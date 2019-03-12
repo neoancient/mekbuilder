@@ -66,6 +66,10 @@ public class ComponentLibrary {
                         case HEAT_SINK:
                             tr = new TypeReference<List<HeatSink>>(){};
                             break;
+                        case HEAVY_WEAPON:
+                        case CAPITAL_WEAPON:
+                            tr = new TypeReference<List<HeavyWeapon>>(){};
+                            break;
                         default:
                             tr = new TypeReference<List<Component>>(){};
                             break;
