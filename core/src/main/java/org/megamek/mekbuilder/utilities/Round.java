@@ -1,4 +1,4 @@
-/**
+/*
  * MekBuilder - unit design companion of MegaMek
  * Copyright (C) 2019 The MegaMek Team
  *
@@ -21,10 +21,10 @@ package org.megamek.mekbuilder.utilities;
 import org.megamek.mekbuilder.unit.UnitBuild;
 
 /**
- * A collection of general purpose utilities
+ * A collection of general static methods for rounding component weights.
  */
 
-public class Utilities {
+public class Round {
 
     /**
      * Used for round a weight up to the nearest ton
