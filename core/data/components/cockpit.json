@@ -1,0 +1,778 @@
+[{
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Superheavy Tripod Cockpit",
+  "mmName" : "Superheavy Tripod Cockpit",
+  "fullName" : "Superheavy Tripod Cockpit",
+  "shortName" : "Superheavy Tripod",
+  "weightFactor" : 5.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 500000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 5.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "162, IO",
+  "switches" : {
+    "SUPERHEAVY_MEK" : true,
+    "TRIPOD" : true
+  },
+  "techAdvancement" : "IS|E|XFXF|~3130(RS),3135(RS),-,-,-|-,-,-,-,-|ADVANCED",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_HEAD" : 1
+  },
+  "allowedUnitTypes" : [ "BATTLE_MEK" ],
+  "sensorLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_HEAD" : 2
+  }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Tripod Cockpit",
+  "mmName" : "Tripod Cockpit",
+  "fullName" : "Tripod Cockpit",
+  "shortName" : "Tripod",
+  "weightFactor" : 4.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 400000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 5.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "165, IO",
+  "switches" : {
+    "SUPERHEAVY_MEK" : false,
+    "TRIPOD" : true
+  },
+  "techAdvancement" : "IS|E|XXXF|~2590(TH),2602(TH),-,-,-|-,-,-,-,-|ADVANCED",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_HEAD" : 1
+  },
+  "allowedUnitTypes" : [ "BATTLE_MEK" ],
+  "sensorLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_HEAD" : 2
+  }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "ProtoMek Cockpit",
+  "mmName" : "",
+  "fullName" : "ProtoMek Cockpit",
+  "shortName" : "ProtoMek",
+  "weightFactor" : 0.5,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 500000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 0.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "211, TM",
+  "switches" : { },
+  "techAdvancement" : "CLAN|F|XXED|-,-,-,-,-|~3055(CSJ),3060(CSJ),3060,-,-|STANDARD",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : { },
+  "allowedUnitTypes" : [ "PROTOMEK" ],
+  "sensorLocations" : { },
+  "lifeSupportLocations" : { }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "CV Cockpit",
+  "mmName" : "",
+  "fullName" : "Control Systems",
+  "shortName" : "Control Systems",
+  "weightFactor" : 0.05,
+  "weightAddend" : 0.0,
+  "weightCalc" : "TOTAL_TONNAGE",
+  "costFactor" : 500.0,
+  "costAddend" : 0.0,
+  "costCalc" : "TOTAL_TONNAGE",
+  "slots" : 0.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "211, TM",
+  "switches" : { },
+  "techAdvancement" : "ALL|D|CCCB|-,2470(TH/TH),2490,-,-|-,2470,2490,-,-|STANDARD",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : { },
+  "allowedUnitTypes" : [ "COMBAT_VEHICLE" ],
+  "sensorLocations" : { },
+  "lifeSupportLocations" : { }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "QuadVee Cockpit",
+  "mmName" : "QuadVee Cockpit",
+  "fullName" : "QuadVee Cockpit",
+  "shortName" : "QuadVee",
+  "weightFactor" : 4.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 375000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 2.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "134, IO",
+  "switches" : {
+    "QUADVEE" : true
+  },
+  "techAdvancement" : "CLAN|F|XXXF|-,-,-,-,-|~3130(CHH),3135(CHH),-,-,-|ADVANCED",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "allowedUnitTypes" : [ "BATTLE_MEK" ],
+  "sensorLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_HEAD" : 2
+  }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Superheavy Cockpit",
+  "mmName" : "Superheavy Cockpit",
+  "fullName" : "Superheavy Cockpit",
+  "shortName" : "Superheavy",
+  "weightFactor" : 4.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 300000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 5.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "162, IO",
+  "switches" : {
+    "SUPERHEAVY_MEK" : true
+  },
+  "techAdvancement" : "IS|E|XXFE|~3060(WB),3076(WB),-,-,-|-,-,-,-,-|ADVANCED",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_HEAD" : 1
+  },
+  "allowedUnitTypes" : [ "BATTLE_MEK" ],
+  "sensorLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_HEAD" : 2
+  }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Torso-Mounted Cockpit",
+  "mmName" : "Torso-Mounted Cockpit",
+  "fullName" : "Torso-Mounted Cockpit",
+  "shortName" : "Torso-Mounted",
+  "weightFactor" : 4.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 750000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 6.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 2.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "300, TO",
+  "switches" : {
+    "SUPERHEAVY_MEK" : false,
+    "TRIPOD" : false
+  },
+  "techAdvancement" : "ALL|D|XXFF|3053(FS/LC),~3080(LC),3100,-,-|3055(CSJ),~3080,3100,-,-|EXPERIMENTAL",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_CTORSO" : 1
+  },
+  "allowedUnitTypes" : [ "BATTLE_MEK" ],
+  "sensorLocations" : {
+    "MEK_CTORSO" : 1,
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_LTORSO" : 1,
+    "MEK_RTORSO" : 1
+  }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Industrial Advanced Fire Con",
+  "mmName" : "",
+  "fullName" : "Industrial Advanced Fire Con",
+  "shortName" : "Industrial (Adv FC)",
+  "weightFactor" : 3.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 200000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 5.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "211, TM",
+  "switches" : {
+    "SUPERHEAVY_MEK" : false,
+    "ADV_FIRECON" : null,
+    "TRIPOD" : false
+  },
+  "techAdvancement" : "ALL|D|DEED|~2469(TH/TH),2470(TH/TH),2491,-,-|~2469,2470,2491,-,-|STANDARD",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_HEAD" : 1
+  },
+  "allowedUnitTypes" : [ "INDUSTRIAL_MEK" ],
+  "sensorLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_HEAD" : 2
+  }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Primitive Cockpit",
+  "mmName" : "Primitive Cockpit",
+  "fullName" : "Primitive Cockpit",
+  "shortName" : "Primitive",
+  "weightFactor" : 3.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 100000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 5.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "123, IO",
+  "switches" : {
+    "SUPERHEAVY_MEK" : false,
+    "PRIMITIVE" : true,
+    "TRIPOD" : false
+  },
+  "techAdvancement" : "ALL|D|DXXF|~2430(TH/TH),2439(TH/TH),-,2520,-|~2430,2439,-,2520,-|ADVANCED",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_HEAD" : 1
+  },
+  "allowedUnitTypes" : [ "BATTLE_MEK" ],
+  "sensorLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_HEAD" : 2
+  }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Virtual Reality Piloting Pod",
+  "mmName" : "Virtual Reality Piloting Pod",
+  "fullName" : "Virtual Reality Piloting Pod",
+  "shortName" : "VRRP",
+  "weightFactor" : 3.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 1250000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 6.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 2.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "69, IO",
+  "switches" : {
+    "SUPERHEAVY_MEK" : false,
+    "TRIPOD" : false
+  },
+  "techAdvancement" : "IS|E|XXFX|3052(FS/LC),-,-,3055,-|-,-,-,-,-|EXPERIMENTAL",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_CTORSO" : 1
+  },
+  "allowedUnitTypes" : [ "BATTLE_MEK" ],
+  "sensorLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_HEAD" : 2
+  }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "CF Cockpit",
+  "mmName" : "",
+  "fullName" : "Convention Fighter Cockpit",
+  "shortName" : "Standard",
+  "weightFactor" : 0.1,
+  "weightAddend" : 0.0,
+  "weightCalc" : "TOTAL_TONNAGE",
+  "costFactor" : 400.0,
+  "costAddend" : 0.0,
+  "costCalc" : "TOTAL_TONNAGE",
+  "slots" : 0.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "211, TM",
+  "switches" : { },
+  "techAdvancement" : "ALL|C|CCCC|~2460(TH/TH),2470(TH/TH),2491,-,-|~2460,2470,2491,-,-|STANDARD",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : { },
+  "allowedUnitTypes" : [ "CONV_FIGHTER" ],
+  "sensorLocations" : { },
+  "lifeSupportLocations" : { }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Standard Cockpit",
+  "mmName" : "Standard Cockpit",
+  "fullName" : "Standard Cockpit",
+  "shortName" : "Standard",
+  "weightFactor" : 3.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 200000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 5.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "211, TM",
+  "switches" : {
+    "SUPERHEAVY_MEK" : false,
+    "TRIPOD" : false
+  },
+  "techAdvancement" : "ALL|D|CCCC|~2468(TH/TH),2470(TH/TH),2487,-,-|~2468,2470,2487,-,-|INTRO",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_HEAD" : 1
+  },
+  "allowedUnitTypes" : [ "BATTLE_MEK" ],
+  "sensorLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_HEAD" : 2
+  }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Industrial Cockpit",
+  "mmName" : "Industrial Cockpit",
+  "fullName" : "Industrial Cockpit",
+  "shortName" : "Industrial",
+  "weightFactor" : 3.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 100000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 5.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "211, TM",
+  "switches" : {
+    "SUPERHEAVY_MEK" : false,
+    "TRIPOD" : false
+  },
+  "techAdvancement" : "ALL|C|BCCB|~2469(TH/TH),2470(TH/TH),2490,-,-|~2469,2470,2490,-,-|STANDARD",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_HEAD" : 1
+  },
+  "allowedUnitTypes" : [ "INDUSTRIAL_MEK" ],
+  "sensorLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_HEAD" : 2
+  }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "ASF Cockpit",
+  "mmName" : "Standard Cockpit",
+  "fullName" : "ASF Cockpit",
+  "shortName" : "Standard",
+  "weightFactor" : 3.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 200000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 0.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "211, TM",
+  "switches" : { },
+  "techAdvancement" : "ALL|C|CCCC|~2460(TH/TH),2470(TH/TH),2491,-,-|~2460,2470,2491,-,-|INTRO",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : { },
+  "allowedUnitTypes" : [ "ASF" ],
+  "sensorLocations" : { },
+  "lifeSupportLocations" : { }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "IS ProtoMek Interface",
+  "mmName" : "",
+  "fullName" : "IS ProtoMek Interface",
+  "shortName" : "ProtoMek Interface",
+  "weightFactor" : 0.5,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 1000000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 0.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "102, IO",
+  "switches" : { },
+  "techAdvancement" : "IS|E|XXFX|~3071(WB),-,-,-,-|-,-,-,-,-|EXPERIMENTAL",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : { },
+  "allowedUnitTypes" : [ "PROTOMEK" ],
+  "sensorLocations" : { },
+  "lifeSupportLocations" : { }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Small Cockpit",
+  "mmName" : "Small Cockpit",
+  "fullName" : "Small Cockpit",
+  "shortName" : "Small",
+  "weightFactor" : 2.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 175000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 4.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "211, TM",
+  "switches" : {
+    "SUPERHEAVY_MEK" : false,
+    "TRIPOD" : false
+  },
+  "techAdvancement" : "ALL|E|XXED|3060(FS),3067(FS),3080,-,-|-,3080(CJF),3080,-,-|STANDARD",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_HEAD" : 1
+  },
+  "allowedUnitTypes" : [ "BATTLE_MEK" ],
+  "sensorLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_HEAD" : 1
+  }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Primitive Industrial Cockpit",
+  "mmName" : "Primitive Industrial Cockpit",
+  "fullName" : "Primitive Industrial Cockpit",
+  "shortName" : "Primitive Industrial",
+  "weightFactor" : 3.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 50000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 5.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "123, IO",
+  "switches" : {
+    "SUPERHEAVY_MEK" : false,
+    "PRIMITIVE" : true,
+    "TRIPOD" : false
+  },
+  "techAdvancement" : "ALL|C|CXXF|~2300(TA/TA),2350(TH/TH),-,2520,-|~2300,2350,-,2520,-|ADVANCED",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_HEAD" : 1
+  },
+  "allowedUnitTypes" : [ "INDUSTRIAL_MEK" ],
+  "sensorLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_HEAD" : 2
+  }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Primitive ASF Cockpit",
+  "mmName" : "Primitive Cockpit",
+  "fullName" : "Primitive ASF Cockpit",
+  "shortName" : "Primitive",
+  "weightFactor" : 3.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 100000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 0.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "125, IO",
+  "switches" : {
+    "PRIMITIVE" : true
+  },
+  "techAdvancement" : "ALL|C|DXXF|-,~2300(TA/TA),-,2520,-|-,~2300,-,2520,-|ADVANCED",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : { },
+  "allowedUnitTypes" : [ "ASF" ],
+  "sensorLocations" : { },
+  "lifeSupportLocations" : { }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Superheavy Industrial Cockpit",
+  "mmName" : "Superheavy Industrial Cockpit",
+  "fullName" : "Superheavy Industrial Cockpit",
+  "shortName" : "Superheavy Industrial",
+  "weightFactor" : 4.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 200000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 5.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "162, IO",
+  "switches" : {
+    "SUPERHEAVY_MEK" : true
+  },
+  "techAdvancement" : "IS|D|XFFF|~2905(FW),2940(FW),-,-,-|-,-,-,-,-|ADVANCED",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_HEAD" : 1
+  },
+  "allowedUnitTypes" : [ "INDUSTRIAL_MEK" ],
+  "sensorLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_HEAD" : 2
+  }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Small ASF Cockpit",
+  "mmName" : "Small Cockpit",
+  "fullName" : "Small ASF Cockpit",
+  "shortName" : "Small",
+  "weightFactor" : 2.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 175000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 0.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.0,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "300, TO",
+  "switches" : { },
+  "techAdvancement" : "ALL|E|XXED|~3065(WB),3070(WB),3080,-,-|-,3080(CSR),3080,-,-|STANDARD",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : { },
+  "allowedUnitTypes" : [ "ASF" ],
+  "sensorLocations" : { },
+  "lifeSupportLocations" : { }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "IS Interface Cockpit",
+  "mmName" : "Interface Cockpit",
+  "fullName" : "Interface Cockpit",
+  "shortName" : "Interface",
+  "weightFactor" : 4.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 150000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 6.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 1.3,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "116, IO",
+  "switches" : {
+    "SUPERHEAVY_MEK" : false,
+    "TRIPOD" : false
+  },
+  "techAdvancement" : "IS|E|XXFX|~3074(WB),-,-,-,-|-,-,-,-,-|EXPERIMENTAL",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "allowedUnitTypes" : [ "BATTLE_MEK" ],
+  "sensorLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_HEAD" : 2
+  }
+}, {
+  "type" : "org.megamek.mekbuilder.component.Cockpit",
+  "componentType" : "COCKPIT",
+  "internalName" : "Clan Interface Cockpit",
+  "mmName" : "Interface Cockpit",
+  "fullName" : "Interface Cockpit",
+  "shortName" : "Interface",
+  "weightFactor" : 4.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 150000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 6.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 1.3,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "BASIC",
+  "rulesRef" : "116, IO",
+  "switches" : {
+    "SUPERHEAVY_MEK" : false,
+    "TRIPOD" : false
+  },
+  "techAdvancement" : "CLAN|F|XXFF|-,-,-,-,-|~3083(CHH),-,-,-,-|EXPERIMENTAL",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "allowedUnitTypes" : [ "BATTLE_MEK" ],
+  "sensorLocations" : {
+    "MEK_HEAD" : 2
+  },
+  "lifeSupportLocations" : {
+    "MEK_HEAD" : 2
+  }
+}]
