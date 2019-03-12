@@ -111,8 +111,17 @@ public interface ITechProgression {
         if (techStage != TechStage.EXTINCTION) {
             return earliestDate(getDate(techStage, true), getDate(techStage, false));
         } else {
-            return latestDate(getDate(TechStage.EXTINCTION, true),
-                    getDate(TechStage.EXTINCTION, false));
+            // A null extinction date for either Clan or IS is only meaningful if that tech base has access
+            // to the tech in the first place.
+            Integer clanDate = getDate(TechStage.EXTINCTION, true);
+            if ((null == clanDate) && introDate(true) != null) {
+                return null;
+            }
+            Integer isDate = getDate(TechStage.EXTINCTION, false);
+            if ((null == isDate) && introDate(false) != null) {
+                return null;
+            }
+            return latestDate(isDate, clanDate);
         }
     }
 
@@ -124,7 +133,7 @@ public interface ITechProgression {
      * @return The date the tech became available
      */
     default @Nullable Integer introDate(boolean clan, @Nullable Faction faction) {
-        Integer retVal = getDate(TechStage.PRODUCTION, clan, faction);
+        Integer retVal = getDate(TechStage.PROTOTYPE, clan, faction);
         if (null == retVal) {
             retVal = getDate(TechStage.PRODUCTION, clan, faction);
         }
@@ -150,7 +159,7 @@ public interface ITechProgression {
      * @return The date the tech became available
      */
     default @Nullable Integer introDate() {
-        Integer retVal = getDate(TechStage.PRODUCTION);
+        Integer retVal = getDate(TechStage.PROTOTYPE);
         if (null == retVal) {
             retVal = getDate(TechStage.PRODUCTION);
         }

@@ -95,7 +95,7 @@ public class TechProgression implements ITechProgression {
         this.staticLevel = TechLevel.STANDARD;
     }
 
-    private static class Parser {
+    static class Parser {
         private static final Pattern regex = Pattern.compile("(~?)(\\d+)(\\(.*\\))?");
 
         private final String string;
@@ -138,7 +138,7 @@ public class TechProgression implements ITechProgression {
                         approx.add(stage);
                     }
                     prog.put(stage, Integer.parseInt(matcher.group(2)));
-                    if (matcher.groupCount() > 3 && !matcher.group(3).isEmpty()) {
+                    if (matcher.group(3) != null && !matcher.group(3).isEmpty()) {
                         String[] fnames = matcher.group(3).replaceAll("[()]", "").split("/");
                         for (String name : fnames) {
                             factionMap.get(stage).add(Faction.valueOf(name));
@@ -352,10 +352,11 @@ public class TechProgression implements ITechProgression {
             }
             sb.append(prog.get(stage) == null ? "-" : prog.get(stage));
             Set<Faction> fList = factions.get(stage);
-            if ((null != fList) && !fList.isEmpty()) {
+            String str = fList.stream().filter(f -> f.isClan() == clan)
+                    .map(Faction::toString).collect(Collectors.joining("/"));
+            if (!str.isEmpty()) {
                 sb.append("(");
-                sb.append(fList.stream().filter(f -> f.isClan() == clan)
-                    .map(Faction::toString).collect(Collectors.joining("/")));
+                sb.append(str);
                 sb.append(")");
             }
             sj.add(sb.toString());
