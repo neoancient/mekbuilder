@@ -1,4 +1,4 @@
-/**
+/*
  * MekBuilder - unit design companion of MegaMek
  * Copyright (C) 2017 The MegaMek Team
  * <p>
@@ -19,7 +19,8 @@
 package org.megamek.mekbuilder.unit;
 
 /**
- * @author: Neoancient
+ * Values for classifying units by weight. The range for each weight class varies by unit type, and not
+ * all weight classes are used for every unit type.
  */
 public enum UnitWeightClass {
     ULTRALIGHT(0, "u"),

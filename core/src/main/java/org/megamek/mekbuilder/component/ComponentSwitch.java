@@ -1,4 +1,4 @@
-/**
+/*
  * MekBuilder - unit design companion of MegaMek
  * Copyright (C) 2017 The MegaMek Team
  * <p>
@@ -45,8 +45,6 @@ class DataParsers {
 /**
  * A set of switches for miscellaneous information about equipment. These are similar to the BigInteger
  * flags used by MegaMek, but can be mapped to data to provide more information.
- *
- * @author: Neoancient
  */
 public enum ComponentSwitch {
     SPREADABLE, // Can be split among various locations

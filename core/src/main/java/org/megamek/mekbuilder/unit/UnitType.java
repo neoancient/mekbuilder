@@ -1,4 +1,4 @@
-/**
+/*
  * MekBuilder - unit design companion of MegaMek
  * Copyright (C) 2017 The MegaMek Team
  * <p>
@@ -19,7 +19,8 @@
 package org.megamek.mekbuilder.unit;
 
 /**
- * @author: Neoancient
+ * Unit types. These categories are the ones used by construction rules to identify which unit types can
+ * legally use a component.
  */
 public enum UnitType {
     BATTLE_MEK("BM"),

@@ -1,4 +1,4 @@
-/**
+/*
  * MekBuilder - unit design companion of MegaMek
  * Copyright (C) 2017 The MegaMek Team
  * <p>
@@ -19,7 +19,8 @@
 package org.megamek.mekbuilder.component;
 
 /**
- * @author: Neoancient
+ * Ammunition according to weapon type. This does not cover alternate munition types or various sizes of
+ * the same weapon.
  */
 public enum AmmunitionType {
     NONE,

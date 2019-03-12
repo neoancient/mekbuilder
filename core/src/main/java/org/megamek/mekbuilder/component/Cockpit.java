@@ -1,4 +1,4 @@
-/**
+/*
  * MekBuilder - unit design companion of MegaMek
  * Copyright (C) 2017 The MegaMek Team
  * <p>

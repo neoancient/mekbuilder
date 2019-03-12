@@ -1,4 +1,4 @@
-/**
+/*
  * MekBuilder - unit design companion of MegaMek
  * Copyright (C) 2017 The MegaMek Team
  * <p>
@@ -19,9 +19,7 @@
 package org.megamek.mekbuilder.tech;
 
 /**
- * Values used for faction-specific intro dates.
- *
- * @author: Neoancient
+ * Values used for faction-specific intro dates. These are all the factions listed in Interstellar Operations.
  */
 public enum Faction {
     IS ("Inner Sphere", Faction.GROUP_IS),

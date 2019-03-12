@@ -1,4 +1,4 @@
-/**
+/*
  * MekBuilder - unit design companion of MegaMek
  * Copyright (C) 2019 The MegaMek Team
  *
@@ -20,8 +20,6 @@ package org.megamek.mekbuilder.component;
 
 /**
  * Various component categories useful for filtering.
- *
- * @author Neoancient
  */
 
 public enum ComponentType {

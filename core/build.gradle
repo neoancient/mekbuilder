@@ -19,4 +19,5 @@ dependencies {
     compile 'org.megamek:megamek:0.45.3'
 
     testCompile 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testCompile 'org.mockito:mockito-core:2.16.0'
 }

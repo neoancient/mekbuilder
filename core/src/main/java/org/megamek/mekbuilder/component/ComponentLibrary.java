@@ -26,13 +26,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.module.SimpleModule;
 
 import java.io.*;
 import java.util.*;
 
 /**
- *
+ * Singleton class responsible for loading all components and providing a lookup service.
  */
 public class ComponentLibrary {
     private static ComponentLibrary instance = null;

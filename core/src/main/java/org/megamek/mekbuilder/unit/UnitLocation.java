@@ -1,4 +1,4 @@
-/**
+/*
  * MekBuilder - unit design companion of MegaMek
  * Copyright (C) 2017 The MegaMek Team
  * <p>
@@ -19,7 +19,8 @@
 package org.megamek.mekbuilder.unit;
 
 /**
- * @author: Neoancient
+ * Unit locations. Each value applies to a specific location on a specific type of unit, with the exception
+ * of a small number of virtual locations which are mapped to physical locations depending on circumstances.
  */
 public enum UnitLocation {
     NO_LOCATION(false, false, false),

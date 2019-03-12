@@ -1,4 +1,4 @@
-/**
+/*
  * MekBuilder - unit design companion of MegaMek
  * Copyright (C) 2017 The MegaMek Team
  *
@@ -22,8 +22,6 @@ import java.util.Set;
 
 /**
  * Base class for unit types
- *
- * @author Neoancient
  */
 
 public abstract class UnitBuild {

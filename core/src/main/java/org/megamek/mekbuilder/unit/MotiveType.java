@@ -19,7 +19,7 @@
 package org.megamek.mekbuilder.unit;
 
 /**
- * @author: Neoancient
+ * Movemement modes available to units.
  */
 public enum MotiveType {
     GROUND("-"),
