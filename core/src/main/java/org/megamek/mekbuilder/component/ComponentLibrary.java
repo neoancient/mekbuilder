@@ -62,6 +62,9 @@ public class ComponentLibrary {
                         case ARMOR:
                             tr = new TypeReference<List<Armor>>(){};
                             break;
+                        case COCKPIT:
+                            tr = new TypeReference<List<Cockpit>>(){};
+                            break;
                         default:
                             tr = new TypeReference<List<Component>>(){};
                             break;

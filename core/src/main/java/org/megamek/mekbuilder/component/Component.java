@@ -106,8 +106,8 @@ public class Component implements ITechDelegator {
      * @param location The location to check
      * @return The number of slots that must be allocated in the given location for this component.
      */
-    public Integer fixedSlots(UnitBuild unit, UnitLocation location) {
-        return fixedLocations.get(location);
+    public int fixedSlots(UnitBuild unit, UnitLocation location) {
+        return fixedLocations.getOrDefault(location, 0);
     }
 
     /**

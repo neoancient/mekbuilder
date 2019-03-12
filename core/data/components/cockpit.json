@@ -35,7 +35,8 @@
   },
   "lifeSupportLocations" : {
     "MEK_HEAD" : 2
-  }
+  },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -73,7 +74,8 @@
   },
   "lifeSupportLocations" : {
     "MEK_HEAD" : 2
-  }
+  },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -102,7 +104,8 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "PROTOMEK" ],
   "sensorLocations" : { },
-  "lifeSupportLocations" : { }
+  "lifeSupportLocations" : { },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -131,7 +134,8 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "COMBAT_VEHICLE" ],
   "sensorLocations" : { },
-  "lifeSupportLocations" : { }
+  "lifeSupportLocations" : { },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -168,7 +172,8 @@
   },
   "lifeSupportLocations" : {
     "MEK_HEAD" : 2
-  }
+  },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -205,7 +210,8 @@
   },
   "lifeSupportLocations" : {
     "MEK_HEAD" : 2
-  }
+  },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -245,7 +251,8 @@
   "lifeSupportLocations" : {
     "MEK_LTORSO" : 1,
     "MEK_RTORSO" : 1
-  }
+  },
+  "torsoMounted" : true
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -284,7 +291,8 @@
   },
   "lifeSupportLocations" : {
     "MEK_HEAD" : 2
-  }
+  },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -323,7 +331,8 @@
   },
   "lifeSupportLocations" : {
     "MEK_HEAD" : 2
-  }
+  },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -361,7 +370,8 @@
   },
   "lifeSupportLocations" : {
     "MEK_HEAD" : 2
-  }
+  },
+  "torsoMounted" : true
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -390,7 +400,8 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "CONV_FIGHTER" ],
   "sensorLocations" : { },
-  "lifeSupportLocations" : { }
+  "lifeSupportLocations" : { },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -428,7 +439,8 @@
   },
   "lifeSupportLocations" : {
     "MEK_HEAD" : 2
-  }
+  },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -466,7 +478,8 @@
   },
   "lifeSupportLocations" : {
     "MEK_HEAD" : 2
-  }
+  },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -495,7 +508,8 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "ASF" ],
   "sensorLocations" : { },
-  "lifeSupportLocations" : { }
+  "lifeSupportLocations" : { },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -524,7 +538,8 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "PROTOMEK" ],
   "sensorLocations" : { },
-  "lifeSupportLocations" : { }
+  "lifeSupportLocations" : { },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -562,7 +577,8 @@
   },
   "lifeSupportLocations" : {
     "MEK_HEAD" : 1
-  }
+  },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -601,7 +617,8 @@
   },
   "lifeSupportLocations" : {
     "MEK_HEAD" : 2
-  }
+  },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -632,7 +649,8 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "ASF" ],
   "sensorLocations" : { },
-  "lifeSupportLocations" : { }
+  "lifeSupportLocations" : { },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -669,7 +687,8 @@
   },
   "lifeSupportLocations" : {
     "MEK_HEAD" : 2
-  }
+  },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -698,7 +717,8 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "ASF" ],
   "sensorLocations" : { },
-  "lifeSupportLocations" : { }
+  "lifeSupportLocations" : { },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -736,7 +756,8 @@
   },
   "lifeSupportLocations" : {
     "MEK_HEAD" : 2
-  }
+  },
+  "torsoMounted" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
@@ -774,5 +795,6 @@
   },
   "lifeSupportLocations" : {
     "MEK_HEAD" : 2
-  }
+  },
+  "torsoMounted" : false
 }]
