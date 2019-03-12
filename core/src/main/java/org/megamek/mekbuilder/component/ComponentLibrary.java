@@ -49,10 +49,9 @@ public class ComponentLibrary {
                 .withSetterVisibility(JsonAutoDetect.Visibility.NONE)
                 .withIsGetterVisibility(JsonAutoDetect.Visibility.NONE));
         for (ComponentType type : ComponentType.values()) {
-            final File file = new File(DATA_DIR, type.name().toLowerCase() + ".json");
-            if (file.exists()) {
+            final InputStream is = getClass().getResourceAsStream(type.name().toLowerCase() + ".json");
+            if (null != is) {
                 try {
-                    InputStream is = new FileInputStream(file);
                     TypeReference<?> tr;
                     switch (type) {
                         case AMMUNITION:
