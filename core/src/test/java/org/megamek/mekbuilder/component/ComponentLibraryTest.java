@@ -13,6 +13,7 @@ class ComponentLibraryTest {
     void testLoadLibrary() {
         assertAll(
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("Ammo AC/5") instanceof Ammunition),
+                () -> assertTrue(ComponentLibrary.getInstance().getComponent("Clan Ferro-Fibrous") instanceof Armor),
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("ISCASE") instanceof Component)
         );
     }

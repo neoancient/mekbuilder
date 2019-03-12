@@ -34,9 +34,6 @@ public class Ammunition extends Component {
     private double kgPerShot = 0.0;
     private WeaponRange range = new WeaponRange(0, 0, 0, 0, 0);
 
-    @JsonCreator
-    Ammunition() {}
-
     public AmmunitionType getAmmoType() {
         return ammoType;
     }
