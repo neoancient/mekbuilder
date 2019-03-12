@@ -24,7 +24,8 @@
   "requiredComponents" : { },
   "incompatibleComponents" : { },
   "fixedLocations" : { },
-  "allowedUnitTypes" : [ "PROTOMEK" ]
+  "allowedUnitTypes" : [ "PROTOMEK" ],
+  "heatDissipation" : 1
 }, {
   "type" : "org.megamek.mekbuilder.component.HeatSink",
   "componentType" : "HEAT_SINK",
@@ -54,7 +55,8 @@
   "requiredComponents" : { },
   "incompatibleComponents" : { },
   "fixedLocations" : { },
-  "allowedUnitTypes" : [ "JUMPSHIP", "BATTLE_MEK", "ASF", "WARSHIP", "INDUSTRIAL_MEK", "SMALL_CRAFT", "DROPSHIP", "SUPPORT_VEHICLE", "COMBAT_VEHICLE", "CONV_FIGHTER" ]
+  "allowedUnitTypes" : [ "JUMPSHIP", "BATTLE_MEK", "ASF", "WARSHIP", "INDUSTRIAL_MEK", "SMALL_CRAFT", "DROPSHIP", "SUPPORT_VEHICLE", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
+  "heatDissipation" : 1
 }, {
   "type" : "org.megamek.mekbuilder.component.HeatSink",
   "componentType" : "HEAT_SINK",
@@ -84,7 +86,8 @@
   "requiredComponents" : { },
   "incompatibleComponents" : { },
   "fixedLocations" : { },
-  "allowedUnitTypes" : [ "JUMPSHIP", "BATTLE_MEK", "ASF", "WARSHIP", "SMALL_CRAFT", "DROPSHIP" ]
+  "allowedUnitTypes" : [ "JUMPSHIP", "BATTLE_MEK", "ASF", "WARSHIP", "SMALL_CRAFT", "DROPSHIP" ],
+  "heatDissipation" : 2
 }, {
   "type" : "org.megamek.mekbuilder.component.HeatSink",
   "componentType" : "HEAT_SINK",
@@ -114,7 +117,8 @@
   "requiredComponents" : { },
   "incompatibleComponents" : { },
   "fixedLocations" : { },
-  "allowedUnitTypes" : [ "BATTLE_MEK" ]
+  "allowedUnitTypes" : [ "BATTLE_MEK" ],
+  "heatDissipation" : 2
 }, {
   "type" : "org.megamek.mekbuilder.component.HeatSink",
   "componentType" : "HEAT_SINK",
@@ -144,7 +148,8 @@
   "requiredComponents" : { },
   "incompatibleComponents" : { },
   "fixedLocations" : { },
-  "allowedUnitTypes" : [ "BATTLE_MEK" ]
+  "allowedUnitTypes" : [ "BATTLE_MEK" ],
+  "heatDissipation" : 1
 }, {
   "type" : "org.megamek.mekbuilder.component.HeatSink",
   "componentType" : "HEAT_SINK",
@@ -174,7 +179,8 @@
   "requiredComponents" : { },
   "incompatibleComponents" : { },
   "fixedLocations" : { },
-  "allowedUnitTypes" : [ "JUMPSHIP", "BATTLE_MEK", "ASF", "WARSHIP", "SMALL_CRAFT", "DROPSHIP" ]
+  "allowedUnitTypes" : [ "JUMPSHIP", "BATTLE_MEK", "ASF", "WARSHIP", "SMALL_CRAFT", "DROPSHIP" ],
+  "heatDissipation" : 2
 }, {
   "type" : "org.megamek.mekbuilder.component.HeatSink",
   "componentType" : "HEAT_SINK",
@@ -204,5 +210,6 @@
   "requiredComponents" : { },
   "incompatibleComponents" : { },
   "fixedLocations" : { },
-  "allowedUnitTypes" : [ "JUMPSHIP", "BATTLE_MEK", "ASF", "WARSHIP", "SMALL_CRAFT", "DROPSHIP" ]
+  "allowedUnitTypes" : [ "JUMPSHIP", "BATTLE_MEK", "ASF", "WARSHIP", "SMALL_CRAFT", "DROPSHIP" ],
+  "heatDissipation" : 2
 }]

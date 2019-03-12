@@ -65,6 +65,9 @@ public class ComponentLibrary {
                         case COCKPIT:
                             tr = new TypeReference<List<Cockpit>>(){};
                             break;
+                        case HEAT_SINK:
+                            tr = new TypeReference<List<HeatSink>>(){};
+                            break;
                         default:
                             tr = new TypeReference<List<Component>>(){};
                             break;
