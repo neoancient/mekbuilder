@@ -17,6 +17,8 @@ class ComponentLibraryTest {
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("Standard Cockpit") instanceof Cockpit),
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("Heat Sink") instanceof HeatSink),
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("Small Laser") instanceof HeavyWeapon),
+                () -> assertTrue(ComponentLibrary.getInstance().getComponent("MechWarrior Combat Suit") instanceof InfantryArmorKit),
+                () -> assertTrue(ComponentLibrary.getInstance().getComponent("Auto-Rifle") instanceof InfantryWeapon),
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("ISCASE") instanceof Component)
         );
     }

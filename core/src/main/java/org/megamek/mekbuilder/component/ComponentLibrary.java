@@ -70,6 +70,12 @@ public class ComponentLibrary {
                         case CAPITAL_WEAPON:
                             tr = new TypeReference<List<HeavyWeapon>>(){};
                             break;
+                        case INF_ARMOR:
+                            tr = new TypeReference<List<InfantryArmorKit>>(){};
+                            break;
+                        case INF_WEAPON:
+                            tr = new TypeReference<List<InfantryWeapon>>(){};
+                            break;
                         default:
                             tr = new TypeReference<List<Component>>(){};
                             break;
