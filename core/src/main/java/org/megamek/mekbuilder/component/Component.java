@@ -77,7 +77,7 @@ public class Component implements ITechDelegator {
     private Set<UnitType> allowedUnitTypes = EnumSet.noneOf(UnitType.class);
 
     @JsonCreator
-    private Component() {}
+    Component() {}
 
     public ComponentType getType() {
         return componentType;
@@ -286,4 +286,5 @@ public class Component implements ITechDelegator {
     public ITechProgression techDelegate() {
         return techProgression;
     }
+
 }

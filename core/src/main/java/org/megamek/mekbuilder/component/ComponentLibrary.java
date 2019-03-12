@@ -26,6 +26,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 
 import java.io.*;
 import java.util.*;
@@ -41,7 +42,7 @@ public class ComponentLibrary {
     private final Map<String, Component> allComponents = new HashMap<>();
 
     private ComponentLibrary() {
-        ObjectMapper mapper = new ObjectMapper();
+        final ObjectMapper mapper = new ObjectMapper();
         mapper.setDefaultSetterInfo(JsonSetter.Value.forValueNulls(Nulls.SKIP));
         mapper.setVisibility(mapper.getSerializationConfig().getDefaultVisibilityChecker()
                 .withFieldVisibility(JsonAutoDetect.Visibility.ANY)
@@ -53,7 +54,16 @@ public class ComponentLibrary {
             if (file.exists()) {
                 try {
                     InputStream is = new FileInputStream(file);
-                    List<Component> list = mapper.readValue(is, new TypeReference<List<Component>>(){});
+                    TypeReference<?> tr;
+                    switch (type) {
+                        case AMMUNITION:
+                            tr = new TypeReference<List<Ammunition>>(){};
+                            break;
+                        default:
+                            tr = new TypeReference<List<Component>>(){};
+                            break;
+                    }
+                    List<? extends Component> list = mapper.readValue(is, tr);
                     list.forEach(c -> allComponents.put(c.getInternalName(), c));
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();

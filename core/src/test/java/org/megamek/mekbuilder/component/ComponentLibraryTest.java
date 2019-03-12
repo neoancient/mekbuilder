@@ -11,6 +11,9 @@ class ComponentLibraryTest {
 
     @Test
     void testLoadLibrary() {
-        assertTrue(ComponentLibrary.getInstance().getComponent("Small Cockpit") instanceof Component);
+        assertAll(
+                () -> assertTrue(ComponentLibrary.getInstance().getComponent("Ammo AC/5") instanceof Ammunition),
+                () -> assertTrue(ComponentLibrary.getInstance().getComponent("ISCASE") instanceof Component)
+        );
     }
 }
