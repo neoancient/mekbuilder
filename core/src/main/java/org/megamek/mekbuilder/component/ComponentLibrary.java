@@ -76,6 +76,9 @@ public class ComponentLibrary {
                         case INF_WEAPON:
                             tr = new TypeReference<List<InfantryWeapon>>(){};
                             break;
+                        case MOVE_ENHANCEMENT:
+                            tr = new TypeReference<List<MoveEnhancement>>(){};
+                            break;
                         default:
                             tr = new TypeReference<List<Component>>(){};
                             break;

@@ -19,6 +19,7 @@ class ComponentLibraryTest {
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("Small Laser") instanceof HeavyWeapon),
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("MechWarrior Combat Suit") instanceof InfantryArmorKit),
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("Auto-Rifle") instanceof InfantryWeapon),
+                () -> assertTrue(ComponentLibrary.getInstance().getComponent("ISMASC") instanceof MoveEnhancement),
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("ISCASE") instanceof Component)
         );
     }
