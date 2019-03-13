@@ -20,7 +20,8 @@ class ComponentLibraryTest {
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("MechWarrior Combat Suit") instanceof InfantryArmorKit),
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("Auto-Rifle") instanceof InfantryWeapon),
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("ISMASC") instanceof MoveEnhancement),
-                () -> assertTrue(ComponentLibrary.getInstance().getComponent("FusionEngine") instanceof MVFEngine)
+                () -> assertTrue(ComponentLibrary.getInstance().getComponent("FusionEngine") instanceof MVFEngine),
+                () -> assertTrue(ComponentLibrary.getInstance().getComponent("Sword") instanceof PhysicalWeapon)
         );
     }
 }

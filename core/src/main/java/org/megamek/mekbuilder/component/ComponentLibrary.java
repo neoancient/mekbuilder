@@ -82,6 +82,9 @@ public class ComponentLibrary {
                         case ENGINE:
                             tr = new TypeReference<List<MVFEngine>>(){};
                             break;
+                        case PHYSICAL_WEAPON:
+                            tr = new TypeReference<List<PhysicalWeapon>>(){};
+                            break;
                         default:
                             tr = new TypeReference<List<Component>>(){};
                             break;
