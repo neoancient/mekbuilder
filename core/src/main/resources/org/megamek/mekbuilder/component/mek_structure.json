@@ -16,7 +16,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "342, TO",
   "switches" : {
     "SUPERHEAVY_MEK" : "null",
@@ -46,7 +46,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "71, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : "null",
@@ -76,7 +76,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "161, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : "null"
@@ -105,7 +105,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "161, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : "null",
@@ -135,7 +135,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "161, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : "null"
@@ -164,7 +164,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "224, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : "null",
@@ -194,7 +194,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "225, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : "null"
@@ -223,7 +223,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "224, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : "null",
@@ -253,7 +253,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 2.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "342, TO",
   "switches" : {
     "SUPERHEAVY_MEK" : "null"
@@ -282,7 +282,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "342, TO",
   "switches" : {
     "SUPERHEAVY_MEK" : "null",
@@ -312,7 +312,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 2.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "161, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : "null",
@@ -342,7 +342,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "224, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : "null"
@@ -382,7 +382,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "224, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : "null"

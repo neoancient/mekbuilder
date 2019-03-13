@@ -16,7 +16,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "327, TO",
   "switches" : {
     "ONE_SHOT" : "null"
@@ -45,7 +45,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "322, TO",
   "switches" : {
     "LASER_INSULATOR" : "null",
@@ -64,7 +64,7 @@
   "internalName" : "ISRISCLaserPulseModule",
   "mmName" : "ISRISCLaserPulseModule",
   "fullName" : "RISC Laser Pulse Module",
-  "shortName" : "RISC Laser Pulse Module",
+  "shortName" : "Laser Pulse Module",
   "weightFactor" : 1.0,
   "weightAddend" : 0.0,
   "weightCalc" : "BASIC",
@@ -76,7 +76,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.15,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "LINKED",
   "rulesRef" : "93, IO",
   "switches" : {
     "PULSE_MODULE" : "null",
@@ -108,7 +108,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.3,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "LINKED",
   "rulesRef" : "283, TO",
   "switches" : {
     "LINK_ALL" : "null",
@@ -140,7 +140,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.2,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "LINKED",
   "rulesRef" : "206, TM",
   "switches" : {
     "LINK_ALL" : "null",
@@ -172,7 +172,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.2,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "LINKED",
   "rulesRef" : "206, TM",
   "switches" : {
     "LINK_ALL" : "null",
@@ -204,7 +204,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "230, TM",
   "switches" : {
     "ONE_SHOT" : "null"
@@ -233,7 +233,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "243, TM",
   "switches" : {
     "HITTABLE" : "null",
@@ -264,7 +264,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "337, TO",
   "switches" : {
     "PPC_CAPACITOR" : "null",
@@ -278,4 +278,34 @@
   "incompatibleComponents" : { },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "JUMPSHIP", "BATTLE_MEK", "ASF", "SPACE_STATION", "WARSHIP", "MOBILE_STRUCTURE", "INDUSTRIAL_MEK", "SMALL_CRAFT", "DROPSHIP", "SUPPORT_VEHICLE", "COMBAT_VEHICLE", "CONV_FIGHTER" ]
+}, {
+  "type" : "org.megamek.mekbuilder.component.Component",
+  "componentType" : "ELECTRONICS",
+  "internalName" : "ISApollo",
+  "mmName" : "ISApollo",
+  "fullName" : "Apollo MRM FCS",
+  "shortName" : "Apollo MRM FCS",
+  "weightFactor" : 1.0,
+  "weightAddend" : 0.0,
+  "weightCalc" : "BASIC",
+  "costFactor" : 125000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "BASIC",
+  "slots" : 1.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 1.15,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "LINKED",
+  "rulesRef" : "330, TO",
+  "switches" : {
+    "HITTABLE" : "null",
+    "MODULE" : "null"
+  },
+  "techAdvancement" : "IS|D|XXED|~3065(DC),3071(DC),-,-,-|-,-,-,-,-|STANDARD",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : { },
+  "allowedUnitTypes" : [ ]
 }]

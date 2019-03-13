@@ -16,7 +16,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "162, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : true,
@@ -55,7 +55,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "165, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -94,7 +94,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "211, TM",
   "switches" : { },
   "techAdvancement" : "CLAN|F|XXED|-,-,-,-,-|~3055(CSJ),3060(CSJ),3060,-,-|STANDARD",
@@ -124,7 +124,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "211, TM",
   "switches" : { },
   "techAdvancement" : "ALL|D|CCCB|-,2470(TH/TH),2490,-,-|-,2470,2490,-,-|STANDARD",
@@ -154,7 +154,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "134, IO",
   "switches" : {
     "QUADVEE" : true
@@ -192,7 +192,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "162, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : true
@@ -230,7 +230,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 2.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "TORSO_COCKPIT",
   "rulesRef" : "300, TO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -271,7 +271,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "211, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -311,7 +311,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "123, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -351,7 +351,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 2.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "TORSO_COCKPIT",
   "rulesRef" : "69, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -390,7 +390,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "211, TM",
   "switches" : { },
   "techAdvancement" : "ALL|C|CCCC|~2460(TH/TH),2470(TH/TH),2491,-,-|~2460,2470,2491,-,-|STANDARD",
@@ -420,7 +420,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "211, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -459,7 +459,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "211, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -498,7 +498,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "211, TM",
   "switches" : { },
   "techAdvancement" : "ALL|C|CCCC|~2460(TH/TH),2470(TH/TH),2491,-,-|~2460,2470,2491,-,-|INTRO",
@@ -528,7 +528,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "102, IO",
   "switches" : { },
   "techAdvancement" : "IS|E|XXFX|~3071(WB),-,-,-,-|-,-,-,-,-|EXPERIMENTAL",
@@ -558,7 +558,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "211, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -597,7 +597,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "123, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -637,7 +637,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "125, IO",
   "switches" : {
     "PRIMITIVE" : true
@@ -669,7 +669,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "162, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : true
@@ -707,7 +707,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "300, TO",
   "switches" : { },
   "techAdvancement" : "ALL|E|XXED|~3065(WB),3070(WB),3080,-,-|-,3080(CSR),3080,-,-|STANDARD",
@@ -737,7 +737,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.3,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "FINAL",
   "rulesRef" : "116, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -776,7 +776,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.3,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "FINAL",
   "rulesRef" : "116, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,

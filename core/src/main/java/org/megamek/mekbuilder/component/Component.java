@@ -57,8 +57,7 @@ public class Component implements ITechDelegator {
     private CalcMethod slotCalc = CalcMethod.BASIC;
     private double bvFactor = 0.0;
     private double bvFactor2 = 0.0;
-    @JsonAlias("bvCalcType")
-    private CalcMethod bvCalc = CalcMethod.BASIC;
+    private BVCalcType bvCalcType = BVCalcType.EQUIPMENT;
     private String rulesRef = "?";
     @JsonSerialize(using=ComponentSwitch.SwitchMapSerializer.class)
     @JsonDeserialize(using=ComponentSwitch.SwitchMapDeserializer.class)
@@ -104,6 +103,32 @@ public class Component implements ITechDelegator {
 
     public String getShortName() {
         return shortName;
+    }
+
+    /**
+     * The way this Component affect BV is determined by {@link #getBVCalcType()} using this factor.
+     *
+     * @return The BV factor
+     */
+    public double getBVFactor() {
+        return bvFactor;
+    }
+
+    /**
+     * For components that are included in both offensive and defensive BV, {@link #getBVFactor()} is used
+     * for offensive and this value is used for defensive.
+     *
+     * @return The value to add to defensive bonus if required.
+     */
+    public double getBVFactor2() {
+        return bvFactor2;
+    }
+
+    /**
+     * @return A value indicating how this component affects BV calculations.
+     */
+    public BVCalcType getBVCalcType() {
+        return bvCalcType;
     }
 
     /**

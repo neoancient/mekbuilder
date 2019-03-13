@@ -16,7 +16,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.4,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "282, TO",
   "switches" : { },
   "techAdvancement" : "IS|F|XXFE|-,~3093(RS),3100,-,-|-,-,-,-,-|STANDARD",
@@ -43,7 +43,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "205, TM",
   "switches" : {
     "SPREADABLE" : null
@@ -74,7 +74,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.1,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "87, IO",
   "switches" : {
     "SPREADABLE" : null
@@ -103,7 +103,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "205, TM",
   "switches" : {
     "SPREADABLE" : null
@@ -137,7 +137,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "205, TM",
   "switches" : {
     "PRIMITIVE" : null
@@ -166,7 +166,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "282, TO",
   "switches" : {
     "BV_TARGET_BONUS" : 2,
@@ -203,7 +203,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "280, TO",
   "switches" : {
     "SPREADABLE" : null
@@ -235,7 +235,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "205, TM",
   "switches" : { },
   "techAdvancement" : "ALL|D|CCCB|~2460(TH/TH),2470(TH/TH),2470,-,-|~2460,2470,2470,-,-|INTRO",
@@ -262,7 +262,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.4,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "280, TO",
   "switches" : { },
   "techAdvancement" : "IS|F|XXFE|-,~3089(DC),3105,-,-|-,-,-,-,-|STANDARD",
@@ -289,7 +289,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.4,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "280, TO",
   "switches" : { },
   "techAdvancement" : "CLAN|F|XXFE|-,-,-,-,-|3074(CSF),~3089(CNC),3105,-,-|STANDARD",
@@ -316,7 +316,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "206, TM",
   "switches" : { },
   "techAdvancement" : "IS|D|CCCB|~2460(TH/TH),2470(TH/TH),2470,-,-|~2460,2470,2470,-,-|STANDARD",
@@ -343,7 +343,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "253, TM",
   "switches" : { },
   "techAdvancement" : "IS|E|XXFE|~3058(CS/WB),3061(WB),3065,-,-|-,-,-,-,-|STANDARD",
@@ -370,7 +370,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "252, TM",
   "switches" : { },
   "techAdvancement" : "CLAN|E|XXFE|-,-,-,-,-|-,3058(CSR),3059,-,-|STANDARD",
@@ -397,7 +397,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "252, TM",
   "switches" : { },
   "techAdvancement" : "IS|E|FFED|~2680(TH),-,3054,2766,3050(FS/LC/DC)|-,-,-,-,-|STANDARD",
@@ -424,7 +424,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "205, TM",
   "switches" : {
     "SPREADABLE" : null
@@ -455,7 +455,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "205, TM",
   "switches" : { },
   "techAdvancement" : "IS|B|BBAA|~2290(TA/TA),~2300(TA/TA),2310,-,-|~2290,~2300,2310,-,-|STANDARD",
@@ -482,7 +482,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "252, TM",
   "switches" : { },
   "techAdvancement" : "IS|E|FFED|~2700(TH),2710(TH),3054,2770,3052(DC)|-,-,-,-,-|STANDARD",
@@ -509,7 +509,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "205, TM",
   "switches" : {
     "SPREADABLE" : null
@@ -541,7 +541,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "206, TM",
   "switches" : {
     "BV_TARGET_BONUS" : 2,
@@ -583,7 +583,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "252, TM",
   "switches" : { },
   "techAdvancement" : "CLAN|E|FXED|-,-,-,-,-|~2710,2720,3055,-,-|STANDARD",
@@ -610,7 +610,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "282, TO",
   "switches" : {
     "SPREADABLE" : null
@@ -642,7 +642,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.4,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "282, TO",
   "switches" : { },
   "techAdvancement" : "CLAN|F|XXFE|-,-,-,-,-|3075(CSF),-,3100,-,-|STANDARD",
@@ -669,7 +669,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "87, IO",
   "switches" : {
     "SPREADABLE" : null
@@ -702,7 +702,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "125, IO",
   "switches" : {
     "PRIMITIVE" : null
@@ -731,7 +731,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.4,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "253, TM",
   "switches" : { },
   "techAdvancement" : "CLAN|F|XXFE|-,-,-,-,-|~3052(CFM),3058(CFM),3065,-,-|STANDARD",
@@ -758,7 +758,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "206, TM",
   "switches" : { },
   "techAdvancement" : "IS|C|BCBB|~2430(TH/TH),~2439(TH/TH),2439,-,-|~2430,~2439,2439,-,-|STANDARD",
@@ -785,7 +785,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.2,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "86, IO",
   "switches" : {
     "SPREADABLE" : null
@@ -817,7 +817,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "282, TO",
   "switches" : {
     "SPREADABLE" : null
@@ -851,7 +851,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "280, TO",
   "switches" : {
     "SPREADABLE" : null
@@ -884,7 +884,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "252, TM",
   "switches" : { },
   "techAdvancement" : "IS|E|XXFE|~3055(FW/WB),3057(FW/WB),3059,-,-|-,-,-,-,-|STANDARD",
@@ -911,7 +911,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "72, IO",
   "switches" : {
     "SPREADABLE" : null
@@ -944,7 +944,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "252, TM",
   "switches" : { },
   "techAdvancement" : "CLAN|E|XFED|-,-,-,-,-|~2700,2710,3055,-,-|STANDARD",
@@ -971,7 +971,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "252, TM",
   "switches" : { },
   "techAdvancement" : "IS|E|FXED|~2710(TH),2720(TH),3055,2770,3053(DC)|-,-,-,-,-|STANDARD",
@@ -998,7 +998,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "205, TM",
   "switches" : {
     "SPREADABLE" : null
@@ -1029,7 +1029,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.2,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "279, TO",
   "switches" : {
     "SPREADABLE" : null
@@ -1058,7 +1058,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "205, TM",
   "switches" : {
     "SPREADABLE" : null
@@ -1089,7 +1089,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 2.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "280, TO",
   "switches" : {
     "VEE_MOTIVE" : [ "TRACKED", "WHEELED", "NAVAL", "SUBMERSIBLE" ]
@@ -1120,7 +1120,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 32.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "64, IO",
   "switches" : { },
   "techAdvancement" : "CLAN|F|XXFX|-,-,-,-,-|~3071(CFM),-,-,3085,-|EXPERIMENTAL",
@@ -1147,7 +1147,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "205, TM",
   "switches" : {
     "SPREADABLE" : null
@@ -1178,7 +1178,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "252, TM",
   "switches" : { },
   "techAdvancement" : "CLAN|E|FFED|-,-,-,-,-|~2680,2868(CWF),2875,-,-|STANDARD",
@@ -1205,7 +1205,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "252, TM",
   "switches" : { },
   "techAdvancement" : "IS|E|XXFE|3050(FS/LC),3052(FS/LC),3054,3055,-|-,-,-,-,-|STANDARD",
@@ -1232,7 +1232,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "87, IO",
   "switches" : {
     "SPREADABLE" : null
@@ -1261,7 +1261,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "252, TM",
   "switches" : { },
   "techAdvancement" : "ALL|E|FFED|~2680(TH),-,3054,2766,3050(FS/LC/DC)|-,-,-,-,-|STANDARD",
@@ -1288,7 +1288,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "205, TM",
   "switches" : { },
   "techAdvancement" : "CLAN|F|XXDD|-,-,-,-,-|~3055(CSJ),3060(CSJ),3060,-,-|INTRO",
@@ -1315,7 +1315,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "72, IO",
   "switches" : {
     "SPREADABLE" : null
@@ -1346,7 +1346,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "205, TM",
   "switches" : {
     "SPREADABLE" : null
@@ -1378,7 +1378,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "ARMOR",
   "rulesRef" : "252, TM",
   "switches" : { },
   "techAdvancement" : "IS|E|XXFE|-,3057(FW),3060,-,-|-,-,-,-,-|STANDARD",

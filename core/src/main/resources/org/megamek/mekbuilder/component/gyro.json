@@ -16,7 +16,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "MEK_GYRO",
   "rulesRef" : "162, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : "null",
@@ -48,7 +48,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "MEK_GYRO",
   "rulesRef" : "116, IO",
   "switches" : { },
   "techAdvancement" : "ALL|A|AAAA|~3074(WB),-,-,-,-|~3083(CHH),-,-,-,-|ADVANCED",
@@ -75,7 +75,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "MEK_GYRO",
   "rulesRef" : "220, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : "null",
@@ -107,7 +107,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "MEK_GYRO",
   "rulesRef" : "219, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : "null",
@@ -139,7 +139,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "MEK_GYRO",
   "rulesRef" : "219, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : "null",
@@ -171,7 +171,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "MEK_GYRO",
   "rulesRef" : "219, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : "null",

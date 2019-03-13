@@ -16,7 +16,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 15.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -60,7 +60,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 11.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -104,7 +104,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 3.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "218, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -147,7 +147,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 26.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -191,7 +191,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -235,7 +235,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 3.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -279,7 +279,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 10.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -323,7 +323,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -367,7 +367,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 40.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "219, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -410,7 +410,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 13.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "326, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -454,7 +454,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 11.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -498,7 +498,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 156.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "67, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -542,7 +542,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 14.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -586,7 +586,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 10.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -630,7 +630,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 75.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -674,7 +674,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "298, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -717,7 +717,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 14.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -761,7 +761,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 78.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "67, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -805,7 +805,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 19.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -849,7 +849,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 26.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "234, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -892,7 +892,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "228, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -936,7 +936,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 14.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -980,7 +980,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 26.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -1024,7 +1024,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 12.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "320, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -1068,7 +1068,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 36.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -1112,7 +1112,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 11.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "204, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1156,7 +1156,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1200,7 +1200,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 30.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1244,7 +1244,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 42.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "67, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -1288,7 +1288,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "228, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1332,7 +1332,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 43.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "218, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1375,7 +1375,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 8.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1419,7 +1419,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 22.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "204, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1463,7 +1463,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 39.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -1507,7 +1507,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -1551,7 +1551,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 4.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1595,7 +1595,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1639,7 +1639,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 2.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "231, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1683,7 +1683,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 21.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1727,7 +1727,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 27.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "67, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -1771,7 +1771,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 285.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -1815,7 +1815,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 32.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1859,7 +1859,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 50.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "219, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1902,7 +1902,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 33.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "219, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1945,7 +1945,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "326, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -1989,7 +1989,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 101.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "67, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -2033,7 +2033,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 12.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2077,7 +2077,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 4.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2121,7 +2121,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 26.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -2165,7 +2165,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2209,7 +2209,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 20.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "285, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -2253,7 +2253,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 15.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "96, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -2297,7 +2297,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 26.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "326, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -2341,7 +2341,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2385,7 +2385,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 22.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "96, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -2429,7 +2429,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 26.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -2473,7 +2473,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 21.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -2517,7 +2517,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2561,7 +2561,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2605,7 +2605,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 2.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "231, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2649,7 +2649,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 3.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2693,7 +2693,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 11.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2737,7 +2737,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 4.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2781,7 +2781,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 17.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2825,7 +2825,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 15.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2869,7 +2869,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 11.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2913,7 +2913,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.2,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "263, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2957,7 +2957,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 2.4,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "263, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3001,7 +3001,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 3.6,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "263, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3045,7 +3045,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.2,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "263, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3089,7 +3089,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 2.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "285, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -3133,7 +3133,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 38.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "347, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -3177,7 +3177,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 29.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "347, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -3221,7 +3221,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3265,7 +3265,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 9.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3309,7 +3309,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 23.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3353,7 +3353,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 10.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "285, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -3397,7 +3397,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 16.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "347, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -3441,7 +3441,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 11.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3485,7 +3485,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 19.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3529,7 +3529,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 31.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3573,7 +3573,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 8.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "327, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -3617,7 +3617,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 8.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3661,7 +3661,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 22.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3705,7 +3705,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "346, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -3749,7 +3749,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 35.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "118, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -3793,7 +3793,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 2.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "231, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3837,7 +3837,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 19.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3881,7 +3881,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3925,7 +3925,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "320, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -3969,7 +3969,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 11.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4013,7 +4013,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 17.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4057,7 +4057,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4101,7 +4101,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 15.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4145,7 +4145,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 20.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "286, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -4189,7 +4189,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 21.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -4233,7 +4233,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 52.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -4277,7 +4277,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4321,7 +4321,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 14.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "231, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4365,7 +4365,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 21.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "231, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4409,7 +4409,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4453,7 +4453,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4497,7 +4497,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "285, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -4541,7 +4541,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 11.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "338, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -4585,7 +4585,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 2.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "314, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -4628,7 +4628,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 27.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "231, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4672,7 +4672,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 23.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4716,7 +4716,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 9.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "96, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -4760,7 +4760,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "96, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -4804,7 +4804,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4848,7 +4848,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 22.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4892,7 +4892,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 54.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -4936,7 +4936,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "232, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4980,7 +4980,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 191.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -5024,7 +5024,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 3.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5068,7 +5068,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "338, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -5112,7 +5112,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5156,7 +5156,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 54.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -5200,7 +5200,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 43.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "286, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -5244,7 +5244,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 27.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5288,7 +5288,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5332,7 +5332,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5376,7 +5376,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5420,7 +5420,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 26.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5464,7 +5464,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 3.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5508,7 +5508,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "228, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5552,7 +5552,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "231, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5596,7 +5596,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 19.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5640,7 +5640,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 8.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5684,7 +5684,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 15.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5728,7 +5728,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "141, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -5772,7 +5772,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 36.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -5816,7 +5816,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "228, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5860,7 +5860,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 42.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5904,7 +5904,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 30.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -5948,7 +5948,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 41.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "285, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -5992,7 +5992,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 4.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6036,7 +6036,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "231, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6080,7 +6080,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 52.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -6124,7 +6124,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 2.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "231, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6168,7 +6168,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 3.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "231, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6212,7 +6212,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "231, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6256,7 +6256,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 36.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -6300,7 +6300,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 30.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6344,7 +6344,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 14.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6388,7 +6388,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 21.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6432,7 +6432,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 14.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6476,7 +6476,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 48.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "313, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -6519,7 +6519,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 67.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "219, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6562,7 +6562,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 43.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6606,7 +6606,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 28.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6650,7 +6650,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 11.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6694,7 +6694,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 52.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -6738,7 +6738,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 78.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -6782,7 +6782,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6826,7 +6826,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 10.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6870,7 +6870,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "218, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6914,7 +6914,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 78.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -6958,7 +6958,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -7002,7 +7002,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 108.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "67, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -7046,7 +7046,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 129.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7090,7 +7090,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -7134,7 +7134,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 35.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "208, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -7178,7 +7178,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "228, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -7222,7 +7222,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 20.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "326, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7266,7 +7266,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 39.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -7310,7 +7310,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 3.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "338, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7354,7 +7354,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 78.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -7398,7 +7398,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 46.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7442,7 +7442,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 70.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "67, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -7486,7 +7486,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 51.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "67, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -7530,7 +7530,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 8.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -7574,7 +7574,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 17.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "327, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7618,7 +7618,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 25.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "327, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7662,7 +7662,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "320, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7706,7 +7706,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -7750,7 +7750,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 34.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "327, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7794,7 +7794,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 14.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -7838,7 +7838,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 8.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "347, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7882,7 +7882,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "285, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7926,7 +7926,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -7970,7 +7970,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 20.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "219, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -8013,7 +8013,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 21.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -8057,7 +8057,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 14.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "285, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -8101,7 +8101,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 30.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -8145,7 +8145,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 21.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "234, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -8188,7 +8188,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 54.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -8232,7 +8232,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 8.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "286, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -8276,7 +8276,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 39.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "138, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -8320,7 +8320,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "286, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -8364,7 +8364,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 4.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "286, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -8408,7 +8408,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 12.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -8452,7 +8452,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 30.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "207, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -8496,7 +8496,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 25.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "314, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -8539,7 +8539,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 30.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -8583,7 +8583,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "228, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -8627,7 +8627,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "313, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -8670,7 +8670,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "AMMUNITION",
   "rulesRef" : "141, TW",
   "switches" : {
     "HITTABLE" : null,

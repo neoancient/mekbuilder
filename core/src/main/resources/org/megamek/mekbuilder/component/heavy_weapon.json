@@ -16,7 +16,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 39.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -70,7 +70,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 59.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -124,7 +124,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 21.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -178,7 +178,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "228, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -231,7 +231,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 244.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -285,7 +285,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 9.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "227, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -339,7 +339,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "228, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -392,7 +392,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "PM_MISSILE_TUBE",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -447,7 +447,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 93.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "321, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -501,7 +501,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 158.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "285, TO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -557,7 +557,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 16.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "312, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -611,7 +611,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 181.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "96, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -666,7 +666,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 210.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "97, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -721,7 +721,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 30.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "232, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -775,7 +775,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "238, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -828,7 +828,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "218, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -882,7 +882,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 111.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -936,7 +936,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 32.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DEFENSIVE",
   "rulesRef" : "204, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -989,7 +989,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 47.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "207, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -1044,7 +1044,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 93.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "207, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -1099,7 +1099,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "218, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1152,7 +1152,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 178.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "321, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -1206,7 +1206,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 601.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -1259,7 +1259,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 55.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1313,7 +1313,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 265.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1367,7 +1367,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 178.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "208, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -1422,7 +1422,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 368.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "284, TO",
   "switches" : {
     "SUPERHEAVY_MEK" : true,
@@ -1476,7 +1476,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 123.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "208, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -1531,7 +1531,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1031.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -1584,7 +1584,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 30.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "298, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -1637,7 +1637,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 45.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DEFENSIVE",
   "rulesRef" : "322, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -1690,7 +1690,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 222.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "319, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -1744,7 +1744,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 42.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "97, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -1799,7 +1799,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 45.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -1854,7 +1854,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 237.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "207, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -1909,7 +1909,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1530.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -1962,7 +1962,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 86.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "327, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -2017,7 +2017,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 345.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "286, TO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -2072,7 +2072,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 161.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "286, TO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -2127,7 +2127,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 83.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "65, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -2181,7 +2181,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 165.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "65, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -2235,7 +2235,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 231.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "65, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -2289,7 +2289,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 32.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DEFENSIVE",
   "rulesRef" : "204, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2342,7 +2342,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 24.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2396,7 +2396,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "320, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -2450,7 +2450,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 12.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2504,7 +2504,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 198.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "314, TO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -2559,7 +2559,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 23.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2613,7 +2613,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 18.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2667,7 +2667,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 15.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "312, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -2721,7 +2721,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "313, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -2774,7 +2774,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 329.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "285, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -2828,7 +2828,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 59.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2882,7 +2882,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 53.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2935,7 +2935,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 39.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -2989,7 +2989,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 105.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3042,7 +3042,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 50.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "324, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -3096,7 +3096,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 147.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3149,7 +3149,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 181.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3203,7 +3203,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 21.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3257,7 +3257,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 21.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "338, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -3311,7 +3311,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 62.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3365,7 +3365,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 75.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "141, TW",
   "switches" : {
     "HITTABLE" : null,
@@ -3419,7 +3419,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 210.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "208, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -3474,7 +3474,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 26.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "324, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -3528,7 +3528,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 10.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "324, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -3582,7 +3582,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 240.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -3635,7 +3635,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 14.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "324, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -3689,7 +3689,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 329.0,
   "bvFactor2" : 438.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "PPC",
   "rulesRef" : "95, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -3745,7 +3745,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 148.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "207, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -3800,7 +3800,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 281.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "208, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -3855,7 +3855,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 76.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3909,7 +3909,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 119.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -3963,7 +3963,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "228, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4016,7 +4016,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 39.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4070,7 +4070,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 21.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4124,7 +4124,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 70.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "208, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -4179,7 +4179,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 99.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "320, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -4233,7 +4233,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 37.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "208, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -4288,7 +4288,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 59.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4342,7 +4342,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 159.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "219, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -4398,7 +4398,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 65.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "89, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -4452,7 +4452,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 41.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "285, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -4506,7 +4506,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "330, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -4560,7 +4560,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 123.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "227, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4614,7 +4614,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 212.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4667,7 +4667,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 85.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -4720,7 +4720,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 83.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "97, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -4775,7 +4775,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 40.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4829,7 +4829,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 79.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4883,7 +4883,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 118.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4937,7 +4937,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 181.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -4992,7 +4992,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 90.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5047,7 +5047,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 163.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5101,7 +5101,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 136.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5156,7 +5156,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 48.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5210,7 +5210,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5264,7 +5264,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 79.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "96, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -5318,7 +5318,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 37.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "96, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -5373,7 +5373,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 28.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "96, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -5427,7 +5427,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 39.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "96, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -5481,7 +5481,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 70.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "96, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -5536,7 +5536,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 11.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "65, IO",
   "switches" : {
     "HITTABLE" : null
@@ -5588,7 +5588,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 21.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5642,7 +5642,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 15.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "314, TO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -5698,7 +5698,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 39.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5752,7 +5752,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 59.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5806,7 +5806,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 346.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "218, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -5864,7 +5864,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 55.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5919,7 +5919,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "PM_MISSILE_TUBE",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -5973,7 +5973,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "228, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6026,7 +6026,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "238, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6079,7 +6079,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 161.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "89, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -6133,7 +6133,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 88.0,
   "bvFactor2" : 132.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "PPC",
   "rulesRef" : "234, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -6189,7 +6189,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 148.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "216, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -6244,7 +6244,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 46.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "227, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6298,7 +6298,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 12.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6352,7 +6352,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 112.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "216, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -6407,7 +6407,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 210.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "234, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6460,7 +6460,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 56.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "97, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -6515,7 +6515,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 123.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "96, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -6570,7 +6570,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 229.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "347, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -6625,7 +6625,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 127.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "347, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -6680,7 +6680,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 267.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "219, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -6736,7 +6736,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 133.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "327, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -6791,7 +6791,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 170.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "234, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6844,7 +6844,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 45.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -6898,7 +6898,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 305.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "347, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -6953,7 +6953,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 488.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "91, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -7008,7 +7008,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 62.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "207, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -7063,7 +7063,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 401.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "219, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -7119,7 +7119,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 30.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "232, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -7173,7 +7173,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 30.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "207, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -7228,7 +7228,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "228, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -7281,7 +7281,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 104.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "326, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7336,7 +7336,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 157.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "326, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7391,7 +7391,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 535.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "219, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -7447,7 +7447,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 248.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -7501,7 +7501,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 19.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "321, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7555,7 +7555,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 178.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "96, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -7610,7 +7610,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 45.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DEFENSIVE",
   "rulesRef" : "322, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7663,7 +7663,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 229.0,
   "bvFactor2" : 343.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "PPC",
   "rulesRef" : "233, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -7719,7 +7719,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 91.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "338, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7773,7 +7773,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 165.0,
   "bvFactor2" : 252.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "PPC",
   "rulesRef" : "234, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -7829,7 +7829,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 51.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "338, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7883,7 +7883,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 268.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "326, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7938,7 +7938,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 50.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "324, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -7992,7 +7992,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 26.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "324, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -8046,7 +8046,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 14.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "324, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -8100,7 +8100,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 10.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "324, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -8154,7 +8154,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 2281.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -8207,7 +8207,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 385.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "313, TO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -8265,7 +8265,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 176.0,
   "bvFactor2" : 370.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "PPC",
   "rulesRef" : "95, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -8321,7 +8321,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 109.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -8375,7 +8375,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 317.0,
   "bvFactor2" : 370.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "PPC",
   "rulesRef" : "234, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -8431,7 +8431,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 164.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -8485,7 +8485,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 45.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "96, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -8540,7 +8540,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 21.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "218, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -8596,7 +8596,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "PM_MISSILE_TUBE",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -8649,7 +8649,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "238, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -8702,7 +8702,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 90.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -8756,7 +8756,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 136.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -8810,7 +8810,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 320.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "219, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -8866,7 +8866,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 320.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "219, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -8922,7 +8922,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 220.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -8976,7 +8976,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 77.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "285, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -9030,7 +9030,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 119.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "95, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -9084,7 +9084,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 56.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -9138,7 +9138,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 56.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "208, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -9193,7 +9193,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 40.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "346, TO",
   "switches" : {
     "VEE_MOTIVE" : [ "TRACKED", "WHEELED", "HOVER", "NAVAL", "SUBMERSIBLE", "VTOL" ],
@@ -9249,7 +9249,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 36.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "320, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -9303,7 +9303,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 173.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "327, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -9358,7 +9358,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 112.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "208, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -9413,7 +9413,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 112.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -9467,7 +9467,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 30.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -9521,7 +9521,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 59.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -9575,7 +9575,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 15.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -9629,7 +9629,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "218, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -9683,7 +9683,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 296.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "321, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -9737,7 +9737,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 71.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "321, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -9791,7 +9791,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 168.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -9845,7 +9845,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "238, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -9898,7 +9898,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 89.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "230, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -9952,7 +9952,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 176.0,
   "bvFactor2" : 370.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "PPC",
   "rulesRef" : "234, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -10008,7 +10008,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 66.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "286, TO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -10063,7 +10063,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 412.0,
   "bvFactor2" : 548.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "PPC",
   "rulesRef" : "233, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -10119,7 +10119,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 108.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -10173,7 +10173,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 83.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "207, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -10228,7 +10228,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 42.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "207, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -10283,7 +10283,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "228, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -10336,7 +10336,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 320.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "96, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -10392,7 +10392,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 31.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -10446,7 +10446,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 224.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -10500,7 +10500,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 49.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "286, TO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -10555,7 +10555,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 123.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "95, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -10609,7 +10609,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 34.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "286, TO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -10664,7 +10664,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 122.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "208, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -10719,7 +10719,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 98.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "90, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -10773,7 +10773,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 86.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -10828,7 +10828,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 52.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "326, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -10883,7 +10883,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 67.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -10938,7 +10938,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 45.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -10993,7 +10993,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 29.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -11048,7 +11048,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 62.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "208, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -11103,7 +11103,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 240.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -11156,7 +11156,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 335.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "208, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -11211,7 +11211,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 247.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "207, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -11266,7 +11266,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 118.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "207, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -11321,7 +11321,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 237.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "97, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -11376,7 +11376,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 56.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "321, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -11430,7 +11430,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 24.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -11484,7 +11484,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 210.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "208, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -11539,7 +11539,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 43.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "284, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -11592,7 +11592,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 15.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "315, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -11646,7 +11646,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 281.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "97, IO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -11701,7 +11701,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 64.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "347, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -11756,7 +11756,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 14.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "89, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -11810,7 +11810,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 22.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "321, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -11864,7 +11864,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 237.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "207, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -11919,7 +11919,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 17.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "226, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -11973,7 +11973,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 109.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -12028,7 +12028,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 164.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -12083,7 +12083,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 148.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "207, TM",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -12138,7 +12138,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 272.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "320, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -12192,7 +12192,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 90.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "96, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -12247,7 +12247,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 136.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "96, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -12302,7 +12302,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 220.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "229, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -12357,7 +12357,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 268.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "327, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -12412,7 +12412,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 21.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "321, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -12466,7 +12466,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 117.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "320, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -12520,7 +12520,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 200.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "327, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -12575,7 +12575,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 137.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "320, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -12629,7 +12629,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 53.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "285, TO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -12685,7 +12685,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 109.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "285, TO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : false,
@@ -12741,7 +12741,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 123.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "321, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -12795,7 +12795,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 67.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "327, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -12850,7 +12850,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 333.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "65, IO",
   "switches" : {
     "HITTABLE" : null,
@@ -12904,7 +12904,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 37.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "320, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -12958,7 +12958,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "PM_MISSILE_TUBE",
   "rulesRef" : "327, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -13012,7 +13012,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 259.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "327, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -13067,7 +13067,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 345.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "327, TO",
   "switches" : {
     "HITTABLE" : null,

@@ -16,7 +16,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.4,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "HEAT_CAPACITY",
   "rulesRef" : "89, IO",
   "switches" : {
     "HITTABLE" : "null",
@@ -49,7 +49,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "245, TM",
   "switches" : {
     "VEE_MOTIVE" : "null",
@@ -81,7 +81,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "248, TM",
   "switches" : {
     "LOCATION_EXCLUSIVE" : "null",
@@ -114,7 +114,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "310, TO",
   "switches" : {
     "UNIT_EXCLUSIVE" : "null"
@@ -143,7 +143,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "227, TM",
   "switches" : {
     "VEE_MOTIVE" : "null"
@@ -172,7 +172,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "245, TM",
   "switches" : {
     "LOCATION_EXCLUSIVE" : "null",
@@ -203,7 +203,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 8.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "325, TO",
   "switches" : {
     "HITTABLE" : "null",
@@ -233,7 +233,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "248,TM",
   "switches" : {
     "HITTABLE" : "null",
@@ -263,7 +263,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "245, TM",
   "switches" : {
     "HITTABLE" : "null",
@@ -294,7 +294,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 200.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "325, TO",
   "switches" : {
     "HITTABLE" : "null",
@@ -324,7 +324,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "248, TM",
   "switches" : {
     "HITTABLE" : "null",
@@ -354,7 +354,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "242, TM",
   "switches" : {
     "LOCATION_EXCLUSIVE" : "null",
@@ -387,7 +387,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "248, TM",
   "switches" : {
     "CONSTRUCTION" : "null",
@@ -420,7 +420,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "248, TM",
   "switches" : {
     "HITTABLE" : "null",
@@ -440,7 +440,7 @@
   "internalName" : "ISHMGA",
   "mmName" : "ISHMGA,Clan Heavy Machine Gun Array",
   "fullName" : "Heavy Machine Gun Array",
-  "shortName" : "Heavy Machine Gun Array",
+  "shortName" : "Heavy MGA",
   "weightFactor" : 0.5,
   "weightAddend" : 0.0,
   "weightCalc" : "BASIC",
@@ -452,7 +452,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.67,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "MGA",
   "rulesRef" : "228, TM",
   "switches" : {
     "MGA" : "null",
@@ -483,7 +483,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "CASE",
   "rulesRef" : "210, TM",
   "switches" : {
     "LOCATION_EXCLUSIVE" : "null",
@@ -513,7 +513,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "CASE_II",
   "rulesRef" : "299, TO",
   "switches" : {
     "LOCATION_EXCLUSIVE" : "null",
@@ -543,7 +543,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "247, TM",
   "switches" : {
     "VEE_MOTIVE" : "null",
@@ -576,7 +576,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "204, TM",
   "switches" : {
     "VEE_MOTIVE" : "null",
@@ -607,7 +607,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "216, TM",
   "switches" : {
     "VEE_MOTIVE" : "null"
@@ -636,7 +636,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "245, TM",
   "switches" : {
     "VEE_MOTIVE" : "null",
@@ -668,7 +668,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 2.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "WEAPON",
   "rulesRef" : "204, TM",
   "switches" : {
     "VEE_MOTIVE" : "null",
@@ -699,7 +699,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "213, TM",
   "switches" : {
     "VEE_MOTIVE" : "null",
@@ -717,7 +717,7 @@
   "internalName" : "ISLMGA",
   "mmName" : "ISLMGA,CLLMGA",
   "fullName" : "Light Machine Gun Array",
-  "shortName" : "Light Machine Gun Array",
+  "shortName" : "Light MGA",
   "weightFactor" : 0.5,
   "weightAddend" : 0.0,
   "weightCalc" : "BASIC",
@@ -729,7 +729,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.67,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "MGA",
   "rulesRef" : "228, TM",
   "switches" : {
     "MGA" : "null",
@@ -760,7 +760,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "248, TM",
   "switches" : {
     "HITTABLE" : "null",
@@ -792,7 +792,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "246, TM",
   "switches" : {
     "CONSTRUCTION" : "null",
@@ -825,7 +825,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "227, TM",
   "switches" : { },
   "techAdvancement" : "ALL|C|BCCB|-,-,-,-,-|-,-,-,-,-|STANDARD",
@@ -852,7 +852,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 6.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "247, TM",
   "switches" : {
     "LOCATION_EXCLUSIVE" : "null",
@@ -885,7 +885,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "213, TM",
   "switches" : {
     "UNIT_EXCLUSIVE" : "null"
@@ -905,7 +905,7 @@
   "internalName" : "ISMGA",
   "mmName" : "ISMGA,CLMGA",
   "fullName" : "Machine Gun Array",
-  "shortName" : "Machine Gun Array",
+  "shortName" : "MGA",
   "weightFactor" : 0.5,
   "weightAddend" : 0.0,
   "weightCalc" : "BASIC",
@@ -917,7 +917,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.67,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "MGA",
   "rulesRef" : "228, TM",
   "switches" : {
     "MGA" : "null",
@@ -948,7 +948,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "242, TM",
   "switches" : {
     "LOCATION_EXCLUSIVE" : "null",
@@ -981,7 +981,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "309, TO",
   "switches" : {
     "HITTABLE" : "null",
@@ -1014,7 +1014,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 30.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "326, TO",
   "switches" : {
     "VEE_MOTIVE" : "null",
@@ -1045,7 +1045,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "248, TM",
   "switches" : {
     "HITTABLE" : "null",
@@ -1077,7 +1077,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "216, TM",
   "switches" : {
     "VEE_MOTIVE" : "null"
@@ -1106,7 +1106,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.2,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "HEAT_CAPACITY",
   "rulesRef" : "303, TO",
   "switches" : {
     "HITTABLE" : "null",
@@ -1138,7 +1138,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 7.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "242, TM",
   "switches" : {
     "CONSTRUCTION" : "null",
@@ -1170,7 +1170,7 @@
   "slotCalc" : "COMPONENT_TONNAGE",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "244, TM",
   "switches" : {
     "HITTABLE" : "null",
@@ -1205,7 +1205,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "245, TM",
   "switches" : {
     "VEE_MOTIVE" : "null",
@@ -1236,7 +1236,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "227, TM",
   "switches" : {
     "VEE_MOTIVE" : "null"
@@ -1265,7 +1265,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "CASE",
   "rulesRef" : "210, TM",
   "switches" : {
     "LOCATION_EXCLUSIVE" : "null",
@@ -1298,7 +1298,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "242, TM",
   "switches" : {
     "LOCATION_EXCLUSIVE" : "null",
@@ -1331,7 +1331,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "300, TO",
   "switches" : {
     "COCKPIT_COMMAND" : "null",
@@ -1363,7 +1363,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 10.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "242, TM",
   "switches" : {
     "VEE_MOTIVE" : "null",
@@ -1394,7 +1394,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 8.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "249, TM",
   "switches" : {
     "LOCATION_EXCLUSIVE" : "null",
@@ -1427,7 +1427,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "306, TO",
   "switches" : {
     "MODULE" : "null"
@@ -1456,7 +1456,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "243, TM",
   "switches" : {
     "CONSTRUCTION" : "null",
@@ -1489,7 +1489,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "305, TO",
   "switches" : {
     "VARIABLE" : "null",
@@ -1519,7 +1519,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 9.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "243, TM",
   "switches" : {
     "CONSTRUCTION" : "null",
@@ -1552,7 +1552,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 9.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "325, TO",
   "switches" : {
     "HITTABLE" : "null",
@@ -1582,7 +1582,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "244, TM",
   "switches" : {
     "CONSTRUCTION" : "null",
@@ -1614,7 +1614,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 8.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "241, TM",
   "switches" : {
     "CONSTRUCTION" : "null",
@@ -1647,7 +1647,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "245, TM",
   "switches" : {
     "HITTABLE" : "null",
@@ -1678,7 +1678,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "CASE_II",
   "rulesRef" : "299, TO",
   "switches" : {
     "LOCATION_EXCLUSIVE" : "null",

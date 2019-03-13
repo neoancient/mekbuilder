@@ -16,7 +16,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "345, TO",
   "switches" : {
     "VEE_MOTIVE" : [ "TRACKED", "WHEELED", "HOVER", "WIGE", "NAVAL", "SUBMERSIBLE" ],
@@ -52,7 +52,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "266, TM",
   "switches" : {
     "PARTIAL_WING" : null
@@ -86,7 +86,7 @@
   "slotCalc" : "NUM_LEGS",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "249, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -125,7 +125,7 @@
   "slotCalc" : "TOTAL_TONNAGE",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "232, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -161,7 +161,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : -3.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "HEAT_SINK",
   "rulesRef" : "292, TO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -198,7 +198,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "351, TO",
   "switches" : {
     "VEE_MOTIVE" : [ "VTOL" ],
@@ -235,7 +235,7 @@
   "slotCalc" : "NUM_LEGS",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "293, TO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -277,7 +277,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : -3.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "HEAT_SINK",
   "rulesRef" : "292, TO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -314,7 +314,7 @@
   "slotCalc" : "TOTAL_TONNAGE",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "232, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
@@ -350,7 +350,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "257, TM",
   "switches" : {
     "SPEED_BOOST" : null
@@ -384,7 +384,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "286, TO",
   "switches" : {
     "MECH_JUMP" : null
@@ -416,7 +416,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "287, TO",
   "switches" : {
     "SPEED_BOOST" : null
@@ -448,7 +448,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "232, TM",
   "switches" : {
     "SPEED_BOOST" : null
@@ -480,7 +480,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "NONE",
   "rulesRef" : "292, TO",
   "switches" : {
     "HITTABLE" : null,

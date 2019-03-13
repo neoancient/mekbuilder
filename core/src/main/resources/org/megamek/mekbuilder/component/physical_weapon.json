@@ -16,7 +16,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 50.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DEFENSIVE",
   "rulesRef" : "290, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -50,7 +50,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 17.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "292, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -84,7 +84,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.725,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DAMAGE",
   "rulesRef" : "237, TM",
   "switches" : {
     "HAND_ACTUATOR" : true,
@@ -119,7 +119,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DAMAGE",
   "rulesRef" : "290, TO",
   "switches" : {
     "HAND_ACTUATOR" : true,
@@ -154,7 +154,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 5.175,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DAMAGE",
   "rulesRef" : "289, TO",
   "switches" : {
     "HAND_ACTUATOR" : true,
@@ -189,7 +189,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 11.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "220, TM",
   "switches" : {
     "HAND_ACTUATOR" : false,
@@ -225,7 +225,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.725,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DAMAGE",
   "rulesRef" : "236, TM",
   "switches" : {
     "HITTABLE" : null,
@@ -259,7 +259,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.5,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DAMAGE",
   "rulesRef" : "290, TO",
   "switches" : {
     "HAND_ACTUATOR" : true,
@@ -294,7 +294,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 135.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DEFENSIVE",
   "rulesRef" : "290, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -328,7 +328,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 263.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DEFENSIVE",
   "rulesRef" : "290, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -362,7 +362,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 12.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "292, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -396,7 +396,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.275,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DAMAGE",
   "rulesRef" : "289, TO",
   "switches" : {
     "HAND_ACTUATOR" : false,
@@ -432,7 +432,7 @@
   "slotCalc" : "NUM_LEGS",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DAMAGE",
   "rulesRef" : "291, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -472,7 +472,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 4.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "291, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -506,7 +506,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 24.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "EQUIPMENT",
   "rulesRef" : "292, TO",
   "switches" : {
     "HITTABLE" : null,
@@ -540,7 +540,7 @@
   "slotCalc" : "BASIC",
   "bvFactor" : 1.0,
   "bvFactor2" : 0.0,
-  "bvCalcType" : "BASIC",
+  "bvCalcType" : "DAMAGE",
   "rulesRef" : "290, TO",
   "switches" : {
     "LOWER_ARM_ACTUATOR" : true,
