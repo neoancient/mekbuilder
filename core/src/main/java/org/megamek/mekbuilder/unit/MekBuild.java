@@ -20,6 +20,7 @@ package org.megamek.mekbuilder.unit;
 
 import org.megamek.mekbuilder.component.*;
 
+import java.util.Collections;
 import java.util.EnumMap;
 import java.util.Map;
 import java.util.Set;
@@ -57,15 +58,20 @@ public class MekBuild extends UnitBuild {
         getComponents().add(engineMount);
         cockpitMount = new CockpitMount(this, ComponentKeys.COCKPIT_STANDARD_MEK);
         getComponents().add(cockpitMount);
-        Mount gyroMount = new Mount(this, ComponentLibrary.getInstance().getComponent(ComponentKeys.GYRO_STANDARD));
+        Mount gyroMount = new Mount(this, ComponentLibrary.getInstance()
+                .getComponent(ComponentKeys.GYRO_STANDARD));
         getComponents().add(gyroMount);
-        secondaryMotiveMount = new CompoundMount(this, ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_JJ));
+        secondaryMotiveMount = new CompoundMount(this, ComponentLibrary.getInstance()
+                .getComponent(ComponentKeys.MEK_JJ));
         getComponents().add(secondaryMotiveMount);
-        heatSinkMount = new CompoundMount(this, ComponentLibrary.getInstance().getComponent(ComponentKeys.HEAT_SINK_SINGLE));
+        heatSinkMount = new CompoundMount(this, ComponentLibrary.getInstance()
+                .getComponent(ComponentKeys.HEAT_SINK_SINGLE));
         getComponents().add(heatSinkMount);
-        myomerMount = new DistributedMount(this, ComponentLibrary.getInstance().getComponent(ComponentKeys.MYOMER_STANDARD));
+        myomerMount = new DistributedMount(this, ComponentLibrary.getInstance()
+                .getComponent(ComponentKeys.MYOMER_STANDARD));
         getComponents().add(myomerMount);
-        armorMount = new ArmorMount(this, (Armor) ComponentLibrary.getInstance().getComponent(getDefaultArmorName()));
+        armorMount = new ArmorMount(this, (Armor) ComponentLibrary.getInstance()
+                .getComponent(getDefaultArmorName()));
         initCriticalSlots();
     }
 
@@ -182,7 +188,15 @@ public class MekBuild extends UnitBuild {
 
     @Override
     public Set<UnitLocation> getLocationSet() {
-        return criticalSlots.keySet();
+        return Collections.unmodifiableSet(criticalSlots.keySet());
+    }
+
+    /**
+     * @param loc A location on the unit
+     * @return    The total number of slots in the location. If the location does not exist on the unit, returns 0.
+     */
+    public int slotsInLocation(UnitLocation loc) {
+        return criticalSlots.getOrDefault(loc, 0);
     }
 
     @Override
@@ -225,7 +239,7 @@ public class MekBuild extends UnitBuild {
     }
 
     @Override
-    public IEngineMount getEngine() {
+    public MekEngineMount getEngine() {
         return engineMount;
     }
 

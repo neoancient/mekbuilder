@@ -43,11 +43,8 @@ public abstract class UnitBuild {
         this.unitType = unitType;
     }
 
-    /**
-     * @return An unmodifiable {@link List} of the installed components.
-     */
-    public List<Mount> getComponents() {
-        return Collections.unmodifiableList(components);
+    protected List<Mount> getComponents() {
+        return components;
     }
 
     /**

@@ -21,7 +21,8 @@
   "switches" : {
     "LARGE_ENGINE" : null,
     "FUSION" : null,
-    "HITTABLE" : null
+    "HITTABLE" : null,
+    "VARIABLE" : "405,500,5"
   },
   "techAdvancement" : "ALL|D|CEDD|2630(TH/TH),~3085(LC),~3120,-,-|2630,-,~3120,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -57,7 +58,8 @@
   "switches" : {
     "FUSION" : null,
     "HITTABLE" : null,
-    "HAS_LARGE_ENGINE" : null
+    "HAS_LARGE_ENGINE" : null,
+    "VARIABLE" : "10,400,5"
   },
   "techAdvancement" : "IS|E|DFED|2556(TH),2579(TH),3045,2865,3035(LC)|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -94,7 +96,8 @@
   "switches" : {
     "LARGE_ENGINE" : null,
     "FUSION" : null,
-    "HITTABLE" : null
+    "HITTABLE" : null,
+    "VARIABLE" : "405,500,5"
   },
   "techAdvancement" : "CLAN|F|DFEE|-,-,-,-,-|~2850(CIH),-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -133,7 +136,8 @@
     "FUSION" : null,
     "HITTABLE" : null,
     "HAS_LARGE_ENGINE" : null,
-    "XXL" : null
+    "XXL" : null,
+    "VARIABLE" : "10,400,5"
   },
   "techAdvancement" : "CLAN|F|DEDD|-,-,-,-,-|~2954(CSF),~3084(CSF),-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -172,7 +176,8 @@
     "SUPERHEAVY_MEK" : false,
     "FUEL_ENGINE" : null,
     "HITTABLE" : null,
-    "HAS_LARGE_ENGINE" : null
+    "HAS_LARGE_ENGINE" : null,
+    "VARIABLE" : "10,400,5"
   },
   "techAdvancement" : "ALL|C|AAAA|-,-,~2300,-,-|-,-,~2300,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -206,7 +211,8 @@
   "switches" : {
     "SUPERHEAVY_MEK" : false,
     "FUEL_ENGINE" : null,
-    "HITTABLE" : null
+    "HITTABLE" : null,
+    "VARIABLE" : "10,400,5"
   },
   "techAdvancement" : "ALL|D|CDDC|~2300(TA/TA),2470(TH/TH),3078,-,-|~2300,2470,3078,-,-|ADVANCED",
   "permittedLocations" : [ ],
@@ -240,7 +246,8 @@
   "switches" : {
     "FUEL_ENGINE" : null,
     "HITTABLE" : null,
-    "HAS_LARGE_ENGINE" : null
+    "HAS_LARGE_ENGINE" : null,
+    "VARIABLE" : "10,400,5"
   },
   "techAdvancement" : "ALL|C|AAAA|-,-,~2300,-,-|-,-,~2300,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -274,7 +281,8 @@
   "switches" : {
     "FUSION" : null,
     "HITTABLE" : null,
-    "HAS_LARGE_ENGINE" : null
+    "HAS_LARGE_ENGINE" : null,
+    "VARIABLE" : "10,400,5"
   },
   "techAdvancement" : "CLAN|F|DEDD|-,-,-,-,-|~2824(CFM),2827(CSR),2829,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -310,7 +318,8 @@
   "rulesRef" : "214, TM",
   "switches" : {
     "FUSION" : null,
-    "HITTABLE" : null
+    "HITTABLE" : null,
+    "VARIABLE" : "10,400,5"
   },
   "techAdvancement" : "IS|E|XXED|~3065(LC),3068(LC),3072,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -344,7 +353,8 @@
   "switches" : {
     "LARGE_ENGINE" : null,
     "FUSION" : null,
-    "HITTABLE" : null
+    "HITTABLE" : null,
+    "VARIABLE" : "405,500,5"
   },
   "techAdvancement" : "IS|E|XXEE|~3064(LC),3065(LC),-,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -382,7 +392,8 @@
   "switches" : {
     "FUSION" : null,
     "HITTABLE" : null,
-    "HAS_LARGE_ENGINE" : null
+    "HAS_LARGE_ENGINE" : null,
+    "VARIABLE" : "10,400,5"
   },
   "techAdvancement" : "ALL|D|CEDD|-,-,~2300,-,-|-,-,~2300,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -417,7 +428,8 @@
     "LARGE_ENGINE" : null,
     "FUSION" : null,
     "HITTABLE" : null,
-    "XXL" : null
+    "XXL" : null,
+    "VARIABLE" : "405,500,5"
   },
   "techAdvancement" : "IS|E|DFEE|3058(FS),3130(LC),-,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -454,7 +466,8 @@
   "rulesRef" : "307, TO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
-    "HITTABLE" : null
+    "HITTABLE" : null,
+    "VARIABLE" : "10,400,5"
   },
   "techAdvancement" : "ALL|D|EEDD|2470(TH/TH),2882(TC/TC),3079,-,-|2470,2882,3079,-,-|ADVANCED",
   "permittedLocations" : [ ],
@@ -489,7 +502,8 @@
     "LARGE_ENGINE" : null,
     "FUSION" : null,
     "HITTABLE" : null,
-    "XXL" : null
+    "XXL" : null,
+    "VARIABLE" : "405,500,5"
   },
   "techAdvancement" : "CLAN|F|DFEE|-,-,-,-,-|3055(CSF),3125(CSF),-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -528,7 +542,8 @@
     "FUSION" : null,
     "HITTABLE" : null,
     "HAS_LARGE_ENGINE" : null,
-    "XXL" : null
+    "XXL" : null,
+    "VARIABLE" : "10,400,5"
   },
   "techAdvancement" : "IS|F|XXFE|~3055(FS/LC),~3110(LC),-,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -566,7 +581,8 @@
   "switches" : {
     "LARGE_ENGINE" : null,
     "FUSION" : null,
-    "HITTABLE" : null
+    "HITTABLE" : null,
+    "VARIABLE" : "405,500,5"
   },
   "techAdvancement" : "IS|E|DFEE|~2635(TH),~3085(LC),-,2822,3054(FS/LC)|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -605,7 +621,8 @@
     "SUPERHEAVY_MEK" : false,
     "LARGE_ENGINE" : null,
     "FUEL_ENGINE" : null,
-    "HITTABLE" : null
+    "HITTABLE" : null,
+    "VARIABLE" : "405,500,5"
   },
   "techAdvancement" : "ALL|C|AAAA|2630(TH/TH),~3085(LC),-,-,-|2630,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -640,7 +657,8 @@
   "switches" : {
     "LARGE_ENGINE" : null,
     "FUEL_ENGINE" : null,
-    "HITTABLE" : null
+    "HITTABLE" : null,
+    "VARIABLE" : "405,500,5"
   },
   "techAdvancement" : "ALL|C|AAAA|2630(TH/TH),~3085(LC),-,-,-|2630,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -674,7 +692,8 @@
   "switches" : {
     "FUSION" : null,
     "HITTABLE" : null,
-    "HAS_LARGE_ENGINE" : null
+    "HAS_LARGE_ENGINE" : null,
+    "VARIABLE" : "10,400,5"
   },
   "techAdvancement" : "IS|E|XXED|~3055(MERC),3062(LC),3067,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
