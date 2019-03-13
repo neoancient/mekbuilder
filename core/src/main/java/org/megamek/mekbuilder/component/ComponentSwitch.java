@@ -47,95 +47,150 @@ class DataParsers {
  * flags used by MegaMek, but can be mapped to data to provide more information.
  */
 public enum ComponentSwitch {
-    SPREADABLE, // Can be split among various locations
-    EXPLOSIVE,  // Explodes when hit, like most ammo
-    HITTABLE,   // Can be hit by critical (specific to Meks)
-    MODULE,		// Can use a modular mount, such as omni pod or BA modular equipment
-    LOCATION_EXCLUSIVE (1, DataParsers.intParser), // The number of this component allowed in a single location (e.g. CASE or harjel)
-    UNIT_EXCLUSIVE (1, DataParsers.intParser), // The number of this component allowed on the same unit.
-    VARIABLE (1.0, DataParsers.doubleArrayParser),	// Components that have a variable size,
-    // such as cargo bays or mechanical jump boosters. First value is the step size.
-    // If a second or third value is provided they are the minimum and maximum size values, respectively.
+    /** Can be split among various locations */
+    SPREADABLE,
+    /** Explodes when hit, like most ammo */
+    EXPLOSIVE,
+    /** Can be hit by critical (specific to Meks) */
+    HITTABLE,
+    /** Can use a modular mount, such as omni pod or BA modular equipment */
+    MODULE,
+    /** The number of this component allowed in a single location (e.g. CASE or harjel) */
+    LOCATION_EXCLUSIVE (1, DataParsers.intParser),
+    /** The number of this component allowed on the same unit. */
+    UNIT_EXCLUSIVE (1, DataParsers.intParser),
+    /** Components that have a variable size,
+     * such as cargo bays or mechanical jump boosters. First value is the step size.
+     * If a second or third value is provided they are the minimum and maximum size values, respectively. */
+    VARIABLE (1.0, DataParsers.doubleArrayParser),
+    /** Can be linked to another component that has one of the given switches (Artemis, PPC Capacitor, etc) */
     LINKABLE (null, (String val, String sep) -> Arrays.stream(val.split(sep))
             .filter(s -> !s.isEmpty())
-            .map(l -> ComponentSwitch.valueOf(l.toUpperCase())).collect(Collectors.toSet())), //Can be linked
-    //to another component that has one of the given switches (Artemis, PPC Capacitor, etc)
+            .map(l -> ComponentSwitch.valueOf(l.toUpperCase())).collect(Collectors.toSet())),
 
     // Flags specific to construction options. If true, can only be used on the particular unit type.
     // if false, cannot be used on the particular unit type.
-    PRIMITIVE (null, DataParsers.booleanParser), //If true, can only be used on primitive and retrotech units;
-    //if false, cannot be used on primitives.
+
+    /** If true, can only be used on primitive and retrotech units; if false, cannot be used on primitives. */
+    PRIMITIVE (null, DataParsers.booleanParser),
+    /** If true, can only be used on superheavy mechs; if false, cannot be used on superheavies. */
     SUPERHEAVY_MEK (null, DataParsers.booleanParser),
+    /** If true, can only be used on tripod mechs; if false, cannot be used on tripods */
     TRIPOD (null, DataParsers.booleanParser),
+    /** If true, can only be used on quad mechs; if false, cannot be used on quads. */
     QUAD (null, DataParsers.booleanParser),
+    /** If true, can only be used on QuadVees; if false, cannot be used on QuadVees. */
     QUADVEE (null, DataParsers.booleanParser),
+    /** If true, can only be used on LandAirMechs; if false, cannot be used on LAMs. */
     LAM (null, DataParsers.booleanParser),
 
+    /** Can only be installed on vehicles with a motive type contained in the set. */
     VEE_MOTIVE (EnumSet.allOf(MotiveType.class),
             (String val, String sep) -> Arrays.stream(val.split(sep))
                     .filter(s -> !s.isEmpty())
-                    .map(wc -> MotiveType.valueOf(wc)).collect(Collectors.toSet())), //Can only be installed on vehicles
-    //with a motive type contained in the set.
+                    .map(wc -> MotiveType.valueOf(wc)).collect(Collectors.toSet())),
+    /** Can only be installed on unit with a weight class in the set. */
     WEIGHT_CLASS (EnumSet.allOf(UnitWeightClass.class),
             (String val, String sep) -> Arrays.stream(val.split(sep))
                     .filter(s -> !s.isEmpty())
-                    .map(wc -> UnitWeightClass.valueOf(wc)).collect(Collectors.toSet())), //Can only be installed on unit
-    //with a weight class in the set.
+                    .map(wc -> UnitWeightClass.valueOf(wc)).collect(Collectors.toSet())),
 
-    //For physical weapons or industrial equipment, actuators that must be present or removed to mount
-    //(true for required, false for must be removed).
-    //For other weapons, actuators that must be removed when mounting in an arm on an OmniMek.
-    HAND_ACTUATOR (null, DataParsers.booleanParser),//if true, implies lower arm actuator.
-    LOWER_ARM_ACTUATOR (null, DataParsers.booleanParser), //if false, implies missing hand actuator.
+    /** For physical weapons or industrial equipment, actuators that must be present or removed to mount
+     * (true for required, false for must be removed). For other weapons, actuators that must be removed
+     * when mounting in an arm on an OmniMech. If true, implies lower arm actuator. */
+    HAND_ACTUATOR (null, DataParsers.booleanParser),
+     /** For physical weapons or industrial equipment, actuators that must be present or removed to mount
+     * (true for required, false for must be removed). For other weapons, actuators that must be removed
+     * when mounting in an arm on an OmniMech. If false, implies missing actuator. */
+    LOWER_ARM_ACTUATOR (null, DataParsers.booleanParser),
 
-    // Engine flags
+    /** Indicates a fusion engine */
     FUSION,
-    LARGE_ENGINE, //Engine rating > 400
-    HAS_LARGE_ENGINE, //Normal sized engines that have a large engine version
-    FUEL_ENGINE, //Any engine that requires fuel (ICE, fuel cell)
-    XXL, //Adds to movement heat and doubles jump heat.
+    /** Engine rating > 400 */
+    LARGE_ENGINE,
+    /** Normal sized engines that have a large engine version */
+    HAS_LARGE_ENGINE,
+    /** Any engine that requires fuel (ICE, fuel cell) */
+    FUEL_ENGINE,
+    /** Adds to movement heat and doubles jump heat. */
+    XXL,
+    /** Must have one of the named engine types to mount component */
     ENGINE_TYPE (Collections.emptySet(),
-            (String val, String sep) -> Arrays.stream(val.split(sep)).collect(Collectors.toSet())), //Must have one of the named engine types to mount component
+            (String val, String sep) -> Arrays.stream(val.split(sep)).collect(Collectors.toSet())),
 
     // Flags specific to weapons
-    INDIRECT_FIRE,	//Capable of indirect fire; used in Alpha Strike calculations
-    TC_LINKABLE,	//DF weapon that can be linked to a targeting computer
-    ARTEMIS,		//Enhancement available to some missile systems
-    APOLLO,			//Enhancement available to MRM systems
-    PPC_CAPACITOR,	//Enhancement available to PPCs
-    LASER_INSULATOR,//Enhancement available to lasers
-    PULSE_MODULE,	//Enhancement available to non-pulse lasers
-    ONE_SHOT,		//Enhancement available to missile launchers
-    LINK_ALL,		//Enhancement requires all eligible components to be linked if any are (Artemis, Apollo).
-    MGA (null, (String s1, String s2) -> AmmunitionType.valueOf(s1)), //Machine gun array, value is ammo type of eligible machine guns in same location
-    VGL,			//Special facing rules for Mek side torso.
+    /** Capable of indirect fire; used in Alpha Strike calculations */
+    INDIRECT_FIRE,
+    /** DF weapon that can be linked to a targeting computer */
+    TC_LINKABLE,
+    /** Enhancement available to some missile systems */
+    ARTEMIS,
+    /** Enhancement available to MRM systems */
+    APOLLO,
+    /** Enhancement available to PPCs */
+    PPC_CAPACITOR,
+    /** Enhancement available to lasers */
+    LASER_INSULATOR,
+    /** Enhancement available to non-pulse lasers */
+    PULSE_MODULE,
+    /** Enhancement available to missile launchers */
+    ONE_SHOT,
+    /** Enhancement requires all eligible components to be linked if any are (Artemis, Apollo). */
+    LINK_ALL,
+    /** Machine gun array, value is ammo type of eligible machine guns in same location */
+    MGA (null, (String s1, String s2) -> AmmunitionType.valueOf(s1)),
+    /** Special facing rules for Mek side torso. */
+    VGL,
 
-    BV_TARGET_BONUS (0, DataParsers.intParser), //Defensive bonus supplied by items such as stealth armor.
-    MOVEMENT_HEAT (0, DataParsers.intParser), //Value added to movement heat when calculating BV.
+    /** Defensive bonus supplied by items such as stealth armor. */
+    BV_TARGET_BONUS (0, DataParsers.intParser),
+    /** Value added to movement heat when calculating BV. */
+    MOVEMENT_HEAT (0, DataParsers.intParser),
 
     // Flags to identify certain types of equipment
-    PATCHWORK_ARMOR,//Virtual armor component indicating each location can have a different armor type
-    ECM,			//Qualifies for stealth armor requirement
-    MASC_COMPATIBLE,//Standard myomer required for MASC
-    SPEED_BOOST,	//Enables running at walk x 2 (MASC, supercharger, etc)
-    MECH_JUMP,		//Mechanical jump boosters
-    PARTIAL_WING,	//Confers both jump and heat dissipation bonus
-    C3,				//Standard C3 system, incompatible with C3i
-    C3I,			//C3i system, incompatible with standard
-    BASIC_FIRECON,	//Reduces gunner crew needs
-    ADV_FIRECON,	//Advanced fire control; needed by IM and SV for some equipment.
-    COOLANT_POD,	//Cannot mount both coolant pod and radical heat sink system.
-    SHIELD,			//Reduced movement
-    CONSTRUCTION,	//Can only mount one component with this flag in a location.
-    DUMPER,			//Available as an enhancement for cargo, must have direction indicated.
-    COCKPIT_COMMAND,//Incompatible with IM ejection seat.
-    TORSO_COCKPIT,	//Incompatible with cockpit command console.
+    /** Virtual armor component indicating each location can have a different armor type */
+    PATCHWORK_ARMOR,
+    /** Qualifies for stealth armor requirement */
+    ECM,
+    /** Standard myomer required for MASC */
+    MASC_COMPATIBLE,
+    /** Enables running at walk x 2 (MASC, supercharger, etc) */
+    SPEED_BOOST,
+    /** Mechanical jump boosters */
+    MECH_JUMP,
+    /** Confers both jump and heat dissipation bonus */
+    PARTIAL_WING,
+    /** Standard C3 system, incompatible with C3i */
+    C3,
+    /** C3i system, incompatible with standard */
+    C3I,
+    /** Reduces gunner crew needs */
+    BASIC_FIRECON,
+    /** Advanced fire control; needed by IM and SV for some equipment. */
+    ADV_FIRECON,
+    /** Cannot mount both coolant pod and radical heat sink system. */
+    COOLANT_POD,
+    /** Reduced movement */
+    SHIELD,
+    /** Can only mount one component with this flag in a location. */
+    CONSTRUCTION,
+    /** Available as an enhancement for cargo, must have direction indicated. */
+    DUMPER,
+    /** Incompatible with IM ejection seat. */
+    COCKPIT_COMMAND,
+    /** Incompatible with cockpit command console. */
+    TORSO_COCKPIT,
+    /** Required by some components, possibly a particular type */
     CARGO (Collections.emptySet(),
-            (String val, String sep) -> Arrays.stream(val.split(sep)).collect(Collectors.toSet())), //Required by some components, possibly a particular type
-    HARJEL_II,		//Incompatible with harjel_iii and certain armor type
-    HARJET_III,		//Incompatible with harjel_ii and certain armor type
-    NSS,			//Null-signature system, incompatible with C3, TC, stealth armor, and VSS.
-    HGAUSS;			//Requires fusion or fission engine; torso mount restriction removed for superheavy.
+            (String val, String sep) -> Arrays.stream(val.split(sep)).collect(Collectors.toSet())),
+    /** Incompatible with harjel_iii and certain armor type */
+    HARJEL_II,
+    /** Incompatible with harjel_ii and certain armor type */
+    HARJET_III,
+    /** Null-signature system, incompatible with C3, TC, stealth armor, and VSS. */
+    NSS,
+    /** Requires fusion or fission engine; torso mount restriction removed for superheavy. */
+    HGAUSS;
 
     private final Object defaultVal;
     private final BiFunction<String, String, Object> dataParser;
