@@ -41,6 +41,14 @@ public class MekEngineMount extends Mount implements IEngineMount {
     }
 
     @Override
+    public void setComponent(Component component) {
+        if (!(component instanceof MVFEngine)) {
+            throw new IllegalArgumentException("Attempting to assign non-engine component to engine mount.");
+        }
+        super.setComponent(component);
+    }
+
+    @Override
     public int getEngineRating() {
         return (int)getSize();
     }
