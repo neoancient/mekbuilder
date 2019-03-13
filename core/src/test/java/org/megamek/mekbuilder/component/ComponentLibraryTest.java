@@ -13,9 +13,9 @@ class ComponentLibraryTest {
     void testLoadLibrary() {
         assertAll(
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("Ammo AC/5") instanceof Ammunition),
-                () -> assertTrue(ComponentLibrary.getInstance().getComponent("Clan Ferro-Fibrous") instanceof Armor),
-                () -> assertTrue(ComponentLibrary.getInstance().getComponent("Standard Cockpit") instanceof Cockpit),
-                () -> assertTrue(ComponentLibrary.getInstance().getComponent("Heat Sink") instanceof HeatSink),
+                () -> assertTrue(ComponentLibrary.getInstance().getComponent(ComponentKeys.ARMOR_STANDARD) instanceof Armor),
+                () -> assertTrue(ComponentLibrary.getInstance().getComponent(ComponentKeys.COCKPIT_STANDARD_MEK) instanceof Cockpit),
+                () -> assertTrue(ComponentLibrary.getInstance().getComponent(ComponentKeys.HEAT_SINK_SINGLE) instanceof HeatSink),
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("Small Laser") instanceof HeavyWeapon),
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("MechWarrior Combat Suit") instanceof InfantryArmorKit),
                 () -> assertTrue(ComponentLibrary.getInstance().getComponent("Auto-Rifle") instanceof InfantryWeapon),

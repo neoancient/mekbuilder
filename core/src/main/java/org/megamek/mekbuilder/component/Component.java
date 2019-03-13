@@ -24,7 +24,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.megamek.mekbuilder.tech.*;
-import org.megamek.mekbuilder.unit.IMount;
 import org.megamek.mekbuilder.unit.UnitBuild;
 import org.megamek.mekbuilder.unit.UnitLocation;
 import org.megamek.mekbuilder.unit.UnitType;
@@ -37,7 +36,7 @@ import java.util.Set;
 /**
  * Individual components that make up units. This class is immutable, and there is only
  * one instance of each component. Any situational details such as location
- * or variable size are handled through {@link IMount IMount}.
+ * or variable size are handled through {@link Mount Mount}.
  */
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class Component implements ITechDelegator {
@@ -148,61 +147,62 @@ public class Component implements ITechDelegator {
      * @param unit The unit mounting the component
      * @return The combined weight of the components
      */
-    public double calcWeight(UnitBuild unit) {
+    double calcWeight(UnitBuild unit) {
         return calcWeight(unit, 1.0);
     }
 
     /**
-     * For non-linear weight calculations
+     * For non-linear weight calculations. This should be access through the {@link Mount}
      *
      * @param unit The unit mounting the component
      * @param size The size or number of the component present
      * @return The combined weight of the components
      */
-    public double calcWeight(UnitBuild unit, double size) {
-       return weightCalc.calcValue(this, unit, weightFactor) + weightAddend;
+    double calcWeight(UnitBuild unit, double size) {
+       return (weightCalc.calcValue(this, unit, weightFactor) + weightAddend) * size;
     }
 
     /**
-     * Calculates the cost of the component
+     * Calculates the cost of the component. This should be access through the {@link Mount}
      *
      * @param unit The unit mounting the component
      * @return The combined cost of the components
      */
-    public double calcCost(UnitBuild unit) {
+    double calcCost(UnitBuild unit) {
         return calcCost(unit, 1.0);
     }
 
     /**
-     * For non-linear cost calculations (e.g. jump jets)
+     * For non-linear cost calculations (e.g. jump jets).  This should be access through the {@link Mount}
      *
      * @param unit The unit mounting the component
      * @param size The size of number of the component present
      * @return The combined cost of the components
      */
-    public double calcCost(UnitBuild unit, double size) {
-        return costCalc.calcValue(this, unit, costFactor) + costAddend;
+    double calcCost(UnitBuild unit, double size) {
+        return (costCalc.calcValue(this, unit, costFactor) + costAddend) * size;
     }
 
     /**
-     * Calculates the number of slots the component requires.
+     * Calculates the number of slots the component requires. This should be access through the {@link Mount}
      *
      * @param unit The unit mounting the component
      * @return The number of slots required by the components
      */
-    public int calcSlots(UnitBuild unit) {
+    int calcSlots(UnitBuild unit) {
         return calcSlots(unit, 1.0);
     }
 
     /**
-     * For non-linear slot calculations (e.g. vehicular jump jets take one slot regardless of number)
+     * For non-linear slot calculations (e.g. vehicular jump jets take one slot regardless of number).
+     * This should be access through the {@link Mount}
      *
      * @param unit The unit mounting the component
      * @param size The number or size of the component present
      * @return The number of slots required by the components
      */
-    public int calcSlots(UnitBuild unit, double size) {
-        return (int) Math.ceil(slotCalc.calcValue(this, unit, slots) + slotAddend);
+    int calcSlots(UnitBuild unit, double size) {
+        return (int) Math.ceil((slotCalc.calcValue(this, unit, slots) + slotAddend) * size);
     }
 
     /**

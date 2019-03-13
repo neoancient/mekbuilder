@@ -41,7 +41,7 @@ public class Armor extends Component {
      * @param unit
      * @return The number of slots taken up in a location covered in patchwork armor.
      */
-    int patchworkSlots(UnitBuild unit) {
+    public int patchworkSlots(UnitBuild unit) {
         int totalSlots = calcSlots(unit);
         if (totalSlots == 0) {
             return 0;

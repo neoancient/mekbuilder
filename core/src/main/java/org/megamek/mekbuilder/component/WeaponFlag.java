@@ -21,7 +21,7 @@ package org.megamek.mekbuilder.component;
 /**
  * Qualities that apply specifically to weapons and weapon-like equipment
  */
-enum WeaponFlag {
+public enum WeaponFlag {
     DIRECT_FIRE_BALLISTIC("DB"),
     DIRECT_FIRE_ENERGY("DE"),
     PULSE("P"),

@@ -45,7 +45,7 @@ public enum CalcMethod {
     ARMOR_VALUE ("AV", (c, u, f) -> f * u.getTotalArmorPoints()), // factor * total armor points
     POINTS_PER_TON ("PPT", (c, u, f) -> f > 0 ? 1.0 / f : 0.0), // 1 / factor
     MASC ("ETCT", (c, u, f) -> f * u.getTonnage() * c.calcWeight(u)), // factor * engine tonnage * component tonnage
-    MOVEMENT_POINTS ("MP", (c, u, f) -> f * u.getWalkMP()), // factor * ground MP
+    MOVEMENT_POINTS ("MP", (c, u, f) -> f * u.getBaseWalkMP()), // factor * ground MP
     NUM_LEGS ("LEG", (c, u, f) -> {
         if (u.isQuad()) {
             return f * 4;

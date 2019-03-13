@@ -16,10 +16,17 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.megamek.mekbuilder.unit;
+package org.megamek.mekbuilder.component;
+
+import org.megamek.mekbuilder.unit.UnitLocation;
 
 /**
- * Handles the specific details of how a {@link org.megamek.mekbuilder.component.Component Component} is used on a {@link UnitBuild}
+ *
  */
-public interface IMount {
+public interface IEngineMount {
+    int getEngineRating();
+
+    double getEngineTonnage();
+
+    boolean isEngineLocation(UnitLocation loc);
 }

@@ -34,6 +34,10 @@ public class SecondaryMotiveSystem extends Component {
     private static final double BA_UMU_WEIGHTS[] = { 45, 45, 85, 160, 250 };
     private static final double BA_VTOL_WEIGHTS[] = { 30, 40, 60 };
 
+    public MotiveType getMode() {
+        return mode;
+    }
+
     @Override
     public double calcWeight(UnitBuild unit, double size) {
         if (unit.getUnitType().equals(UnitType.PROTOMEK)) {
