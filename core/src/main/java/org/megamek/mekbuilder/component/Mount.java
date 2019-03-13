@@ -89,6 +89,10 @@ public class Mount {
         this.component = component;
     }
 
+    public void setComponent(String key) {
+        setComponent(ComponentLibrary.getInstance().getComponent(key));
+    }
+
     public ModuleType getModuleType() {
         return moduleType;
     }

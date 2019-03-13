@@ -99,23 +99,12 @@ public class MekInternalStructure extends DistributedMount {
         return Round.round(base, getUnit());
     }
 
-    /**
-     * Change the structure type. If there are more slots allocated to structure than required
-     * by the new type, remove slots until the total drops to the required value.
-     *
-     * @param structureType The new type of internal structure.
-     */
-    public void setStructureType(String structureType) {
-        Component structure = ComponentLibrary.getInstance().getComponent(structureType);
-        if (null == structure) {
-            System.err.println("Could not find internal structure type: " + structureType);
-            return;
-        } else if (!structure.getType().equals(ComponentType.MEK_STRUCTURE)) {
-            System.err.println(structure.getInternalName()
-                    + " is not Mek internal structure.");
-            return;
+    @Override
+    public void setComponent(Component component) {
+        if (!component.getType().equals(ComponentType.MEK_STRUCTURE)) {
+            throw new IllegalArgumentException("Attempting to assign non-structure component to internal structure");
         }
-        setComponent(structure);
+        super.setComponent(component);
         if (getComponent().locationFixed()) {
             updateLocations();
         } else {

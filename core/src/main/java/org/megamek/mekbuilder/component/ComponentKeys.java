@@ -36,6 +36,8 @@ public interface ComponentKeys {
     String ARMOR_BA_CLAN_STANDARD = "CLAN BA Standard Armor (Basic)";
 
     String MEK_STRUCTURE_STANDARD = "Standard Structure";
+    String MEK_STRUCTURE_IS_ENDO_STEEL = "IS Endo Steel";
+    String MEK_STRUCTURE_CLAN_ENDO_STEEL = "Clan Endo Steel";
 
     String COCKPIT_STANDARD_MEK = "Standard Cockpit";
     String COCKPIT_INDUSTRIAL = "Industrial Cockpit";

@@ -230,7 +230,7 @@ public class MekBuild extends UnitBuild {
     }
 
     public void setStructureType(String structureType) {
-        internalStructure.setStructureType(structureType);
+        internalStructure.setComponent(structureType);
     }
 
     @Override
