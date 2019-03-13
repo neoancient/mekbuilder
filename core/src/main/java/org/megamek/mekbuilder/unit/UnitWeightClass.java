@@ -30,8 +30,8 @@ public enum UnitWeightClass {
     ASSAULT(4, "a"),
     SUPERHEAVY(5, "s");
 
-    private final int value;
-    private final String key;
+    public final int value;
+    public final String key;
 
     UnitWeightClass(int value, String key) {
         this.value = value;

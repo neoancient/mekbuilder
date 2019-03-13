@@ -85,6 +85,9 @@ public class ComponentLibrary {
                         case PHYSICAL_WEAPON:
                             tr = new TypeReference<List<PhysicalWeapon>>(){};
                             break;
+                        case SECONDARY_MOTIVE_SYSTEM:
+                            tr = new TypeReference<List<SecondaryMotiveSystem>>(){};
+                            break;
                         default:
                             tr = new TypeReference<List<Component>>(){};
                             break;
