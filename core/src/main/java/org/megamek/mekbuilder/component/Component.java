@@ -78,6 +78,14 @@ public class Component implements ITechDelegator {
     @JsonCreator
     Component() {}
 
+    double getWeightFactor() {
+        return weightFactor;
+    }
+
+    double getCostFactor() {
+        return costFactor;
+    }
+
     public ComponentType getType() {
         return componentType;
     }

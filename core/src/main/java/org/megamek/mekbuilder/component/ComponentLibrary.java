@@ -79,6 +79,9 @@ public class ComponentLibrary {
                         case MOVE_ENHANCEMENT:
                             tr = new TypeReference<List<MoveEnhancement>>(){};
                             break;
+                        case ENGINE:
+                            tr = new TypeReference<List<MVFEngine>>(){};
+                            break;
                         default:
                             tr = new TypeReference<List<Component>>(){};
                             break;
