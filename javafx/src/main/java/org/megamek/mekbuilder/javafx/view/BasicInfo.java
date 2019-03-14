@@ -16,31 +16,32 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-package org.megamek.mekbuilder.javafx.unitlayout;
+package org.megamek.mekbuilder.javafx.view;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.control.Tab;
-import javafx.scene.layout.Pane;
-import org.controlsfx.tools.Borders;
-import org.megamek.mekbuilder.javafx.view.BasicInfo;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import org.megamek.mekbuilder.tech.Faction;
+import org.megamek.mekbuilder.tech.TechBase;
+import org.megamek.mekbuilder.tech.TechLevel;
 
 import java.io.IOException;
 
 /**
- * UI Controller for the most typical layout
+ * Controller for basic info view.
  */
-public class StandardLayout {
+public class BasicInfo {
 
-    private static StandardLayout instance;
+    private static BasicInfo instance;
     private Node root;
 
-    public static StandardLayout getInstance() {
+    public static BasicInfo getInstance() {
         if (null == instance) {
             try {
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(StandardLayout.class.getResource("StandardLayout.fxml"));
+                loader.setLocation(BasicInfo.class.getResource("BasicInfo.fxml"));
                 Node root = loader.load();
                 instance = loader.getController();
                 instance.root = root;
@@ -56,43 +57,17 @@ public class StandardLayout {
     }
 
     @FXML
-    private Tab structureTab;
+    private TextField txtChassis;
     @FXML
-    private Tab armorTab;
+    private TextField txtModel;
     @FXML
-    private Tab equipmentTab;
+    private TextField txtYear;
     @FXML
-    private Tab buildTab;
+    private TextField txtSource;
     @FXML
-    private Tab previewTab;
-
+    private ComboBox<TechBase> cbTechBase;
     @FXML
-    private Pane panBasicInfo;
+    private ComboBox<TechLevel> cbTechLevel;
     @FXML
-    private Pane panChassis;
-    @FXML
-    private Pane panMovement;
-    @FXML
-    private Pane panSummary;
-    @FXML
-    private Pane panEnhancements;
-
-    @FXML
-    private void initialize() {
-        Node node = BasicInfo.getInstance().getRoot();
-        Node border = Borders.wrap(node).lineBorder().title("Basic Info").buildAll();
-        panBasicInfo.getChildren().add(border);
-    }
-
-    public static Node create() {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(StandardLayout.class.getResource("StandardLayout.fxml"));
-        Node root = null;
-        try {
-            root = loader.load();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return root;
-    }
+    private ComboBox<Faction> cbFaction;
 }

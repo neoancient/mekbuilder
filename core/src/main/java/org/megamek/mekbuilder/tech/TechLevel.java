@@ -21,6 +21,6 @@ package org.megamek.mekbuilder.tech;
 /**
  * Tech levels corresponding to sets of rules
  */
-enum TechLevel {
+public enum TechLevel {
     INTRO, STANDARD, ADVANCED, EXPERIMENTAL, UNOFFICIAL;
 }

@@ -23,7 +23,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.MenuBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
@@ -39,14 +38,14 @@ import java.io.IOException;
 public class RootLayout {
 
     private static RootLayout instance;
-    private Parent root;
+    private Node root;
 
     public static RootLayout getInstance() {
         if (null == instance) {
             try {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(RootLayout.class.getResource("RootLayout.fxml"));
-                Parent node = loader.load();
+                Node node = loader.load();
                 instance = loader.getController();
                 instance.root = node;
             } catch (IOException ex) {
@@ -56,7 +55,7 @@ public class RootLayout {
         return instance;
     }
 
-    public Parent getRoot() {
+    public Node getRoot() {
         return root;
     }
 

@@ -46,7 +46,7 @@ public class MekBuilder extends Application {
     }
 
     private void initRootLayout() {
-        Scene scene = new Scene(RootLayout.getInstance().getRoot());
+        Scene scene = new Scene((Parent) RootLayout.getInstance().getRoot());
         primaryStage.setScene(scene);
         primaryStage.show();
     }
