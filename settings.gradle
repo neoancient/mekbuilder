@@ -1,2 +1,4 @@
 rootProject.name = 'mekbuilder'
+include 'core'
+include 'javafx'
 
