@@ -21,19 +21,44 @@ package org.megamek.mekbuilder.javafx;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.MenuBar;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import org.megamek.mekbuilder.javafx.unitlayout.StandardLayout;
 import org.megamek.mekbuilder.unit.MekBuild;
 import org.megamek.mekbuilder.unit.UnitBuild;
 
+import java.io.IOException;
+
 /**
  *
  */
 public class RootLayout {
+
+    private static RootLayout instance;
+    private Parent root;
+
+    public static RootLayout getInstance() {
+        if (null == instance) {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(RootLayout.class.getResource("RootLayout.fxml"));
+                Parent node = loader.load();
+                instance = loader.getController();
+                instance.root = node;
+            } catch (IOException ex) {
+
+            }
+        }
+        return instance;
+    }
+
+    public Parent getRoot() {
+        return root;
+    }
 
     private final ObjectProperty<UnitBuild> unitProperty = new SimpleObjectProperty();
 

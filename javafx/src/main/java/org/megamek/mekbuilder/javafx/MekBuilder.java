@@ -21,6 +21,7 @@ package org.megamek.mekbuilder.javafx;
 import javafx.application.Application;
 import javafx.beans.property.ObjectProperty;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
@@ -35,8 +36,6 @@ import java.io.IOException;
 public class MekBuilder extends Application {
 
     private Stage primaryStage;
-    private BorderPane rootLayout;
-    private ObjectProperty<UnitBuild> unitProperty;
 
     @Override
     public void start(Stage primaryStage) {
@@ -47,17 +46,9 @@ public class MekBuilder extends Application {
     }
 
     private void initRootLayout() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("RootLayout.fxml"));
-            rootLayout = loader.load();
-
-            Scene scene = new Scene(rootLayout);
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (IOException ex) {
-
-        }
+        Scene scene = new Scene(RootLayout.getInstance().getRoot());
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
     public static void main(String[] args) {

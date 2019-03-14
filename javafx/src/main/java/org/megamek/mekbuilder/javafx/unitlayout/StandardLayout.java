@@ -21,10 +21,10 @@ package org.megamek.mekbuilder.javafx.unitlayout;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.TilePane;
 import org.controlsfx.tools.Borders;
 
 import java.io.IOException;
@@ -33,6 +33,28 @@ import java.io.IOException;
  * UI Controller for the most typical layout
  */
 public class StandardLayout {
+
+    private static StandardLayout instance;
+    private Parent root;
+
+    public static StandardLayout getInstance() {
+        if (null == instance) {
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(StandardLayout.class.getResource("StandardLayout.fxml"));
+                Parent root = loader.load();
+                instance = loader.getController();
+                instance.root = root;
+            } catch (IOException ex) {
+
+            }
+        }
+        return instance;
+    }
+
+    public Parent getRoot() {
+        return root;
+    }
 
     @FXML
     private Tab structureTab;
