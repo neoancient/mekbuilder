@@ -23,8 +23,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import org.controlsfx.tools.Borders;
+import org.megamek.mekbuilder.javafx.RootLayout;
 import org.megamek.mekbuilder.javafx.view.BasicInfo;
+import org.megamek.mekbuilder.javafx.view.MekChassis;
+import org.megamek.mekbuilder.unit.UnitType;
 
 import java.io.IOException;
 
@@ -67,21 +71,15 @@ public class StandardLayout {
     private Tab previewTab;
 
     @FXML
-    private Pane panBasicInfo;
+    private VBox structureLeft;
     @FXML
-    private Pane panChassis;
+    private VBox structureMid;
     @FXML
-    private Pane panMovement;
-    @FXML
-    private Pane panSummary;
-    @FXML
-    private Pane panEnhancements;
+    private VBox structureRight;
 
     @FXML
     private void initialize() {
-        Node node = BasicInfo.getInstance().getRoot();
-        Node border = Borders.wrap(node).lineBorder().title("Basic Info").buildAll();
-        panBasicInfo.getChildren().add(border);
+        refreshLayout();
     }
 
     public static Node create() {
@@ -94,5 +92,24 @@ public class StandardLayout {
             e.printStackTrace();
         }
         return root;
+    }
+
+    private Node addBorder(Node node, String title) {
+        return Borders.wrap(node).lineBorder().title(title).buildAll();
+    }
+
+    private void refreshLayout() {
+        /*
+        UnitType type = RootLayout.getInstance().getUnit().getUnitType();
+        switch (type) {
+            case BATTLE_MEK:
+            case INDUSTRIAL_MEK:
+            */
+        structureLeft.getChildren().setAll(
+                addBorder(BasicInfo.getInstance().getRoot(), "Basic Info"),
+                addBorder(MekChassis.getInstance().getRoot(), "Chassis")
+        );
+//            default:
+//        }
     }
 }
