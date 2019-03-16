@@ -22,13 +22,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Tab;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import org.controlsfx.tools.Borders;
-import org.megamek.mekbuilder.javafx.RootLayout;
 import org.megamek.mekbuilder.javafx.view.BasicInfo;
 import org.megamek.mekbuilder.javafx.view.MekChassis;
-import org.megamek.mekbuilder.unit.UnitType;
 
 import java.io.IOException;
 
@@ -94,8 +91,12 @@ public class StandardLayout {
         return root;
     }
 
-    private Node addBorder(Node node, String title) {
-        return Borders.wrap(node).lineBorder().title(title).buildAll();
+    private Node wrapAnchor(Node node) {
+        AnchorPane anchor = new AnchorPane();
+        anchor.getChildren().setAll(node);
+        AnchorPane.setLeftAnchor(node, 0.0);
+        AnchorPane.setRightAnchor(node, 0.0);
+        return anchor;
     }
 
     private void refreshLayout() {
@@ -105,9 +106,10 @@ public class StandardLayout {
             case BATTLE_MEK:
             case INDUSTRIAL_MEK:
             */
+
         structureLeft.getChildren().setAll(
-                addBorder(BasicInfo.getInstance().getRoot(), "Basic Info"),
-                addBorder(MekChassis.getInstance().getRoot(), "Chassis")
+                wrapAnchor(BasicInfo.getInstance().getRoot()),
+                wrapAnchor(MekChassis.getInstance().getRoot())
         );
 //            default:
 //        }

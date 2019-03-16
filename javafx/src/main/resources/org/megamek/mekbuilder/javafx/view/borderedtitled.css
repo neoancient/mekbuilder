@@ -1,0 +1,9 @@
+.bordered-titled-border {
+    -fx-border-insets: 8 0 0 0;
+    -fx-border-color: black;
+    -fx-background-color: #f4f4f4;
+}
+
+.bordered-titled-title {
+    -fx-background-color: inherit;
+}
