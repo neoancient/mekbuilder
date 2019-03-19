@@ -18,15 +18,19 @@
  */
 package org.megamek.mekbuilder.unit;
 
+import javafx.beans.property.*;
+import megamek.common.annotations.Nullable;
 import org.megamek.mekbuilder.component.ComponentSwitch;
 import org.megamek.mekbuilder.component.ComponentType;
 import org.megamek.mekbuilder.component.HeavyWeapon;
 import org.megamek.mekbuilder.component.WeaponFlag;
 import org.megamek.mekbuilder.component.IEngineMount;
 import org.megamek.mekbuilder.component.Mount;
+import org.megamek.mekbuilder.tech.Faction;
+import org.megamek.mekbuilder.tech.TechBase;
+import org.megamek.mekbuilder.tech.TechLevel;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -38,6 +42,14 @@ public abstract class UnitBuild {
 
     private final UnitType unitType;
     private final List<Mount> components = new ArrayList<>();
+
+    private StringProperty chassisProperty = new SimpleStringProperty("");
+    private StringProperty modelProperty = new SimpleStringProperty("");
+    private StringProperty sourceProperty = new SimpleStringProperty("");
+    private IntegerProperty yearProperty = new SimpleIntegerProperty(3067);
+    private ObjectProperty<TechBase> techBaseProperty = new SimpleObjectProperty<>(TechBase.IS);
+    private ObjectProperty<TechLevel> techLevelProperty = new SimpleObjectProperty<>(TechLevel.STANDARD);
+    private ObjectProperty<Faction> factionProperty = new SimpleObjectProperty<>(null);
 
     protected UnitBuild(UnitType unitType) {
         this.unitType = unitType;
@@ -70,6 +82,175 @@ public abstract class UnitBuild {
         return unitType;
     }
 
+    /**
+     * @return The property that stores the chassis name
+     */
+    public StringProperty chassisProperty() {
+        return chassisProperty;
+    }
+
+    /**
+     * @return The chassis name. Variants typically keep the same chassis name and differ in model name.
+     */
+    public String getChassis() {
+        return chassisProperty().get();
+    }
+
+    /**
+     * Sets the chassis name.
+     *
+     * @param chassis The chassis name
+     */
+    public void setChassis(String chassis) {
+        chassisProperty().set(chassis);
+    }
+
+    /**
+     * @return The property that stores the model name.
+     */
+    public StringProperty modelProperty() {
+        return modelProperty;
+    }
+
+    /**
+     * @return The unit's model name. Variants typically have the same chassis name but differ in model name.
+     */
+    public String getModel() {
+        return modelProperty().get();
+    }
+
+    /**
+     * Sets the model name.
+     *
+     * @param model The unit's model name
+     */
+    public void setModel(String model) {
+        modelProperty().set(model);
+    }
+
+    /**
+     * @return The property that stores the name of the source publication
+     */
+    public StringProperty sourceProperty() {
+        return sourceProperty;
+    }
+
+    /**
+     * @return The unit's source publication
+     */
+    public String getSource() {
+        return sourceProperty().get();
+    }
+
+    /**
+     * Sets the source.
+     *
+     * @param source The name of the source publication
+     */
+    public void setSource(String source) {
+        sourceProperty().set(source);
+    }
+
+    /**
+     * @return The property that stores the year the unit was first produced.
+     */
+    public IntegerProperty yearProperty() {
+        return yearProperty;
+    }
+
+    /**
+     * @return The game year the unit was first produced.
+     */
+    public int getYear() {
+        return yearProperty().get();
+    }
+
+    /**
+     * Sets the production year.
+     *
+     * @param year The year the unit was first produced.
+     */
+    public void setYear(int year) {
+        yearProperty.set(year);
+    }
+
+    /**
+     * @return The property that stores the unit's tech base. {@link TechBase#ALL} is used for mixed-tech units.
+     */
+    public ObjectProperty<TechBase> techBaseProperty() {
+        return techBaseProperty;
+    }
+
+    /**
+     * @return The unit's tech base (IS or Clan). {@link TechBase#ALL} is used for mixed tech units.
+     */
+    public TechBase getTechBase() {
+        return techBaseProperty().get();
+    }
+
+    /**
+     * Sets whether the unit has an IS or Clan base.
+     *
+     * @param techBase The tech base.
+     */
+    public void setTechBase(TechBase techBase) {
+        techBaseProperty.set(techBase);
+    }
+
+    /**
+     * @return The property that stores the unit's maximum tech level.
+     */
+    public ObjectProperty<TechLevel> techLevelProperty() {
+        return techLevelProperty;
+    }
+
+    /**
+     * @return The maximum tech level for the unit, used for filtering available equipment.
+     */
+    public TechLevel getTechLevel() {
+        return techLevelProperty().get();
+    }
+
+    /**
+     * Sets the tech level to use for filtering equipment.
+     *
+     * @param techLevel The maximum tech level
+     */
+    public void setTechLevel(TechLevel techLevel) {
+        techLevelProperty.set(techLevel);
+    }
+
+    /**
+     * @return The property used to store the production faction.
+     */
+    public ObjectProperty<Faction> factionProperty() {
+        return factionProperty;
+    }
+
+    /**
+     * Production faction can be used to modify tech introduction dates so that the faction that develops it has
+     * access a few years before other factions. {@link Faction#IS} and {@link Faction#CLAN} can be used to apply
+     * variable introduction dates without specifying a faction (by using the one appropriate to the tech base).
+     * A value of {@code null} will ignore the faction data and use the base years.
+     *
+     * @return The production faction, or {@code null} if there is not a particular faction.
+     */
+    public @Nullable Faction getFaction() {
+        return factionProperty.get();
+    }
+
+    /**
+     * Sets the faction to use for faction-specific intro dates.
+     *
+     * @param faction The production faction, or {@code null} to ignore faction-specific intro dates.
+     */
+    public void setFaction(@Nullable Faction faction) {
+        factionProperty.set(faction);
+    }
+
+    /**
+     * @return Whether this unit should round weights to the kilogram instead of the half ton.
+     */
     abstract public boolean usesKilogramStandard();
 
     /**

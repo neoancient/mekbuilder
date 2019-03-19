@@ -22,5 +22,15 @@ package org.megamek.mekbuilder.tech;
  * Tech levels corresponding to sets of rules
  */
 public enum TechLevel {
-    INTRO, STANDARD, ADVANCED, EXPERIMENTAL, UNOFFICIAL;
+    INTRO ("Introductory"),
+    STANDARD ("Standard/Tournament"),
+    ADVANCED ("Advanced"),
+    EXPERIMENTAL ("Experimental"),
+    UNOFFICIAL ("Unofficial");
+
+    public final String displayName;
+
+    TechLevel(String displayName) {
+        this.displayName = displayName;
+    }
 }

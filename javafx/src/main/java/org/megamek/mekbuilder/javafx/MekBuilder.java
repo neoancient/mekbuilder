@@ -20,11 +20,13 @@ package org.megamek.mekbuilder.javafx;
 
 import javafx.application.Application;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import org.megamek.mekbuilder.unit.MekBuild;
 import org.megamek.mekbuilder.unit.UnitBuild;
 
 import java.io.IOException;
@@ -34,6 +36,23 @@ import java.io.IOException;
  */
 
 public class MekBuilder extends Application {
+
+    private static ObjectProperty<UnitBuild> unitProperty = new SimpleObjectProperty<>();
+
+    public static ObjectProperty<UnitBuild> unitProperty() {
+        if (unitProperty.get() == null) {
+            unitProperty.set(new MekBuild());
+        }
+        return unitProperty;
+    }
+
+    public static UnitBuild getUnit() {
+        return unitProperty().get();
+    }
+
+    public static void setUnit(UnitBuild unit) {
+        unitProperty().set(unit);
+    }
 
     private Stage primaryStage;
 

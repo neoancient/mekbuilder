@@ -18,14 +18,22 @@
  */
 package org.megamek.mekbuilder.javafx.view;
 
+import javafx.beans.binding.Bindings;
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextFormatter;
+import javafx.util.StringConverter;
+import org.megamek.mekbuilder.javafx.MekBuilder;
+import org.megamek.mekbuilder.javafx.util.SimpleComboBoxCellFactory;
 import org.megamek.mekbuilder.tech.Faction;
 import org.megamek.mekbuilder.tech.TechBase;
 import org.megamek.mekbuilder.tech.TechLevel;
+import org.megamek.mekbuilder.tech.TechProgression;
+import org.megamek.mekbuilder.unit.UnitBuild;
 
 import java.io.IOException;
 
@@ -46,7 +54,7 @@ public class BasicInfo {
                 instance = loader.getController();
                 instance.root = root;
             } catch (IOException ex) {
-
+                ex.printStackTrace();
             }
         }
         return instance;
@@ -70,4 +78,69 @@ public class BasicInfo {
     private ComboBox<TechLevel> cbTechLevel;
     @FXML
     private ComboBox<Faction> cbFaction;
+
+    @FXML
+    private void initialize() {
+        // Only allow up to four digits, but not initial zero.
+        txtYear.setTextFormatter(new TextFormatter<>(new YearFieldConverter()));
+        cbTechBase.setItems(FXCollections.observableArrayList(TechBase.values()));
+        SimpleComboBoxCellFactory.setConverter(cbTechBase, tb -> tb.unitDisplayName);
+        cbTechLevel.setItems(FXCollections.observableArrayList(TechLevel.values()));
+        SimpleComboBoxCellFactory.setConverter(cbTechLevel, tl -> tl.displayName);
+        cbFaction.setItems(FXCollections.observableArrayList(Faction.values()));
+        SimpleComboBoxCellFactory.setConverter(cbFaction, f -> f.displayName);
+        rebind(null, MekBuilder.getUnit());
+        MekBuilder.unitProperty().addListener((obs, ov, nv) -> rebind(ov, nv));
+    }
+
+    private void rebind(UnitBuild oldV, UnitBuild newV) {
+        if (null != oldV) {
+            txtChassis.textProperty().unbindBidirectional(oldV.chassisProperty());
+            txtModel.textProperty().unbindBidirectional(oldV.modelProperty());
+            txtSource.textProperty().unbindBidirectional(oldV.sourceProperty());
+            txtYear.textProperty().unbindBidirectional(oldV.yearProperty());
+            oldV.techBaseProperty().unbind();
+            oldV.techLevelProperty().unbind();
+            oldV.factionProperty().unbind();
+        }
+        if (null != newV) {
+            txtChassis.textProperty().bindBidirectional(newV.chassisProperty());
+            txtModel.textProperty().bindBidirectional(newV.modelProperty());
+            txtSource.textProperty().bindBidirectional(newV.sourceProperty());
+            Bindings.bindBidirectional(txtYear.textProperty(), newV.yearProperty(), new YearFieldConverter());
+            cbTechBase.getSelectionModel().select(newV.getTechBase());
+            newV.techBaseProperty().bind(cbTechBase.getSelectionModel().selectedItemProperty());
+            cbTechLevel.getSelectionModel().select(newV.getTechLevel());
+            newV.techLevelProperty().bind(cbTechLevel.getSelectionModel().selectedItemProperty());
+            cbFaction.getSelectionModel().select(newV.getFaction());
+            newV.factionProperty().bind(cbFaction.getSelectionModel().selectedItemProperty());
+        }
+    }
+
+    private static class YearFieldConverter extends StringConverter<Number> {
+        private static final int MIN_YEAR = TechProgression.DATE_PS;
+        private static final int MAX_YEAR = 3200;
+        private static final int DEFAULT_YEAR = 3067;
+
+        @Override
+        public String toString(Number object) {
+            if (null == object) {
+                return "";
+            } else {
+                return object.toString();
+            }
+        }
+
+        @Override
+        public Integer fromString(String string) {
+            string = string.replaceAll("[^\\d]", "");
+            if (!string.isEmpty()) {
+                return Math.min(Math.max(Integer.valueOf(string), MIN_YEAR), MAX_YEAR);
+            } else if (MekBuilder.getUnit() != null){
+                return MekBuilder.getUnit().getYear();
+            } else {
+                return DEFAULT_YEAR;
+            }
+        }
+    }
 }

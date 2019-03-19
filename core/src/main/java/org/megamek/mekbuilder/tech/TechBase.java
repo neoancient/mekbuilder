@@ -22,4 +22,17 @@ package org.megamek.mekbuilder.tech;
  * Component tech base
  */
 
-public enum TechBase { IS, CLAN, ALL };
+public enum TechBase {
+    IS ("Inner Sphere"),
+    CLAN ("Clan"),
+    ALL ("Mixed");
+
+    /**
+     * The displayable name used for units (ALL is shown as "Mixed").
+     */
+    public final String unitDisplayName;
+
+    TechBase(String unitDisplayName) {
+        this.unitDisplayName = unitDisplayName;
+    }
+}

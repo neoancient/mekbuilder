@@ -19,6 +19,8 @@
 package org.megamek.mekbuilder.javafx;
 
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.ReadOnlyObjectProperty;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -59,8 +61,6 @@ public class RootLayout {
         return root;
     }
 
-    private final ObjectProperty<UnitBuild> unitProperty = new SimpleObjectProperty();
-
     @FXML
     private MenuBar menuBar;
     @FXML
@@ -70,16 +70,11 @@ public class RootLayout {
 
     @FXML
     private void initialize() {
-        unitProperty.set(new MekBuild());
         Node root = StandardLayout.create();
         AnchorPane.setTopAnchor(root, 0.0);
         AnchorPane.setBottomAnchor(root, 0.0);
         AnchorPane.setLeftAnchor(root, 0.0);
         AnchorPane.setRightAnchor(root, 0.0);
         panCenter.getChildren().setAll(root);
-    }
-
-    public UnitBuild getUnit() {
-        return unitProperty.get();
     }
 }
