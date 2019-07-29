@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.megamek.mekbuilder.javafx.unitlayout.StandardLayout">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <tabs>
       <Tab fx:id="structureTab" text="Structure">
          <content>
-            <AnchorPane>
+            <AnchorPane fx:id="tabStructure">
                <children>
                   <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
@@ -33,19 +33,23 @@
       </Tab>
       <Tab fx:id="equipmentTab" text="Equipment">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" />
+            <AnchorPane fx:id="tabEquipment" minHeight="0.0" minWidth="0.0" />
          </content>
       </Tab>
       <Tab fx:id="armorTab" text="Armor">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            <AnchorPane fx:id="tabArmor" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
          </content>
       </Tab>
       <Tab fx:id="buildTab" text="Build">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            <AnchorPane fx:id="tabBuild" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
          </content>
       </Tab>
-      <Tab fx:id="previewTab" text="Preview" />
+      <Tab fx:id="previewTab" text="Preview">
+         <content>
+            <AnchorPane fx:id="tabPreview" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+         </content>
+      </Tab>
    </tabs>
 </TabPane>

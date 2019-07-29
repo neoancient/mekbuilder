@@ -36,7 +36,7 @@ public class MekBuild extends UnitBuild {
 
     private final Map<UnitLocation, Integer> criticalSlots;
     private LimbConfiguration limbConfiguration;
-    private int tonnage = 20;
+    private double tonnage = 20;
 
     private MekInternalStructure internalStructure;
     private MekEngineMount engineMount;
@@ -204,7 +204,7 @@ public class MekBuild extends UnitBuild {
         return tonnage;
     }
 
-    public void setTonnage(int tonnage) {
+    public void setTonnage(double tonnage) {
         this.tonnage = tonnage;
     }
 
@@ -225,11 +225,17 @@ public class MekBuild extends UnitBuild {
         }
     }
 
+    public MekInternalStructure getStructureMount() {
+        return internalStructure;
+    }
+
     public Component getStructureType() {
         return internalStructure.getComponent();
     }
 
-    public void setStructureType(String structureType) {
+    public void setStructureType(Component structure) { internalStructure.setComponent(structure);}
+
+    public void setStructureTypeByName(String structureType) {
         internalStructure.setComponent(structureType);
     }
 

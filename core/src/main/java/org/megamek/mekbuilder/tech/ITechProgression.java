@@ -82,7 +82,7 @@ public interface ITechProgression {
      * @param year An in-universe year
      * @return The index of the era the year falls in
      */
-    default int techEra(int year) {
+    static int techEra(int year) {
         if (year < 2780) {
             return ERA_SL;
         } else if (year < 3050) {

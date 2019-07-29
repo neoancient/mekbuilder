@@ -21,10 +21,8 @@ package org.megamek.mekbuilder.component;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonSetter;
 import com.fasterxml.jackson.annotation.Nulls;
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.*;
@@ -94,12 +92,6 @@ public class ComponentLibrary {
                     }
                     List<? extends Component> list = mapper.readValue(is, tr);
                     list.forEach(c -> allComponents.put(c.getInternalName(), c));
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (JsonParseException e) {
-                    e.printStackTrace();
-                } catch (JsonMappingException e) {
-                    e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -148,8 +140,6 @@ public class ComponentLibrary {
                 pw.close();
                 os.flush();
                 os.close();
-            } catch (FileNotFoundException ex) {
-                ex.printStackTrace();
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
