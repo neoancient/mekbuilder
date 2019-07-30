@@ -1,5 +1,7 @@
 package org.megamek.mekbuilder.javafx.view
 
+import javafx.beans.InvalidationListener
+import javafx.beans.Observable
 import javafx.beans.binding.Bindings
 import javafx.scene.control.CheckBox
 import javafx.scene.control.ComboBox
@@ -7,21 +9,23 @@ import javafx.scene.control.TextField
 import javafx.scene.control.TextFormatter
 import javafx.scene.layout.AnchorPane
 import javafx.util.StringConverter
-import org.megamek.mekbuilder.tech.Faction
-import org.megamek.mekbuilder.tech.TechBase
-import org.megamek.mekbuilder.tech.TechLevel
-import org.megamek.mekbuilder.tech.TechProgression
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
 import org.megamek.mekbuilder.javafx.util.SimpleComboBoxCellFactory
+import org.megamek.mekbuilder.tech.*
 import tornadofx.*
 
 /**
  *
  */
-class BasicInfo: View() {
+class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
     val model: UnitViewModel by inject()
 
     override val root: AnchorPane by fxml()
+
+    private val listeners = ArrayList<InvalidationListener>()
+    override fun addListener(listener: InvalidationListener) { listeners.add(listener)}
+    override fun removeListener(listener: InvalidationListener) { listeners.remove(listener)}
+    override fun invalidated(observable: Observable) {listeners.forEach{it.invalidated(this)}}
 
     private val yearFieldConverter = object : StringConverter<Int>() {
         private val MIN_YEAR = TechProgression.DATE_PS
@@ -71,6 +75,23 @@ class BasicInfo: View() {
         cbFaction.selectionModel.select(model.faction.value)
         model.faction.bind(cbFaction.selectionModel.selectedItemProperty())
 
+        txtYear.textProperty().addListener(this)
+        cbTechBase.selectionModel.selectedItemProperty().addListener(this)
+        cbTechLevel.selectionModel.selectedItemProperty().addListener(this)
+        cbFaction.selectionModel.selectedItemProperty().addListener(this)
+        chkEraBasedProgression.selectedProperty().addListener(this)
+        chkShowExtinct.selectedProperty().addListener(this)
     }
 
+    override fun getYear() = txtYear.textProperty().value.toInt()
+
+    override fun getTechBase() = cbTechBase.selectedItem ?: TechBase.ALL
+
+    override fun getTechLevel() = cbTechLevel.selectedItem ?: TechLevel.STANDARD
+
+    override fun getFaction() = cbFaction.selectedItem
+
+    override fun eraBasedProgression() = chkEraBasedProgression.isSelected
+
+    override fun showExtinct() = chkShowExtinct.isSelected
 }

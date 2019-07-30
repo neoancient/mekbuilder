@@ -1,5 +1,7 @@
 package org.megamek.mekbuilder.javafx.view
 
+import javafx.beans.InvalidationListener
+import javafx.beans.Observable
 import javafx.scene.control.CheckBox
 import javafx.scene.control.ComboBox
 import javafx.scene.control.Spinner
@@ -12,9 +14,9 @@ import tornadofx.*
 /**
  *
  */
-class MekChassis: View() {
-
+class MekChassis: View(), InvalidationListener {
     override val root: AnchorPane by fxml()
+    val techFilter: BasicInfo by inject()
 
     val spnTonnage: Spinner<Int> by fxid()
     val chkOmni: CheckBox by fxid()
@@ -25,4 +27,11 @@ class MekChassis: View() {
     val cbGyro: ComboBox<Component> by fxid()
     val cbCockpit: ComboBox<Cockpit> by fxid()
 
+    init {
+
+    }
+
+    override fun invalidated(observable: Observable) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 }
