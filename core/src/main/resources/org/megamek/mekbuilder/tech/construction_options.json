@@ -83,6 +83,15 @@
     "prevWeightKey" : "MEK_TRIPOD",
     "nextWeightKey" : null
   },
+  "MEK_ULTRALIGHT" : {
+    "techProgression" : "IS|D|XXXF|~3135(RS),3136(RS),-,-,-|-,-,-,-,-|ADVANCED",
+    "unitType" : "BATTLE_MEK",
+    "minWeight" : 10.0,
+    "maxWeight" : 15.0,
+    "weightIncrement" : 5.0,
+    "prevWeightKey" : null,
+    "nextWeightKey" : "MEK_STANDARD"
+  },
   "IMEK_STANDARD" : {
     "techProgression" : "ALL|C|CCCB|2460(TH),2470(TH),2500,-,-|2460,2470,2500,-,-|STANDARD",
     "unitType" : "INDUSTRIAL_MEK",
@@ -213,6 +222,16 @@
     "prevWeightKey" : null,
     "nextWeightKey" : "CV_SUPERHEAVY_WIGE",
     "motiveType" : "WIGE"
+  },
+  "CV_NAVAL_DISPLACEMENT" : {
+    "techProgression" : "ALL|D|CCCB|-,2470(TH),2490,-,-|-,2470,2490,-,-|STANDARD",
+    "unitType" : "COMBAT_VEHICLE",
+    "minWeight" : 1.0,
+    "maxWeight" : 300.0,
+    "weightIncrement" : 1.0,
+    "prevWeightKey" : null,
+    "nextWeightKey" : "CV_SUPERHEAVY_NAVAL_DISPLACEMENT",
+    "motiveType" : "NAVAL"
   },
   "CV_NAVAL_HYDROFOIL" : {
     "techProgression" : "ALL|D|CCCB|-,2470(TH),2490,-,-|-,2470,2490,-,-|STANDARD",
@@ -707,6 +726,15 @@
     "techProgression" : "ALL|D|DEDD|-,~2470(TH),2490,-,-|-,~2470,2490,-,-|STANDARD",
     "unitType" : "DROPSHIP",
     "minWeight" : 200.0,
+    "maxWeight" : 100000.0,
+    "weightIncrement" : 100.0,
+    "prevWeightKey" : null,
+    "nextWeightKey" : null
+  },
+  "DS_STANDARD_AERODYNE" : {
+    "techProgression" : "ALL|D|DEDD|-,~2470(TH),2490,-,-|-,~2470,2490,-,-|STANDARD",
+    "unitType" : "DROPSHIP",
+    "minWeight" : 200.0,
     "maxWeight" : 35000.0,
     "weightIncrement" : 100.0,
     "prevWeightKey" : null,
@@ -763,6 +791,15 @@
     "minWeight" : 5000.0,
     "maxWeight" : 25000.0,
     "weightIncrement" : 100.0,
+    "prevWeightKey" : null,
+    "nextWeightKey" : null
+  },
+  "SPACE_STATION_STANDARD" : {
+    "techProgression" : "ALL|D|CDCC|2100,-,-,2100,-|2100,-,-,2100,-|ADVANCED",
+    "unitType" : "SPACE_STATION",
+    "minWeight" : 2000.0,
+    "maxWeight" : 2500000.0,
+    "weightIncrement" : 500.0,
     "prevWeightKey" : null,
     "nextWeightKey" : null
   },

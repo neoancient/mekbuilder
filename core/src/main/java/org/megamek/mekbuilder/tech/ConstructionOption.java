@@ -19,13 +19,8 @@
 package org.megamek.mekbuilder.tech;
 
 import com.fasterxml.jackson.annotation.*;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
-import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Class for tracking tech progression of various generic construction options. Base class for unit-specific
@@ -52,20 +47,4 @@ public class ConstructionOption implements ITechDelegator {
         return techProgression;
     }
 
-    private static final Map<ConstructionOptionKey, ConstructionOption> optionMap = new HashMap<>();
-    private static boolean initialized = false;
-
-    private static void initialize() {
-        final ObjectMapper mapper = new ObjectMapper();
-        mapper.setDefaultSetterInfo(JsonSetter.Value.forValueNulls(Nulls.SKIP));
-        mapper.setVisibility(mapper.getSerializationConfig().getDefaultVisibilityChecker()
-                .withFieldVisibility(JsonAutoDetect.Visibility.ANY)
-                .withGetterVisibility(JsonAutoDetect.Visibility.NONE)
-                .withSetterVisibility(JsonAutoDetect.Visibility.NONE)
-                .withIsGetterVisibility(JsonAutoDetect.Visibility.NONE));
-        final InputStream is = ConstructionOption.class.getResourceAsStream("construction_options.json");
-        if (null != is) {
-
-        }
-    }
 }
