@@ -39,7 +39,7 @@ public class VehicleConstructionOption extends UnitConstructionOption {
                 MotiveType.WHEELED);
     }
 
-    VehicleConstructionOption(TechProgression techProgression,
+    public VehicleConstructionOption(TechProgression techProgression,
                               UnitType unitType, double minWeight, double maxWeight, double weightIncrement,
                               ConstructionOptionKey prevWeightKey, ConstructionOptionKey nextWeightKey,
                               MotiveType motiveType) {

@@ -1,8 +1,9 @@
-package org.megamek.mekbuilder.tech
+package org.megamek.mekbuilder.util.tech
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.function.Executable
+import org.megamek.mekbuilder.tech.*
 import org.megamek.mekbuilder.unit.MotiveType
 import org.megamek.mekbuilder.unit.UnitType
 

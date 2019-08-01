@@ -38,7 +38,7 @@ public class ConstructionOption implements ITechDelegator {
         this(new TechProgression());
     }
 
-    ConstructionOption(TechProgression techProgression) {
+    public ConstructionOption(TechProgression techProgression) {
         this.techProgression = techProgression;
     }
 

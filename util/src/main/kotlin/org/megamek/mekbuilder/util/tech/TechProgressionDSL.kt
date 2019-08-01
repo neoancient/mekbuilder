@@ -1,5 +1,6 @@
-package org.megamek.mekbuilder.tech
+package org.megamek.mekbuilder.util.tech
 
+import org.megamek.mekbuilder.tech.*
 import java.util.regex.Pattern
 
 /**

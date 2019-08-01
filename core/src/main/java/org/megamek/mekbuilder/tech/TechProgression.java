@@ -58,7 +58,7 @@ public class TechProgression implements ITechProgression {
     private final Rating rating;
     private final Rating[] availability = new Rating[NUM_ERAS];
 
-    TechProgression(TechBase techBase, Rating rating, Rating[] availability,
+    public TechProgression(TechBase techBase, Rating rating, Rating[] availability,
                            Map<TechStage, Integer> isProgression,
                            Map<TechStage, Integer> clanProgression,
                            Set<TechStage> isApproximate,

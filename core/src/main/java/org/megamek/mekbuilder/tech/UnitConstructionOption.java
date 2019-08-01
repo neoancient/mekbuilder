@@ -44,7 +44,7 @@ public class UnitConstructionOption extends ConstructionOption {
                 null, null);
     }
 
-    UnitConstructionOption(TechProgression techProgression,
+    public UnitConstructionOption(TechProgression techProgression,
                            UnitType unitType, double minWeight, double maxWeight, double weightIncrement,
                            ConstructionOptionKey prevWeightKey, ConstructionOptionKey nextWeightKey) {
         super(techProgression);

@@ -1,8 +1,12 @@
-package org.megamek.mekbuilder.tech
+package org.megamek.mekbuilder.util.tech
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.function.Executable
+import org.megamek.mekbuilder.tech.Rating
+import org.megamek.mekbuilder.tech.TechBase
+import org.megamek.mekbuilder.tech.TechLevel
+import org.megamek.mekbuilder.tech.TechStage
 
 /**
  * Domain-specific language for building TechProgression objects
