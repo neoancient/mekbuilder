@@ -13,7 +13,6 @@ internal class ConstructionOptionBuilderTest {
     @Test
     fun testBaseOption() {
         val option = constructionOption {
-            key = ConstructionOptionKey.OMNI
             techProgression {
                 techBase = TechBase.ALL
                 rating = Rating.RATING_E
@@ -41,7 +40,6 @@ internal class ConstructionOptionBuilderTest {
     @Test
     fun testUnitOption() {
         val option = unitConstructionOption {
-            key = ConstructionOptionKey.MEK_STANDARD
             unitType = UnitType.BATTLE_MEK
             minWeight = 20.0
             maxWeight = 100.0
@@ -70,7 +68,6 @@ internal class ConstructionOptionBuilderTest {
     @Test
     fun testVehicleOption() {
         val option = vehicleConstructionOption {
-            key = ConstructionOptionKey.CV_WHEELED
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 5.0
             maxWeight = 80.0

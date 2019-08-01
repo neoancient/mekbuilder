@@ -18,8 +18,14 @@
  */
 package org.megamek.mekbuilder.tech;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Class for tracking tech progression of various generic construction options. Base class for unit-specific
@@ -27,23 +33,39 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
  */
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class ConstructionOption implements ITechDelegator {
-
-    private final ConstructionOptionKey key;
+    @JsonSerialize(using = TechProgression.Serializer.class)
+    @JsonDeserialize(using = TechProgression.Deserializer.class)
     private final TechProgression techProgression;
 
     @JsonCreator
     @SuppressWarnings("unused")
     ConstructionOption() {
-        this(ConstructionOptionKey.OMNI, new TechProgression());
+        this(new TechProgression());
     }
 
-    ConstructionOption(ConstructionOptionKey key, TechProgression techProgression) {
-        this.key = key;
+    ConstructionOption(TechProgression techProgression) {
         this.techProgression = techProgression;
     }
 
     @Override
     public ITechProgression techDelegate() {
         return techProgression;
+    }
+
+    private static final Map<ConstructionOptionKey, ConstructionOption> optionMap = new HashMap<>();
+    private static boolean initialized = false;
+
+    private static void initialize() {
+        final ObjectMapper mapper = new ObjectMapper();
+        mapper.setDefaultSetterInfo(JsonSetter.Value.forValueNulls(Nulls.SKIP));
+        mapper.setVisibility(mapper.getSerializationConfig().getDefaultVisibilityChecker()
+                .withFieldVisibility(JsonAutoDetect.Visibility.ANY)
+                .withGetterVisibility(JsonAutoDetect.Visibility.NONE)
+                .withSetterVisibility(JsonAutoDetect.Visibility.NONE)
+                .withIsGetterVisibility(JsonAutoDetect.Visibility.NONE));
+        final InputStream is = ConstructionOption.class.getResourceAsStream("construction_options.json");
+        if (null != is) {
+
+        }
     }
 }

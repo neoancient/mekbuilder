@@ -34,22 +34,24 @@ public class UnitConstructionOption extends ConstructionOption {
     private final UnitType unitType;
     private final double minWeight;
     private final double maxWeight;
+    private final double weightIncrement;
     private final @Nullable ConstructionOptionKey prevWeightKey;
     private final @Nullable ConstructionOptionKey nextWeightKey;
 
     @JsonCreator
     UnitConstructionOption() {
-        this(ConstructionOptionKey.MEK_STANDARD, new TechProgression(),
-                UnitType.BATTLE_MEK, 0.0, 0.0, null, null);
+        this(new TechProgression(), UnitType.BATTLE_MEK, 5.0, 100.0, 5.0,
+                null, null);
     }
 
-    UnitConstructionOption(ConstructionOptionKey key, TechProgression techProgression,
-                           UnitType unitType, double minWeight, double maxWeight,
+    UnitConstructionOption(TechProgression techProgression,
+                           UnitType unitType, double minWeight, double maxWeight, double weightIncrement,
                            ConstructionOptionKey prevWeightKey, ConstructionOptionKey nextWeightKey) {
-        super(key, techProgression);
+        super(techProgression);
         this.unitType = unitType;
         this.minWeight = minWeight;
         this.maxWeight = maxWeight;
+        this.weightIncrement = weightIncrement;
         this.prevWeightKey = prevWeightKey;
         this.nextWeightKey = nextWeightKey;
     }
@@ -66,4 +68,13 @@ public class UnitConstructionOption extends ConstructionOption {
         return maxWeight;
     }
 
+    public double getWeightIncrement() { return weightIncrement; }
+
+    public @Nullable ConstructionOptionKey getPrevWeightKey() {
+        return prevWeightKey;
+    }
+
+    public @Nullable ConstructionOptionKey getNextWeightKey() {
+        return nextWeightKey;
+    }
 }
