@@ -7,10 +7,10 @@ import tornadofx.*
  */
 class MainMenu: View() {
     override val root = menubar {
-        menu("File")
-        menu("Edit")
-        menu("Help") {
-            item("About...")
+        menu(messages["menu.file"])
+        menu(messages["menu.edit"])
+        menu(messages["menu.help"]) {
+            item(messages["menuItem.about"])
         }
     }
 }

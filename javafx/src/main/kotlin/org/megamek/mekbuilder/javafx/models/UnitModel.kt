@@ -16,6 +16,8 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     val unit = unitBuild
     val unitType = unit.unitType
 
+    val baseOptionProperty = observable(unit, UnitBuild::getBaseConstructionOption, UnitBuild::setConstructionOption)
+    var baseConstructionOption by baseOptionProperty
     val chassisProperty = observable(unit, UnitBuild::getChassis, UnitBuild::setChassis)
     var chassisName by chassisProperty
     val modelProperty = observable(unit, UnitBuild::getModel, UnitBuild::setModel)

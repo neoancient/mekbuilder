@@ -82,7 +82,7 @@ public interface ITechFilter {
         boolean extinctIS = tech.extinct(getYear(), false);
         boolean extinctClan = tech.extinct(getYear(), true);
 
-        if ((faction.isComStar())
+        if ((null != faction && faction.isComStar())
                 && extinctIS && (null != isIntroDate)
                 && (tech.baseAvailability(ITechProgression.techEra(getYear())).ordinal() < Rating.RATING_X.ordinal())
                 && isIntroDate <= getYear()) {

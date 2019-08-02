@@ -34,13 +34,13 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label text="Chassis" />
-            <Label text="Model" GridPane.rowIndex="1" />
-            <Label text="Year" GridPane.rowIndex="2" />
-            <Label text="Source" GridPane.rowIndex="3" />
-            <Label text="Tech Base" GridPane.rowIndex="4" />
-            <Label text="Rules Level" GridPane.rowIndex="5" />
-            <Label text="Faction" GridPane.rowIndex="6" />
+            <Label text="%lblChassis.text" />
+            <Label text="%lblModel.text" GridPane.rowIndex="1" />
+            <Label text="%lblYear.text" GridPane.rowIndex="2" />
+            <Label text="%lblSource.text" GridPane.rowIndex="3" />
+            <Label text="%lblTechBase.text" GridPane.rowIndex="4" />
+            <Label text="%lblRulesLevel.text" GridPane.rowIndex="5" />
+            <Label text="%lblFaction.text" GridPane.rowIndex="6" />
             <TextField fx:id="txtChassis" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" />
             <TextField fx:id="txtModel" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" />
             <TextField fx:id="txtYear" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" />
@@ -48,8 +48,8 @@
             <ComboBox fx:id="cbTechBase" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="4" />
             <ComboBox fx:id="cbTechLevel" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="5" />
             <ComboBox fx:id="cbFaction" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="6" />
-            <CheckBox fx:id="chkEraBasedProgression" mnemonicParsing="false" text="Era-based tech progression" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="8" />
-            <CheckBox fx:id="chkShowExtinct" mnemonicParsing="false" text="Show extinct components" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <CheckBox fx:id="chkEraBasedProgression" mnemonicParsing="false" text="%chkEraBasedProgression.text" GridPane.columnIndex="1" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="8" />
+            <CheckBox fx:id="chkShowExtinct" mnemonicParsing="false" text="%chkShowExtinct.text" GridPane.columnIndex="1" GridPane.rowIndex="7" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

@@ -27,6 +27,7 @@ import org.megamek.mekbuilder.component.IEngineMount;
 import org.megamek.mekbuilder.component.Mount;
 import org.megamek.mekbuilder.tech.Faction;
 import org.megamek.mekbuilder.tech.TechBase;
+import org.megamek.mekbuilder.tech.UnitConstructionOption;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,8 +39,8 @@ import java.util.Set;
 
 public abstract class UnitBuild {
 
-    private final UnitType unitType;
     private final List<Mount> components = new ArrayList<>();
+    private UnitConstructionOption baseConstructionOption;
 
     private String chassis = "";
     private String model = "";
@@ -48,8 +49,8 @@ public abstract class UnitBuild {
     private TechBase techBase = TechBase.IS;
     private Faction faction = null;
 
-    protected UnitBuild(UnitType unitType) {
-        this.unitType = unitType;
+    protected UnitBuild(UnitConstructionOption option) {
+        this.baseConstructionOption = option;
     }
 
     protected List<Mount> getComponents() {
@@ -75,8 +76,30 @@ public abstract class UnitBuild {
         return false;
     }
 
+    /**
+     * The unit construction option sets the variation on the base unit type and can affect
+     * available intro years and weight limits.
+     *
+     * @return The current base construction option
+     */
+    public UnitConstructionOption getBaseConstructionOption() {
+        return baseConstructionOption;
+    }
+
+    /**
+     * Allows changing the unit subtype, but the new one must have the same base type as the previous one.
+     *
+     * @param option The construction option
+     */
+    public void setConstructionOption(UnitConstructionOption option) {
+        if (option.getUnitType() != baseConstructionOption.getUnitType()) {
+            throw new IllegalArgumentException("Illegal change of unit type.");
+        }
+        baseConstructionOption = option;
+    }
+
     public UnitType getUnitType() {
-        return unitType;
+        return baseConstructionOption.getUnitType();
     }
 
     /**

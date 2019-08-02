@@ -12,6 +12,10 @@ import tornadofx.*
 class UnitViewModel(): ViewModel() {
     var unitModel: UnitModel = MekModel(MekBuild())
 
+    val baseConfiguration = bind{unitModel.baseOptionProperty}
+    val minWeight = doubleBinding(baseConfiguration) {unitModel.baseConstructionOption.minWeight}
+    val maxWeight = doubleBinding(baseConfiguration) {unitModel.baseConstructionOption.maxWeight}
+    val weightIncrement = doubleBinding(baseConfiguration) {unitModel.baseConstructionOption.weightIncrement}
     val chassisName = bind{unitModel.chassisProperty}
     val modelName = bind{unitModel.modelProperty}
     val source = bind{unitModel.sourceProperty}

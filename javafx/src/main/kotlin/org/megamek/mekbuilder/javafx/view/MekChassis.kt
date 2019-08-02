@@ -2,13 +2,17 @@ package org.megamek.mekbuilder.javafx.view
 
 import javafx.beans.InvalidationListener
 import javafx.beans.Observable
+import javafx.beans.property.DoubleProperty
 import javafx.scene.control.CheckBox
 import javafx.scene.control.ComboBox
 import javafx.scene.control.Spinner
+import javafx.scene.control.SpinnerValueFactory
 import javafx.scene.layout.AnchorPane
 import org.megamek.mekbuilder.component.Cockpit
 import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.component.MVFEngine
+import org.megamek.mekbuilder.javafx.models.UnitViewModel
+import org.megamek.mekbuilder.tech.UnitConstructionOption
 import tornadofx.*
 
 /**
@@ -17,8 +21,9 @@ import tornadofx.*
 class MekChassis: View(), InvalidationListener {
     override val root: AnchorPane by fxml()
     val techFilter: BasicInfo by inject()
+    val model: UnitViewModel by inject()
 
-    val spnTonnage: Spinner<Int> by fxid()
+    val spnTonnage: Spinner<Double> by fxid()
     val chkOmni: CheckBox by fxid()
     val cbBaseType: ComboBox<String> by fxid()
     val cbMotiveType: ComboBox<String> by fxid()
@@ -27,11 +32,39 @@ class MekChassis: View(), InvalidationListener {
     val cbGyro: ComboBox<Component> by fxid()
     val cbCockpit: ComboBox<Cockpit> by fxid()
 
-    init {
+    val maxWeight = doubleBinding(model.baseConfiguration) {
+        var config = model.baseConfiguration.value
+        while ((config.nextWeightKey?.get() != null) && techFilter.isLegal(config.nextWeightKey.get())) {
+            config = config.nextWeightKey.get() as UnitConstructionOption
+        }
+        config.maxWeight
+    }
 
+    val minWeight = doubleBinding(model.baseConfiguration) {
+        var config = model.baseConfiguration.value
+        while ((config.prevWeightKey?.get() != null) && techFilter.isLegal(config.prevWeightKey.get())) {
+            config = config.prevWeightKey.get() as UnitConstructionOption
+        }
+        config.minWeight
+    }
+
+    init {
+        val tonnageFactory = SpinnerValueFactory.DoubleSpinnerValueFactory(
+                model.minWeight.value, model.maxWeight.value, model.declaredTonnage.value.toDouble(),
+                model.weightIncrement.value)
+        tonnageFactory.minProperty().bind(minWeight)
+        tonnageFactory.maxProperty().bind(maxWeight)
+        tonnageFactory.amountToStepByProperty().bind(model.weightIncrement)
+        // Bind ObjectProperty<Double> to DoubleProperty that can be bound to model property
+        val tonnageValueProperty = DoubleProperty.doubleProperty(tonnageFactory.valueProperty())
+        tonnageValueProperty.bindBidirectional(model.declaredTonnage)
+        spnTonnage.valueFactory = tonnageFactory
+
+        techFilter.addListener(this)
     }
 
     override fun invalidated(observable: Observable) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        maxWeight.invalidate()
+        minWeight.invalidate()
     }
 }

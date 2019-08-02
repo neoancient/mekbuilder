@@ -84,7 +84,7 @@
     "nextWeightKey" : null
   },
   "MEK_ULTRALIGHT" : {
-    "techProgression" : "IS|D|XXXF|~3135(RS),3136(RS),-,-,-|-,-,-,-,-|ADVANCED",
+    "techProgression" : "IS|D|EFEE|~2500(FW/TH),2519(FW),~3075,-,-|~2500,2519,~3075,-,-|ADVANCED",
     "unitType" : "BATTLE_MEK",
     "minWeight" : 10.0,
     "maxWeight" : 15.0,

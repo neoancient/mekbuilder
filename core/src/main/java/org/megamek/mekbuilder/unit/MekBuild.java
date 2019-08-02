@@ -19,6 +19,8 @@
 package org.megamek.mekbuilder.unit;
 
 import org.megamek.mekbuilder.component.*;
+import org.megamek.mekbuilder.tech.ConstructionOptionKey;
+import org.megamek.mekbuilder.tech.UnitConstructionOption;
 
 import java.util.Collections;
 import java.util.EnumMap;
@@ -48,7 +50,7 @@ public class MekBuild extends UnitBuild {
     private ArmorMount armorMount;
 
     public MekBuild() {
-        super(UnitType.BATTLE_MEK);
+        super((UnitConstructionOption) ConstructionOptionKey.MEK_STANDARD.get());
         criticalSlots = new EnumMap<>(UnitLocation.class);
         limbConfiguration = LimbConfiguration.BIPED;
         internalStructure = new MekInternalStructure(this);
