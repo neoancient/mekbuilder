@@ -235,10 +235,11 @@ class OptionGenerator {
             techProgression {
                 techBase = TechBase.IS
                 rating = Rating.RATING_D
-                availability = "XXXF"
-                isProgression {
-                    prototype = "~3135(RS)"
-                    production = "3136(RS)"
+                availability = "EFEE"
+                progression {
+                    prototype = "~2500(TH/FW)"
+                    production = "2519(FW)"
+                    common = "~3075"
                 }
                 staticLevel = TechLevel.ADVANCED
             }
