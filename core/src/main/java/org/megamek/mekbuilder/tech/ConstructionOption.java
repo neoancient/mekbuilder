@@ -28,6 +28,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  */
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class ConstructionOption implements ITechDelegator {
+    private final ConstructionOptionKey key;
     @JsonSerialize(using = TechProgression.Serializer.class)
     @JsonDeserialize(using = TechProgression.Deserializer.class)
     private final TechProgression techProgression;
@@ -35,11 +36,16 @@ public class ConstructionOption implements ITechDelegator {
     @JsonCreator
     @SuppressWarnings("unused")
     ConstructionOption() {
-        this(new TechProgression());
+        this(null, new TechProgression());
     }
 
-    public ConstructionOption(TechProgression techProgression) {
+    public ConstructionOption(ConstructionOptionKey key, TechProgression techProgression) {
+        this.key = key;
         this.techProgression = techProgression;
+    }
+
+    public ConstructionOptionKey getKey() {
+        return key;
     }
 
     @Override

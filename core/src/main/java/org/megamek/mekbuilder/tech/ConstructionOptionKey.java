@@ -27,18 +27,13 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.sun.istack.Nullable;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Keys that provide fixed values for accessing construction options
@@ -138,7 +133,10 @@ public enum ConstructionOptionKey {
     WARSHIP (ConstructionOptionKey.TYPE_UNIT),
     WARSHIP_SUBCOMPACT (ConstructionOptionKey.TYPE_UNIT),
     SPACE_STATION_STANDARD (ConstructionOptionKey.TYPE_UNIT),
-    SPACE_STATION_MODULAR (ConstructionOptionKey.TYPE_UNIT);
+    SPACE_STATION_MODULAR (ConstructionOptionKey.TYPE_UNIT),
+
+    MEK_QUAD_LAM_UNOFFICIAL (ConstructionOptionKey.TYPE_UNIT),
+    MEK_HEAVY_LAM_UNOFFICIAL (ConstructionOptionKey.TYPE_UNIT);
 
     static final int TYPE_BASIC = 0;
     static final int TYPE_UNIT = 1;
@@ -159,7 +157,6 @@ public enum ConstructionOptionKey {
     }
 
     private static class OptionMap {
-        @JsonDeserialize(using = OptionMapDeserializer.class)
         private final Map<ConstructionOptionKey, ConstructionOption> optionMap = new HashMap<>();
 
         @Nullable
@@ -176,28 +173,28 @@ public enum ConstructionOptionKey {
                     .withSetterVisibility(JsonAutoDetect.Visibility.NONE)
                     .withIsGetterVisibility(JsonAutoDetect.Visibility.NONE));
             SimpleModule module = new SimpleModule();
-            module.addDeserializer(Map.class, new OptionMapDeserializer());
+            module.addDeserializer(List.class, new OptionListDeserializer());
             mapper.registerModule(module);
             final InputStream is = ConstructionOption.class.getResourceAsStream("construction_options.json");
             if (null != is) {
                 try {
-                    optionMap.putAll(mapper.readValue(is,
-                            new TypeReference<Map<ConstructionOptionKey, ConstructionOption>>(){}));
+                    List<ConstructionOption> list = mapper.readValue(is, new TypeReference<List<ConstructionOption>>(){});
+                    list.forEach(o -> optionMap.put(o.getKey(), o));
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         }
 
-        public static class OptionMapDeserializer extends StdDeserializer<Map<ConstructionOptionKey, ConstructionOption>> {
+        public static class OptionListDeserializer extends StdDeserializer<List<ConstructionOption>> {
             @JsonCreator
-            private OptionMapDeserializer() {
-                super(Map.class);
+            private OptionListDeserializer() {
+                super(List.class);
             }
 
             @Override
-            public Map<ConstructionOptionKey, ConstructionOption> deserialize(JsonParser parser, DeserializationContext ctxt) throws IOException {
-                final Map<ConstructionOptionKey, ConstructionOption> map = new HashMap<>();
+            public List<ConstructionOption> deserialize(JsonParser parser, DeserializationContext ctxt) throws IOException {
+                final List<ConstructionOption> list = new ArrayList<>();
                 @SuppressWarnings("unchecked")
                 final TypeReference<? extends ConstructionOption>[] typerefs = new TypeReference[]{
                         new TypeReference<ConstructionOption>(){},
@@ -205,14 +202,14 @@ public enum ConstructionOptionKey {
                         new TypeReference<VehicleConstructionOption>(){}
                 };
                 ObjectMapper mapper = (ObjectMapper) parser.getCodec();
-                ObjectNode objNode = mapper.readTree(parser);
-                for (Iterator<Map.Entry<String, JsonNode>> iter = objNode.fields(); iter.hasNext();) {
-                    final Map.Entry<String, JsonNode> entry = iter.next();
-                    ConstructionOptionKey key = ConstructionOptionKey.valueOf(entry.getKey());
-                    ConstructionOption val = mapper.readValue(entry.getValue().toString(), typerefs[key.type]);
-                    map.put(key, val);
+                JsonNode node = mapper.readTree(parser);
+                for (Iterator<JsonNode> iter = node.elements(); iter.hasNext();) {
+                    final JsonNode element = iter.next();
+                    ConstructionOptionKey key = mapper.readValue(element.get("key").toString(), ConstructionOptionKey.class);
+                    ConstructionOption val = mapper.readValue(element.toString(), typerefs[key.type]);
+                    list.add(val);
                 }
-                return map;
+                return list;
             }
         }
     }

@@ -9,12 +9,13 @@ import java.io.FileOutputStream
 import java.io.PrintWriter
 
 /**
- *
+ * Utility for generating construction option json file.
  */
 class OptionGenerator {
-    val map = mapOf(
-        ConstructionOptionKey.OMNI to constructionOption {
+    val list = listOf(
+        constructionOption {
             techProgression {
+                key = ConstructionOptionKey.OMNI
                 techBase = TechBase.ALL
                 rating = Rating.RATING_E
                 availability = "XEED"
@@ -30,7 +31,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.OMNI_VEHICLE to constructionOption {
+        constructionOption {
+            key = ConstructionOptionKey.OMNI_VEHICLE
             techProgression {
                 techBase = TechBase.ALL
                 rating = Rating.RATING_E
@@ -48,7 +50,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.PATCHWORK_ARMOR to constructionOption {
+        constructionOption {
+            key = ConstructionOptionKey.PATCHWORK_ARMOR
             techProgression {
                 techBase = TechBase.ALL
                 availability = "EDEE"
@@ -60,7 +63,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.MIXED_TECH to constructionOption {
+        constructionOption {
+            key = ConstructionOptionKey.MIXED_TECH
             techProgression {
                 techBase = TechBase.ALL
                 availability = "XXED"
@@ -78,7 +82,8 @@ class OptionGenerator {
             }
         },
 
-        ConstructionOptionKey.MEK_STANDARD to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.MEK_STANDARD
             unitType = UnitType.BATTLE_MEK
             minWeight = 20.0
             maxWeight = 100.0
@@ -97,7 +102,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.MEK_PRIMITIVE to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.MEK_PRIMITIVE
             unitType = UnitType.BATTLE_MEK
             minWeight = 10.0
             maxWeight = 100.0
@@ -115,7 +121,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.MEK_BIMODAL_LAM to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.MEK_BIMODAL_LAM
             unitType = UnitType.BATTLE_MEK
             minWeight = 20.0
             maxWeight = 55.0
@@ -137,7 +144,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.EXPERIMENTAL
             }
         },
-        ConstructionOptionKey.MEK_STANDARD_LAM to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.MEK_STANDARD_LAM
             unitType = UnitType.BATTLE_MEK
             minWeight = 20.0
             maxWeight = 55.0
@@ -159,7 +167,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.EXPERIMENTAL
             }
         },
-        ConstructionOptionKey.MEK_QUADVEE to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.MEK_QUADVEE
             unitType = UnitType.BATTLE_MEK
             minWeight = 20.0
             maxWeight = 100.0
@@ -175,7 +184,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.MEK_TRIPOD to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.MEK_TRIPOD
             unitType = UnitType.BATTLE_MEK
             minWeight = 20.0
             maxWeight = 100.0
@@ -192,7 +202,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.MEK_SUPERHEAVY to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.MEK_SUPERHEAVY
             unitType = UnitType.BATTLE_MEK
             minWeight = 105.0
             maxWeight = 200.0
@@ -209,7 +220,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.MEK_SUPERHEAVY_TRIPOD to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.MEK_SUPERHEAVY_TRIPOD
             unitType = UnitType.BATTLE_MEK
             minWeight = 105.0
             maxWeight = 200.0
@@ -226,7 +238,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.MEK_ULTRALIGHT to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.MEK_ULTRALIGHT
             unitType = UnitType.BATTLE_MEK
             minWeight = 10.0
             maxWeight = 15.0
@@ -245,7 +258,8 @@ class OptionGenerator {
             }
         },
 
-        ConstructionOptionKey.IMEK_STANDARD to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.IMEK_STANDARD
             unitType = UnitType.INDUSTRIAL_MEK
             minWeight = 10.0
             maxWeight = 100.0
@@ -263,7 +277,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.IMEK_PRIMITIVE to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.IMEK_PRIMITIVE
             unitType = UnitType.INDUSTRIAL_MEK
             minWeight = 10.0
             maxWeight = 100.0
@@ -281,7 +296,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.IMEK_SUPERHEAVY to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.IMEK_SUPERHEAVY
             unitType = UnitType.INDUSTRIAL_MEK
             minWeight = 105.0
             maxWeight = 200.0
@@ -298,7 +314,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.IMEK_TRIPOD to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.IMEK_TRIPOD
             unitType = UnitType.INDUSTRIAL_MEK
             minWeight = 10.0
             maxWeight = 100.0
@@ -315,7 +332,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.IMEK_SUPERHEAVY_TRIPOD to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.IMEK_SUPERHEAVY_TRIPOD
             unitType = UnitType.INDUSTRIAL_MEK
             minWeight = 105.0
             maxWeight = 200.0
@@ -333,7 +351,8 @@ class OptionGenerator {
             }
         },
 
-        ConstructionOptionKey.PROTOMEK_STANDARD to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.PROTOMEK_STANDARD
             unitType = UnitType.PROTOMEK
             minWeight = 2.0
             maxWeight = 9.0
@@ -351,7 +370,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.PROTOMEK_ULTRAHEAVY to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.PROTOMEK_ULTRAHEAVY
             unitType = UnitType.PROTOMEK
             minWeight = 10.0
             maxWeight = 15.0
@@ -369,7 +389,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.PROTOMEK_QUAD to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.PROTOMEK_QUAD
             unitType = UnitType.PROTOMEK
             minWeight = 2.0
             maxWeight = 15.0
@@ -386,7 +407,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.PROTOMEK_GLIDER to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.PROTOMEK_GLIDER
             unitType = UnitType.PROTOMEK
             minWeight = 2.0
             maxWeight = 15.0
@@ -404,7 +426,8 @@ class OptionGenerator {
             }
         },
 
-        ConstructionOptionKey.CV_WHEELED to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_WHEELED
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 1.0
             maxWeight = 80.0
@@ -422,7 +445,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.CV_TRACKED to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_TRACKED
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 1.0
             maxWeight = 100.0
@@ -440,7 +464,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.CV_HOVER to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_HOVER
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 1.0
             maxWeight = 50.0
@@ -458,7 +483,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.CV_VTOL to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_VTOL
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 1.0
             maxWeight = 30.0
@@ -476,7 +502,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.CV_WIGE to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_WIGE
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 1.0
             maxWeight = 80.0
@@ -494,7 +521,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.CV_NAVAL_DISPLACEMENT to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_NAVAL_DISPLACEMENT
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 1.0
             maxWeight = 300.0
@@ -512,7 +540,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.CV_NAVAL_HYDROFOIL to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_NAVAL_HYDROFOIL
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 1.0
             maxWeight = 100.0
@@ -529,7 +558,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.CV_NAVAL_SUBMARINE to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_NAVAL_SUBMARINE
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 1.0
             maxWeight = 300.0
@@ -547,7 +577,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.CV_SUPERHEAVY_WHEELED to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_SUPERHEAVY_WHEELED
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 81.0
             maxWeight = 160.0
@@ -565,7 +596,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.CV_SUPERHEAVY_TRACKED to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_SUPERHEAVY_TRACKED
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 101.0
             maxWeight = 200.0
@@ -583,7 +615,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.CV_SUPERHEAVY_HOVER to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_SUPERHEAVY_HOVER
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 51.0
             maxWeight = 100.0
@@ -601,7 +634,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.CV_SUPERHEAVY_VTOL to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_SUPERHEAVY_VTOL
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 31.0
             maxWeight = 60.0
@@ -619,7 +653,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.CV_SUPERHEAVY_WIGE to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_SUPERHEAVY_WIGE
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 81.0
             maxWeight = 160.0
@@ -637,7 +672,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.CV_SUPERHEAVY_NAVAL_DISPLACEMENT to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_SUPERHEAVY_NAVAL_DISPLACEMENT
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 301.0
             maxWeight = 555.0
@@ -655,7 +691,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.CV_SUPERHEAVY_NAVAL_SUBMARINE to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.CV_SUPERHEAVY_NAVAL_SUBMARINE
             unitType = UnitType.COMBAT_VEHICLE
             minWeight = 301.0
             maxWeight = 555.0
@@ -674,7 +711,8 @@ class OptionGenerator {
             }
         },
 
-        ConstructionOptionKey.SV_WHEELED_S to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_WHEELED_S
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 0.1
             maxWeight = 4.999
@@ -693,7 +731,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_WHEELED_M to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_WHEELED_M
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 5.0
             maxWeight = 80.0
@@ -713,7 +752,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_WHEELED_L to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_WHEELED_L
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 80.5
             maxWeight = 160.0
@@ -732,7 +772,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_TRACKED_S to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_TRACKED_S
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 0.1
             maxWeight = 4.999
@@ -751,7 +792,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_TRACKED_M to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_TRACKED_M
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 5.0
             maxWeight = 100.0
@@ -771,7 +813,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_TRACKED_L to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_TRACKED_L
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 100.5
             maxWeight = 200.0
@@ -790,7 +833,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_HOVER_S to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_HOVER_S
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 0.1
             maxWeight = 4.999
@@ -809,7 +853,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_HOVER_M to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_HOVER_M
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 5.0
             maxWeight = 50.0
@@ -829,7 +874,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_HOVER_L to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_HOVER_L
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 50.5
             maxWeight = 100.0
@@ -848,7 +894,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_VTOL_S to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_VTOL_S
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 0.1
             maxWeight = 4.999
@@ -867,7 +914,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_VTOL_M to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_VTOL_M
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 5.0
             maxWeight = 30.0
@@ -887,7 +935,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_VTOL_L to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_VTOL_L
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 30.5
             maxWeight = 60.0
@@ -906,7 +955,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_NAVAL_S to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_NAVAL_S
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 0.1
             maxWeight = 4.999
@@ -925,7 +975,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_NAVAL_M to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_NAVAL_M
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 5.0
             maxWeight = 300.0
@@ -945,7 +996,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_NAVAL_L to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_NAVAL_L
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 300.5
             maxWeight = 100000.0
@@ -964,7 +1016,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.SV_WIGE_S to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_WIGE_S
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 0.1
             maxWeight = 4.999
@@ -983,7 +1036,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_WIGE_M to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_WIGE_M
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 5.0
             maxWeight = 80.0
@@ -1003,7 +1057,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_WIGE_L to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_WIGE_L
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 80.5
             maxWeight = 160.0
@@ -1022,7 +1077,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_FIXED_WING_S to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_FIXED_WING_S
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 0.1
             maxWeight = 4.999
@@ -1041,7 +1097,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_FIXED_WING_M to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_FIXED_WING_M
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 5.0
             maxWeight = 100.0
@@ -1061,7 +1118,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_FIXED_WING_L to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_FIXED_WING_L
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 100.5
             maxWeight = 200.0
@@ -1080,7 +1138,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_AIRSHIP_S to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_AIRSHIP_S
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 0.1
             maxWeight = 4.999
@@ -1099,7 +1158,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_AIRSHIP_M to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_AIRSHIP_M
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 5.0
             maxWeight = 300.0
@@ -1119,7 +1179,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SV_AIRSHIP_L to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_AIRSHIP_L
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 300.5
             maxWeight = 1000.0
@@ -1138,7 +1199,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.SV_RAIL_S to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_RAIL_S
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 0.1
             maxWeight = 4.999
@@ -1157,7 +1219,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.SV_RAIL_M to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_RAIL_M
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 5.0
             maxWeight = 300.0
@@ -1177,7 +1240,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.SV_RAIL_L to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_RAIL_L
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 300.5
             maxWeight = 600.0
@@ -1196,7 +1260,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.SV_SATELLITE_S to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_SATELLITE_S
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 0.1
             maxWeight = 4.999
@@ -1215,7 +1280,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.SV_SATELLITE_M to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_SATELLITE_M
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 5.0
             maxWeight = 100.0
@@ -1235,7 +1301,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.SV_SATELLITE_L to vehicleConstructionOption {
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.SV_SATELLITE_L
             unitType = UnitType.SUPPORT_VEHICLE
             minWeight = 100.5
             maxWeight = 300.0
@@ -1255,7 +1322,8 @@ class OptionGenerator {
             }
         },
 
-        ConstructionOptionKey.BA_EXOSKELETON to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.BA_EXOSKELETON
             unitType = UnitType.BATTLE_ARMOR
             minKg = 80
             maxKg = 400
@@ -1271,7 +1339,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.BA_PAL to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.BA_PAL
             unitType = UnitType.BATTLE_ARMOR
             minKg = 80
             maxKg = 400
@@ -1294,7 +1363,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.BA_LIGHT to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.BA_LIGHT
             unitType = UnitType.BATTLE_ARMOR
             minKg = 401
             maxKg = 750
@@ -1317,7 +1387,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.BA_MEDIUM to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.BA_MEDIUM
             unitType = UnitType.BATTLE_ARMOR
             minKg = 401
             maxKg = 750
@@ -1340,7 +1411,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.BA_HEAVY to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.BA_HEAVY
             unitType = UnitType.BATTLE_ARMOR
             minKg = 401
             maxKg = 750
@@ -1363,7 +1435,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.BA_ASSAULT to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.BA_ASSAULT
             unitType = UnitType.BATTLE_ARMOR
             minKg = 401
             maxKg = 750
@@ -1385,7 +1458,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.ASF_PRIMITIVE to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.ASF_PRIMITIVE
             unitType = UnitType.ASF
             minWeight = 10.0
             maxWeight = 100.0
@@ -1402,7 +1476,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.ASF_STANDARD to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.ASF_STANDARD
             unitType = UnitType.ASF
             minWeight = 5.0
             maxWeight = 100.0
@@ -1418,7 +1493,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.CF_STANDARD to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.CF_STANDARD
             unitType = UnitType.CONV_FIGHTER
             minWeight = 5.0
             maxWeight = 50.0
@@ -1434,7 +1510,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SC_STANDARD to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.SC_STANDARD
             unitType = UnitType.SMALL_CRAFT
             minWeight = 100.0
             maxWeight = 200.0
@@ -1450,7 +1527,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.SC_PRIMITIVE to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.SC_PRIMITIVE
             unitType = UnitType.SMALL_CRAFT
             minWeight = 100.0
             maxWeight = 200.0
@@ -1467,7 +1545,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.DS_STANDARD_SPHEROID to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.DS_STANDARD_SPHEROID
             unitType = UnitType.DROPSHIP
             minWeight = 200.0
             maxWeight = 100000.0
@@ -1483,7 +1562,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.DS_STANDARD_AERODYNE to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.DS_STANDARD_AERODYNE
             unitType = UnitType.DROPSHIP
             minWeight = 200.0
             maxWeight = 35000.0
@@ -1499,7 +1579,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.DS_PRIMITIVE_SPHEROID to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.DS_PRIMITIVE_SPHEROID
             unitType = UnitType.DROPSHIP
             minWeight = 200.0
             maxWeight = 100000.0
@@ -1516,7 +1597,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.DS_PRIMITIVE_AERODYNE to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.DS_PRIMITIVE_AERODYNE
             unitType = UnitType.SMALL_CRAFT
             minWeight = 200.0
             maxWeight = 35000.0
@@ -1533,7 +1615,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.STANDARD
             }
         },
-        ConstructionOptionKey.JS_STANDARD to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.JS_STANDARD
             unitType = UnitType.JUMPSHIP
             minWeight = 50000.0
             maxWeight = 500000.0
@@ -1548,7 +1631,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.JS_PRIMITIVE to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.JS_PRIMITIVE
             unitType = UnitType.WARSHIP
             minWeight = 50000.0
             maxWeight = 1000000.0
@@ -1565,7 +1649,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.WARSHIP to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.WARSHIP
             unitType = UnitType.WARSHIP
             minWeight = 100000.0
             maxWeight = 2500000.0
@@ -1587,7 +1672,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.WARSHIP_SUBCOMPACT to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.WARSHIP_SUBCOMPACT
             unitType = UnitType.WARSHIP
             minWeight = 5000.0
             maxWeight = 25000.0
@@ -1606,7 +1692,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.EXPERIMENTAL
             }
         },
-        ConstructionOptionKey.SPACE_STATION_STANDARD to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.SPACE_STATION_STANDARD
             unitType = UnitType.SPACE_STATION
             minWeight = 2000.0
             maxWeight = 2500000.0
@@ -1622,7 +1709,8 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
-        ConstructionOptionKey.SPACE_STATION_MODULAR to unitConstructionOption {
+        unitConstructionOption {
+            key = ConstructionOptionKey.SPACE_STATION_MODULAR
             unitType = UnitType.SPACE_STATION
             minWeight = 2000.0
             maxWeight = 2500000.0
@@ -1639,14 +1727,49 @@ class OptionGenerator {
                 }
                 staticLevel = TechLevel.ADVANCED
             }
+        },
+
+    // Unofficial options from XTRO Boondoggles
+        unitConstructionOption {
+            key = ConstructionOptionKey.MEK_QUAD_LAM_UNOFFICIAL
+            unitType = UnitType.BATTLE_MEK
+            minWeight = 20.0
+            maxWeight = 55.0
+            weightIncrement = 5.0
+            techProgression {
+                techBase = TechBase.ALL
+                rating = Rating.RATING_E
+                availability = "XXXX"
+                isProgression {
+                    prototype = "2690"
+                }
+                staticLevel = TechLevel.UNOFFICIAL
+            }
+        },
+        unitConstructionOption {
+            key = ConstructionOptionKey.MEK_HEAVY_LAM_UNOFFICIAL
+            unitType = UnitType.BATTLE_MEK
+            minWeight = 60.0
+            maxWeight = 100.0
+            weightIncrement = 5.0
+            techProgression {
+                techBase = TechBase.ALL
+                rating = Rating.RATING_E
+                availability = "XXXX"
+                isProgression {
+                    prototype = "2699"
+                }
+                staticLevel = TechLevel.UNOFFICIAL
+            }
         }
+
     )
 }
 
 fun main() {
     val generator = OptionGenerator()
     val mapper = ObjectMapper()
-    val output = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(generator.map)
+    val output = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(generator.list)
     val f = File("util/data", "construction_options.json")
     val os = FileOutputStream(f)
     val pw = PrintWriter(os)

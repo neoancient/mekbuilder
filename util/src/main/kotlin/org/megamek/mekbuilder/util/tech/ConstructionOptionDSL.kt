@@ -12,12 +12,13 @@ const val PS = "1950"
 const val ES = "2100"
 
 open class ConstructionOptionBuilder {
+    var key: ConstructionOptionKey? = null
     var techProg = TechProgression()
     fun techProgression(block: TechProgressionBuilder.() -> Unit) {
         techProg = TechProgressionBuilder().apply(block).build()
     }
 
-    open fun build() = ConstructionOption(techProg)
+    open fun build() = ConstructionOption(key, techProg)
 }
 
 open class UnitConstructionOptionBuilder: ConstructionOptionBuilder() {
@@ -43,14 +44,14 @@ open class UnitConstructionOptionBuilder: ConstructionOptionBuilder() {
     var prevWeightKey: ConstructionOptionKey? = null
     var nextWeightKey: ConstructionOptionKey? = null
 
-    override fun build(): ConstructionOption = UnitConstructionOption(techProg, unitType,
+    override fun build(): ConstructionOption = UnitConstructionOption(key, techProg, unitType,
             minWeight, maxWeight, weightIncrement, prevWeightKey, nextWeightKey)
 }
 
 open class VehicleConstructionOptionBuilder: UnitConstructionOptionBuilder() {
     var motiveType: MotiveType? = null
 
-    override fun build(): ConstructionOption = VehicleConstructionOption(techProg, unitType,
+    override fun build(): ConstructionOption = VehicleConstructionOption(key, techProg, unitType,
             minWeight, maxWeight, weightIncrement, prevWeightKey, nextWeightKey, motiveType)
 }
 

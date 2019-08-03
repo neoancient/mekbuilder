@@ -40,14 +40,14 @@ public class UnitConstructionOption extends ConstructionOption {
 
     @JsonCreator
     UnitConstructionOption() {
-        this(new TechProgression(), UnitType.BATTLE_MEK, 5.0, 100.0, 5.0,
+        this(null, new TechProgression(), UnitType.BATTLE_MEK, 5.0, 100.0, 5.0,
                 null, null);
     }
 
-    public UnitConstructionOption(TechProgression techProgression,
+    public UnitConstructionOption(ConstructionOptionKey key, TechProgression techProgression,
                            UnitType unitType, double minWeight, double maxWeight, double weightIncrement,
                            ConstructionOptionKey prevWeightKey, ConstructionOptionKey nextWeightKey) {
-        super(techProgression);
+        super(key, techProgression);
         this.unitType = unitType;
         this.minWeight = minWeight;
         this.maxWeight = maxWeight;

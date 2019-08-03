@@ -34,16 +34,16 @@ public class VehicleConstructionOption extends UnitConstructionOption {
     @JsonCreator
     @SuppressWarnings("unused")
     VehicleConstructionOption() {
-        this(new TechProgression(),
+        this(null, new TechProgression(),
                 UnitType.BATTLE_MEK, 0.0, 0.0, 0.0, null, null,
                 MotiveType.WHEELED);
     }
 
-    public VehicleConstructionOption(TechProgression techProgression,
+    public VehicleConstructionOption(ConstructionOptionKey key, TechProgression techProgression,
                               UnitType unitType, double minWeight, double maxWeight, double weightIncrement,
                               ConstructionOptionKey prevWeightKey, ConstructionOptionKey nextWeightKey,
                               MotiveType motiveType) {
-        super(techProgression, unitType, minWeight, maxWeight, weightIncrement, prevWeightKey, nextWeightKey);
+        super(key, techProgression, unitType, minWeight, maxWeight, weightIncrement, prevWeightKey, nextWeightKey);
         this.motiveType = motiveType;
     }
 
