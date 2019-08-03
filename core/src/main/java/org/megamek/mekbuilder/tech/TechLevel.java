@@ -18,19 +18,21 @@
  */
 package org.megamek.mekbuilder.tech;
 
+import java.util.ResourceBundle;
+
 /**
  * Tech levels corresponding to sets of rules
  */
 public enum TechLevel {
-    INTRO ("Introductory"),
-    STANDARD ("Standard/Tournament"),
-    ADVANCED ("Advanced"),
-    EXPERIMENTAL ("Experimental"),
-    UNOFFICIAL ("Unofficial");
+    INTRO,
+    STANDARD,
+    ADVANCED,
+    EXPERIMENTAL,
+    UNOFFICIAL;
 
-    public final String displayName;
+    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle(TechLevel.class.getName());
 
-    TechLevel(String displayName) {
-        this.displayName = displayName;
+    public final String displayName() {
+        return resourceBundle.getString("displayName." + name());
     }
 }

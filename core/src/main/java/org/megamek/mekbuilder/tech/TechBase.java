@@ -18,21 +18,26 @@
  */
 package org.megamek.mekbuilder.tech;
 
+import java.util.ResourceBundle;
+
 /**
  * Component tech base
  */
 
 public enum TechBase {
-    IS ("Inner Sphere"),
-    CLAN ("Clan"),
-    ALL ("Mixed");
+    IS,
+    CLAN,
+    ALL;
 
+    private static final ResourceBundle resourceBundle = ResourceBundle.getBundle(TechBase.class.getName());
+
+    public String fullName() {
+        return resourceBundle.getString("fullName." + name());
+    }
     /**
      * The displayable name used for units (ALL is shown as "Mixed").
      */
-    public final String unitDisplayName;
-
-    TechBase(String unitDisplayName) {
-        this.unitDisplayName = unitDisplayName;
+    public String unitDisplayName() {
+        return resourceBundle.getString("unitDisplayName." + name());
     }
 }
