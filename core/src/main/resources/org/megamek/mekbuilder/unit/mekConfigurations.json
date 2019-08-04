@@ -1,0 +1,46 @@
+[ {
+  "baseType" : "STANDARD",
+  "subType" : "STANDARD_BIPED",
+  "limbConfiguration" : "BIPED",
+  "constructionOptions" : [ "MEK_ULTRALIGHT", "MEK_STANDARD", "MEK_SUPERHEAVY" ]
+}, {
+  "baseType" : "STANDARD",
+  "subType" : "STANDARD_QUAD",
+  "limbConfiguration" : "QUAD",
+  "constructionOptions" : [ "MEK_ULTRALIGHT", "MEK_STANDARD", "MEK_SUPERHEAVY" ]
+}, {
+  "baseType" : "STANDARD",
+  "subType" : "STANDARD_TRIPOD",
+  "limbConfiguration" : "TRIPOD",
+  "constructionOptions" : [ "MEK_TRIPOD", "MEK_SUPERHEAVY_TRIPOD" ]
+}, {
+  "baseType" : "PRIMITIVE",
+  "subType" : "PRIMITIVE_BIPED",
+  "limbConfiguration" : "BIPED",
+  "constructionOptions" : [ "MEK_PRIMITIVE" ]
+}, {
+  "baseType" : "PRIMITIVE",
+  "subType" : "PRIMITIVE_QUAD",
+  "limbConfiguration" : "QUAD",
+  "constructionOptions" : [ "MEK_PRIMITIVE" ]
+}, {
+  "baseType" : "LAM",
+  "subType" : "LAM_STANDARD",
+  "limbConfiguration" : "BIPED",
+  "constructionOptions" : [ "MEK_STANDARD_LAM" ]
+}, {
+  "baseType" : "LAM",
+  "subType" : "LAM_BIMODAL",
+  "limbConfiguration" : "BIPED",
+  "constructionOptions" : [ "MEK_BIMODAL_LAM" ]
+}, {
+  "baseType" : "QUADVEE",
+  "subType" : "QUADVEE_TRACKED",
+  "limbConfiguration" : "QUAD",
+  "constructionOptions" : [ "MEK_QUADVEE_TRACKED" ]
+}, {
+  "baseType" : "QUADVEE",
+  "subType" : "QUADVEE_WHEELED",
+  "limbConfiguration" : "QUAD",
+  "constructionOptions" : [ "MEK_QUADVEE_WHEELED" ]
+} ]

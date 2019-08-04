@@ -47,14 +47,25 @@
   "prevWeightKey" : null,
   "nextWeightKey" : null
 }, {
-  "key" : "MEK_QUADVEE",
+  "key" : "MEK_QUADVEE_TRACKED",
   "techProgression" : "CLAN|F|XXXF|-,-,-,-,-|~3130(CHH),3135(CHH),-,-,-|ADVANCED",
   "unitType" : "BATTLE_MEK",
   "minWeight" : 20.0,
   "maxWeight" : 100.0,
   "weightIncrement" : 5.0,
   "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "nextWeightKey" : null,
+  "motiveType" : "TRACKED"
+}, {
+  "key" : "MEK_QUADVEE_WHEELED",
+  "techProgression" : "CLAN|F|XXXF|-,-,-,-,-|~3130(CHH),3135(CHH),-,-,-|ADVANCED",
+  "unitType" : "BATTLE_MEK",
+  "minWeight" : 20.0,
+  "maxWeight" : 100.0,
+  "weightIncrement" : 5.0,
+  "prevWeightKey" : null,
+  "nextWeightKey" : null,
+  "motiveType" : "WHEELED"
 }, {
   "key" : "MEK_TRIPOD",
   "techProgression" : "IS|D|FFFE|~2585(TH),2602(TH),-,-,-|-,-,-,-,-|ADVANCED",

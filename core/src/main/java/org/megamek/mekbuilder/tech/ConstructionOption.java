@@ -19,8 +19,16 @@
 package org.megamek.mekbuilder.tech;
 
 import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.core.JsonGenerator;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.fasterxml.jackson.databind.ser.std.StdSerializer;
+
+import java.io.IOException;
 
 /**
  * Class for tracking tech progression of various generic construction options. Base class for unit-specific
@@ -53,4 +61,33 @@ public class ConstructionOption implements ITechDelegator {
         return techProgression;
     }
 
+    /**
+     * Serializes only the key value
+     */
+    public static class Serializer extends StdSerializer<ConstructionOption> {
+        @JsonCreator
+        public Serializer() {
+            super(ConstructionOption.class);
+        }
+
+        @Override
+        public void serialize(ConstructionOption value, JsonGenerator gen, SerializerProvider provider) throws IOException {
+            gen.writeString(value.key.name());
+        }
+    }
+
+    /**
+     * Reads the key value and fetches the object that's already loaded
+     */
+    public static class Deserializer extends StdDeserializer<ConstructionOption> {
+        @JsonCreator
+        public Deserializer() {
+            super(ConstructionOption.class);
+        }
+
+        @Override
+        public ConstructionOption deserialize(JsonParser parser, DeserializationContext ctxt) throws IOException {
+            return ConstructionOptionKey.valueOf(parser.getText()).get();
+        }
+    }
 }

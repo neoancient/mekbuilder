@@ -167,12 +167,31 @@ class OptionGenerator {
                 staticLevel = TechLevel.EXPERIMENTAL
             }
         },
-        unitConstructionOption {
-            key = ConstructionOptionKey.MEK_QUADVEE
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.MEK_QUADVEE_TRACKED
             unitType = UnitType.BATTLE_MEK
             minWeight = 20.0
             maxWeight = 100.0
             weightIncrement = 5.0
+            motiveType = MotiveType.TRACKED
+            techProgression {
+                techBase = TechBase.CLAN
+                rating = Rating.RATING_F
+                availability = "XXXF"
+                clanProgression {
+                    prototype = "~3130(CHH)"
+                    production = "3135(CHH)"
+                }
+                staticLevel = TechLevel.ADVANCED
+            }
+        },
+        vehicleConstructionOption {
+            key = ConstructionOptionKey.MEK_QUADVEE_WHEELED
+            unitType = UnitType.BATTLE_MEK
+            minWeight = 20.0
+            maxWeight = 100.0
+            weightIncrement = 5.0
+            motiveType = MotiveType.WHEELED
             techProgression {
                 techBase = TechBase.CLAN
                 rating = Rating.RATING_F

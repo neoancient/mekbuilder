@@ -48,7 +48,8 @@ public enum ConstructionOptionKey {
     MEK_STANDARD (ConstructionOptionKey.TYPE_UNIT),
     MEK_BIMODAL_LAM (ConstructionOptionKey.TYPE_UNIT),
     MEK_STANDARD_LAM (ConstructionOptionKey.TYPE_UNIT),
-    MEK_QUADVEE (ConstructionOptionKey.TYPE_UNIT),
+    MEK_QUADVEE_TRACKED (ConstructionOptionKey.TYPE_VEHICLE),
+    MEK_QUADVEE_WHEELED (ConstructionOptionKey.TYPE_VEHICLE),
     MEK_TRIPOD (ConstructionOptionKey.TYPE_UNIT),
     MEK_SUPERHEAVY (ConstructionOptionKey.TYPE_UNIT),
     MEK_SUPERHEAVY_TRIPOD (ConstructionOptionKey.TYPE_UNIT),
@@ -142,11 +143,14 @@ public enum ConstructionOptionKey {
     static final int TYPE_UNIT = 1;
     static final int TYPE_VEHICLE = 2;
 
-    final int type;
+    /**
+     * For internal use to determine which class to instantiate when deserializing
+     */
+    private final int _type;
     private OptionMap optionMap;
 
-    ConstructionOptionKey(int type) {
-        this.type = type;
+    ConstructionOptionKey(int _type) {
+        this._type = _type;
     }
 
     public @Nullable ConstructionOption get() {
@@ -206,7 +210,7 @@ public enum ConstructionOptionKey {
                 for (Iterator<JsonNode> iter = node.elements(); iter.hasNext();) {
                     final JsonNode element = iter.next();
                     ConstructionOptionKey key = mapper.readValue(element.get("key").toString(), ConstructionOptionKey.class);
-                    ConstructionOption val = mapper.readValue(element.toString(), typerefs[key.type]);
+                    ConstructionOption val = mapper.readValue(element.toString(), typerefs[key._type]);
                     list.add(val);
                 }
                 return list;

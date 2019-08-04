@@ -1,0 +1,26 @@
+[ {
+  "baseType" : "STANDARD",
+  "subType" : "STANDARD_BIPED",
+  "limbConfiguration" : "BIPED",
+  "constructionOptions" : [ "IMEK_STANDARD", "IMEK_SUPERHEAVY" ]
+}, {
+  "baseType" : "STANDARD",
+  "subType" : "STANDARD_QUAD",
+  "limbConfiguration" : "QUAD",
+  "constructionOptions" : [ "IMEK_STANDARD", "IMEK_SUPERHEAVY" ]
+}, {
+  "baseType" : "STANDARD",
+  "subType" : "STANDARD_TRIPOD",
+  "limbConfiguration" : "TRIPOD",
+  "constructionOptions" : [ "IMEK_TRIPOD", "IMEK_SUPERHEAVY_TRIPOD" ]
+}, {
+  "baseType" : "PRIMITIVE",
+  "subType" : "PRIMITIVE_BIPED",
+  "limbConfiguration" : "BIPED",
+  "constructionOptions" : [ "IMEK_PRIMITIVE" ]
+}, {
+  "baseType" : "PRIMITIVE",
+  "subType" : "PRIMITIVE_QUAD",
+  "limbConfiguration" : "QUAD",
+  "constructionOptions" : [ "IMEK_PRIMITIVE" ]
+} ]
