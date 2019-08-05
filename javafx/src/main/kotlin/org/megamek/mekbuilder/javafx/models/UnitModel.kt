@@ -7,6 +7,7 @@ import javafx.collections.ObservableList
 import org.megamek.mekbuilder.component.Mount
 import org.megamek.mekbuilder.unit.UnitBuild
 import org.megamek.mekbuilder.unit.UnitLocation
+import org.megamek.mekbuilder.unit.UnitType
 import tornadofx.*
 
 /**
@@ -14,7 +15,7 @@ import tornadofx.*
  */
 abstract class UnitModel (unitBuild: UnitBuild) {
     val unit = unitBuild
-    val unitType = unit.unitType
+    val unitTypeProperty = ReadOnlyObjectWrapper<UnitType>(unit.unitType)
 
     val baseOptionProperty = observable(unit, UnitBuild::getBaseConstructionOption, UnitBuild::setConstructionOption)
     var baseConstructionOption by baseOptionProperty

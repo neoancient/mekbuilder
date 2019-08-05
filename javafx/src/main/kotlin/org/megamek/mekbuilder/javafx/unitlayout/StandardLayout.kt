@@ -7,12 +7,14 @@ import javafx.scene.layout.AnchorPane
 import javafx.scene.layout.VBox
 import org.megamek.mekbuilder.javafx.view.BasicInfo
 import org.megamek.mekbuilder.javafx.view.MekChassis
+import org.megamek.mekbuilder.javafx.view.MekConfigPanel
 import tornadofx.*
 
 /**
  *
  */
 class StandardLayout: View() {
+    val mekConfiguration: MekConfigPanel by inject()
     val basicInfo: BasicInfo by inject()
     val mekChassis: MekChassis by inject()
 
@@ -49,6 +51,7 @@ class StandardLayout: View() {
             */
 
         structureLeft.children.setAll(
+                wrapAnchor(mekConfiguration.root),
                 wrapAnchor(basicInfo.root),
                 wrapAnchor(mekChassis.root)
         )

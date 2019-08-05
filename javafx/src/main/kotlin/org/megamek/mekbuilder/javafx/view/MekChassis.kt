@@ -32,16 +32,16 @@ class MekChassis: View(), InvalidationListener {
     val cbGyro: ComboBox<Component> by fxid()
     val cbCockpit: ComboBox<Cockpit> by fxid()
 
-    val maxWeight = doubleBinding(model.baseConfiguration) {
-        var config = model.baseConfiguration.value
+    val maxWeight = doubleBinding(model.baseOption) {
+        var config = model.baseOption.value
         while ((config.nextWeightKey?.get() != null) && techFilter.isLegal(config.nextWeightKey.get())) {
             config = config.nextWeightKey.get() as UnitConstructionOption
         }
         config.maxWeight
     }
 
-    val minWeight = doubleBinding(model.baseConfiguration) {
-        var config = model.baseConfiguration.value
+    val minWeight = doubleBinding(model.baseOption) {
+        var config = model.baseOption.value
         while ((config.prevWeightKey?.get() != null) && techFilter.isLegal(config.prevWeightKey.get())) {
             config = config.prevWeightKey.get() as UnitConstructionOption
         }

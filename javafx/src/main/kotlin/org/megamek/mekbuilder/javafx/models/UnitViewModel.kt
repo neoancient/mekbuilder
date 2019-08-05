@@ -4,6 +4,7 @@ import javafx.beans.property.SimpleListProperty
 import javafx.beans.property.SimpleObjectProperty
 import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.unit.MekBuild
+import org.megamek.mekbuilder.unit.MekConfiguration
 import tornadofx.*
 
 /**
@@ -11,11 +12,11 @@ import tornadofx.*
  */
 class UnitViewModel(): ViewModel() {
     var unitModel: UnitModel = MekModel(MekBuild())
-
-    val baseConfiguration = bind{unitModel.baseOptionProperty}
-    val minWeight = doubleBinding(baseConfiguration) {unitModel.baseConstructionOption.minWeight}
-    val maxWeight = doubleBinding(baseConfiguration) {unitModel.baseConstructionOption.maxWeight}
-    val weightIncrement = doubleBinding(baseConfiguration) {unitModel.baseConstructionOption.weightIncrement}
+    val unitType = bind{unitModel.unitTypeProperty}
+    val baseOption = bind{unitModel.baseOptionProperty}
+    val minWeight = doubleBinding(baseOption) {unitModel.baseConstructionOption.minWeight}
+    val maxWeight = doubleBinding(baseOption) {unitModel.baseConstructionOption.maxWeight}
+    val weightIncrement = doubleBinding(baseOption) {unitModel.baseConstructionOption.weightIncrement}
     val chassisName = bind{unitModel.chassisProperty}
     val modelName = bind{unitModel.modelProperty}
     val source = bind{unitModel.sourceProperty}
@@ -36,6 +37,6 @@ class UnitViewModel(): ViewModel() {
     val runMP = bind{unitModel.runMPProperty}
 
     // Mek properties
+    val mekConfiguration = bind{if (unitModel is MekModel) (unitModel as MekModel).configurationProperty else SimpleObjectProperty<MekConfiguration>()}
     val internalStructure = bind {if (unitModel is MekModel) (unitModel as MekModel).internalStructureProperty else SimpleObjectProperty<Component>()}
-    val limbConfiguration = bind {if (unitModel is MekModel) (unitModel as MekModel).limbConfigurationProperty else SimpleObjectProperty<MekBuild.LimbConfiguration>()}
 }

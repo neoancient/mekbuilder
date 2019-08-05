@@ -37,7 +37,7 @@ public class MekBuild extends UnitBuild {
     };
 
     private final Map<UnitLocation, Integer> criticalSlots;
-    private LimbConfiguration limbConfiguration;
+    private MekConfiguration configuration;
     private double tonnage = 20;
 
     private MekInternalStructure internalStructure;
@@ -52,7 +52,7 @@ public class MekBuild extends UnitBuild {
     public MekBuild() {
         super((UnitConstructionOption) ConstructionOptionKey.MEK_STANDARD.get());
         criticalSlots = new EnumMap<>(UnitLocation.class);
-        limbConfiguration = LimbConfiguration.BIPED;
+        configuration = MekConfiguration.getConfigurations(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_BIPED);
         internalStructure = new MekInternalStructure(this);
         getComponents().add(internalStructure);
         engineMount = new MekEngineMount(this, (MVFEngine) ComponentLibrary.getInstance()
@@ -79,18 +79,18 @@ public class MekBuild extends UnitBuild {
 
     @Override
     public boolean isBiped() {
-        return limbConfiguration.equals(LimbConfiguration.BIPED)
-                || limbConfiguration.equals(LimbConfiguration.ARMLESS);
+        return configuration.getLimbConfiguration().equals(LimbConfiguration.BIPED)
+                || configuration.getLimbConfiguration().equals(LimbConfiguration.ARMLESS);
     }
 
     @Override
     public boolean isTripod() {
-        return limbConfiguration.equals(LimbConfiguration.TRIPOD);
+        return configuration.getLimbConfiguration().equals(LimbConfiguration.TRIPOD);
     }
 
     @Override
     public boolean isQuad() {
-        return limbConfiguration.equals(LimbConfiguration.QUAD);
+        return configuration.getLimbConfiguration().equals(LimbConfiguration.QUAD);
     }
 
     @Override
@@ -109,7 +109,7 @@ public class MekBuild extends UnitBuild {
         criticalSlots.put(UnitLocation.MEK_RTORSO, 12);
         criticalSlots.put(UnitLocation.MEK_LLEG, 6);
         criticalSlots.put(UnitLocation.MEK_RLEG, 6);
-        switch (limbConfiguration) {
+        switch (getLimbConfiguration()) {
             case BIPED:
                 criticalSlots.put(UnitLocation.MEK_LARM, 12);
                 criticalSlots.put(UnitLocation.MEK_RARM, 12);
@@ -144,18 +144,54 @@ public class MekBuild extends UnitBuild {
     }
 
     public LimbConfiguration getLimbConfiguration() {
-        return limbConfiguration;
+        return configuration.getLimbConfiguration();
+    }
+
+    @Override
+    public void setConstructionOption(UnitConstructionOption option) {
+        if (!configuration.getConstructionOptions().contains(option)) {
+            throw new IllegalArgumentException("Mismatch between configuration option "
+                    + configuration.getSubType() + " and constructionOption " + option.getKey());
+        }
+        super.setConstructionOption(option);
+    }
+
+    /**
+     * @return The specific mech configuration
+     */
+    public MekConfiguration getConfiguration() {
+        return configuration;
+    }
+
+    /**
+     * Sets the specific mech configuration. The construction option will be changed to the one most closely
+     * matching the current tonnage.
+     *
+     * @param configuration      The configuration to set
+     */
+    public void setConfiguration(MekConfiguration configuration) {
+        LimbConfiguration oldLimbs = getLimbConfiguration();
+        this.configuration = configuration;
+        if (oldLimbs != getLimbConfiguration()) {
+            resetLimbConfiguration();
+        }
+        for (UnitConstructionOption option : configuration.getConstructionOptions()) {
+            if (getTonnage() >= option.getMinWeight() && getTonnage() <= option.getMaxWeight()) {
+                setConstructionOption(option);
+                return;
+            }
+        }
+        // Current tonnage doesn't match; just pick the first one.
+        setConstructionOption(configuration.getConstructionOptions().get(0));
     }
 
     /**
      * Changes limb configuration and adjusts critical spaces. Equipment mounted on a changed
      * limb is moved to the new corresponding limb, or unmounted if there is no corresponding limb
      * in the new configuration.
-     *
-     * @param newConfiguration The limb configuration to change to.
      */
-    public void setLimbConfiguration(LimbConfiguration newConfiguration) {
-        switch (newConfiguration) {
+    private void resetLimbConfiguration() {
+        switch (getLimbConfiguration()) {
             case BIPED:
                 getComponents().forEach(md -> {
                     md.changeLocation(UnitLocation.MEK_LFLEG, UnitLocation.MEK_LARM);
@@ -184,7 +220,6 @@ public class MekBuild extends UnitBuild {
                 });
                 break;
         }
-        limbConfiguration = newConfiguration;
         initCriticalSlots();
     }
 
