@@ -12,7 +12,7 @@ class MekBuildTest {
     @Test
     void testBiped() {
         MekBuild mek = new MekBuild();
-        mek.setLimbConfiguration(MekBuild.LimbConfiguration.BIPED);
+        mek.setConfiguration(MekConfiguration.getConfigurations(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_BIPED));
 
         assertAll(
                 () -> assertTrue(mek.isBiped()),
@@ -35,7 +35,7 @@ class MekBuildTest {
     @Test
     void testQuad() {
         MekBuild mek = new MekBuild();
-        mek.setLimbConfiguration(MekBuild.LimbConfiguration.QUAD);
+        mek.setConfiguration(MekConfiguration.getConfigurations(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_QUAD));
 
         assertAll(
                 () -> assertFalse(mek.isBiped()),
@@ -58,7 +58,7 @@ class MekBuildTest {
     @Test
     void testTripod() {
         MekBuild mek = new MekBuild();
-        mek.setLimbConfiguration(MekBuild.LimbConfiguration.TRIPOD);
+        mek.setConfiguration(MekConfiguration.getConfigurations(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_TRIPOD));
 
         assertAll(
                 () -> assertFalse(mek.isBiped()),
@@ -89,7 +89,7 @@ class MekBuildTest {
     @Test
     void testQuadStructureTonnage() {
         MekBuild quad = new MekBuild();
-        quad.setLimbConfiguration(MekBuild.LimbConfiguration.QUAD);
+        quad.setConfiguration(MekConfiguration.getConfigurations(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_QUAD));
         quad.setTonnage(50);
 
         assertEquals(quad.getStructureTonnage(), 5);
@@ -98,7 +98,7 @@ class MekBuildTest {
     @Test
     void testTripodStructureTonnage() {
         MekBuild tripod = new MekBuild();
-        tripod.setLimbConfiguration(MekBuild.LimbConfiguration.TRIPOD);
+        tripod.setConfiguration(MekConfiguration.getConfigurations(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_TRIPOD));
         tripod.setTonnage(50);
 
         assertEquals(tripod.getStructureTonnage(), 5.5);

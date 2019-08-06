@@ -48,6 +48,7 @@ public abstract class UnitBuild {
     private int year = 3067;
     private TechBase techBase = TechBase.IS;
     private Faction faction = null;
+    private double tonnage = 0.0;
 
     protected UnitBuild(UnitConstructionOption option) {
         this.baseConstructionOption = option;
@@ -91,7 +92,7 @@ public abstract class UnitBuild {
      *
      * @param option The construction option
      */
-    public void setConstructionOption(UnitConstructionOption option) {
+    public void setBaseConstructionOption(UnitConstructionOption option) {
         if (option.getUnitType() != baseConstructionOption.getUnitType()) {
             throw new IllegalArgumentException("Illegal change of unit type.");
         }
@@ -202,6 +203,24 @@ public abstract class UnitBuild {
     }
 
     /**
+     * To get the current weight of installed components, use {@link #buildWeight()}
+     *
+     * @return The declared final tonnage of the unit.
+     */
+    public double getTonnage() {
+        return tonnage;
+    }
+
+    /**
+     * Sets the declared weight of the unit
+     *
+     * @param tonnage The weight of the unit in tons
+     */
+    public void setTonnage(double tonnage) {
+        this.tonnage = tonnage;
+    }
+
+    /**
      * @return Whether this unit should round weights to the kilogram instead of the half ton.
      */
     abstract public boolean usesKilogramStandard();
@@ -245,13 +264,6 @@ public abstract class UnitBuild {
                 .filter(m -> m.getComponent().hasFlag(ComponentSwitch.TC_LINKABLE))
                 .mapToDouble(Mount::getComponentWeight).sum();
     }
-
-    /**
-     * To get the current weight of installed components, use {@link #buildWeight()}
-     *
-     * @return The declared final tonnage of the unit.
-     */
-    abstract public double getTonnage();
 
     /**
      * @return The weight of the structure, in tons.

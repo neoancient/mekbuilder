@@ -45,10 +45,9 @@ class MekConfigPanel: View() {
             }
         }
         cbSubType.items = configurationsList
-        cbSubType.selectionModel.select(model.mekConfiguration.value)
         SimpleComboBoxCellFactory.setConverter(cbSubType) {
             messages["subType.${it.subType}"]
         }
-        model.mekConfiguration.bind(cbSubType.selectionModel.selectedItemProperty())
+        cbSubType.bind(model.mekConfiguration)
     }
 }

@@ -148,12 +148,12 @@ public class MekBuild extends UnitBuild {
     }
 
     @Override
-    public void setConstructionOption(UnitConstructionOption option) {
+    public void setBaseConstructionOption(UnitConstructionOption option) {
         if (!configuration.getConstructionOptions().contains(option)) {
             throw new IllegalArgumentException("Mismatch between configuration option "
                     + configuration.getSubType() + " and constructionOption " + option.getKey());
         }
-        super.setConstructionOption(option);
+        super.setBaseConstructionOption(option);
     }
 
     /**
@@ -175,14 +175,16 @@ public class MekBuild extends UnitBuild {
         if (oldLimbs != getLimbConfiguration()) {
             resetLimbConfiguration();
         }
+        // Assign the first one that we find with upper limit >= designated tonnage
         for (UnitConstructionOption option : configuration.getConstructionOptions()) {
-            if (getTonnage() >= option.getMinWeight() && getTonnage() <= option.getMaxWeight()) {
-                setConstructionOption(option);
+            if (getTonnage() <= option.getMaxWeight()) {
+                setBaseConstructionOption(option);
                 return;
             }
         }
-        // Current tonnage doesn't match; just pick the first one.
-        setConstructionOption(configuration.getConstructionOptions().get(0));
+        // If we can't find a match, pick the last one
+        setBaseConstructionOption(configuration.getConstructionOptions()
+                .get(configuration.getConstructionOptions().size() - 1));
     }
 
     /**

@@ -17,20 +17,21 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     val unit = unitBuild
     val unitTypeProperty = ReadOnlyObjectWrapper<UnitType>(unit.unitType)
 
-    val baseOptionProperty = observable(unit, UnitBuild::getBaseConstructionOption, UnitBuild::setConstructionOption)
+    val baseOptionProperty = unit.observable(UnitBuild::getBaseConstructionOption, UnitBuild::setBaseConstructionOption)
     var baseConstructionOption by baseOptionProperty
-    val chassisProperty = observable(unit, UnitBuild::getChassis, UnitBuild::setChassis)
+    val chassisProperty = unit.observable(UnitBuild::getChassis, UnitBuild::setChassis)
     var chassisName by chassisProperty
-    val modelProperty = observable(unit, UnitBuild::getModel, UnitBuild::setModel)
+    val modelProperty = unit.observable(UnitBuild::getModel, UnitBuild::setModel)
     var modelName by modelProperty
-    val sourceProperty = observable(unit, UnitBuild::getSource, UnitBuild::setSource)
+    val sourceProperty = unit.observable(UnitBuild::getSource, UnitBuild::setSource)
     var source by sourceProperty
-    val yearProperty = observable(unit, UnitBuild::getYear, UnitBuild::setYear)
+    val yearProperty = unit.observable(UnitBuild::getYear, UnitBuild::setYear)
     var introYear by yearProperty
-    val techBaseProperty = observable(unit, UnitBuild::getTechBase, UnitBuild::setTechBase)
+    val techBaseProperty = unit.observable(UnitBuild::getTechBase, UnitBuild::setTechBase)
     var techBase by techBaseProperty
-    val factionProperty = observable(unit, UnitBuild::getFaction, UnitBuild::setFaction)
+    val factionProperty = unit.observable(UnitBuild::getFaction, UnitBuild::setFaction)
     var faction by factionProperty
+    val tonnageProperty = unit.observable(UnitBuild::getTonnage, UnitBuild::setTonnage)
 
     val componentList = ArrayList<Mount>().observable()
     val componentMap = HashMap<UnitLocation, ObservableList<Mount>>().observable()
