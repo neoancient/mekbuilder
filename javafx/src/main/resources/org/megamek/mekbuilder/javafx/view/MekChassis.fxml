@@ -29,24 +29,18 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
          </rowConstraints>
          <children>
             <Label text="%spnTonnage.text" />
-            <Label text="%cbBaseType.text" GridPane.rowIndex="1" />
-            <Label text="%cbMotiveType.text" GridPane.rowIndex="2" />
-            <Label text="%cbStructure.text" GridPane.rowIndex="3" />
-            <Label text="%cbEngine.text" GridPane.rowIndex="4" />
-            <Label text="%cbGyro.text" GridPane.rowIndex="5" />
-            <Label text="%cbCockpit.text" GridPane.rowIndex="6" />
+            <Label text="%cbStructure.text" GridPane.rowIndex="1" />
+            <Label text="%cbEngine.text" GridPane.rowIndex="2" />
+            <Label text="%cbGyro.text" GridPane.rowIndex="3" />
+            <Label text="%cbCockpit.text" GridPane.rowIndex="4" />
             <Spinner fx:id="spnTonnage" prefWidth="100.0" GridPane.columnIndex="1" />
-            <ComboBox fx:id="cbBaseType" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" />
-            <ComboBox fx:id="cbMotiveType" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" />
-            <ComboBox fx:id="cbStructure" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" />
-            <ComboBox fx:id="cbEngine" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="4" />
-            <ComboBox fx:id="cbGryo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="5" />
-            <ComboBox fx:id="cbCockpit" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="6" />
+            <ComboBox fx:id="cbStructure" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" />
+            <ComboBox fx:id="cbEngine" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cbGryo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cbCockpit" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="4" />
             <CheckBox fx:id="chkOmni" mnemonicParsing="false" text="%chkOmni.text" GridPane.columnIndex="2" />
          </children>
          <padding>

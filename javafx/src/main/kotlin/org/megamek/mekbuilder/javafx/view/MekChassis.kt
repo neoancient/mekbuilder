@@ -25,8 +25,6 @@ class MekChassis: View(), InvalidationListener {
 
     val spnTonnage: Spinner<Double> by fxid()
     val chkOmni: CheckBox by fxid()
-    val cbBaseType: ComboBox<String> by fxid()
-    val cbMotiveType: ComboBox<String> by fxid()
     val cbStructure: ComboBox<Component> by fxid()
     val cbEngine: ComboBox<MVFEngine> by fxid()
     val cbGyro: ComboBox<Component> by fxid()
