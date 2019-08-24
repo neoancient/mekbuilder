@@ -2,7 +2,7 @@ package org.megamek.mekbuilder.javafx.view
 
 import javafx.beans.InvalidationListener
 import javafx.beans.Observable
-import javafx.beans.binding.Bindings
+import javafx.beans.property.SimpleListProperty
 import javafx.scene.control.CheckBox
 import javafx.scene.control.ComboBox
 import javafx.scene.control.TextField
@@ -13,6 +13,8 @@ import org.megamek.mekbuilder.javafx.models.UnitViewModel
 import org.megamek.mekbuilder.javafx.util.SimpleComboBoxCellFactory
 import org.megamek.mekbuilder.tech.*
 import tornadofx.*
+import kotlin.math.max
+import kotlin.math.min
 
 /**
  *
@@ -28,52 +30,61 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
     override fun invalidated(observable: Observable) {listeners.forEach{it.invalidated(this)}}
 
     private val yearFieldConverter = object : StringConverter<Int>() {
-        private val MIN_YEAR = TechProgression.DATE_PS
         private val MAX_YEAR = 3200
-        private val DEFAULT_YEAR = 3067
 
         override fun toString(`object`: Int?): String {
             return `object`?.toString() ?: ""
         }
 
         override fun fromString(string: String): Int? {
-            var str = string.replace("[^\\d]".toRegex(), "")
-            return if (!str.isEmpty()) {
-                Math.min(Math.max(Integer.valueOf(str), MIN_YEAR), MAX_YEAR)
+            val str = string.replace("[^\\d]".toRegex(), "")
+            return if (str.isNotEmpty()) {
+                min(max(Integer.valueOf(str), model.baseOption.value.introDate()), MAX_YEAR)
             } else {
                 model.introYear.value
             }
         }
     }
 
-    val txtChassis: TextField by fxid()
-    val txtModel: TextField by fxid()
-    val txtYear: TextField by fxid()
-    val chkShowExtinct: CheckBox by fxid()
-    val txtSource: TextField by fxid()
-    val cbTechBase: ComboBox<TechBase> by fxid()
-    val cbTechLevel: ComboBox<TechLevel> by fxid()
-    val chkEraBasedProgression: CheckBox by fxid()
-    val cbFaction: ComboBox<Faction> by fxid()
+    private val txtChassis: TextField by fxid()
+    private val txtModel: TextField by fxid()
+    private val txtYear: TextField by fxid()
+    private val chkShowExtinct: CheckBox by fxid()
+    private val txtSource: TextField by fxid()
+    private val cbTechBase: ComboBox<TechBase> by fxid()
+    private val cbTechLevel: ComboBox<TechLevel> by fxid()
+    private val chkEraBasedProgression: CheckBox by fxid()
+    private val cbFaction: ComboBox<Faction> by fxid()
 
     init {
-        txtYear.setTextFormatter(TextFormatter(yearFieldConverter))
-        cbTechBase.items = TechBase.values().toList().observable()
+        val techBaseList = SimpleListProperty<TechBase>()
+        techBaseList.bind(objectBinding(model.baseOption) {
+            if (model.baseOption.value == null
+                    || model.baseOption.value.techBase() == TechBase.ALL) {
+                TechBase.values().toList().observable()
+            } else {
+                observableList(model.baseOption.value.techBase(), TechBase.ALL)
+            }
+        })
+        val techLevelList = SimpleListProperty<TechLevel>()
+        techLevelList.bind(objectBinding(model.baseOption) {
+            TechLevel.values().filter{it >= model.baseOption.value.staticTechLevel()}.toList().observable()
+        })
+        txtYear.textFormatter = TextFormatter(yearFieldConverter)
+        cbTechBase.items = techBaseList
         SimpleComboBoxCellFactory.setConverter(cbTechBase, TechBase::unitDisplayName)
-        cbTechLevel.items = TechLevel.values().toList().observable()
+        cbTechLevel.items = techLevelList
         SimpleComboBoxCellFactory.setConverter(cbTechLevel, TechLevel::displayName)
-        cbTechLevel.getSelectionModel().select(TechLevel.STANDARD)
+        cbTechLevel.selectionModel.select(TechLevel.STANDARD)
         cbFaction.items = Faction.values().toList().observable()
         SimpleComboBoxCellFactory.setConverter(cbFaction, Faction::displayName)
 
-        txtChassis.textProperty().bindBidirectional(model.chassisName)
-        txtModel.textProperty().bindBidirectional(model.modelName)
-        txtSource.textProperty().bindBidirectional(model.source)
-        Bindings.bindBidirectional(txtYear.textProperty(), model.introYear, yearFieldConverter)
-        cbTechBase.selectionModel.select(model.techBase.value)
-        model.techBase.bind(cbTechBase.selectionModel.selectedItemProperty())
-        cbFaction.selectionModel.select(model.faction.value)
-        model.faction.bind(cbFaction.selectionModel.selectedItemProperty())
+        txtChassis.bind(model.chassisName)
+        txtModel.bind(model.modelName)
+        txtSource.bind(model.source)
+        txtYear.bind(model.introYear, false, yearFieldConverter)
+        cbTechBase.bind(model.techBase)
+        cbFaction.bind(model.faction)
 
         txtYear.textProperty().addListener(this)
         cbTechBase.selectionModel.selectedItemProperty().addListener(this)
@@ -81,6 +92,14 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
         cbFaction.selectionModel.selectedItemProperty().addListener(this)
         chkEraBasedProgression.selectedProperty().addListener(this)
         chkShowExtinct.selectedProperty().addListener(this)
+
+        model.baseOption.onChange {
+            if (it != null) {
+                if ((it.techBase() != TechBase.ALL) && (model.techBase.value != TechBase.ALL)) {
+                    model.techBase.value = it.techBase()
+                }
+            }
+        }
     }
 
     override fun getYear() = txtYear.textProperty().value.toInt()

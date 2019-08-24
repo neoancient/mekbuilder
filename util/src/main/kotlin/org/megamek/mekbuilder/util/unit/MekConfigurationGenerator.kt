@@ -22,9 +22,11 @@ class MekConfigurationBuilder {
     fun option(key: ConstructionOptionKey) {
         constructionOptions.add(key.get() as UnitConstructionOption)
     }
+    var omni = true;
 
     fun build(): MekConfiguration = MekConfiguration(baseType, subType, limbConfiguration,
-            constructionOptions.stream().sorted{o1, o2 -> o1.minWeight.compareTo(o2.minWeight)}.toList())
+            constructionOptions.stream().sorted{o1, o2 -> o1.minWeight.compareTo(o2.minWeight)}.toList(),
+            omni)
 }
 
 fun mekConfiguration(block: MekConfigurationBuilder.() -> Unit) = MekConfigurationBuilder().apply(block).build()
@@ -37,6 +39,7 @@ val mekList = listOf(
             option(ConstructionOptionKey.MEK_ULTRALIGHT)
             option(ConstructionOptionKey.MEK_STANDARD)
             option(ConstructionOptionKey.MEK_SUPERHEAVY)
+            omni = true
         },
         mekConfiguration {
             baseType = MekConfiguration.BaseType.STANDARD
@@ -45,6 +48,7 @@ val mekList = listOf(
             option(ConstructionOptionKey.MEK_ULTRALIGHT)
             option(ConstructionOptionKey.MEK_STANDARD)
             option(ConstructionOptionKey.MEK_SUPERHEAVY)
+            omni = true
         },
         mekConfiguration {
             baseType = MekConfiguration.BaseType.STANDARD
@@ -52,42 +56,49 @@ val mekList = listOf(
             limbConfiguration = MekBuild.LimbConfiguration.TRIPOD
             option(ConstructionOptionKey.MEK_TRIPOD)
             option(ConstructionOptionKey.MEK_SUPERHEAVY_TRIPOD)
+            omni = true
         },
         mekConfiguration {
             baseType = MekConfiguration.BaseType.PRIMITIVE
             subType = MekConfiguration.SubType.PRIMITIVE_BIPED
             limbConfiguration = MekBuild.LimbConfiguration.BIPED
             option(ConstructionOptionKey.MEK_PRIMITIVE)
+            omni = false
         },
         mekConfiguration {
             baseType = MekConfiguration.BaseType.PRIMITIVE
             subType = MekConfiguration.SubType.PRIMITIVE_QUAD
             limbConfiguration = MekBuild.LimbConfiguration.QUAD
             option(ConstructionOptionKey.MEK_PRIMITIVE)
+            omni = false
         },
         mekConfiguration {
             baseType = MekConfiguration.BaseType.LAM
             subType = MekConfiguration.SubType.LAM_STANDARD
             limbConfiguration = MekBuild.LimbConfiguration.BIPED
             option(ConstructionOptionKey.MEK_STANDARD_LAM)
+            omni = false
         },
         mekConfiguration {
             baseType = MekConfiguration.BaseType.LAM
             subType = MekConfiguration.SubType.LAM_BIMODAL
             limbConfiguration = MekBuild.LimbConfiguration.BIPED
             option(ConstructionOptionKey.MEK_BIMODAL_LAM)
+            omni = false
         },
         mekConfiguration {
             baseType = MekConfiguration.BaseType.QUADVEE
             subType = MekConfiguration.SubType.QUADVEE_TRACKED
             limbConfiguration = MekBuild.LimbConfiguration.QUAD
             option(ConstructionOptionKey.MEK_QUADVEE_TRACKED)
+            omni = true
         },
         mekConfiguration {
             baseType = MekConfiguration.BaseType.QUADVEE
             subType = MekConfiguration.SubType.QUADVEE_WHEELED
             limbConfiguration = MekBuild.LimbConfiguration.QUAD
             option(ConstructionOptionKey.MEK_QUADVEE_WHEELED)
+            omni = true
         }
 )
 
@@ -98,6 +109,7 @@ val imekList = listOf(
         limbConfiguration = MekBuild.LimbConfiguration.BIPED
         option(ConstructionOptionKey.IMEK_STANDARD)
         option(ConstructionOptionKey.IMEK_SUPERHEAVY)
+        omni = false
     },
     mekConfiguration {
         baseType = MekConfiguration.BaseType.STANDARD
@@ -105,6 +117,7 @@ val imekList = listOf(
         limbConfiguration = MekBuild.LimbConfiguration.QUAD
         option(ConstructionOptionKey.IMEK_STANDARD)
         option(ConstructionOptionKey.IMEK_SUPERHEAVY)
+        omni = false
     },
     mekConfiguration {
         baseType = MekConfiguration.BaseType.STANDARD
@@ -112,18 +125,21 @@ val imekList = listOf(
         limbConfiguration = MekBuild.LimbConfiguration.TRIPOD
         option(ConstructionOptionKey.IMEK_TRIPOD)
         option(ConstructionOptionKey.IMEK_SUPERHEAVY_TRIPOD)
+        omni = false
     },
     mekConfiguration {
         baseType = MekConfiguration.BaseType.PRIMITIVE
         subType = MekConfiguration.SubType.PRIMITIVE_BIPED
         limbConfiguration = MekBuild.LimbConfiguration.BIPED
         option(ConstructionOptionKey.IMEK_PRIMITIVE)
+        omni = false
     },
     mekConfiguration {
         baseType = MekConfiguration.BaseType.PRIMITIVE
         subType = MekConfiguration.SubType.PRIMITIVE_QUAD
         limbConfiguration = MekBuild.LimbConfiguration.QUAD
         option(ConstructionOptionKey.IMEK_PRIMITIVE)
+        omni = false
     }
 )
 

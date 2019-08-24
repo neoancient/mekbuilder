@@ -170,6 +170,21 @@ public interface ITechProgression {
     }
 
     /**
+     * Finds the earliest date the tech became available at any stage to a specific tech base
+     * @param techBase The unit's tech base, with ALL implying mixed tech
+     * @return         The date the tech became availabe
+     */
+    default @Nullable Integer introDate(TechBase techBase) {
+        if (techBase == TechBase.IS) {
+            return introDate(false);
+        } else if (techBase == TechBase.CLAN) {
+            return introDate(true);
+        } else {
+            return introDate();
+        }
+    }
+
+    /**
      * Finds the earliest date the tech became available at any stage regardless of tech base
      *
      * @return The date the tech became available

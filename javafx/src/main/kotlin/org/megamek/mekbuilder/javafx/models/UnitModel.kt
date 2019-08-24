@@ -5,6 +5,7 @@ import javafx.beans.value.ObservableDoubleValue
 import javafx.beans.value.ObservableIntegerValue
 import javafx.collections.ObservableList
 import org.megamek.mekbuilder.component.Mount
+import org.megamek.mekbuilder.tech.TechBase
 import org.megamek.mekbuilder.unit.UnitBuild
 import org.megamek.mekbuilder.unit.UnitLocation
 import org.megamek.mekbuilder.unit.UnitType
@@ -17,21 +18,21 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     val unit = unitBuild
     val unitTypeProperty = ReadOnlyObjectWrapper<UnitType>(unit.unitType)
 
-    val baseOptionProperty = unit.observable(UnitBuild::getBaseConstructionOption, UnitBuild::setBaseConstructionOption)
+    val baseOptionProperty = observable(unit, UnitBuild::getBaseConstructionOption, UnitBuild::setBaseConstructionOption)
     var baseConstructionOption by baseOptionProperty
-    val chassisProperty = unit.observable(UnitBuild::getChassis, UnitBuild::setChassis)
+    val chassisProperty = observable(unit, UnitBuild::getChassis, UnitBuild::setChassis)
     var chassisName by chassisProperty
-    val modelProperty = unit.observable(UnitBuild::getModel, UnitBuild::setModel)
+    val modelProperty = observable(unit, UnitBuild::getModel, UnitBuild::setModel)
     var modelName by modelProperty
-    val sourceProperty = unit.observable(UnitBuild::getSource, UnitBuild::setSource)
+    val sourceProperty = observable(unit, UnitBuild::getSource, UnitBuild::setSource)
     var source by sourceProperty
-    val yearProperty = unit.observable(UnitBuild::getYear, UnitBuild::setYear)
+    val yearProperty = observable(unit, UnitBuild::getYear, UnitBuild::setYear)
     var introYear by yearProperty
-    val techBaseProperty = unit.observable(UnitBuild::getTechBase, UnitBuild::setTechBase)
+    val techBaseProperty = observable(unit, UnitBuild::getTechBase, UnitBuild::setTechBase)
     var techBase by techBaseProperty
-    val factionProperty = unit.observable(UnitBuild::getFaction, UnitBuild::setFaction)
+    val factionProperty = observable(unit, UnitBuild::getFaction, UnitBuild::setFaction)
     var faction by factionProperty
-    val tonnageProperty = unit.observable(UnitBuild::getTonnage, UnitBuild::setTonnage)
+    val tonnageProperty = observable(unit, UnitBuild::getTonnage, UnitBuild::setTonnage)
 
     val componentList = ArrayList<Mount>().observable()
     val componentMap = HashMap<UnitLocation, ObservableList<Mount>>().observable()
@@ -50,6 +51,8 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     }
     fun maxArmorPointsProperty(loc: UnitLocation) = maxArmorPointsMap[loc] ?: SimpleIntegerProperty()
 
+    val omniProperty = observable(unit, UnitBuild::isOmni, UnitBuild::setOmni)
+    var isOmni by omniProperty
     val kgStandardProperty = SimpleBooleanProperty(false)
     var usesKgStandard by kgStandardProperty
     val declaredTonnageProperty = SimpleDoubleProperty(0.0)
@@ -71,4 +74,19 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     val runMPProperty = SimpleIntegerProperty(0)
     var runMP by runMPProperty
 
+    init {
+        baseOptionProperty.onChange {
+            if (it != null) {
+                // If we're not on mixed tech make sure the tech base matches the construction option
+                if ((it.techBase() != TechBase.ALL) && (techBase != TechBase.ALL)) {
+                    techBase = it.techBase()
+                }
+                // Make sure we are meeting the minimum intro year
+                val intro = it.introDate(techBase);
+                if (intro != null && introYear < intro) {
+                    introYear = intro
+                }
+            }
+        }
+    }
 }

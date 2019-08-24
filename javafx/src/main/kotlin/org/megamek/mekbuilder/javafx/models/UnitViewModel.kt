@@ -14,19 +14,18 @@ class UnitViewModel(): ViewModel() {
     var unitModel: UnitModel = MekModel(MekBuild())
 
     val unitType = bind{unitModel.unitTypeProperty}
-    val baseOption = bind{unitModel.baseOptionProperty}
-    val minWeight = doubleBinding(baseOption) {unitModel.baseConstructionOption.minWeight}
-    val maxWeight = doubleBinding(baseOption) {unitModel.baseConstructionOption.maxWeight}
+    val baseOption = bind(true) {unitModel.baseOptionProperty}
     val weightIncrement = doubleBinding(baseOption) {unitModel.baseConstructionOption.weightIncrement}
-    val chassisName = bind{unitModel.chassisProperty}
-    val modelName = bind{unitModel.modelProperty}
-    val source = bind{unitModel.sourceProperty}
-    val introYear = bind{unitModel.yearProperty}
-    val techBase = bind{unitModel.techBaseProperty}
-    val faction = bind{unitModel.factionProperty}
+    val chassisName = bind(true) {unitModel.chassisProperty}
+    val modelName = bind(true) {unitModel.modelProperty}
+    val source = bind(true) {unitModel.sourceProperty}
+    val introYear = bind(true) {unitModel.yearProperty}
+    val techBase = bind(true) {unitModel.techBaseProperty}
+    val faction = bind(true) {unitModel.factionProperty}
     val tonnage = bind(true) {unitModel.tonnageProperty}
     val componentList = bind{ SimpleListProperty(unitModel.componentList) }
 
+    val omni = bind{unitModel.omniProperty}
     val kgStandard = bind{unitModel.kgStandardProperty}
     val declaredTonnage = bind{unitModel.declaredTonnageProperty}
     val structureTonnage = bind{unitModel.structureTonnageProperty}

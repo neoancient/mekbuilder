@@ -39,6 +39,7 @@ public class MekBuild extends UnitBuild {
     private final Map<UnitLocation, Integer> criticalSlots;
     private MekConfiguration configuration;
     private double tonnage = 20;
+    private boolean omni = false;
 
     private MekInternalStructure internalStructure;
     private MekEngineMount engineMount;
@@ -175,6 +176,9 @@ public class MekBuild extends UnitBuild {
         if (oldLimbs != getLimbConfiguration()) {
             resetLimbConfiguration();
         }
+        if (isOmni() && !configuration.isOmniAllowed()) {
+            setOmni(false);
+        }
         // Assign the first one that we find with upper limit >= designated tonnage
         for (UnitConstructionOption option : configuration.getConstructionOptions()) {
             if (getTonnage() <= option.getMaxWeight()) {
@@ -245,6 +249,16 @@ public class MekBuild extends UnitBuild {
 
     public void setTonnage(double tonnage) {
         this.tonnage = tonnage;
+    }
+
+    @Override
+    public boolean isOmni() {
+        return omni;
+    }
+
+    @Override
+    public void setOmni(boolean omni) {
+        this.omni = omni && configuration.isOmniAllowed();
     }
 
     @Override

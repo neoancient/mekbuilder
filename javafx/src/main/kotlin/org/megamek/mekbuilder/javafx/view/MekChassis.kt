@@ -30,28 +30,23 @@ class MekChassis: View(), InvalidationListener {
     val cbGyro: ComboBox<Component> by fxid()
     val cbCockpit: ComboBox<Cockpit> by fxid()
 
-    val maxWeight = doubleBinding(model.baseOption) {
-        var config = model.baseOption.value
-        while ((config.nextWeightKey?.get() != null) && techFilter.isLegal(config.nextWeightKey.get())) {
-            config = config.nextWeightKey.get() as UnitConstructionOption
-        }
-        config.maxWeight
-    }
-
-    val minWeight = doubleBinding(model.baseOption) {
-        var config = model.baseOption.value
-        while ((config.prevWeightKey?.get() != null) && techFilter.isLegal(config.prevWeightKey.get())) {
-            config = config.prevWeightKey.get() as UnitConstructionOption
-        }
-        config.minWeight
-    }
-
     init {
         val tonnageFactory = SpinnerValueFactory.DoubleSpinnerValueFactory(
-                model.minWeight.value, model.maxWeight.value, model.declaredTonnage.value.toDouble(),
+                model.baseOption.value.minWeight, model.baseOption.value.maxWeight,
+                model.declaredTonnage.value.toDouble(),
                 model.weightIncrement.value)
-        tonnageFactory.minProperty().bind(minWeight)
-        tonnageFactory.maxProperty().bind(maxWeight)
+        model.baseOption.onChange {
+            if (it != null) {
+                tonnageFactory.min = it.minWeight
+                tonnageFactory.max = it.maxWeight
+                if (tonnageFactory.value < it.minWeight) {
+                    tonnageFactory.value = it.minWeight
+                }
+                if (tonnageFactory.value > it.maxWeight) {
+                    tonnageFactory.value = it.maxWeight
+                }
+            }
+        }
         tonnageFactory.amountToStepByProperty().bind(model.weightIncrement)
         // Bind ObjectProperty<Double> to DoubleProperty that can be bound to model property
         val tonnageValueProperty = DoubleProperty.doubleProperty(tonnageFactory.valueProperty())
@@ -62,7 +57,5 @@ class MekChassis: View(), InvalidationListener {
     }
 
     override fun invalidated(observable: Observable) {
-        maxWeight.invalidate()
-        minWeight.invalidate()
     }
 }

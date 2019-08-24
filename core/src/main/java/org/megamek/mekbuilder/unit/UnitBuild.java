@@ -221,6 +221,21 @@ public abstract class UnitBuild {
     }
 
     /**
+     * @return Whether the unit is built using modular omni technology
+     */
+    public boolean isOmni() {
+        return false;
+    }
+
+    /**
+     * Sets whether the unit uses omni modular technology. Note that units which cannot
+     * be built using omni tech will ignore this.
+     *
+     * @param omni Whether the unit is build with omni tech
+     */
+    public void setOmni(boolean omni) {}
+
+    /**
      * @return Whether this unit should round weights to the kilogram instead of the half ton.
      */
     abstract public boolean usesKilogramStandard();

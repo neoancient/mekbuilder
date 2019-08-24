@@ -102,6 +102,7 @@ public class MekConfiguration {
     private final BaseType baseType;
     private final SubType subType;
     private final MekBuild.LimbConfiguration limbConfiguration;
+    private final boolean omniAllowed;
     @JsonSerialize(contentUsing=ConstructionOption.Serializer.class)
     @JsonDeserialize(contentUsing=ConstructionOption.Deserializer.class)
     private final List<UnitConstructionOption> constructionOptions;
@@ -109,17 +110,19 @@ public class MekConfiguration {
     @JsonCreator
     @SuppressWarnings("unused")
     MekConfiguration() {
-        this(BaseType.STANDARD, SubType.STANDARD_BIPED, MekBuild.LimbConfiguration.BIPED, new ArrayList<>());
+        this(BaseType.STANDARD, SubType.STANDARD_BIPED, MekBuild.LimbConfiguration.BIPED, new ArrayList<>(), false);
     }
 
     public MekConfiguration(BaseType baseType,
                             SubType subType,
                             MekBuild.LimbConfiguration limbConfiguration,
-                            List<UnitConstructionOption> constructionOptions) {
+                            List<UnitConstructionOption> constructionOptions,
+                            boolean omniAllowed) {
         this.baseType = baseType;
         this.subType = subType;
         this.limbConfiguration = limbConfiguration;
         this.constructionOptions = Collections.unmodifiableList(new ArrayList<>(constructionOptions));
+        this.omniAllowed = omniAllowed;
     }
 
     /**
@@ -141,6 +144,10 @@ public class MekConfiguration {
      */
     public MekBuild.LimbConfiguration getLimbConfiguration() {
         return limbConfiguration;
+    }
+
+    public boolean isOmniAllowed() {
+        return omniAllowed;
     }
 
     /**
