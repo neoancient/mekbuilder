@@ -29,7 +29,7 @@ class UnitViewModel(): ViewModel() {
 
     val omni = bind(true) {unitModel.omniProperty}
     val kgStandard = bind(true) {unitModel.kgStandardProperty}
-    val structureTonnage = bind(true) {unitModel.structureTonnageProperty}
+    val structureTonnage = bind {unitModel.structureTonnageProperty}
     val armorTonnage = bind(true) {unitModel.armorTonnageProperty}
     val totalArmorPoints = bind(true) {unitModel.totalArmorPointsProperty}
     val defaultArmorName = bind(true) {unitModel.defaultArmorNameProperty}

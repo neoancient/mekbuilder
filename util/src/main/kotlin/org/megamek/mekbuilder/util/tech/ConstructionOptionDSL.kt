@@ -41,18 +41,16 @@ open class UnitConstructionOptionBuilder: ConstructionOptionBuilder() {
             field = value
             weightIncrement = value / 1000.0
         }
-    var prevWeightKey: ConstructionOptionKey? = null
-    var nextWeightKey: ConstructionOptionKey? = null
 
     override fun build(): ConstructionOption = UnitConstructionOption(key, techProg, unitType,
-            minWeight, maxWeight, weightIncrement, prevWeightKey, nextWeightKey)
+            minWeight, maxWeight, weightIncrement)
 }
 
 open class VehicleConstructionOptionBuilder: UnitConstructionOptionBuilder() {
     var motiveType: MotiveType? = null
 
     override fun build(): ConstructionOption = VehicleConstructionOption(key, techProg, unitType,
-            minWeight, maxWeight, weightIncrement, prevWeightKey, nextWeightKey, motiveType)
+            minWeight, maxWeight, weightIncrement, motiveType)
 }
 
 fun constructionOption(block: ConstructionOptionBuilder.() -> Unit) = ConstructionOptionBuilder().apply(block).build()

@@ -12,40 +12,32 @@
   "techProgression" : "ALL|A|XXED|~3050(DC/FS/LC),~3082,~3115,-,-|~2820(CLAN),~3082,~3115,-,-|ADVANCED"
 }, {
   "key" : "MEK_STANDARD",
-  "techProgression" : "ALL|D|CEDC|2460(TH),2470(TH),2500,-,-|2460,2470,2500,-,-|INTRO",
+  "techProgression" : "ALL|D|CEDC|2460(TH),2470(TH),2500,-,-|2460,2470,2500,-,-|STANDARD",
   "unitType" : "BATTLE_MEK",
   "minWeight" : 20.0,
   "maxWeight" : 100.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : "MEK_ULTRALIGHT",
-  "nextWeightKey" : "MEK_SUPERHEAVY"
+  "weightIncrement" : 5.0
 }, {
   "key" : "MEK_PRIMITIVE",
   "techProgression" : "IS|D|DXFF|2439(TH),2443(TH),2470,2520,-|-,-,-,-,-|ADVANCED",
   "unitType" : "BATTLE_MEK",
   "minWeight" : 10.0,
   "maxWeight" : 100.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "MEK_BIMODAL_LAM",
   "techProgression" : "ALL|E|EFXX|2680(TH),2684(TH),-,2781,-|2680,2684,-,2801,-|EXPERIMENTAL",
   "unitType" : "BATTLE_MEK",
   "minWeight" : 20.0,
   "maxWeight" : 55.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "MEK_STANDARD_LAM",
   "techProgression" : "ALL|E|DEFF|2683(TH),2688(TH),-,3085,-|2683,2688,-,2825,-|EXPERIMENTAL",
   "unitType" : "BATTLE_MEK",
   "minWeight" : 20.0,
   "maxWeight" : 55.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "MEK_QUADVEE_TRACKED",
   "techProgression" : "CLAN|F|XXXF|-,-,-,-,-|~3130(CHH),3135(CHH),-,-,-|ADVANCED",
@@ -53,8 +45,6 @@
   "minWeight" : 20.0,
   "maxWeight" : 100.0,
   "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null,
   "motiveType" : "TRACKED"
 }, {
   "key" : "MEK_QUADVEE_WHEELED",
@@ -63,8 +53,6 @@
   "minWeight" : 20.0,
   "maxWeight" : 100.0,
   "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null,
   "motiveType" : "WHEELED"
 }, {
   "key" : "MEK_TRIPOD",
@@ -72,117 +60,91 @@
   "unitType" : "BATTLE_MEK",
   "minWeight" : 20.0,
   "maxWeight" : 100.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "MEK_SUPERHEAVY_TRIPOD"
+  "weightIncrement" : 5.0
 }, {
   "key" : "MEK_SUPERHEAVY",
   "techProgression" : "IS|D|XXFF|3077(WB),3078(WB),-,-,-|-,-,-,-,-|ADVANCED",
   "unitType" : "BATTLE_MEK",
   "minWeight" : 105.0,
   "maxWeight" : 200.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : "MEK_STANDARD",
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "MEK_SUPERHEAVY_TRIPOD",
   "techProgression" : "IS|D|XXXF|~3135(RS),3136(RS),-,-,-|-,-,-,-,-|ADVANCED",
   "unitType" : "BATTLE_MEK",
   "minWeight" : 105.0,
   "maxWeight" : 200.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : "MEK_TRIPOD",
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "MEK_ULTRALIGHT",
   "techProgression" : "IS|D|EFEE|~2500(FW/TH),2519(FW),~3075,-,-|~2500,2519,~3075,-,-|ADVANCED",
   "unitType" : "BATTLE_MEK",
   "minWeight" : 10.0,
   "maxWeight" : 15.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "MEK_STANDARD"
+  "weightIncrement" : 5.0
 }, {
   "key" : "IMEK_STANDARD",
   "techProgression" : "ALL|C|CCCB|2460(TH),2470(TH),2500,-,-|2460,2470,2500,-,-|STANDARD",
   "unitType" : "INDUSTRIAL_MEK",
   "minWeight" : 10.0,
   "maxWeight" : 100.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "IMEK_SUPERHEAVY"
+  "weightIncrement" : 5.0
 }, {
   "key" : "IMEK_PRIMITIVE",
   "techProgression" : "IS|D|CXFF|2300(TA),2350(TH),2425,2520,-|-,-,-,-,-|ADVANCED",
   "unitType" : "INDUSTRIAL_MEK",
   "minWeight" : 10.0,
   "maxWeight" : 100.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "IMEK_SUPERHEAVY",
   "techProgression" : "IS|D|XXFF|~2930(FW),2940(FW),-,-,-|-,-,-,-,-|ADVANCED",
   "unitType" : "INDUSTRIAL_MEK",
   "minWeight" : 105.0,
   "maxWeight" : 200.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : "IMEK_STANDARD",
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "IMEK_TRIPOD",
   "techProgression" : "IS|D|FFFE|~2585(TH),2602(TH),-,-,-|-,-,-,-,-|ADVANCED",
   "unitType" : "INDUSTRIAL_MEK",
   "minWeight" : 10.0,
   "maxWeight" : 100.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "IMEK_SUPERHEAVY_TRIPOD"
+  "weightIncrement" : 5.0
 }, {
   "key" : "IMEK_SUPERHEAVY_TRIPOD",
   "techProgression" : "IS|D|XFXF|~2930(FW),2940(FW),-,-,-|-,-,-,-,-|ADVANCED",
   "unitType" : "INDUSTRIAL_MEK",
   "minWeight" : 105.0,
   "maxWeight" : 200.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : "IMEK_TRIPOD",
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "PROTOMEK_STANDARD",
   "techProgression" : "CLAN|F|XXED|-,-,-,-,-|~3055(CSJ),3059(CSJ),3060,-,-|STANDARD",
   "unitType" : "PROTOMEK",
   "minWeight" : 2.0,
   "maxWeight" : 9.0,
-  "weightIncrement" : 1.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "PROTOMEK_ULTRAHEAVY"
+  "weightIncrement" : 1.0
 }, {
   "key" : "PROTOMEK_ULTRAHEAVY",
   "techProgression" : "CLAN|F|XXDD|-,-,-,-,-|3075(CLAN),~3083(CCY),3100,-,-|ADVANCED",
   "unitType" : "PROTOMEK",
   "minWeight" : 10.0,
   "maxWeight" : 15.0,
-  "weightIncrement" : 1.0,
-  "prevWeightKey" : "PROTOMEK_STANDARD",
-  "nextWeightKey" : null
+  "weightIncrement" : 1.0
 }, {
   "key" : "PROTOMEK_QUAD",
   "techProgression" : "CLAN|F|XXED|-,-,-,-,-|3075(CLAN),~3083(CCC),3100,-,-|ADVANCED",
   "unitType" : "PROTOMEK",
   "minWeight" : 2.0,
   "maxWeight" : 15.0,
-  "weightIncrement" : 1.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 1.0
 }, {
   "key" : "PROTOMEK_GLIDER",
   "techProgression" : "CLAN|F|XXED|-,-,-,-,-|3075(CLAN),~3084(CSR),3100,-,-|ADVANCED",
   "unitType" : "PROTOMEK",
   "minWeight" : 2.0,
   "maxWeight" : 15.0,
-  "weightIncrement" : 1.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 1.0
 }, {
   "key" : "CV_WHEELED",
   "techProgression" : "ALL|D|CCCB|-,2470(TH),2490,-,-|-,2470,2490,-,-|STANDARD",
@@ -190,8 +152,6 @@
   "minWeight" : 1.0,
   "maxWeight" : 80.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "CV_SUPERHEAVY_WHEELED",
   "motiveType" : "WHEELED"
 }, {
   "key" : "CV_TRACKED",
@@ -200,8 +160,6 @@
   "minWeight" : 1.0,
   "maxWeight" : 100.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "CV_SUPERHEAVY_TRACKED",
   "motiveType" : "TRACKED"
 }, {
   "key" : "CV_HOVER",
@@ -210,8 +168,6 @@
   "minWeight" : 1.0,
   "maxWeight" : 50.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "CV_SUPERHEAVY_HOVER",
   "motiveType" : "HOVER"
 }, {
   "key" : "CV_VTOL",
@@ -220,8 +176,6 @@
   "minWeight" : 1.0,
   "maxWeight" : 30.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "CV_SUPERHEAVY_VTOL",
   "motiveType" : "VTOL"
 }, {
   "key" : "CV_WIGE",
@@ -230,8 +184,6 @@
   "minWeight" : 1.0,
   "maxWeight" : 80.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "CV_SUPERHEAVY_WIGE",
   "motiveType" : "WIGE"
 }, {
   "key" : "CV_NAVAL_DISPLACEMENT",
@@ -240,8 +192,6 @@
   "minWeight" : 1.0,
   "maxWeight" : 300.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "CV_SUPERHEAVY_NAVAL_DISPLACEMENT",
   "motiveType" : "NAVAL"
 }, {
   "key" : "CV_NAVAL_HYDROFOIL",
@@ -250,8 +200,6 @@
   "minWeight" : 1.0,
   "maxWeight" : 100.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null,
   "motiveType" : "NAVAL"
 }, {
   "key" : "CV_NAVAL_SUBMARINE",
@@ -260,8 +208,6 @@
   "minWeight" : 1.0,
   "maxWeight" : 300.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "CV_SUPERHEAVY_NAVAL_SUBMARINE",
   "motiveType" : "SUBMERSIBLE"
 }, {
   "key" : "CV_SUPERHEAVY_WHEELED",
@@ -270,8 +216,6 @@
   "minWeight" : 81.0,
   "maxWeight" : 160.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : "CV_WHEELED",
-  "nextWeightKey" : null,
   "motiveType" : "WHEELED"
 }, {
   "key" : "CV_SUPERHEAVY_TRACKED",
@@ -280,8 +224,6 @@
   "minWeight" : 101.0,
   "maxWeight" : 200.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : "CV_TRACKED",
-  "nextWeightKey" : null,
   "motiveType" : "TRACKED"
 }, {
   "key" : "CV_SUPERHEAVY_HOVER",
@@ -290,8 +232,6 @@
   "minWeight" : 51.0,
   "maxWeight" : 100.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : "CV_HOVER",
-  "nextWeightKey" : null,
   "motiveType" : "HOVER"
 }, {
   "key" : "CV_SUPERHEAVY_VTOL",
@@ -300,8 +240,6 @@
   "minWeight" : 31.0,
   "maxWeight" : 60.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : "CV_VTOL",
-  "nextWeightKey" : null,
   "motiveType" : "VTOL"
 }, {
   "key" : "CV_SUPERHEAVY_WIGE",
@@ -310,8 +248,6 @@
   "minWeight" : 81.0,
   "maxWeight" : 160.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : "CV_WIGE",
-  "nextWeightKey" : null,
   "motiveType" : "WIGE"
 }, {
   "key" : "CV_SUPERHEAVY_NAVAL_DISPLACEMENT",
@@ -320,8 +256,6 @@
   "minWeight" : 301.0,
   "maxWeight" : 555.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : "CV_NAVAL_DISPLACEMENT",
-  "nextWeightKey" : null,
   "motiveType" : "NAVAL"
 }, {
   "key" : "CV_SUPERHEAVY_NAVAL_SUBMARINE",
@@ -330,8 +264,6 @@
   "minWeight" : 301.0,
   "maxWeight" : 555.0,
   "weightIncrement" : 1.0,
-  "prevWeightKey" : "CV_NAVAL_SUBMARINE",
-  "nextWeightKey" : null,
   "motiveType" : "SUBMERSIBLE"
 }, {
   "key" : "SV_WHEELED_S",
@@ -340,8 +272,6 @@
   "minWeight" : 0.1,
   "maxWeight" : 4.999,
   "weightIncrement" : 0.001,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "SV_WHEELED_M",
   "motiveType" : "WHEELED"
 }, {
   "key" : "SV_WHEELED_M",
@@ -350,8 +280,6 @@
   "minWeight" : 5.0,
   "maxWeight" : 80.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_WHEELED_S",
-  "nextWeightKey" : "SV_WHEELED_L",
   "motiveType" : "WHEELED"
 }, {
   "key" : "SV_WHEELED_L",
@@ -360,8 +288,6 @@
   "minWeight" : 80.5,
   "maxWeight" : 160.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_WHEELED_M",
-  "nextWeightKey" : null,
   "motiveType" : "WHEELED"
 }, {
   "key" : "SV_TRACKED_S",
@@ -370,8 +296,6 @@
   "minWeight" : 0.1,
   "maxWeight" : 4.999,
   "weightIncrement" : 0.001,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "SV_TRACKED_M",
   "motiveType" : "TRACKED"
 }, {
   "key" : "SV_TRACKED_M",
@@ -380,8 +304,6 @@
   "minWeight" : 5.0,
   "maxWeight" : 100.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_TRACKED_S",
-  "nextWeightKey" : "SV_TRACKED_L",
   "motiveType" : "TRACKED"
 }, {
   "key" : "SV_TRACKED_L",
@@ -390,8 +312,6 @@
   "minWeight" : 100.5,
   "maxWeight" : 200.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_TRACKED_M",
-  "nextWeightKey" : null,
   "motiveType" : "TRACKED"
 }, {
   "key" : "SV_HOVER_S",
@@ -400,8 +320,6 @@
   "minWeight" : 0.1,
   "maxWeight" : 4.999,
   "weightIncrement" : 0.001,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "SV_HOVER_M",
   "motiveType" : "HOVER"
 }, {
   "key" : "SV_HOVER_M",
@@ -410,8 +328,6 @@
   "minWeight" : 5.0,
   "maxWeight" : 50.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_HOVER_S",
-  "nextWeightKey" : "SV_HOVER_L",
   "motiveType" : "HOVER"
 }, {
   "key" : "SV_HOVER_L",
@@ -420,8 +336,6 @@
   "minWeight" : 50.5,
   "maxWeight" : 100.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_HOVER_M",
-  "nextWeightKey" : null,
   "motiveType" : "HOVER"
 }, {
   "key" : "SV_VTOL_S",
@@ -430,8 +344,6 @@
   "minWeight" : 0.1,
   "maxWeight" : 4.999,
   "weightIncrement" : 0.001,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "SV_VTOL_M",
   "motiveType" : "VTOL"
 }, {
   "key" : "SV_VTOL_M",
@@ -440,8 +352,6 @@
   "minWeight" : 5.0,
   "maxWeight" : 30.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_VTOL_S",
-  "nextWeightKey" : "SV_VTOL_L",
   "motiveType" : "VTOL"
 }, {
   "key" : "SV_VTOL_L",
@@ -450,8 +360,6 @@
   "minWeight" : 30.5,
   "maxWeight" : 60.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_VTOL_M",
-  "nextWeightKey" : null,
   "motiveType" : "VTOL"
 }, {
   "key" : "SV_NAVAL_S",
@@ -460,8 +368,6 @@
   "minWeight" : 0.1,
   "maxWeight" : 4.999,
   "weightIncrement" : 0.001,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "SV_NAVAL_M",
   "motiveType" : "NAVAL"
 }, {
   "key" : "SV_NAVAL_M",
@@ -470,8 +376,6 @@
   "minWeight" : 5.0,
   "maxWeight" : 300.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_NAVAL_S",
-  "nextWeightKey" : "SV_NAVAL_L",
   "motiveType" : "NAVAL"
 }, {
   "key" : "SV_NAVAL_L",
@@ -480,8 +384,6 @@
   "minWeight" : 300.5,
   "maxWeight" : 100000.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_NAVAL_M",
-  "nextWeightKey" : null,
   "motiveType" : "NAVAL"
 }, {
   "key" : "SV_WIGE_S",
@@ -490,8 +392,6 @@
   "minWeight" : 0.1,
   "maxWeight" : 4.999,
   "weightIncrement" : 0.001,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "SV_WIGE_M",
   "motiveType" : "WIGE"
 }, {
   "key" : "SV_WIGE_M",
@@ -500,8 +400,6 @@
   "minWeight" : 5.0,
   "maxWeight" : 80.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_WIGE_S",
-  "nextWeightKey" : "SV_WIGE_L",
   "motiveType" : "WIGE"
 }, {
   "key" : "SV_WIGE_L",
@@ -510,8 +408,6 @@
   "minWeight" : 80.5,
   "maxWeight" : 160.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_WIGE_M",
-  "nextWeightKey" : null,
   "motiveType" : "WIGE"
 }, {
   "key" : "SV_FIXED_WING_S",
@@ -520,8 +416,6 @@
   "minWeight" : 0.1,
   "maxWeight" : 4.999,
   "weightIncrement" : 0.001,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "SV_FIXED_WING_M",
   "motiveType" : "AERODYNE"
 }, {
   "key" : "SV_FIXED_WING_M",
@@ -530,8 +424,6 @@
   "minWeight" : 5.0,
   "maxWeight" : 100.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_FIXED_WING_S",
-  "nextWeightKey" : "SV_FIXED_WING_L",
   "motiveType" : "AERODYNE"
 }, {
   "key" : "SV_FIXED_WING_L",
@@ -540,8 +432,6 @@
   "minWeight" : 100.5,
   "maxWeight" : 200.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_FIXED_WING_M",
-  "nextWeightKey" : null,
   "motiveType" : "AERODYNE"
 }, {
   "key" : "SV_AIRSHIP_S",
@@ -550,8 +440,6 @@
   "minWeight" : 0.1,
   "maxWeight" : 4.999,
   "weightIncrement" : 0.001,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "SV_AIRSHIP_M",
   "motiveType" : "AIRSHIP"
 }, {
   "key" : "SV_AIRSHIP_M",
@@ -560,8 +448,6 @@
   "minWeight" : 5.0,
   "maxWeight" : 300.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_AIRSHIP_S",
-  "nextWeightKey" : "SV_AIRSHIP_L",
   "motiveType" : "AIRSHIP"
 }, {
   "key" : "SV_AIRSHIP_L",
@@ -570,8 +456,6 @@
   "minWeight" : 300.5,
   "maxWeight" : 1000.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_AIRSHIP_M",
-  "nextWeightKey" : null,
   "motiveType" : "AIRSHIP"
 }, {
   "key" : "SV_RAIL_S",
@@ -580,8 +464,6 @@
   "minWeight" : 0.1,
   "maxWeight" : 4.999,
   "weightIncrement" : 0.001,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "SV_RAIL_M",
   "motiveType" : "RAIL"
 }, {
   "key" : "SV_RAIL_M",
@@ -590,8 +472,6 @@
   "minWeight" : 5.0,
   "maxWeight" : 300.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_RAIL_S",
-  "nextWeightKey" : "SV_RAIL_L",
   "motiveType" : "RAIL"
 }, {
   "key" : "SV_RAIL_L",
@@ -600,8 +480,6 @@
   "minWeight" : 300.5,
   "maxWeight" : 600.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_RAIL_M",
-  "nextWeightKey" : null,
   "motiveType" : "RAIL"
 }, {
   "key" : "SV_SATELLITE_S",
@@ -610,8 +488,6 @@
   "minWeight" : 0.1,
   "maxWeight" : 4.999,
   "weightIncrement" : 0.001,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "SV_SATELLITE_M",
   "motiveType" : "STATION_KEEPING"
 }, {
   "key" : "SV_SATELLITE_M",
@@ -620,8 +496,6 @@
   "minWeight" : 5.0,
   "maxWeight" : 100.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_SATELLITE_S",
-  "nextWeightKey" : "SV_SATELLITE_L",
   "motiveType" : "STATION_KEEPING"
 }, {
   "key" : "SV_SATELLITE_L",
@@ -630,8 +504,6 @@
   "minWeight" : 100.5,
   "maxWeight" : 300.0,
   "weightIncrement" : 0.5,
-  "prevWeightKey" : "SV_SATELLITE_M",
-  "nextWeightKey" : null,
   "motiveType" : "STATION_KEEPING"
 }, {
   "key" : "BA_EXOSKELETON",
@@ -639,205 +511,159 @@
   "unitType" : "BATTLE_ARMOR",
   "minWeight" : 0.08,
   "maxWeight" : 0.4,
-  "weightIncrement" : 0.001,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 0.001
 }, {
   "key" : "BA_PAL",
   "techProgression" : "ALL|D|FXED|2710(TH),-,3058,2766,2905(CS)|2710,-,3058,-,-|STANDARD",
   "unitType" : "BATTLE_ARMOR",
   "minWeight" : 0.08,
   "maxWeight" : 0.4,
-  "weightIncrement" : 0.001,
-  "prevWeightKey" : null,
-  "nextWeightKey" : "BA_LIGHT"
+  "weightIncrement" : 0.001
 }, {
   "key" : "BA_LIGHT",
   "techProgression" : "ALL|E|XFED|3050(FS/LC),-,3050,-,-|~2865(CWF),2870(CIH),2900,-,-|STANDARD",
   "unitType" : "BATTLE_ARMOR",
   "minWeight" : 0.401,
   "maxWeight" : 0.75,
-  "weightIncrement" : 0.001,
-  "prevWeightKey" : "BA_PAL",
-  "nextWeightKey" : "BA_MEDIUM"
+  "weightIncrement" : 0.001
 }, {
   "key" : "BA_MEDIUM",
   "techProgression" : "ALL|E|XDDD|3052(CS/FS/LC),-,3052,-,-|~2840(CGS),2868(CWF),2875,-,-|STANDARD",
   "unitType" : "BATTLE_ARMOR",
   "minWeight" : 0.401,
   "maxWeight" : 0.75,
-  "weightIncrement" : 0.001,
-  "prevWeightKey" : "BA_LIGHT",
-  "nextWeightKey" : "BA_HEAVY"
+  "weightIncrement" : 0.001
 }, {
   "key" : "BA_HEAVY",
   "techProgression" : "ALL|E|XFED|3050(FS/LC),-,3050,-,-|~2867(CWF),2875(CHH),3058,-,-|STANDARD",
   "unitType" : "BATTLE_ARMOR",
   "minWeight" : 0.401,
   "maxWeight" : 0.75,
-  "weightIncrement" : 0.001,
-  "prevWeightKey" : "BA_MEDIUM",
-  "nextWeightKey" : "BA_ASSAULT"
+  "weightIncrement" : 0.001
 }, {
   "key" : "BA_ASSAULT",
   "techProgression" : "ALL|E|XFED|3058(DC),-,3060,-,-|~2870(CNC),2877(CGB),3060,-,-|STANDARD",
   "unitType" : "BATTLE_ARMOR",
   "minWeight" : 0.401,
   "maxWeight" : 0.75,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : "BA_HEAVY",
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "ASF_PRIMITIVE",
   "techProgression" : "IS|D|DXFF|2100,~2200(TA),-,2520,-|2100,~2200,-,2520,-|STANDARD",
   "unitType" : "ASF",
   "minWeight" : 10.0,
   "maxWeight" : 100.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "ASF_STANDARD",
   "techProgression" : "ALL|D|CEDC|-,2470(TH),2490,-,-|-,2470,2490,-,-|STANDARD",
   "unitType" : "ASF",
   "minWeight" : 5.0,
   "maxWeight" : 100.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "CF_STANDARD",
   "techProgression" : "ALL|D|CDCB|-,2470(TH),2490,-,-|-,2470,2490,-,-|STANDARD",
   "unitType" : "CONV_FIGHTER",
   "minWeight" : 5.0,
   "maxWeight" : 50.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "SC_STANDARD",
   "techProgression" : "ALL|D|DEDD|-,2350(TH),2400,-,-|-,2350,2400,-,-|STANDARD",
   "unitType" : "SMALL_CRAFT",
   "minWeight" : 100.0,
   "maxWeight" : 200.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "SC_PRIMITIVE",
   "techProgression" : "IS|D|DXFF|2100,~2200(TA),-,2400,-|-,-,-,-,-|STANDARD",
   "unitType" : "SMALL_CRAFT",
   "minWeight" : 100.0,
   "maxWeight" : 200.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "DS_STANDARD_SPHEROID",
   "techProgression" : "ALL|D|DEDD|-,~2470(TH),2490,-,-|-,~2470,2490,-,-|STANDARD",
   "unitType" : "DROPSHIP",
   "minWeight" : 200.0,
   "maxWeight" : 100000.0,
-  "weightIncrement" : 100.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 100.0
 }, {
   "key" : "DS_STANDARD_AERODYNE",
   "techProgression" : "ALL|D|DEDD|-,~2470(TH),2490,-,-|-,~2470,2490,-,-|STANDARD",
   "unitType" : "DROPSHIP",
   "minWeight" : 200.0,
   "maxWeight" : 35000.0,
-  "weightIncrement" : 100.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 100.0
 }, {
   "key" : "DS_PRIMITIVE_SPHEROID",
   "techProgression" : "ALL|D|DXXX|2100,~2200(TH),-,2500,-|2100,~2200,-,2500,-|STANDARD",
   "unitType" : "DROPSHIP",
   "minWeight" : 200.0,
   "maxWeight" : 100000.0,
-  "weightIncrement" : 100.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 100.0
 }, {
   "key" : "DS_PRIMITIVE_AERODYNE",
   "techProgression" : "IS|D|DXXX|2100,~2200(TH),-,2500,-|-,-,-,-,-|STANDARD",
   "unitType" : "SMALL_CRAFT",
   "minWeight" : 200.0,
   "maxWeight" : 35000.0,
-  "weightIncrement" : 100.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 100.0
 }, {
   "key" : "JS_STANDARD",
   "techProgression" : "ALL|D|DEDF|-,~2300(TA),-,-,-|-,~2300,-,-,-|ADVANCED",
   "unitType" : "JUMPSHIP",
   "minWeight" : 50000.0,
   "maxWeight" : 500000.0,
-  "weightIncrement" : 1000.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 1000.0
 }, {
   "key" : "JS_PRIMITIVE",
   "techProgression" : "IS|D|DXXX|~2100,~2200(TA),-,2500,-|-,-,-,-,-|ADVANCED",
   "unitType" : "WARSHIP",
   "minWeight" : 50000.0,
   "maxWeight" : 1000000.0,
-  "weightIncrement" : 1000.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 1000.0
 }, {
   "key" : "WARSHIP",
   "techProgression" : "ALL|E|DEEF|~2300(TA),2305(TH),-,2950,3050(DC/FS/LC)|~2300,2305,-,-,-|ADVANCED",
   "unitType" : "WARSHIP",
   "minWeight" : 100000.0,
   "maxWeight" : 2500000.0,
-  "weightIncrement" : 10000.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 10000.0
 }, {
   "key" : "WARSHIP_SUBCOMPACT",
   "techProgression" : "ALL|E|FXFF|~2620(TH),-,-,2850,-|~2620,-,-,-,-|EXPERIMENTAL",
   "unitType" : "WARSHIP",
   "minWeight" : 5000.0,
   "maxWeight" : 25000.0,
-  "weightIncrement" : 100.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 100.0
 }, {
   "key" : "SPACE_STATION_STANDARD",
   "techProgression" : "ALL|D|CDCC|2100,-,-,2100,-|2100,-,-,2100,-|ADVANCED",
   "unitType" : "SPACE_STATION",
   "minWeight" : 2000.0,
   "maxWeight" : 2500000.0,
-  "weightIncrement" : 500.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 500.0
 }, {
   "key" : "SPACE_STATION_MODULAR",
   "techProgression" : "ALL|D|EXXE|2565(TH),2585(TH),-,2790,3090(RS)|2565,2585,-,2790,3090|ADVANCED",
   "unitType" : "SPACE_STATION",
   "minWeight" : 2000.0,
   "maxWeight" : 2500000.0,
-  "weightIncrement" : 500.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 500.0
 }, {
   "key" : "MEK_QUAD_LAM_UNOFFICIAL",
   "techProgression" : "ALL|E|XXXX|2690,-,-,-,-|-,-,-,-,-|UNOFFICIAL",
   "unitType" : "BATTLE_MEK",
   "minWeight" : 20.0,
   "maxWeight" : 55.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 }, {
   "key" : "MEK_HEAVY_LAM_UNOFFICIAL",
   "techProgression" : "ALL|E|XXXX|2699,-,-,-,-|-,-,-,-,-|UNOFFICIAL",
   "unitType" : "BATTLE_MEK",
   "minWeight" : 60.0,
   "maxWeight" : 100.0,
-  "weightIncrement" : 5.0,
-  "prevWeightKey" : null,
-  "nextWeightKey" : null
+  "weightIncrement" : 5.0
 } ]

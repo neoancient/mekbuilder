@@ -88,8 +88,6 @@ class OptionGenerator {
             minWeight = 20.0
             maxWeight = 100.0
             weightIncrement = 5.0
-            prevWeightKey = ConstructionOptionKey.MEK_ULTRALIGHT
-            nextWeightKey = ConstructionOptionKey.MEK_SUPERHEAVY
             techProgression {
                 techBase = TechBase.ALL
                 rating = Rating.RATING_D
@@ -209,7 +207,6 @@ class OptionGenerator {
             minWeight = 20.0
             maxWeight = 100.0
             weightIncrement = 5.0
-            nextWeightKey = ConstructionOptionKey.MEK_SUPERHEAVY_TRIPOD
             techProgression {
                 techBase = TechBase.IS
                 rating = Rating.RATING_D
@@ -227,7 +224,6 @@ class OptionGenerator {
             minWeight = 105.0
             maxWeight = 200.0
             weightIncrement = 5.0
-            prevWeightKey = ConstructionOptionKey.MEK_STANDARD
             techProgression {
                 techBase = TechBase.IS
                 rating = Rating.RATING_D
@@ -245,7 +241,6 @@ class OptionGenerator {
             minWeight = 105.0
             maxWeight = 200.0
             weightIncrement = 5.0
-            prevWeightKey = ConstructionOptionKey.MEK_TRIPOD
             techProgression {
                 techBase = TechBase.IS
                 rating = Rating.RATING_D
@@ -263,7 +258,6 @@ class OptionGenerator {
             minWeight = 10.0
             maxWeight = 15.0
             weightIncrement = 5.0
-            nextWeightKey = ConstructionOptionKey.MEK_STANDARD
             techProgression {
                 techBase = TechBase.IS
                 rating = Rating.RATING_D
@@ -283,7 +277,6 @@ class OptionGenerator {
             minWeight = 10.0
             maxWeight = 100.0
             weightIncrement = 5.0
-            nextWeightKey = ConstructionOptionKey.IMEK_SUPERHEAVY
             techProgression {
                 techBase = TechBase.ALL
                 rating = Rating.RATING_C
@@ -321,7 +314,6 @@ class OptionGenerator {
             minWeight = 105.0
             maxWeight = 200.0
             weightIncrement = 5.0
-            prevWeightKey = ConstructionOptionKey.IMEK_STANDARD
             techProgression {
                 techBase = TechBase.IS
                 rating = Rating.RATING_D
@@ -339,7 +331,6 @@ class OptionGenerator {
             minWeight = 10.0
             maxWeight = 100.0
             weightIncrement = 5.0
-            nextWeightKey = ConstructionOptionKey.IMEK_SUPERHEAVY_TRIPOD
             techProgression {
                 techBase = TechBase.IS
                 rating = Rating.RATING_D
@@ -357,7 +348,6 @@ class OptionGenerator {
             minWeight = 105.0
             maxWeight = 200.0
             weightIncrement = 5.0
-            prevWeightKey = ConstructionOptionKey.IMEK_TRIPOD
             techProgression {
                 techBase = TechBase.IS
                 rating = Rating.RATING_D
@@ -376,7 +366,6 @@ class OptionGenerator {
             minWeight = 2.0
             maxWeight = 9.0
             weightIncrement = 1.0
-            nextWeightKey = ConstructionOptionKey.PROTOMEK_ULTRAHEAVY
             techProgression {
                 techBase = TechBase.CLAN
                 rating = Rating.RATING_F
@@ -395,7 +384,6 @@ class OptionGenerator {
             minWeight = 10.0
             maxWeight = 15.0
             weightIncrement = 1.0
-            prevWeightKey = ConstructionOptionKey.PROTOMEK_STANDARD
             techProgression {
                 techBase = TechBase.CLAN
                 rating = Rating.RATING_F
@@ -451,7 +439,6 @@ class OptionGenerator {
             minWeight = 1.0
             maxWeight = 80.0
             weightIncrement = 1.0
-            nextWeightKey = ConstructionOptionKey.CV_SUPERHEAVY_WHEELED
             motiveType = MotiveType.WHEELED
             techProgression {
                 techBase = TechBase.ALL
@@ -470,7 +457,6 @@ class OptionGenerator {
             minWeight = 1.0
             maxWeight = 100.0
             weightIncrement = 1.0
-            nextWeightKey = ConstructionOptionKey.CV_SUPERHEAVY_TRACKED
             motiveType = MotiveType.TRACKED
             techProgression {
                 techBase = TechBase.ALL
@@ -489,7 +475,6 @@ class OptionGenerator {
             minWeight = 1.0
             maxWeight = 50.0
             weightIncrement = 1.0
-            nextWeightKey = ConstructionOptionKey.CV_SUPERHEAVY_HOVER
             motiveType = MotiveType.HOVER
             techProgression {
                 techBase = TechBase.ALL
@@ -508,7 +493,6 @@ class OptionGenerator {
             minWeight = 1.0
             maxWeight = 30.0
             weightIncrement = 1.0
-            nextWeightKey = ConstructionOptionKey.CV_SUPERHEAVY_VTOL
             motiveType = MotiveType.VTOL
             techProgression {
                 techBase = TechBase.ALL
@@ -527,7 +511,6 @@ class OptionGenerator {
             minWeight = 1.0
             maxWeight = 80.0
             weightIncrement = 1.0
-            nextWeightKey = ConstructionOptionKey.CV_SUPERHEAVY_WIGE
             motiveType = MotiveType.WIGE
             techProgression {
                 techBase = TechBase.ALL
@@ -546,7 +529,6 @@ class OptionGenerator {
             minWeight = 1.0
             maxWeight = 300.0
             weightIncrement = 1.0
-            nextWeightKey = ConstructionOptionKey.CV_SUPERHEAVY_NAVAL_DISPLACEMENT
             motiveType = MotiveType.NAVAL
             techProgression {
                 techBase = TechBase.ALL
@@ -583,7 +565,6 @@ class OptionGenerator {
             minWeight = 1.0
             maxWeight = 300.0
             weightIncrement = 1.0
-            nextWeightKey = ConstructionOptionKey.CV_SUPERHEAVY_NAVAL_SUBMARINE
             motiveType = MotiveType.SUBMERSIBLE
             techProgression {
                 techBase = TechBase.ALL
@@ -602,7 +583,6 @@ class OptionGenerator {
             minWeight = 81.0
             maxWeight = 160.0
             weightIncrement = 1.0
-            prevWeightKey = ConstructionOptionKey.CV_WHEELED
             motiveType = MotiveType.WHEELED
             techProgression {
                 techBase = TechBase.ALL
@@ -621,7 +601,6 @@ class OptionGenerator {
             minWeight = 101.0
             maxWeight = 200.0
             weightIncrement = 1.0
-            prevWeightKey = ConstructionOptionKey.CV_TRACKED
             motiveType = MotiveType.TRACKED
             techProgression {
                 techBase = TechBase.ALL
@@ -640,7 +619,6 @@ class OptionGenerator {
             minWeight = 51.0
             maxWeight = 100.0
             weightIncrement = 1.0
-            prevWeightKey = ConstructionOptionKey.CV_HOVER
             motiveType = MotiveType.HOVER
             techProgression {
                 techBase = TechBase.ALL
@@ -659,7 +637,6 @@ class OptionGenerator {
             minWeight = 31.0
             maxWeight = 60.0
             weightIncrement = 1.0
-            prevWeightKey = ConstructionOptionKey.CV_VTOL
             motiveType = MotiveType.VTOL
             techProgression {
                 techBase = TechBase.ALL
@@ -678,7 +655,6 @@ class OptionGenerator {
             minWeight = 81.0
             maxWeight = 160.0
             weightIncrement = 1.0
-            prevWeightKey = ConstructionOptionKey.CV_WIGE
             motiveType = MotiveType.WIGE
             techProgression {
                 techBase = TechBase.ALL
@@ -697,7 +673,6 @@ class OptionGenerator {
             minWeight = 301.0
             maxWeight = 555.0
             weightIncrement = 1.0
-            prevWeightKey = ConstructionOptionKey.CV_NAVAL_DISPLACEMENT
             motiveType = MotiveType.NAVAL
             techProgression {
                 techBase = TechBase.ALL
@@ -716,7 +691,6 @@ class OptionGenerator {
             minWeight = 301.0
             maxWeight = 555.0
             weightIncrement = 1.0
-            prevWeightKey = ConstructionOptionKey.CV_NAVAL_SUBMARINE
             motiveType = MotiveType.SUBMERSIBLE
             techProgression {
                 techBase = TechBase.ALL
@@ -736,7 +710,6 @@ class OptionGenerator {
             minWeight = 0.1
             maxWeight = 4.999
             weightIncrement = 0.001
-            nextWeightKey = ConstructionOptionKey.SV_WHEELED_M
             motiveType = MotiveType.WHEELED
             techProgression {
                 techBase = TechBase.ALL
@@ -756,8 +729,6 @@ class OptionGenerator {
             minWeight = 5.0
             maxWeight = 80.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_WHEELED_S
-            nextWeightKey = ConstructionOptionKey.SV_WHEELED_L
             motiveType = MotiveType.WHEELED
             techProgression {
                 techBase = TechBase.ALL
@@ -777,7 +748,6 @@ class OptionGenerator {
             minWeight = 80.5
             maxWeight = 160.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_WHEELED_M
             motiveType = MotiveType.WHEELED
             techProgression {
                 techBase = TechBase.ALL
@@ -797,7 +767,6 @@ class OptionGenerator {
             minWeight = 0.1
             maxWeight = 4.999
             weightIncrement = 0.001
-            nextWeightKey = ConstructionOptionKey.SV_TRACKED_M
             motiveType = MotiveType.TRACKED
             techProgression {
                 techBase = TechBase.ALL
@@ -817,8 +786,6 @@ class OptionGenerator {
             minWeight = 5.0
             maxWeight = 100.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_TRACKED_S
-            nextWeightKey = ConstructionOptionKey.SV_TRACKED_L
             motiveType = MotiveType.TRACKED
             techProgression {
                 techBase = TechBase.ALL
@@ -838,7 +805,6 @@ class OptionGenerator {
             minWeight = 100.5
             maxWeight = 200.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_TRACKED_M
             motiveType = MotiveType.TRACKED
             techProgression {
                 techBase = TechBase.ALL
@@ -858,7 +824,6 @@ class OptionGenerator {
             minWeight = 0.1
             maxWeight = 4.999
             weightIncrement = 0.001
-            nextWeightKey = ConstructionOptionKey.SV_HOVER_M
             motiveType = MotiveType.HOVER
             techProgression {
                 techBase = TechBase.ALL
@@ -878,8 +843,6 @@ class OptionGenerator {
             minWeight = 5.0
             maxWeight = 50.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_HOVER_S
-            nextWeightKey = ConstructionOptionKey.SV_HOVER_L
             motiveType = MotiveType.HOVER
             techProgression {
                 techBase = TechBase.ALL
@@ -899,7 +862,6 @@ class OptionGenerator {
             minWeight = 50.5
             maxWeight = 100.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_HOVER_M
             motiveType = MotiveType.HOVER
             techProgression {
                 techBase = TechBase.ALL
@@ -919,7 +881,6 @@ class OptionGenerator {
             minWeight = 0.1
             maxWeight = 4.999
             weightIncrement = 0.001
-            nextWeightKey = ConstructionOptionKey.SV_VTOL_M
             motiveType = MotiveType.VTOL
             techProgression {
                 techBase = TechBase.ALL
@@ -939,8 +900,6 @@ class OptionGenerator {
             minWeight = 5.0
             maxWeight = 30.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_VTOL_S
-            nextWeightKey = ConstructionOptionKey.SV_VTOL_L
             motiveType = MotiveType.VTOL
             techProgression {
                 techBase = TechBase.ALL
@@ -960,7 +919,6 @@ class OptionGenerator {
             minWeight = 30.5
             maxWeight = 60.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_VTOL_M
             motiveType = MotiveType.VTOL
             techProgression {
                 techBase = TechBase.ALL
@@ -980,7 +938,6 @@ class OptionGenerator {
             minWeight = 0.1
             maxWeight = 4.999
             weightIncrement = 0.001
-            nextWeightKey = ConstructionOptionKey.SV_NAVAL_M
             motiveType = MotiveType.NAVAL
             techProgression {
                 techBase = TechBase.ALL
@@ -1000,8 +957,6 @@ class OptionGenerator {
             minWeight = 5.0
             maxWeight = 300.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_NAVAL_S
-            nextWeightKey = ConstructionOptionKey.SV_NAVAL_L
             motiveType = MotiveType.NAVAL
             techProgression {
                 techBase = TechBase.ALL
@@ -1021,7 +976,6 @@ class OptionGenerator {
             minWeight = 300.5
             maxWeight = 100000.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_NAVAL_M
             motiveType = MotiveType.NAVAL
             techProgression {
                 techBase = TechBase.ALL
@@ -1041,7 +995,6 @@ class OptionGenerator {
             minWeight = 0.1
             maxWeight = 4.999
             weightIncrement = 0.001
-            nextWeightKey = ConstructionOptionKey.SV_WIGE_M
             motiveType = MotiveType.WIGE
             techProgression {
                 techBase = TechBase.ALL
@@ -1061,8 +1014,6 @@ class OptionGenerator {
             minWeight = 5.0
             maxWeight = 80.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_WIGE_S
-            nextWeightKey = ConstructionOptionKey.SV_WIGE_L
             motiveType = MotiveType.WIGE
             techProgression {
                 techBase = TechBase.ALL
@@ -1082,7 +1033,6 @@ class OptionGenerator {
             minWeight = 80.5
             maxWeight = 160.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_WIGE_M
             motiveType = MotiveType.WIGE
             techProgression {
                 techBase = TechBase.ALL
@@ -1102,7 +1052,6 @@ class OptionGenerator {
             minWeight = 0.1
             maxWeight = 4.999
             weightIncrement = 0.001
-            nextWeightKey = ConstructionOptionKey.SV_FIXED_WING_M
             motiveType = MotiveType.AERODYNE
             techProgression {
                 techBase = TechBase.ALL
@@ -1122,8 +1071,6 @@ class OptionGenerator {
             minWeight = 5.0
             maxWeight = 100.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_FIXED_WING_S
-            nextWeightKey = ConstructionOptionKey.SV_FIXED_WING_L
             motiveType = MotiveType.AERODYNE
             techProgression {
                 techBase = TechBase.ALL
@@ -1143,7 +1090,6 @@ class OptionGenerator {
             minWeight = 100.5
             maxWeight = 200.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_FIXED_WING_M
             motiveType = MotiveType.AERODYNE
             techProgression {
                 techBase = TechBase.ALL
@@ -1163,7 +1109,6 @@ class OptionGenerator {
             minWeight = 0.1
             maxWeight = 4.999
             weightIncrement = 0.001
-            nextWeightKey = ConstructionOptionKey.SV_AIRSHIP_M
             motiveType = MotiveType.AIRSHIP
             techProgression {
                 techBase = TechBase.ALL
@@ -1183,8 +1128,6 @@ class OptionGenerator {
             minWeight = 5.0
             maxWeight = 300.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_AIRSHIP_S
-            nextWeightKey = ConstructionOptionKey.SV_AIRSHIP_L
             motiveType = MotiveType.AIRSHIP
             techProgression {
                 techBase = TechBase.ALL
@@ -1204,7 +1147,6 @@ class OptionGenerator {
             minWeight = 300.5
             maxWeight = 1000.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_AIRSHIP_M
             motiveType = MotiveType.AIRSHIP
             techProgression {
                 techBase = TechBase.ALL
@@ -1224,7 +1166,6 @@ class OptionGenerator {
             minWeight = 0.1
             maxWeight = 4.999
             weightIncrement = 0.001
-            nextWeightKey = ConstructionOptionKey.SV_RAIL_M
             motiveType = MotiveType.RAIL
             techProgression {
                 techBase = TechBase.ALL
@@ -1244,8 +1185,6 @@ class OptionGenerator {
             minWeight = 5.0
             maxWeight = 300.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_RAIL_S
-            nextWeightKey = ConstructionOptionKey.SV_RAIL_L
             motiveType = MotiveType.RAIL
             techProgression {
                 techBase = TechBase.ALL
@@ -1265,7 +1204,6 @@ class OptionGenerator {
             minWeight = 300.5
             maxWeight = 600.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_RAIL_M
             motiveType = MotiveType.RAIL
             techProgression {
                 techBase = TechBase.ALL
@@ -1285,7 +1223,6 @@ class OptionGenerator {
             minWeight = 0.1
             maxWeight = 4.999
             weightIncrement = 0.001
-            nextWeightKey = ConstructionOptionKey.SV_SATELLITE_M
             motiveType = MotiveType.STATION_KEEPING
             techProgression {
                 techBase = TechBase.ALL
@@ -1305,8 +1242,6 @@ class OptionGenerator {
             minWeight = 5.0
             maxWeight = 100.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_SATELLITE_S
-            nextWeightKey = ConstructionOptionKey.SV_SATELLITE_L
             motiveType = MotiveType.STATION_KEEPING
             techProgression {
                 techBase = TechBase.ALL
@@ -1326,7 +1261,6 @@ class OptionGenerator {
             minWeight = 100.5
             maxWeight = 300.0
             weightIncrement = 0.5
-            prevWeightKey = ConstructionOptionKey.SV_SATELLITE_M
             motiveType = MotiveType.STATION_KEEPING
             techProgression {
                 techBase = TechBase.ALL
@@ -1368,7 +1302,6 @@ class OptionGenerator {
                 techBase = TechBase.ALL
                 rating = Rating.RATING_D
                 availability = "FXED"
-                nextWeightKey = ConstructionOptionKey.BA_LIGHT
                 isProgression {
                     prototype = "2710(TH)"
                     common = "3058"
@@ -1388,8 +1321,6 @@ class OptionGenerator {
             minKg = 401
             maxKg = 750
             kgIncrement = 1
-            prevWeightKey = ConstructionOptionKey.BA_PAL
-            nextWeightKey = ConstructionOptionKey.BA_MEDIUM
             techProgression {
                 techBase = TechBase.ALL
                 rating = Rating.RATING_E
@@ -1412,8 +1343,6 @@ class OptionGenerator {
             minKg = 401
             maxKg = 750
             kgIncrement = 1
-            prevWeightKey = ConstructionOptionKey.BA_LIGHT
-            nextWeightKey = ConstructionOptionKey.BA_HEAVY
             techProgression {
                 techBase = TechBase.ALL
                 rating = Rating.RATING_E
@@ -1436,8 +1365,6 @@ class OptionGenerator {
             minKg = 401
             maxKg = 750
             kgIncrement = 1
-            prevWeightKey = ConstructionOptionKey.BA_MEDIUM
-            nextWeightKey = ConstructionOptionKey.BA_ASSAULT
             techProgression {
                 techBase = TechBase.ALL
                 rating = Rating.RATING_E
@@ -1460,7 +1387,6 @@ class OptionGenerator {
             minKg = 401
             maxKg = 750
             weightIncrement = 5.0
-            prevWeightKey = ConstructionOptionKey.BA_HEAVY
             techProgression {
                 techBase = TechBase.ALL
                 rating = Rating.RATING_E

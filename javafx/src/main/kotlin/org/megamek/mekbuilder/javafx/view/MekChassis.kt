@@ -33,8 +33,8 @@ class MekChassis: View(), InvalidationListener {
                 model.weightIncrement.value)
         model.baseOption.onChange {
             if (it != null) {
-                tonnageFactory.min = it.minWeight
                 tonnageFactory.max = it.maxWeight
+                tonnageFactory.min = it.minWeight
                 if (tonnageFactory.value < it.minWeight) {
                     tonnageFactory.value = it.minWeight
                 }
@@ -45,8 +45,12 @@ class MekChassis: View(), InvalidationListener {
         }
         tonnageFactory.amountToStepByProperty().bind(model.weightIncrement)
         tonnageFactory.valueProperty().bindBidirectional(model.tonnage)
-        spnTonnage.valueFactory = tonnageFactory
         tonnageFactory.converter = SpinnerDoubleStringConverter(spnTonnage.editor, tonnageFactory)
+        spnTonnage.valueFactory = tonnageFactory
+        // Force update on lost focus (e.g. tab)
+        spnTonnage.focusedProperty().addListener {
+            _, _, newValue -> if (!newValue) spnTonnage.increment(0)
+        }
         lblWeightClass.text = messages["lblWeightClass.${model.unitModel.unit.weightClass}"]
         model.tonnage.onChange {
             lblWeightClass.text = messages["lblWeightClass.${model.unitModel.unit.weightClass}"]

@@ -20,7 +20,6 @@ package org.megamek.mekbuilder.tech;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.sun.istack.Nullable;
 import org.megamek.mekbuilder.unit.UnitType;
 
 /**
@@ -35,25 +34,20 @@ public class UnitConstructionOption extends ConstructionOption {
     private final double minWeight;
     private final double maxWeight;
     private final double weightIncrement;
-    private final @Nullable ConstructionOptionKey prevWeightKey;
-    private final @Nullable ConstructionOptionKey nextWeightKey;
 
     @JsonCreator
+    @SuppressWarnings("unused")
     UnitConstructionOption() {
-        this(null, new TechProgression(), UnitType.BATTLE_MEK, 5.0, 100.0, 5.0,
-                null, null);
+        this(null, new TechProgression(), UnitType.BATTLE_MEK, 5.0, 100.0, 5.0);
     }
 
     public UnitConstructionOption(ConstructionOptionKey key, TechProgression techProgression,
-                           UnitType unitType, double minWeight, double maxWeight, double weightIncrement,
-                           ConstructionOptionKey prevWeightKey, ConstructionOptionKey nextWeightKey) {
+                           UnitType unitType, double minWeight, double maxWeight, double weightIncrement) {
         super(key, techProgression);
         this.unitType = unitType;
         this.minWeight = minWeight;
         this.maxWeight = maxWeight;
         this.weightIncrement = weightIncrement;
-        this.prevWeightKey = prevWeightKey;
-        this.nextWeightKey = nextWeightKey;
     }
 
     public UnitType getUnitType() {
@@ -69,12 +63,4 @@ public class UnitConstructionOption extends ConstructionOption {
     }
 
     public double getWeightIncrement() { return weightIncrement; }
-
-    public @Nullable ConstructionOptionKey getPrevWeightKey() {
-        return prevWeightKey;
-    }
-
-    public @Nullable ConstructionOptionKey getNextWeightKey() {
-        return nextWeightKey;
-    }
 }
