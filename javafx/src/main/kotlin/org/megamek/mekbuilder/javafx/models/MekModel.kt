@@ -1,5 +1,7 @@
 package org.megamek.mekbuilder.javafx.models
 
+import javafx.collections.ObservableList
+import org.megamek.mekbuilder.tech.ITechProgression
 import org.megamek.mekbuilder.unit.MekBuild
 import tornadofx.*
 

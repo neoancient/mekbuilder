@@ -3,6 +3,7 @@ package org.megamek.mekbuilder.javafx.models
 import javafx.beans.property.SimpleListProperty
 import javafx.beans.property.SimpleObjectProperty
 import org.megamek.mekbuilder.component.Component
+import org.megamek.mekbuilder.tech.TechLevel
 import org.megamek.mekbuilder.unit.MekBuild
 import org.megamek.mekbuilder.unit.MekConfiguration
 import tornadofx.*
@@ -36,6 +37,8 @@ class UnitViewModel(): ViewModel() {
     val baseRunMP = bind{unitModel.baseRunMPProperty}
     val walkMP = bind{unitModel.walkMPProperty}
     val runMP = bind{unitModel.runMPProperty}
+
+    val minTechLevelProperty = SimpleObjectProperty(TechLevel.INTRO)
 
     // Mek properties
     val mekConfiguration = bind(true) {if (unitModel is MekModel) (unitModel as MekModel).configurationProperty else SimpleObjectProperty<MekConfiguration>()}

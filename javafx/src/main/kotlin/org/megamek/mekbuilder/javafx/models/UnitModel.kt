@@ -5,6 +5,7 @@ import javafx.beans.value.ObservableDoubleValue
 import javafx.beans.value.ObservableIntegerValue
 import javafx.collections.ObservableList
 import org.megamek.mekbuilder.component.Mount
+import org.megamek.mekbuilder.tech.ITechProgression
 import org.megamek.mekbuilder.tech.TechBase
 import org.megamek.mekbuilder.unit.UnitBuild
 import org.megamek.mekbuilder.unit.UnitLocation

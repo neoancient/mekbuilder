@@ -8,6 +8,7 @@ import javafx.scene.control.Label
 import javafx.scene.layout.AnchorPane
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
 import org.megamek.mekbuilder.javafx.util.SimpleComboBoxCellFactory
+import org.megamek.mekbuilder.tech.ConstructionOptionKey
 import org.megamek.mekbuilder.tech.UnitConstructionOption
 import tornadofx.*
 import org.megamek.mekbuilder.unit.MekConfiguration
@@ -74,7 +75,8 @@ class MekConfigPanel: View() {
         }
         cbConstructionOption.selectionModel.selectedItemProperty().onChange {
             if (it != null) {
-                model.baseOption.value = it
+                model.baseOption.setValue(it)
+                setMinTechLevel()
             }
         }
         SimpleComboBoxCellFactory.setConverter(cbConstructionOption) {
@@ -96,5 +98,16 @@ class MekConfigPanel: View() {
         chkOmni.visibleWhen(model.mekConfiguration.booleanBinding {
             it?.isOmniAllowed ?: false
         })
+        chkOmni.selectedProperty().onChange {
+            setMinTechLevel()
+        }
+    }
+
+    private fun setMinTechLevel() {
+        var tl = model.baseOption.value.staticTechLevel()
+        if (model.omni.value && tl < ConstructionOptionKey.OMNI.get().staticTechLevel()) {
+            tl = ConstructionOptionKey.OMNI.get().staticTechLevel()
+        }
+        model.minTechLevelProperty.value = tl
     }
 }

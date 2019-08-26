@@ -19,6 +19,7 @@ import kotlin.math.min
 /**
  *
  */
+
 class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
     val model: UnitViewModel by inject()
 
@@ -66,18 +67,19 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
                 observableList(model.baseOption.value.techBase(), TechBase.ALL)
             }
         })
-        val techLevelList = SimpleListProperty<TechLevel>()
-        techLevelList.bind(objectBinding(model.baseOption) {
-            TechLevel.values().filter{it >= model.baseOption.value.staticTechLevel()}.toList().observable()
-        })
+
         txtYear.textFormatter = TextFormatter(yearFieldConverter)
         cbTechBase.items = techBaseList
         SimpleComboBoxCellFactory.setConverter(cbTechBase, TechBase::unitDisplayName)
-        cbTechLevel.items = techLevelList
+        cbTechLevel.items = TechLevel.values().toList().observable()
         SimpleComboBoxCellFactory.setConverter(cbTechLevel, TechLevel::displayName)
         cbTechLevel.selectionModel.select(TechLevel.STANDARD)
         cbFaction.items = Faction.values().toList().observable()
         SimpleComboBoxCellFactory.setConverter(cbFaction, Faction::displayName)
+
+        model.minTechLevelProperty.onChange {
+            if (it != null) setMininumTechLevel(it)
+        }
 
         txtChassis.bind(model.chassisName)
         txtModel.bind(model.modelName)
@@ -99,6 +101,19 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
                     model.techBase.value = it.techBase()
                 }
             }
+        }
+    }
+
+    /**
+     * When the minimum tech level changes due to chosen construction options, refilters
+     * the available tech level and makes sure the current selection is at least the minimum.
+     */
+    private fun setMininumTechLevel(min: TechLevel) {
+        cbTechLevel.items = TechLevel.values().filter{
+            it >= model.baseOption.value.staticTechLevel()
+        }.toList().observable()
+        if (min > cbTechLevel.selectedItem ?: TechLevel.INTRO) {
+            cbTechLevel.selectionModel.select(min)
         }
     }
 
