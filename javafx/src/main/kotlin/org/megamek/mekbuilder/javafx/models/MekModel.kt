@@ -17,7 +17,7 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
             baseOptionProperty.refresh()
         }
         structureTonnageProperty.bind(doubleBinding(
-                internalStructureProperty, declaredTonnageProperty, configurationProperty)
+                internalStructureProperty, tonnageProperty, configurationProperty)
             {mekBuild.structureTonnage})
     }
 }

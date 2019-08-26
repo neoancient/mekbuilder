@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
@@ -36,12 +35,12 @@
             <Label text="%cbEngine.text" GridPane.rowIndex="2" />
             <Label text="%cbGyro.text" GridPane.rowIndex="3" />
             <Label text="%cbCockpit.text" GridPane.rowIndex="4" />
-            <Spinner fx:id="spnTonnage" prefWidth="100.0" GridPane.columnIndex="1" />
+            <Spinner fx:id="spnTonnage" editable="true" prefWidth="100.0" GridPane.columnIndex="1" />
             <ComboBox fx:id="cbStructure" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" />
             <ComboBox fx:id="cbEngine" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" />
             <ComboBox fx:id="cbGryo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" />
             <ComboBox fx:id="cbCockpit" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="4" />
-            <CheckBox fx:id="chkOmni" mnemonicParsing="false" text="%chkOmni.text" GridPane.columnIndex="2" />
+            <Label fx:id="lblWeightClass" text="Weight Class" GridPane.columnIndex="2" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

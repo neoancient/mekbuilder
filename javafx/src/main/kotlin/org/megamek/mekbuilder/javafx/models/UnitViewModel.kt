@@ -6,6 +6,7 @@ import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.tech.TechLevel
 import org.megamek.mekbuilder.unit.MekBuild
 import org.megamek.mekbuilder.unit.MekConfiguration
+import org.megamek.mekbuilder.unit.UnitWeightClass
 import tornadofx.*
 
 /**
@@ -26,21 +27,25 @@ class UnitViewModel(): ViewModel() {
     val tonnage = bind(true) {unitModel.tonnageProperty}
     val componentList = bind{ SimpleListProperty(unitModel.componentList) }
 
-    val omni = bind{unitModel.omniProperty}
-    val kgStandard = bind{unitModel.kgStandardProperty}
-    val declaredTonnage = bind{unitModel.declaredTonnageProperty}
-    val structureTonnage = bind{unitModel.structureTonnageProperty}
-    val armorTonnage = bind{unitModel.armorTonnageProperty}
-    val totalArmorPoints = bind{unitModel.totalArmorPointsProperty}
-    val defaultArmorName = bind{unitModel.defaultArmorNameProperty}
-    val baseWalkMP = bind{unitModel.baseWalkMPProperty}
-    val baseRunMP = bind{unitModel.baseRunMPProperty}
-    val walkMP = bind{unitModel.walkMPProperty}
-    val runMP = bind{unitModel.runMPProperty}
+    val omni = bind(true) {unitModel.omniProperty}
+    val kgStandard = bind(true) {unitModel.kgStandardProperty}
+    val structureTonnage = bind(true) {unitModel.structureTonnageProperty}
+    val armorTonnage = bind(true) {unitModel.armorTonnageProperty}
+    val totalArmorPoints = bind(true) {unitModel.totalArmorPointsProperty}
+    val defaultArmorName = bind(true) {unitModel.defaultArmorNameProperty}
+    val baseWalkMP = bind(true) {unitModel.baseWalkMPProperty}
+    val baseRunMP = bind(true) {unitModel.baseRunMPProperty}
+    val walkMP = bind(true) {unitModel.walkMPProperty}
+    val runMP = bind(true) {unitModel.runMPProperty}
 
     val minTechLevelProperty = SimpleObjectProperty(TechLevel.INTRO)
+    val weightClassProperty = SimpleObjectProperty<UnitWeightClass>()
 
     // Mek properties
     val mekConfiguration = bind(true) {if (unitModel is MekModel) (unitModel as MekModel).configurationProperty else SimpleObjectProperty<MekConfiguration>()}
     val internalStructure = bind {if (unitModel is MekModel) (unitModel as MekModel).internalStructureProperty else SimpleObjectProperty<Component>()}
+
+    init {
+        weightClassProperty.bind(objectBinding(unitModel) {weightClass.value})
+    }
 }

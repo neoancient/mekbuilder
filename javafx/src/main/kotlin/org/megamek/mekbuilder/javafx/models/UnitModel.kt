@@ -10,6 +10,7 @@ import org.megamek.mekbuilder.tech.TechBase
 import org.megamek.mekbuilder.unit.UnitBuild
 import org.megamek.mekbuilder.unit.UnitLocation
 import org.megamek.mekbuilder.unit.UnitType
+import org.megamek.mekbuilder.unit.UnitWeightClass
 import tornadofx.*
 
 /**
@@ -40,8 +41,8 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     val weaponTonnageMap = HashMap<UnitLocation, ObservableDoubleValue>().observable()
     val maxArmorPointsMap = HashMap<UnitLocation, ObservableIntegerValue>().observable()
 
+    val weightClass = objectBinding(tonnageProperty) {unit.weightClass}
     val buildWeight = doubleBinding(componentList) {unit.buildWeight()}
-    val weightClassProperty = objectBinding(buildWeight) {unit.getWeightClass()}
     val weaponTonnage = doubleBinding(componentList) {unit.getWeaponTonnage()}
     val energyWeaponTonnage = doubleBinding(componentList) {unit.getEnergyWeaponTonnage()}
     val tcompLinkedTonnage = doubleBinding(componentList) {unit.getTCLinkedTonnage()}
@@ -56,8 +57,6 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     var isOmni by omniProperty
     val kgStandardProperty = SimpleBooleanProperty(false)
     var usesKgStandard by kgStandardProperty
-    val declaredTonnageProperty = SimpleDoubleProperty(0.0)
-    var declaredTonnage by declaredTonnageProperty
     val structureTonnageProperty = SimpleDoubleProperty(0.0)
     var structureTonnage by structureTonnageProperty
     val armorTonnageProperty = SimpleDoubleProperty(0.0)

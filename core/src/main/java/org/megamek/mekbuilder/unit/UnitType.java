@@ -40,14 +40,10 @@ public enum UnitType {
     MOBILE_STRUCTURE("MS"),
     HANDHELD_WEAPON("HHW");
 
-    private final String abbrev;
+    public final String abbrev;
 
     UnitType(String abbrev) {
         this.abbrev = abbrev;
-    }
-
-    public String getAbbrev() {
-        return abbrev;
     }
 
     public boolean isMech() {
