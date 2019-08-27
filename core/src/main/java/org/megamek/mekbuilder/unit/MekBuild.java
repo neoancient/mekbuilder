@@ -34,7 +34,7 @@ public class MekBuild extends UnitBuild {
     
     public enum LimbConfiguration {
         BIPED, QUAD, TRIPOD, ARMLESS
-    };
+    }
 
     private final Map<UnitLocation, Integer> criticalSlots;
     private MekConfiguration configuration;
@@ -92,6 +92,22 @@ public class MekBuild extends UnitBuild {
     @Override
     public boolean isQuad() {
         return configuration.getLimbConfiguration().equals(LimbConfiguration.QUAD);
+    }
+
+    public boolean isPrimitive() {
+        return configuration.getBaseType().equals(MekConfiguration.BaseType.PRIMITIVE);
+    }
+
+    public boolean isQuadVee() {
+        return configuration.getBaseType().equals(MekConfiguration.BaseType.QUADVEE);
+    }
+
+    public boolean isLAM() {
+        return configuration.getBaseType().equals(MekConfiguration.BaseType.LAM);
+    }
+
+    public boolean isSuperheavy() {
+        return getWeightClass().equals(UnitWeightClass.SUPERHEAVY);
     }
 
     @Override
@@ -388,8 +404,28 @@ public class MekBuild extends UnitBuild {
         }
     }
 
+    public Component getDefaultStructure() {
+        return ComponentLibrary.getInstance().getAllComponents().stream()
+                .filter(c -> c.getType().equals(ComponentType.MEK_STRUCTURE)
+                && c.isDefault() && allowed(c)).findFirst()
+                .orElse(ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_STRUCTURE_STANDARD));
+    }
+
     @Override
     public String getDefaultArmorName() {
         return ComponentKeys.ARMOR_STANDARD;
+    }
+
+
+    @Override
+    public boolean allowed(Component component) {
+        return super.allowed(component)
+                && component.flagMatches(ComponentSwitch.PRIMITIVE, isPrimitive())
+                && component.flagMatches(ComponentSwitch.SUPERHEAVY_MEK, isSuperheavy())
+                && component.flagMatches(ComponentSwitch.QUAD, isQuad())
+                && component.flagMatches(ComponentSwitch.TRIPOD, isTripod())
+                && component.flagMatches(ComponentSwitch.LAM, isLAM())
+                && component.flagMatches(ComponentSwitch.QUADVEE, isQuadVee())
+                && !(component.spreadable() && isLAM());
     }
 }

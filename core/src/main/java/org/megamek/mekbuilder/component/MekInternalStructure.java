@@ -32,7 +32,7 @@ import java.util.List;
 public class MekInternalStructure extends DistributedMount {
 
     public MekInternalStructure(MekBuild mek) {
-        this(mek, ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_STRUCTURE_STANDARD));
+        this(mek, mek.getDefaultStructure());
     }
 
     public MekInternalStructure(MekBuild mek, String structureType) {

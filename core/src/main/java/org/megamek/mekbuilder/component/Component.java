@@ -23,6 +23,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.sun.istack.Nullable;
 import org.megamek.mekbuilder.tech.*;
 import org.megamek.mekbuilder.unit.UnitBuild;
 import org.megamek.mekbuilder.unit.UnitLocation;
@@ -41,6 +42,7 @@ import java.util.Set;
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class Component implements ITechDelegator {
     private ComponentType componentType = ComponentType.MISC;
+    private boolean isDefault = false;
     private String internalName = "?";
     private String mmName = "?";
     private String fullName = "?";
@@ -86,6 +88,13 @@ public class Component implements ITechDelegator {
 
     public ComponentType getType() {
         return componentType;
+    }
+
+    /**
+     * @return Whether this is the default component in its category (e.g. standard structure, armor, fusion engine)
+     */
+    public boolean isDefault() {
+        return isDefault;
     }
 
     public String getInternalName() {
@@ -260,6 +269,51 @@ public class Component implements ITechDelegator {
      */
     public boolean hasFlag(ComponentSwitch flag) {
         return switches.containsKey(flag);
+    }
+
+    /**
+     * Lookup for the value associated with a component flag. A {@code null} can indicate
+     * that the flag is associated with an explicit null value or that the component
+     * does not have the flag in question.
+     *
+     * @param flag The flag to test
+     * @return     The value associated with the flag.
+     */
+    public @Nullable
+    Object flagValue(ComponentSwitch flag) {
+        return switches.get(flag);
+    }
+
+    /**
+     * Compares the flag associated with a given value and returns whether they are equal.
+     * This versioon of the method is used for filtering components and assumes that those
+     * who do not have an associated value are to be included.
+     * @see #flagMatches(ComponentSwitch, Object, boolean)
+     *
+     * @param flag        The flag to check
+     * @param match       The value to match
+     * @return            Whether the value associated with the flag matches the provided value
+     */
+    public boolean flagMatches(ComponentSwitch flag, Object match) {
+        return flagMatches(flag, match, true);
+    }
+
+    /**
+     * Compares the flag associated with a given value and returns whether they are equal.
+     * If the Component does not have a value associated with the flag, the default value is returned.
+     *
+     * @param flag        The flag to check
+     * @param match       The value to match
+     * @param defaultVal  The value to return if the flag is not present
+     * @return            Whether the value associated with the flag matches the provided value
+     */
+    public boolean flagMatches(ComponentSwitch flag, Object match, boolean defaultVal) {
+        final Object val = switches.get(flag);
+        if (val != null) {
+            return val.equals(match);
+        } else {
+            return defaultVal;
+        }
     }
 
     /**

@@ -14,6 +14,8 @@ import tornadofx.*
  */
 class UnitViewModel(): ViewModel() {
     var unitModel: UnitModel = MekModel(MekBuild())
+    val unitProperty = bind{unitModel.unitProperty}
+    var unit by unitProperty
 
     val unitType = bind{unitModel.unitTypeProperty}
     val baseOption = bind(true) {unitModel.baseOptionProperty}
@@ -43,7 +45,7 @@ class UnitViewModel(): ViewModel() {
 
     // Mek properties
     val mekConfiguration = bind(true) {if (unitModel is MekModel) (unitModel as MekModel).configurationProperty else SimpleObjectProperty<MekConfiguration>()}
-    val internalStructure = bind {if (unitModel is MekModel) (unitModel as MekModel).internalStructureProperty else SimpleObjectProperty<Component>()}
+    val internalStructure = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).internalStructureProperty else SimpleObjectProperty<Component>()}
 
     init {
         weightClassProperty.bind(objectBinding(unitModel) {weightClass.value})

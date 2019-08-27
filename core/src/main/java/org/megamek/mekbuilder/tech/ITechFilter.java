@@ -73,7 +73,7 @@ public interface ITechFilter {
         // Faction may be treated as TH for ComStar and early Clan tech
         Faction faction = getFaction();
         // IS tech may be treated as Clan in early Clan period
-        boolean clanTech = tech.clanTech();
+        boolean clanTech = getTechBase() == TechBase.CLAN;
 
         Integer isIntroDate = tech.introDate(false);
         Integer clanIntroDate = tech.introDate(true);

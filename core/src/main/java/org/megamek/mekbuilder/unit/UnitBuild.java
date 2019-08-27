@@ -19,12 +19,7 @@
 package org.megamek.mekbuilder.unit;
 
 import megamek.common.annotations.Nullable;
-import org.megamek.mekbuilder.component.ComponentSwitch;
-import org.megamek.mekbuilder.component.ComponentType;
-import org.megamek.mekbuilder.component.HeavyWeapon;
-import org.megamek.mekbuilder.component.WeaponFlag;
-import org.megamek.mekbuilder.component.IEngineMount;
-import org.megamek.mekbuilder.component.Mount;
+import org.megamek.mekbuilder.component.*;
 import org.megamek.mekbuilder.tech.Faction;
 import org.megamek.mekbuilder.tech.TechBase;
 import org.megamek.mekbuilder.tech.UnitConstructionOption;
@@ -347,6 +342,17 @@ public abstract class UnitBuild {
      */
     public int getRunMP() {
         return getBaseRunMP();
+    }
+
+    /**
+     * Determines whether the component is allow on the unit. By default this checks
+     * unit type, but subclasses will apply additional restrictions.
+     *
+     * @param component The component to mount
+     * @return          Whether the component is legal for the unit
+     */
+    public boolean allowed(Component component) {
+        return component.allowed(this);
     }
 
 }

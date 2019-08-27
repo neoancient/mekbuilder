@@ -1,5 +1,4 @@
 [{
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MEK_STRUCTURE",
   "internalName" : "IS Endo-Composite",
   "mmName" : "IS Endo-Composite",
@@ -19,7 +18,7 @@
   "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "342, TO",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "false",
     "SPREADABLE" : "null"
   },
   "techAdvancement" : "IS|E|XXFE|3067(LC),~3085(LC),-,-,-|-,-,-,-,-|EXPERIMENTAL",
@@ -29,7 +28,6 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MEK_STRUCTURE",
   "internalName" : "IS Endo Steel:prototype",
   "mmName" : "IS Endo Steel Prototype",
@@ -49,7 +47,7 @@
   "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "71, IO",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "false",
     "SPREADABLE" : "null"
   },
   "techAdvancement" : "IS|E|DFED|~2480(TH),2487(TH),3040,2850,3035(DC)|-,-,-,-,-|STANDARD",
@@ -59,8 +57,8 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MEK_STRUCTURE",
+  "isDefault" : "true",
   "internalName" : "Superheavy Industrial",
   "mmName" : "IS Industrial",
   "fullName" : "Superheavy Industrial",
@@ -79,7 +77,7 @@
   "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "161, IO",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null"
+    "SUPERHEAVY_MEK" : "true"
   },
   "techAdvancement" : "IS|D|XXFF|~2905(FW),2940(FW),-,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -88,7 +86,6 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "INDUSTRIAL_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MEK_STRUCTURE",
   "internalName" : "Superheavy Endo-Steel",
   "mmName" : "IS Endo Steel",
@@ -108,7 +105,7 @@
   "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "161, IO",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "true",
     "SPREADABLE" : "null"
   },
   "techAdvancement" : "IS|E|XXFF|~3060(WB),3076(WB),-,-,-|-,-,-,-,-|STANDARD",
@@ -118,8 +115,8 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MEK_STRUCTURE",
+  "isDefault" : "true",
   "internalName" : "Superheavy Standard Structure",
   "mmName" : "Standard",
   "fullName" : "Superheavy Standard Structure",
@@ -138,7 +135,7 @@
   "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "161, IO",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null"
+    "SUPERHEAVY_MEK" : "true"
   },
   "techAdvancement" : "IS|E|XXFF|~3060(WB),3076(WB),-,-,-|-,-,-,-,-|INTRO",
   "permittedLocations" : [ ],
@@ -147,7 +144,6 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MEK_STRUCTURE",
   "internalName" : "IS Endo Steel",
   "mmName" : "IS Endo Steel",
@@ -167,7 +163,7 @@
   "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "224, TM",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "false",
     "SPREADABLE" : "null"
   },
   "techAdvancement" : "IS|E|DFED|~2480(TH),2487(TH),3040,2850,3035(DC)|-,-,-,-,-|STANDARD",
@@ -177,8 +173,8 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MEK_STRUCTURE",
+  "isDefault" : "true",
   "internalName" : "Standard Structure",
   "mmName" : "Standard",
   "fullName" : "Standard Structure",
@@ -197,7 +193,7 @@
   "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "225, TM",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null"
+    "SUPERHEAVY_MEK" : "false"
   },
   "techAdvancement" : "ALL|D|CCCC|~2430(TH/TH),2439(TH/TH),2505,-,-|~2430,2439,2505,-,-|INTRO",
   "permittedLocations" : [ ],
@@ -206,7 +202,6 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MEK_STRUCTURE",
   "internalName" : "Clan Endo Steel",
   "mmName" : "Clan Endo Steel",
@@ -226,7 +221,7 @@
   "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "224, TM",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "false",
     "SPREADABLE" : "null"
   },
   "techAdvancement" : "CLAN|F|XEDD|-,-,-,-,-|~2825(CIH),~2827(CIH),2830,-,-|STANDARD",
@@ -236,7 +231,6 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MEK_STRUCTURE",
   "internalName" : "Reinforced Structure",
   "mmName" : "IS Reinforced,Clan Reinforced",
@@ -256,7 +250,7 @@
   "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "342, TO",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null"
+    "SUPERHEAVY_MEK" : "false"
   },
   "techAdvancement" : "ALL|E|XXED|3057(CS),-,-,-,-|3065(CGB),~3084(CGB),-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -265,7 +259,6 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MEK_STRUCTURE",
   "internalName" : "Clan Endo-Composite",
   "mmName" : "Clan Endo-Composite",
@@ -285,7 +278,7 @@
   "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "342, TO",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "false",
     "SPREADABLE" : "null"
   },
   "techAdvancement" : "CLAN|E|XXFE|-,-,-,-,-|3073(CWX),-,-,-,-|EXPERIMENTAL",
@@ -295,7 +288,6 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MEK_STRUCTURE",
   "internalName" : "Superheavy Endo-Composite",
   "mmName" : "IS Endo-Composite",
@@ -315,7 +307,7 @@
   "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "161, IO",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "true",
     "SPREADABLE" : "null"
   },
   "techAdvancement" : "IS|E|XXFF|~3130(RS),3135(RS),-,-,-|-,-,-,-,-|EXPERIMENTAL",
@@ -325,7 +317,6 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MEK_STRUCTURE",
   "internalName" : "Industrial Sealed Structure",
   "mmName" : "",
@@ -345,7 +336,7 @@
   "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "224, TM",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null"
+    "SUPERHEAVY_MEK" : "false"
   },
   "techAdvancement" : "ALL|C|CCCC|2300(TA/TA),2350(TH/TH),2495,-,-|2300,2350,2495,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -365,8 +356,8 @@
   },
   "allowedUnitTypes" : [ "INDUSTRIAL_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MEK_STRUCTURE",
+  "isDefault" : "true",
   "internalName" : "Industrial Structure",
   "mmName" : "IS Industrial,Clan Industrial",
   "fullName" : "Industrial Structure",
@@ -385,7 +376,7 @@
   "bvCalcType" : "INTERNAL_STRUCTURE",
   "rulesRef" : "224, TM",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null"
+    "SUPERHEAVY_MEK" : "false"
   },
   "techAdvancement" : "ALL|C|CCCC|~2430(TH/TA),2300(TA/TH),2350(TH),2490,-|2300,2350,2490,-,-|STANDARD",
   "permittedLocations" : [ ],

@@ -17,7 +17,8 @@ import tornadofx.*
  *
  */
 abstract class UnitModel (unitBuild: UnitBuild) {
-    val unit = unitBuild
+    val unitProperty = SimpleObjectProperty(unitBuild)
+    var unit by unitProperty
     val unitTypeProperty = ReadOnlyObjectWrapper<UnitType>(unit.unitType)
 
     val baseOptionProperty = observable(unit, UnitBuild::getBaseConstructionOption, UnitBuild::setBaseConstructionOption)
