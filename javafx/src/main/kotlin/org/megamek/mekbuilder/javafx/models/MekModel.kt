@@ -15,6 +15,9 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
     val internalStructureProperty = observable(mekBuild, MekBuild::getStructureType, MekBuild::setStructureType)
     val engineTypeProperty = observable(mekBuild, MekBuild::getEngineType, MekBuild::setEngineType)
     val engineRatingProperty = observable(mekBuild, MekBuild::getEngineRating, MekBuild::setEngineRating)
+    val cockpitTypeProperty = observable(mekBuild, MekBuild::getCockpitType, MekBuild::setCockpitType)
+    val gyroTypeProperty = observable(mekBuild, MekBuild::getGyroType, MekBuild::setGyroType)
+    val myomerTypeProperty = observable(mekBuild, MekBuild::getMyomerType, MekBuild::setMyomerType)
 
     init {
         structureTonnageProperty.bind(doubleBinding(

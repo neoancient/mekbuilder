@@ -41,9 +41,9 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
         override fun fromString(string: String): Int? {
             val str = string.replace("[^\\d]".toRegex(), "")
             return if (str.isNotEmpty()) {
-                min(max(Integer.valueOf(str), model.baseOption.value.introDate()), MAX_YEAR)
+                min(max(Integer.valueOf(str), model.baseOption.introDate()), MAX_YEAR)
             } else {
-                model.introYear.value
+                model.introYear
             }
         }
     }
@@ -60,12 +60,12 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
 
     init {
         val techBaseList = SimpleListProperty<TechBase>()
-        techBaseList.bind(objectBinding(model.baseOption) {
-            if (model.baseOption.value == null
-                    || model.baseOption.value.techBase() == TechBase.ALL) {
+        techBaseList.bind(objectBinding(model.baseOptionProperty) {
+            if (model.baseOption == null
+                    || model.baseOption.techBase() == TechBase.ALL) {
                 TechBase.values().toList().observable()
             } else {
-                observableList(model.baseOption.value.techBase(), TechBase.ALL)
+                observableList(model.baseOption.techBase(), TechBase.ALL)
             }
         })
 
@@ -82,12 +82,12 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
             if (it != null) setMininumTechLevel(it)
         }
 
-        txtChassis.bind(model.chassisName)
-        txtModel.bind(model.modelName)
-        txtSource.bind(model.source)
-        txtYear.bind(model.introYear, false, yearFieldConverter)
-        cbTechBase.bind(model.techBase)
-        cbFaction.bind(model.faction)
+        txtChassis.bind(model.chassisNameProperty)
+        txtModel.bind(model.modelNameProperty)
+        txtSource.bind(model.sourceProperty)
+        txtYear.bind(model.introYearProperty, false, yearFieldConverter)
+        cbTechBase.bind(model.techBaseProperty)
+        cbFaction.bind(model.factionProperty)
 
         txtYear.textProperty().addListener(this)
         cbTechBase.selectionModel.selectedItemProperty().addListener(this)
@@ -96,12 +96,12 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
         chkEraBasedProgression.selectedProperty().addListener(this)
         chkShowExtinct.selectedProperty().addListener(this)
 
-        model.baseOption.onChange {
+        model.baseOptionProperty.onChange {
             if (it != null) {
-                if ((it.techBase() != TechBase.ALL) && (model.techBase.value != TechBase.ALL)) {
-                    model.techBase.value = it.techBase()
+                if ((it.techBase() != TechBase.ALL) && (model.techBase != TechBase.ALL)) {
+                    model.techBase = it.techBase()
                 }
-                cbTechBase.selectionModel.select(model.techBase.value)
+                cbTechBase.selectionModel.select(model.techBase)
             }
         }
     }
@@ -112,7 +112,7 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
      */
     private fun setMininumTechLevel(min: TechLevel) {
         cbTechLevel.items = TechLevel.values().filter{
-            it >= model.baseOption.value.staticTechLevel()
+            it >= model.baseOption.staticTechLevel()
         }.toList().observable()
         if (min > cbTechLevel.selectedItem ?: TechLevel.INTRO) {
             cbTechLevel.selectionModel.select(min)

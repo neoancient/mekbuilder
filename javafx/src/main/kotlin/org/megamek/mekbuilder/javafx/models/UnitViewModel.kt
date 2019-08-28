@@ -1,8 +1,8 @@
 package org.megamek.mekbuilder.javafx.models
 
-import javafx.beans.property.SimpleIntegerProperty
 import javafx.beans.property.SimpleListProperty
 import javafx.beans.property.SimpleObjectProperty
+import org.megamek.mekbuilder.component.Cockpit
 import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.component.MVFEngine
 import org.megamek.mekbuilder.tech.TechLevel
@@ -19,48 +19,80 @@ class UnitViewModel(): ViewModel() {
     val unitProperty = bind{unitModel.unitProperty}
     var unit by unitProperty
 
-    val unitType = bind{unitModel.unitTypeProperty}
-    val baseOption = bind(true) {unitModel.baseOptionProperty}
-    val weightIncrement = doubleBinding(baseOption) {unitModel.baseConstructionOption.weightIncrement}
-    val chassisName = bind(true) {unitModel.chassisProperty}
-    val modelName = bind(true) {unitModel.modelProperty}
-    val source = bind(true) {unitModel.sourceProperty}
-    val introYear = bind(true) {unitModel.yearProperty}
-    val techBase = bind(true) {unitModel.techBaseProperty}
-    val faction = bind(true) {unitModel.factionProperty}
-    val tonnage = bind(true) {unitModel.tonnageProperty}
-    val componentList = bind{ SimpleListProperty(unitModel.componentList) }
+    val unitTypeProperty = bind{unitModel.unitTypeProperty}
+    var unitType by unitTypeProperty
+    val baseOptionProperty = bind(true) {unitModel.baseOptionProperty}
+    var baseOption by baseOptionProperty
+    val weightIncrementBinding = doubleBinding(baseOptionProperty) {unitModel.baseConstructionOption.weightIncrement}
+    val chassisNameProperty = bind(true) {unitModel.chassisProperty}
+    var chassisName by chassisNameProperty
+    val modelNameProperty = bind(true) {unitModel.modelProperty}
+    var modelName by modelNameProperty
+    val sourceProperty = bind(true) {unitModel.sourceProperty}
+    var source by sourceProperty
+    val introYearProperty = bind(true) {unitModel.yearProperty}
+    var introYear by introYearProperty
+    val techBaseProperty = bind(true) {unitModel.techBaseProperty}
+    var techBase by techBaseProperty
+    val factionProperty = bind(true) {unitModel.factionProperty}
+    var faction by factionProperty
+    val tonnageProperty = bind(true) {unitModel.tonnageProperty}
+    var tonnage by tonnageProperty
+    val componentListProperty = bind{ SimpleListProperty(unitModel.componentList) }
+    var componentList by componentListProperty
 
-    val omni = bind(true) {unitModel.omniProperty}
-    val kgStandard = bind(true) {unitModel.kgStandardProperty}
-    val structureTonnage = bind {unitModel.structureTonnageProperty}
-    val armorTonnage = bind(true) {unitModel.armorTonnageProperty}
-    val totalArmorPoints = bind(true) {unitModel.totalArmorPointsProperty}
-    val defaultArmorName = bind(true) {unitModel.defaultArmorNameProperty}
-    val baseWalkMP = bind(true) {unitModel.baseWalkMPProperty}
-    val baseRunMP = bind(true) {unitModel.baseRunMPProperty}
-    val walkMP = bind(true) {unitModel.walkMPProperty}
-    val runMP = bind(true) {unitModel.runMPProperty}
+    val omniProperty = bind(true) {unitModel.omniProperty}
+    var omni by omniProperty
+    val kgStandardProperty = bind(true) {unitModel.kgStandardProperty}
+    var kgStandard by kgStandardProperty
+    val structureTonnageProperty = bind {unitModel.structureTonnageProperty}
+    var structureTonnage by structureTonnageProperty
+    val armorTonnageProperty = bind(true) {unitModel.armorTonnageProperty}
+    var armorTonnage by armorTonnageProperty
+    val totalArmorPointsProperty = bind(true) {unitModel.totalArmorPointsProperty}
+    var totalArmorPoints by totalArmorPointsProperty
+    val defaultArmorNameProperty = bind(true) {unitModel.defaultArmorNameProperty}
+    var defaultArmorName by defaultArmorNameProperty
+    val baseWalkMPProperty = bind(true) {unitModel.baseWalkMPProperty}
+    var baseWalkMP by baseWalkMPProperty
+    val baseRunMPProperty = bind(true) {unitModel.baseRunMPProperty}
+    var baseRunMP by baseRunMPProperty
+    val walkMPProperty = bind(true) {unitModel.walkMPProperty}
+    var walkMP by walkMPProperty
+    val runMPProperty = bind(true) {unitModel.runMPProperty}
+    var runMP by runMPProperty
 
     val minTechLevelProperty = SimpleObjectProperty(TechLevel.INTRO)
+    var minTechLevel by minTechLevelProperty
     val weightClassProperty = SimpleObjectProperty<UnitWeightClass>()
+    var weightClass by weightClassProperty
 
     // Properties used for several unit types, but not all models have an equivalent property
-    val engineType = bind (true) {
+    val engineTypeProperty = bind (true) {
         if (unitModel is MekModel)
             (unitModel as MekModel).engineTypeProperty
         else SimpleObjectProperty<MVFEngine>()
     }
-    val engineRating = bind (true) {
+    var engineType by engineTypeProperty
+    val engineRatingProperty = bind (true) {
         if (unitModel is MekModel)
             (unitModel as MekModel).engineRatingProperty
         else SimpleObjectProperty<Int>()
     }
+    var engineRating by engineRatingProperty
 
 
     // Mek properties
-    val mekConfiguration = bind(true) {if (unitModel is MekModel) (unitModel as MekModel).configurationProperty else SimpleObjectProperty<MekConfiguration>()}
-    val internalStructure = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).internalStructureProperty else SimpleObjectProperty<Component>()}
+    val mekConfigurationProperty = bind(true) {if (unitModel is MekModel) (unitModel as MekModel).configurationProperty else SimpleObjectProperty<MekConfiguration>()}
+    var mekConfiguration by mekConfigurationProperty
+    val internalStructureProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).internalStructureProperty else SimpleObjectProperty<Component>()}
+    var internalStructure by internalStructureProperty
+    val cockpitProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).cockpitTypeProperty else SimpleObjectProperty<Cockpit>()}
+    var cockpit by cockpitProperty
+    val gyroProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).gyroTypeProperty else SimpleObjectProperty<Component>()}
+    var gyro by gyroProperty
+    val myomerProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).myomerTypeProperty else SimpleObjectProperty<Component>()}
+    var myomer by myomerProperty
 
     init {
         weightClassProperty.bind(objectBinding(unitModel) {weightClass.value})

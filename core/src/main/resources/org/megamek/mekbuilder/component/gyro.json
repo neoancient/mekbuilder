@@ -1,6 +1,6 @@
 [{
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "GYRO",
+  "isDefault" : "true",
   "internalName" : "Superheavy Gyro",
   "mmName" : "Superheavy Gyro",
   "fullName" : "Superheavy Gyro",
@@ -19,7 +19,8 @@
   "bvCalcType" : "MEK_GYRO",
   "rulesRef" : "162, IO",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "true",
+    "PRIMITIVE" : "false",
     "HITTABLE" : "null"
   },
   "techAdvancement" : "ALL|D|XFFF|~2905(FW),2940(FW),-,-,-|-,-,-,-,-|ADVANCED",
@@ -31,7 +32,6 @@
   },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "GYRO",
   "internalName" : "No Gyro",
   "mmName" : "None",
@@ -50,7 +50,10 @@
   "bvFactor2" : 0.0,
   "bvCalcType" : "MEK_GYRO",
   "rulesRef" : "116, IO",
-  "switches" : { },
+  "switches" : {
+    "SUPERHEAVY_MEK" : "false",
+    "PRIMITIVE" : "false"
+  },
   "techAdvancement" : "ALL|A|AAAA|~3074(WB),-,-,-,-|~3083(CHH),-,-,-,-|ADVANCED",
   "permittedLocations" : [ ],
   "requiredComponents" : { },
@@ -58,7 +61,6 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "GYRO",
   "internalName" : "XL Gyro",
   "mmName" : "XL Gyro",
@@ -78,7 +80,8 @@
   "bvCalcType" : "MEK_GYRO",
   "rulesRef" : "220, TM",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "false",
+    "PRIMITIVE" : "false",
     "HITTABLE" : "null"
   },
   "techAdvancement" : "ALL|E|XXED|~3055(CS),3067(CS),3072,-,-|-,-,-,-,-|STANDARD",
@@ -90,7 +93,6 @@
   },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "GYRO",
   "internalName" : "Compact Gyro",
   "mmName" : "Compact Gyro",
@@ -110,7 +112,8 @@
   "bvCalcType" : "MEK_GYRO",
   "rulesRef" : "219, TM",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "false",
+    "PRIMITIVE" : "false",
     "HITTABLE" : "null"
   },
   "techAdvancement" : "ALL|E|XXED|~3055(FS/LC),3068(FS/LC),3072,-,-|-,-,-,-,-|STANDARD",
@@ -122,7 +125,6 @@
   },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "GYRO",
   "internalName" : "Heavy Duty Gyro",
   "mmName" : "Heavy Duty Gyro",
@@ -142,7 +144,8 @@
   "bvCalcType" : "MEK_GYRO",
   "rulesRef" : "219, TM",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "false",
+    "PRIMITIVE" : "false",
     "HITTABLE" : "null"
   },
   "techAdvancement" : "ALL|E|XXED|~3055(DC),3067(DC),3072,-,-|-,-,-,-,-|STANDARD",
@@ -154,8 +157,8 @@
   },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "GYRO",
+  "isDefault" : "true",
   "internalName" : "Standard Gyro",
   "mmName" : "Standard Gyro",
   "fullName" : "Standard Gyro",
@@ -174,10 +177,44 @@
   "bvCalcType" : "MEK_GYRO",
   "rulesRef" : "219, TM",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "false",
+    "PRIMITIVE" : "false",
     "HITTABLE" : "null"
   },
   "techAdvancement" : "ALL|D|CCCC|~2300(TA/TA),2350(TH/TH),2505,-,-|~2300,2350,2505,-,-|INTRO",
+  "permittedLocations" : [ ],
+  "requiredComponents" : { },
+  "incompatibleComponents" : { },
+  "fixedLocations" : {
+    "MEK_CTORSO" : 4
+  },
+  "allowedUnitTypes" : [ "BATTLE_MEK", "INDUSTRIAL_MEK" ]
+}, {
+  "componentType" : "GYRO",
+  "isDefault" : "true",
+  "internalName" : "Primitive Gyro",
+  "mmName" : "Standard Gyro",
+  "fullName" : "Primitive Gyro",
+  "shortName" : "Primitive",
+  "weightFactor" : 0.01,
+  "weightAddend" : 0.0,
+  "weightCalc" : "ENGINE_RATING",
+  "costFactor" : 300000.0,
+  "costAddend" : 0.0,
+  "costCalc" : "COMPONENT_TONNAGE",
+  "slots" : 4.0,
+  "slotAddend" : 0.0,
+  "slotCalc" : "BASIC",
+  "bvFactor" : 0.5,
+  "bvFactor2" : 0.0,
+  "bvCalcType" : "MEK_GYRO",
+  "rulesRef" : "219, TM",
+  "switches" : {
+    "SUPERHEAVY_MEK" : "false",
+    "PRIMITIVE" : "true",
+    "HITTABLE" : "null"
+  },
+  "techAdvancement" : "IS|D|DXFF|2439(TH),2443(TH),2470,2520,-|-,-,-,-,-|ADVANCED",
   "permittedLocations" : [ ],
   "requiredComponents" : { },
   "incompatibleComponents" : { },

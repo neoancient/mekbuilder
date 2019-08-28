@@ -31,26 +31,26 @@ class MekConfigPanel: View() {
     init {
         // List property that updates when the unit type changes to include all base types
         val baseTypeProperty = SimpleListProperty<MekConfiguration.BaseType>()
-        baseTypeProperty.bind(objectBinding(model.unitType) {
-            MekConfiguration.getConfigurations(model.unitType.value).map{it.baseType}.toSet().toList().observable()
+        baseTypeProperty.bind(objectBinding(model.unitTypeProperty) {
+            MekConfiguration.getConfigurations(model.unitType).map{it.baseType}.toSet().toList().observable()
         })
 
         cbBaseType.items = baseTypeProperty
         SimpleComboBoxCellFactory.setConverter(cbBaseType) {
             messages["baseType.$it"]
         }
-        cbBaseType.selectionModel.select(model.mekConfiguration.value.baseType)
+        cbBaseType.selectionModel.select(model.mekConfiguration.baseType)
 
         // List property bound to the available configurations for the base type.
         // This is invalidated when the base type selection changes.
         val configurationsList = SimpleListProperty<MekConfiguration>()
         val subTypeBinding = createObjectBinding (Callable {
-            MekConfiguration.getConfigurations(model.unitType.value, cbBaseType.selectedItem).observable()
+            MekConfiguration.getConfigurations(model.unitType, cbBaseType.selectedItem).observable()
         })
         configurationsList.bind(subTypeBinding)
         cbBaseType.selectionModel.selectedItemProperty().onChange {
             subTypeBinding.invalidate()
-            if (!configurationsList.contains(model.mekConfiguration.value)) {
+            if (!configurationsList.contains(model.mekConfiguration)) {
                 cbSubType.selectionModel.select(configurationsList.first())
             }
         }
@@ -58,32 +58,35 @@ class MekConfigPanel: View() {
         SimpleComboBoxCellFactory.setConverter(cbSubType) {
             messages["subType.${it.subType}"]
         }
-        cbSubType.bind(model.mekConfiguration)
+        cbSubType.bind(model.mekConfigurationProperty)
 
         // List property bound to the available construction options for the configuration.
         // Invalidates when the configuration changes.
         val optionsList = SimpleListProperty<UnitConstructionOption>()
-        optionsList.bind(objectBinding(model.mekConfiguration) {
-            model.mekConfiguration.value.constructionOptions.observable()
+        optionsList.bind(objectBinding(model.mekConfigurationProperty) {
+            model.mekConfiguration.constructionOptions.observable()
         })
         cbConstructionOption.items = optionsList
         // We can't do a simple double binding here because the value can go to null
         // while refreshing the options and we need to be able to ignore it.
-        cbConstructionOption.selectionModel.select(model.baseOption.value)
-        model.baseOption.onChange {
+        cbConstructionOption.selectionModel.select(model.baseOption)
+        model.baseOptionProperty.onChange {
             cbConstructionOption.selectionModel.select(it)
         }
         cbConstructionOption.selectionModel.selectedItemProperty().onChange {
             if (it != null) {
-                model.baseOption.value = it
+                model.baseOption = it
                 setMinTechLevel()
             }
         }
         cbSubType.selectionModel.selectedItemProperty().onChange {
             if (it != null) {
                 optionsList.invalidate()
-                if (model.baseOption.value !in optionsList) {
-                    model.baseOption.value = optionsList.first()
+                if (model.baseOption !in optionsList) {
+                    // Try to keep the same weight class, otherwise pick the first in the list
+                    model.baseOption = optionsList
+                            .filter{model.tonnage >= it.minWeight && model.tonnage <= it.maxWeight}
+                            .firstOrNull() ?: optionsList.first()
                 }
             }
         }
@@ -102,8 +105,8 @@ class MekConfigPanel: View() {
         lblConstructionOption.visibleWhen(showOptions)
         cbConstructionOption.visibleWhen(showOptions)
 
-        chkOmni.bind(model.omni)
-        chkOmni.visibleWhen(model.mekConfiguration.booleanBinding {
+        chkOmni.bind(model.omniProperty)
+        chkOmni.visibleWhen(model.mekConfigurationProperty.booleanBinding {
             it?.isOmniAllowed ?: false
         })
         chkOmni.selectedProperty().onChange {
@@ -112,10 +115,10 @@ class MekConfigPanel: View() {
     }
 
     private fun setMinTechLevel() {
-        var tl = model.baseOption.value.staticTechLevel()
-        if (model.omni.value && tl < ConstructionOptionKey.OMNI.get().staticTechLevel()) {
+        var tl = model.baseOption.staticTechLevel()
+        if (model.omni && tl < ConstructionOptionKey.OMNI.get().staticTechLevel()) {
             tl = ConstructionOptionKey.OMNI.get().staticTechLevel()
         }
-        model.minTechLevelProperty.value = tl
+        model.minTechLevel = tl
     }
 }

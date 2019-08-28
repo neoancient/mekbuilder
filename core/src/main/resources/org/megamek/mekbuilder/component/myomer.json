@@ -1,6 +1,6 @@
 [{
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MYOMER",
+  "isDefault" : "true",
   "internalName" : "Superheavy Myomer",
   "mmName" : "Standard",
   "fullName" : "Superheavy Myomer",
@@ -19,7 +19,8 @@
   "bvCalcType" : "NONE",
   "rulesRef" : "-",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null"
+    "SUPERHEAVY_MEK" : "true",
+    "PRIMITIVE" : "false"
   },
   "techAdvancement" : "IS|D|XXED|~2905(FW),2940(FW),-,-,-|-,-,-,-,-|INTRO",
   "permittedLocations" : [ ],
@@ -28,8 +29,8 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MYOMER",
+  "isDefault" : "true",
   "internalName" : "Standard Myomer",
   "mmName" : "Standard",
   "fullName" : "Standard Myomer",
@@ -48,7 +49,8 @@
   "bvCalcType" : "NONE",
   "rulesRef" : "-",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "false",
+    "PRIMITIVE" : "false",
     "MASC_COMPATIBLE" : "null"
   },
   "techAdvancement" : "ALL|D|CCCC|~2300(TA/TA),2350(TH/TH),2505,-,-|~2300,2350,2505,-,-|INTRO",
@@ -58,8 +60,8 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK", "INDUSTRIAL_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MYOMER",
+  "isDefault" : "true",
   "internalName" : "Primitive Myomer",
   "mmName" : "",
   "fullName" : "Primitive Myomer",
@@ -78,7 +80,7 @@
   "bvCalcType" : "NONE",
   "rulesRef" : "123, IO",
   "switches" : {
-    "PRIMITIVE" : "null"
+    "PRIMITIVE" : "true"
   },
   "techAdvancement" : "ALL|D|CCCC|~2300(TA/TA),2350(TH/TH),2505,-,-|~2300,2350,2505,-,-|ADVANCED",
   "permittedLocations" : [ ],
@@ -87,7 +89,6 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK", "INDUSTRIAL_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MYOMER",
   "internalName" : "ISSuperCooledMyomer",
   "mmName" : "ISSuperCooledMyomer",
@@ -107,7 +108,8 @@
   "bvCalcType" : "MOVEMENT_HEAT",
   "rulesRef" : "94, IO",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "false",
+    "PRIMITIVE" : "false",
     "HITTABLE" : "null",
     "SPREADABLE" : "null"
   },
@@ -118,7 +120,6 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MYOMER",
   "internalName" : "Industrial TSM",
   "mmName" : "Industrial TSM",
@@ -138,7 +139,8 @@
   "bvCalcType" : "MOVE_FACTOR",
   "rulesRef" : "240, TM",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "false",
+    "PRIMITIVE" : "false",
     "SPREADABLE" : "null"
   },
   "techAdvancement" : "IS|E|XXED|~3035(FS),3045(FS),3055,-,-|-,-,-,-,-|STANDARD",
@@ -148,11 +150,10 @@
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "INDUSTRIAL_MEK" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.Component",
   "componentType" : "MYOMER",
   "internalName" : "TSM",
   "mmName" : "TSM",
-  "fullName" : "TSM",
+  "fullName" : "Triple-Strength Myomer",
   "shortName" : "TSM",
   "weightFactor" : 0.0,
   "weightAddend" : 0.0,
@@ -168,7 +169,8 @@
   "bvCalcType" : "MOVE_FACTOR",
   "rulesRef" : "240, TM",
   "switches" : {
-    "SUPERHEAVY_MEK" : "null",
+    "SUPERHEAVY_MEK" : "false",
+    "PRIMITIVE" : "false",
     "SPREADABLE" : "null"
   },
   "techAdvancement" : "IS|E|XXDD|~3028(FS/CC),3050(CC),3055,-,-|-,-,-,-,-|STANDARD",

@@ -1,6 +1,6 @@
 [{
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
+  "isDefault" : true,
   "internalName" : "Superheavy Tripod Cockpit",
   "mmName" : "Superheavy Tripod Cockpit",
   "fullName" : "Superheavy Tripod Cockpit",
@@ -20,6 +20,7 @@
   "rulesRef" : "162, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : true,
+    "PRIMITIVE" : false,
     "TRIPOD" : true
   },
   "techAdvancement" : "IS|E|XFXF|~3130(RS),3135(RS),-,-,-|-,-,-,-,-|ADVANCED",
@@ -38,8 +39,8 @@
   },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
+  "isDefault" : true,
   "internalName" : "Tripod Cockpit",
   "mmName" : "Tripod Cockpit",
   "fullName" : "Tripod Cockpit",
@@ -59,6 +60,7 @@
   "rulesRef" : "165, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
+    "PRIMITIVE" : false,
     "TRIPOD" : true
   },
   "techAdvancement" : "IS|E|XXXF|~2590(TH),2602(TH),-,-,-|-,-,-,-,-|ADVANCED",
@@ -77,12 +79,12 @@
   },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
-  "internalName" : "ProtoMek Cockpit",
+  "isDefault" : true,
+  "internalName" : "ProtoMech Cockpit",
   "mmName" : "",
-  "fullName" : "ProtoMek Cockpit",
-  "shortName" : "ProtoMek",
+  "fullName" : "ProtoMech Cockpit",
+  "shortName" : "ProtoMech",
   "weightFactor" : 0.5,
   "weightAddend" : 0.0,
   "weightCalc" : "BASIC",
@@ -107,8 +109,8 @@
   "lifeSupportLocations" : { },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
+  "isDefault" : true,
   "internalName" : "CV Cockpit",
   "mmName" : "",
   "fullName" : "Control Systems",
@@ -137,8 +139,8 @@
   "lifeSupportLocations" : { },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
+  "isDefault" : true,
   "internalName" : "QuadVee Cockpit",
   "mmName" : "QuadVee Cockpit",
   "fullName" : "QuadVee Cockpit",
@@ -175,8 +177,8 @@
   },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
+  "isDefault" : true,
   "internalName" : "Superheavy Cockpit",
   "mmName" : "Superheavy Cockpit",
   "fullName" : "Superheavy Cockpit",
@@ -195,7 +197,8 @@
   "bvCalcType" : "NONE",
   "rulesRef" : "162, IO",
   "switches" : {
-    "SUPERHEAVY_MEK" : true
+    "SUPERHEAVY_MEK" : true,
+    "PRIMITIVE" : false
   },
   "techAdvancement" : "IS|E|XXFE|~3060(WB),3076(WB),-,-,-|-,-,-,-,-|ADVANCED",
   "permittedLocations" : [ ],
@@ -213,7 +216,6 @@
   },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
   "internalName" : "Torso-Mounted Cockpit",
   "mmName" : "Torso-Mounted Cockpit",
@@ -234,6 +236,8 @@
   "rulesRef" : "300, TO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
+    "LAM" : false,
+    "PRIMITIVE" : false,
     "TRIPOD" : false
   },
   "techAdvancement" : "ALL|D|XXFF|3053(FS/LC),~3080(LC),3100,-,-|3055(CSJ),~3080,3100,-,-|EXPERIMENTAL",
@@ -254,7 +258,6 @@
   },
   "torsoMounted" : true
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
   "internalName" : "Industrial Advanced Fire Con",
   "mmName" : "",
@@ -275,6 +278,7 @@
   "rulesRef" : "211, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
+    "PRIMITIVE" : false,
     "ADV_FIRECON" : null,
     "TRIPOD" : false
   },
@@ -294,8 +298,8 @@
   },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
+  "isDefault" : true,
   "internalName" : "Primitive Cockpit",
   "mmName" : "Primitive Cockpit",
   "fullName" : "Primitive Cockpit",
@@ -334,7 +338,6 @@
   },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
   "internalName" : "Virtual Reality Piloting Pod",
   "mmName" : "Virtual Reality Piloting Pod",
@@ -355,6 +358,8 @@
   "rulesRef" : "69, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
+    "LAM" : false,
+    "PRIMITIVE" : false,
     "TRIPOD" : false
   },
   "techAdvancement" : "IS|E|XXFX|3052(FS/LC),-,-,3055,-|-,-,-,-,-|EXPERIMENTAL",
@@ -373,8 +378,8 @@
   },
   "torsoMounted" : true
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
+  "isDefault" : true,
   "internalName" : "CF Cockpit",
   "mmName" : "",
   "fullName" : "Convention Fighter Cockpit",
@@ -403,8 +408,8 @@
   "lifeSupportLocations" : { },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
+  "isDefault" : true,
   "internalName" : "Standard Cockpit",
   "mmName" : "Standard Cockpit",
   "fullName" : "Standard Cockpit",
@@ -424,6 +429,7 @@
   "rulesRef" : "211, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
+    "PRIMITIVE" : false,
     "TRIPOD" : false
   },
   "techAdvancement" : "ALL|D|CCCC|~2468(TH/TH),2470(TH/TH),2487,-,-|~2468,2470,2487,-,-|INTRO",
@@ -442,8 +448,8 @@
   },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
+  "isDefault" : true,
   "internalName" : "Industrial Cockpit",
   "mmName" : "Industrial Cockpit",
   "fullName" : "Industrial Cockpit",
@@ -463,6 +469,7 @@
   "rulesRef" : "211, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
+    "PRIMITIVE" : false,
     "TRIPOD" : false
   },
   "techAdvancement" : "ALL|C|BCCB|~2469(TH/TH),2470(TH/TH),2490,-,-|~2469,2470,2490,-,-|STANDARD",
@@ -481,8 +488,8 @@
   },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
+  "isDefault" : true,
   "internalName" : "ASF Cockpit",
   "mmName" : "Standard Cockpit",
   "fullName" : "ASF Cockpit",
@@ -511,12 +518,11 @@
   "lifeSupportLocations" : { },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
-  "internalName" : "IS ProtoMek Interface",
+  "internalName" : "IS ProtoMech Interface",
   "mmName" : "",
-  "fullName" : "IS ProtoMek Interface",
-  "shortName" : "ProtoMek Interface",
+  "fullName" : "IS ProtoMech Interface",
+  "shortName" : "ProtoMech Interface",
   "weightFactor" : 0.5,
   "weightAddend" : 0.0,
   "weightCalc" : "BASIC",
@@ -541,7 +547,6 @@
   "lifeSupportLocations" : { },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
   "internalName" : "Small Cockpit",
   "mmName" : "Small Cockpit",
@@ -562,6 +567,7 @@
   "rulesRef" : "211, TM",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
+    "PRIMITIVE" : false,
     "TRIPOD" : false
   },
   "techAdvancement" : "ALL|E|XXED|3060(FS),3067(FS),3080,-,-|-,3080(CJF),3080,-,-|STANDARD",
@@ -580,8 +586,8 @@
   },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
+  "isDefault" : true,
   "internalName" : "Primitive Industrial Cockpit",
   "mmName" : "Primitive Industrial Cockpit",
   "fullName" : "Primitive Industrial Cockpit",
@@ -620,8 +626,8 @@
   },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
+  "isDefault" : true,
   "internalName" : "Primitive ASF Cockpit",
   "mmName" : "Primitive Cockpit",
   "fullName" : "Primitive ASF Cockpit",
@@ -652,8 +658,8 @@
   "lifeSupportLocations" : { },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
+  "isDefault" : true,
   "internalName" : "Superheavy Industrial Cockpit",
   "mmName" : "Superheavy Industrial Cockpit",
   "fullName" : "Superheavy Industrial Cockpit",
@@ -672,7 +678,8 @@
   "bvCalcType" : "NONE",
   "rulesRef" : "162, IO",
   "switches" : {
-    "SUPERHEAVY_MEK" : true
+    "SUPERHEAVY_MEK" : true,
+    "PRIMITIVE" : false
   },
   "techAdvancement" : "IS|D|XFFF|~2905(FW),2940(FW),-,-,-|-,-,-,-,-|ADVANCED",
   "permittedLocations" : [ ],
@@ -690,7 +697,6 @@
   },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
   "internalName" : "Small ASF Cockpit",
   "mmName" : "Small Cockpit",
@@ -720,7 +726,6 @@
   "lifeSupportLocations" : { },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
   "internalName" : "IS Interface Cockpit",
   "mmName" : "Interface Cockpit",
@@ -741,6 +746,7 @@
   "rulesRef" : "116, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
+    "PRIMITIVE" : false,
     "TRIPOD" : false
   },
   "techAdvancement" : "IS|E|XXFX|~3074(WB),-,-,-,-|-,-,-,-,-|EXPERIMENTAL",
@@ -759,7 +765,6 @@
   },
   "torsoMounted" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.Cockpit",
   "componentType" : "COCKPIT",
   "internalName" : "Clan Interface Cockpit",
   "mmName" : "Interface Cockpit",
@@ -780,6 +785,7 @@
   "rulesRef" : "116, IO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
+    "PRIMITIVE" : false,
     "TRIPOD" : false
   },
   "techAdvancement" : "CLAN|F|XXFF|-,-,-,-,-|~3083(CHH),-,-,-,-|EXPERIMENTAL",

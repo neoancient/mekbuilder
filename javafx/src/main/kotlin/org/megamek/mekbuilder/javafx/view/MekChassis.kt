@@ -16,10 +16,6 @@ import org.megamek.mekbuilder.unit.UnitType
 import tornadofx.*
 
 /**
- *
- */
-
-/**
  * Creates an {@link ObservableList} of all components that match the criteria, sorted alphabetically
  * by shortName with default value(s) moved to the top.
  */
@@ -27,6 +23,10 @@ fun createComponentList(op: (Component) -> Boolean) =
         ComponentLibrary.getInstance().allComponents
                 .filter{op(it)}.sortedBy{it.shortName}
                 .sortedBy{!it.isDefault}.toList().observable()
+
+/**
+ * Panel for setting chassis options: tonnage, engine, cockpit, gyro, myomer
+ */
 
 class MekChassis: View(), InvalidationListener {
     override val root: AnchorPane by fxml()
@@ -39,16 +39,88 @@ class MekChassis: View(), InvalidationListener {
     private val cbEngine: ComboBox<MVFEngine> by fxid()
     private val cbGyro: ComboBox<Component> by fxid()
     private val cbCockpit: ComboBox<Cockpit> by fxid()
+    private val cbMyomer: ComboBox<Component> by fxid()
 
     val allStructures = createComponentList { it.type == ComponentType.MEK_STRUCTURE }
     val allEngines = createComponentList { it.type == ComponentType.ENGINE }
+    val allGyros = createComponentList { it.type == ComponentType.GYRO }
+    val allCockpits = createComponentList { it.type == ComponentType.COCKPIT }
+    val allMyomer = createComponentList { it.type == ComponentType.MYOMER }
 
     init {
         val tonnageFactory = SpinnerValueFactory.DoubleSpinnerValueFactory(
-                model.baseOption.value.minWeight, model.baseOption.value.maxWeight,
-                model.tonnage.value.toDouble(),
-                model.weightIncrement.value)
-        model.baseOption.onChange {
+                model.baseOption.minWeight, model.baseOption.maxWeight,
+                model.tonnage.toDouble(),
+                model.weightIncrementBinding.value)
+        tonnageFactory.amountToStepByProperty().bind(model.weightIncrementBinding)
+        tonnageFactory.valueProperty().bindBidirectional(model.tonnageProperty)
+        tonnageFactory.converter = SpinnerDoubleStringConverter(spnTonnage.editor, tonnageFactory)
+        spnTonnage.valueFactory = tonnageFactory
+        // Force update on lost focus (e.g. tab)
+        spnTonnage.focusedProperty().addListener {
+            _, _, newValue -> if (!newValue) spnTonnage.increment(0)
+        }
+        lblWeightClass.text = messages["lblWeightClass.${model.unit.weightClass}"]
+        model.tonnageProperty.onChange {
+            lblWeightClass.text = messages["lblWeightClass.${model.unit.weightClass}"]
+            allStructures.invalidate()
+        }
+
+        val structureList = SimpleListProperty<Component>()
+        structureList.bind(objectBinding(allStructures) {
+            filter { techFilter.isLegal(it, false) && model.unit.allowed(it)}.toList().observable()
+        })
+        cbStructure.items = structureList
+        cbStructure.bind(model.internalStructureProperty)
+        ComponentComboBoxCellFactory.setConverter(cbStructure)
+
+        val engineList = SimpleListProperty<MVFEngine>()
+        engineList.bind(objectBinding(allEngines) {
+            filter { techFilter.isLegal(it, false)
+                    && model.unit.allowed(it)
+                    && model.engineRatingProperty.value >= it.variableSizeMin()
+                    && model.engineRatingProperty.value <= it.variableSizeMax()
+                    && (it.hasFlag(ComponentSwitch.FUSION)
+                    || model.unit.unitType == UnitType.INDUSTRIAL_MEK
+                    || (model.unit as MekBuild).isPrimitive()
+                    || techFilter.isLegal(ConstructionOptionKey.NON_FUSION_BATTLEMEK.get()))}
+                    .map{it as MVFEngine}.toList().observable()
+        })
+        cbEngine.items = engineList
+        cbEngine.bind(model.engineTypeProperty)
+        ComponentComboBoxCellFactory.setConverter(cbEngine)
+
+        val cockpitList = SimpleListProperty<Cockpit>()
+        cockpitList.bind(objectBinding(allCockpits) {
+            filter { techFilter.isLegal(it, false)
+                    && model.unit.allowed(it)}
+                    .map{it as Cockpit}.toList().observable()
+        })
+        cbCockpit.items = cockpitList
+        cbCockpit.bind(model.cockpitProperty)
+        ComponentComboBoxCellFactory.setConverter(cbCockpit)
+
+        val gyroList = SimpleListProperty<Component>()
+        gyroList.bind(objectBinding(allGyros) {
+            filter { techFilter.isLegal(it, false)
+                    && model.unit.allowed(it)}
+                    .toList().observable()
+        })
+        cbGyro.items = gyroList
+        cbGyro.bind(model.gyroProperty)
+        ComponentComboBoxCellFactory.setConverter(cbGyro)
+
+        val myomerList = SimpleListProperty<Component>()
+        myomerList.bind(objectBinding(allMyomer) {
+            filter { techFilter.isLegal(it, false)
+                    && model.unit.allowed(it)}
+                    .toList().observable()
+        })
+        cbMyomer.items = myomerList
+        cbMyomer.bind(model.myomerProperty)
+        ComponentComboBoxCellFactory.setConverter(cbMyomer)
+
+        model.baseOptionProperty.onChange {
             if (it != null) {
                 tonnageFactory.max = it.maxWeight
                 tonnageFactory.min = it.minWeight
@@ -58,45 +130,28 @@ class MekChassis: View(), InvalidationListener {
                 if (tonnageFactory.value > it.maxWeight) {
                     tonnageFactory.value = it.maxWeight
                 }
+                allStructures.invalidate()
+                if (model.internalStructure !in structureList) {
+                    cbStructure.selectionModel.select(structureList.first())
+                }
+                allEngines.invalidate()
+                if (model.engineType !in engineList) {
+                    cbEngine.selectionModel.select(engineList.first())
+                }
+                allGyros.invalidate()
+                if (model.gyro !in gyroList) {
+                    cbGyro.selectionModel.select(gyroList.first())
+                }
+                allCockpits.invalidate()
+                if (model.cockpit !in cockpitList) {
+                    cbCockpit.selectionModel.select(cockpitList.first())
+                }
+                allMyomer.invalidate()
+                if (model.myomer !in myomerList) {
+                    cbMyomer.selectionModel.select(myomerList.first())
+                }
             }
         }
-        tonnageFactory.amountToStepByProperty().bind(model.weightIncrement)
-        tonnageFactory.valueProperty().bindBidirectional(model.tonnage)
-        tonnageFactory.converter = SpinnerDoubleStringConverter(spnTonnage.editor, tonnageFactory)
-        spnTonnage.valueFactory = tonnageFactory
-        // Force update on lost focus (e.g. tab)
-        spnTonnage.focusedProperty().addListener {
-            _, _, newValue -> if (!newValue) spnTonnage.increment(0)
-        }
-        lblWeightClass.text = messages["lblWeightClass.${model.unit.weightClass}"]
-        model.tonnage.onChange {
-            lblWeightClass.text = messages["lblWeightClass.${model.unit.weightClass}"]
-            allStructures.invalidate()
-        }
-
-        val structureList = SimpleListProperty<Component>()
-        structureList.bind(objectBinding(allStructures) {
-            filter { techFilter.isLegal(it) && model.unit.allowed(it)}.toList().observable()
-        })
-        cbStructure.items = structureList
-        cbStructure.bind(model.internalStructure)
-        ComponentComboBoxCellFactory.setConverter(cbStructure)
-
-        val engineList = SimpleListProperty<MVFEngine>()
-        engineList.bind(objectBinding(allEngines) {
-            filter { techFilter.isLegal(it)
-                    && model.unit.allowed(it)
-                    && model.engineRating.value >= it.variableSizeMin()
-                    && model.engineRating.value <= it.variableSizeMax()
-                    && (it.hasFlag(ComponentSwitch.FUSION)
-                        || model.unit.unitType == UnitType.INDUSTRIAL_MEK
-                        || (model.unit as MekBuild).isPrimitive()
-                        || techFilter.isLegal(ConstructionOptionKey.NON_FUSION_BATTLEMEK.get()))}
-                    .map{it as MVFEngine}.toList().observable()
-        })
-        cbEngine.items = engineList
-        cbEngine.bind(model.engineType)
-        ComponentComboBoxCellFactory.setConverter(cbEngine)
 
         techFilter.addListener(this)
     }
@@ -104,7 +159,10 @@ class MekChassis: View(), InvalidationListener {
     override fun invalidated(observable: Observable) {
         allStructures.invalidate()
         allEngines.invalidate()
-        if (model.internalStructure.value !in cbStructure.items
+        allCockpits.invalidate()
+        allGyros.invalidate()
+        allMyomer.invalidate()
+        if (model.internalStructureProperty.value !in cbStructure.items
                 && cbStructure.items.isNotEmpty()) {
             cbStructure.selectionModel.select(cbStructure.items.first())
         }

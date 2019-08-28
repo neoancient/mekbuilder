@@ -18,6 +18,7 @@
  */
 package org.megamek.mekbuilder.component;
 
+import com.sun.istack.NotNull;
 import org.megamek.mekbuilder.unit.UnitBuild;
 import org.megamek.mekbuilder.unit.UnitLocation;
 
@@ -38,15 +39,10 @@ public class CockpitMount extends DistributedMount {
         return (Cockpit) getComponent();
     }
 
-    public void setCockpitType(String cockpitType) {
-        if (!getCockpit().getInternalName().equals(cockpitType)) {
-            Component cockpit = ComponentLibrary.getInstance().getComponent(cockpitType);
-            if (null != cockpit && cockpit.getType().equals(ComponentType.COCKPIT)) {
-                setComponent(cockpit);
-                updateLocations();
-            } else {
-                System.err.println("Could not find cockpit match key " + cockpitType);
-            }
+    public void setCockpitType(@NotNull Cockpit cockpitType) {
+        if ((null != cockpitType) && !getCockpit().equals(cockpitType)) {
+            setComponent(cockpitType);
+            updateLocations();
         }
     }
 

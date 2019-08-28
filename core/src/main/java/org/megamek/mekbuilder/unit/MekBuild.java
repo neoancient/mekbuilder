@@ -62,7 +62,7 @@ public class MekBuild extends UnitBuild {
         getComponents().add(engineMount);
         cockpitMount = new CockpitMount(this, ComponentKeys.COCKPIT_STANDARD_MEK);
         getComponents().add(cockpitMount);
-        Mount gyroMount = new Mount(this, ComponentLibrary.getInstance()
+        gyroMount = new Mount(this, ComponentLibrary.getInstance()
                 .getComponent(ComponentKeys.GYRO_STANDARD));
         getComponents().add(gyroMount);
         secondaryMotiveMount = new CompoundMount(this, ComponentLibrary.getInstance()
@@ -361,11 +361,19 @@ public class MekBuild extends UnitBuild {
         }
     }
 
+    /**
+     * @return The type of cockpit installed on the unit
+     */
     public Cockpit getCockpitType() {
         return cockpitMount.getCockpit();
     }
 
-    public void setCockpitType(String cockpitType) {
+    /**
+     * Sets the type of cockpit on the unit. A {@code null} cockpit is ignored.
+     *
+     * @param cockpitType The cockpit type.
+     */
+    public void setCockpitType(Cockpit cockpitType) {
         cockpitMount.setCockpitType(cockpitType);
     }
 
@@ -374,29 +382,45 @@ public class MekBuild extends UnitBuild {
         return cockpitMount.getCockpitSlots(loc) > 0;
     }
 
-    public Component getGyro() {
+    /**
+     * @return The type of gyro installed
+     */
+    public Component getGyroType() {
         return gyroMount.getComponent();
     }
 
-    public void setGyroType(String gyroType) {
-        Component gyro = ComponentLibrary.getInstance().getComponent(gyroType);
-        if (null != gyro && gyro.getType().equals(ComponentType.GYRO)) {
-            gyroMount.setComponent(gyro);
-        } else {
-            System.err.println("Could not find gyro to match " + gyroType);
+    /**
+     * Sets the type of gyro. A {@code null} gyro is ignored.
+     * @param gyro The gyro type
+     */
+    public void setGyroType(Component gyro) {
+        if (null != gyro) {
+            if (gyro.getType().equals(ComponentType.GYRO)) {
+                gyroMount.setComponent(gyro);
+            } else {
+                System.err.println("Invalid gyro type: " + gyro.getInternalName());
+            }
         }
     }
 
+    /**
+     * @return The type of myomer installed on the unit.
+     */
     public Component getMyomerType() {
         return myomerMount.getComponent();
     }
 
-    public void setMyomerType(String myomerType) {
-        Component myomer = ComponentLibrary.getInstance().getComponent(myomerType);
-        if (null != myomerType && myomer.getType().equals(ComponentType.MYOMER)) {
-            myomerMount.setComponent(myomer);
-        } else {
-            System.err.println("Could not find gyro to match " + myomerType);
+    /**
+     * Sets the type of myomer. A {@code null} myomer is ignored.
+     * @param myomer The myomer type
+     */
+    public void setMyomerType(Component myomer) {
+        if (null != myomer) {
+            if (myomer.getType().equals(ComponentType.MYOMER)) {
+                myomerMount.setComponent(myomer);
+            } else {
+                System.err.println("Invalid myomer type: " + myomer.getInternalName());
+            }
         }
     }
 

@@ -18,7 +18,7 @@ class StandardLayout: View() {
     val basicInfo: BasicInfo by inject()
     val mekChassis: MekChassis by inject()
 
-    override val root: TabPane by fxml()
+    override val root: AnchorPane by fxml()
 
     val structureTab: Tab by fxid()
     val armorTab: Tab by fxid()
