@@ -40,4 +40,20 @@ public enum TechBase {
     public String unitDisplayName() {
         return resourceBundle.getString("unitDisplayName." + name());
     }
+
+    /**
+     * @return A prefix to distinguish between IS and Clan versions of a component, including any
+     *         separating space. ALL returns an empty String.
+     */
+    public String prefix() {
+        return resourceBundle.getString("prefix." + name());
+    }
+
+    /**
+     * @return A suffix to distinguish between IS and Clan versions of a component, including any
+     *         separating space. ALL returns an empty String.
+     */
+    public String suffix() {
+        return resourceBundle.getString("suffix." + name());
+    }
 }

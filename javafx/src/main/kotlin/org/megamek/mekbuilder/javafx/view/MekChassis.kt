@@ -3,12 +3,14 @@ package org.megamek.mekbuilder.javafx.view
 import javafx.beans.InvalidationListener
 import javafx.beans.Observable
 import javafx.beans.property.SimpleListProperty
+import javafx.collections.ListChangeListener
 import javafx.collections.ObservableList
 import javafx.scene.control.*
 import javafx.scene.layout.AnchorPane
 import org.megamek.mekbuilder.component.*
 import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
+import org.megamek.mekbuilder.javafx.util.ComponentComboBoxCellFactory
 import org.megamek.mekbuilder.javafx.util.SimpleComboBoxCellFactory
 import org.megamek.mekbuilder.javafx.util.SpinnerDoubleStringConverter
 import tornadofx.*
@@ -71,7 +73,7 @@ class MekChassis: View(), InvalidationListener {
         })
         cbStructure.items = structureList
         cbStructure.bind(model.internalStructure)
-        SimpleComboBoxCellFactory.setConverter(cbStructure, Component::getFullName)
+        ComponentComboBoxCellFactory.setConverter(cbStructure)
 
         techFilter.addListener(this)
     }
