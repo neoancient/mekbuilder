@@ -28,6 +28,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" />
          </rowConstraints>
          <children>
             <Label text="%spnTonnage.text" />
@@ -38,9 +39,11 @@
             <Spinner fx:id="spnTonnage" editable="true" prefWidth="100.0" GridPane.columnIndex="1" />
             <ComboBox fx:id="cbStructure" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" />
             <ComboBox fx:id="cbEngine" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" />
-            <ComboBox fx:id="cbGryo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cbGyro" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" />
             <ComboBox fx:id="cbCockpit" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="4" />
             <Label fx:id="lblWeightClass" text="Weight Class" GridPane.columnIndex="2" />
+            <Label text="%cbMyomer.text" GridPane.rowIndex="5" />
+            <ComboBox fx:id="cbMyomer" prefWidth="150.0" GridPane.columnIndex="1" GridPane.columnSpan="2147483647" GridPane.rowIndex="5" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
