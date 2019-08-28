@@ -100,6 +100,7 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
                 if ((it.techBase() != TechBase.ALL) && (model.techBase.value != TechBase.ALL)) {
                     model.techBase.value = it.techBase()
                 }
+                cbTechBase.selectionModel.select(model.techBase.value)
             }
         }
     }

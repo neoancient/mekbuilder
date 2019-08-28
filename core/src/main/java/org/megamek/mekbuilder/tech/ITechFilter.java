@@ -73,7 +73,7 @@ public interface ITechFilter {
         // Faction may be treated as TH for ComStar and early Clan tech
         Faction faction = getFaction();
         // IS tech may be treated as Clan in early Clan period
-        boolean clanTech = getTechBase() == TechBase.CLAN;
+        boolean clanTech = tech.techBase().equals(TechBase.CLAN);
 
         Integer isIntroDate = tech.introDate(false);
         Integer clanIntroDate = tech.introDate(true);
@@ -99,6 +99,7 @@ public interface ITechFilter {
             faction = Faction.TH;
             clanTech = false;
         }
+        // Check whether we're using mixed tech first
         if (getTechBase().equals(TechBase.ALL)) {
             if ((!introducedIS && !introducedClan)
                     || (!showExtinct()
@@ -110,8 +111,9 @@ public interface ITechFilter {
                         || tech.simpleLevel(getYear(), false, faction).compareTo(getTechLevel()) <= 0;
             }
         } else {
+            // Not mixed tech; the equipment tech base has to match the filter tech base
             if (!tech.techBase().equals(TechBase.ALL)
-                    && clanTech != tech.clanTech()) {
+                    && clanTech != getTechBase().equals(TechBase.CLAN)) {
                 return false;
             } else if (clanTech && (!introducedClan || (!showExtinct() && extinctClan))) {
                 return false;
