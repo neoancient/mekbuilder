@@ -11,6 +11,9 @@
   "key" : "MIXED_TECH",
   "techProgression" : "ALL|A|XXED|~3050(DC/FS/LC),~3082,~3115,-,-|~2820(CLAN),~3082,~3115,-,-|ADVANCED"
 }, {
+  "key" : "NON_FUSION_BATTLEMEK",
+  "techProgression" : "ALL|A|AAAA|2460,-,-,-,-|2460,-,-,-,-|EXPERIMENTAL"
+}, {
   "key" : "MEK_STANDARD",
   "techProgression" : "ALL|D|CEDC|2460(TH),2470(TH),2500,-,-|2460,2470,2500,-,-|STANDARD",
   "unitType" : "BATTLE_MEK",

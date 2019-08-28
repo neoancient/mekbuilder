@@ -17,7 +17,8 @@ import kotlin.math.max
 import kotlin.math.min
 
 /**
- *
+ * Generic view for all unit types that sets name, year, tech base, and tech level. The settings
+ * in this view are used to filter options in others.
  */
 
 class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
@@ -128,5 +129,5 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
 
     override fun eraBasedProgression() = chkEraBasedProgression.isSelected
 
-    override fun showExtinct() = chkShowExtinct.isSelected
+    override fun hideExtinct() = !chkShowExtinct.isSelected
 }

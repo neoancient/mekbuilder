@@ -67,7 +67,7 @@ public interface ITechFilter {
      *
      * @return Whether to include components even though they are extinct.
      */
-    boolean showExtinct();
+    boolean hideExtinct();
 
     default boolean isLegal(ITechProgression tech) {
         // Faction may be treated as TH for ComStar and early Clan tech
@@ -102,7 +102,7 @@ public interface ITechFilter {
         // Check whether we're using mixed tech first
         if (getTechBase().equals(TechBase.ALL)) {
             if ((!introducedIS && !introducedClan)
-                    || (!showExtinct()
+                    || (hideExtinct()
                     && (tech.extinct(getYear())))) {
                 return false;
             } else if (eraBasedProgression()) {
@@ -115,9 +115,9 @@ public interface ITechFilter {
             if (!tech.techBase().equals(TechBase.ALL)
                     && clanTech != getTechBase().equals(TechBase.CLAN)) {
                 return false;
-            } else if (clanTech && (!introducedClan || (!showExtinct() && extinctClan))) {
+            } else if (clanTech && (!introducedClan || (hideExtinct() && extinctClan))) {
                 return false;
-            } else if (!clanTech && (!introducedIS || (!showExtinct() && extinctIS))) {
+            } else if (!clanTech && (!introducedIS || (hideExtinct() && extinctIS))) {
                 return false;
             } else if (eraBasedProgression()) {
                 return tech.simpleLevel(getYear(), clanTech, faction).compareTo(getTechLevel()) <= 0;

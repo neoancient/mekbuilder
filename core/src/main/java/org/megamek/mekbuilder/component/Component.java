@@ -29,10 +29,7 @@ import org.megamek.mekbuilder.unit.UnitBuild;
 import org.megamek.mekbuilder.unit.UnitLocation;
 import org.megamek.mekbuilder.unit.UnitType;
 
-import java.util.EnumMap;
-import java.util.EnumSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Individual components that make up units. This class is immutable, and there is only
@@ -261,6 +258,54 @@ public class Component implements ITechDelegator {
      */
     public boolean variableSize() {
         return switches.containsKey(ComponentSwitch.VARIABLE);
+    }
+
+    /**
+     * For variable-sized equipment, the step size is the minimal size increments. If not specified, it is
+     * assumed to be one kilogram. This value has no meaning for components without variable size.
+     *
+     * @return The minimum size increment
+     */
+    public double variableStepSize() {
+        if (variableSize()) {
+            List<?> vals = (List<?>) switches.get(ComponentSwitch.VARIABLE);
+            if (vals.size() > 0) {
+                return (Double) vals.get(0);
+            }
+        }
+        return 0.001;
+    }
+
+    /**
+     * Some variable-sized equipment has a minimum size. If not specified, the minimum is assumed to be
+     * the same as the step size. This value has no meaning for components without variable size.
+     *
+     * @return The minimum size
+     */
+    public double variableSizeMin() {
+        if (variableSize()) {
+            List<?> vals = (List<?>) switches.get(ComponentSwitch.VARIABLE);
+            if (vals.size() > 1) {
+                return (Double) vals.get(1);
+            }
+        }
+        return variableStepSize();
+    }
+
+    /**
+     * Some variable-sized equipment has a minimum size. If not specified, the maximum size returned is
+     * {@link Double#MAX_VALUE}. This value has no meaning for components without variable size.
+     *
+     * @return The maximum size
+     */
+    public double variableSizeMax() {
+        if (variableSize()) {
+            List<?> vals = (List<?>) switches.get(ComponentSwitch.VARIABLE);
+            if (vals.size() > 2) {
+                return (Double) vals.get(2);
+            }
+        }
+        return Double.MAX_VALUE;
     }
 
     /**

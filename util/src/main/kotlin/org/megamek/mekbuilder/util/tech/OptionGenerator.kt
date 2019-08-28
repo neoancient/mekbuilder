@@ -81,6 +81,18 @@ class OptionGenerator {
                 staticLevel = TechLevel.ADVANCED
             }
         },
+        constructionOption {
+            techProgression {
+                key = ConstructionOptionKey.NON_FUSION_BATTLEMEK
+                techBase = TechBase.ALL
+                rating = Rating.RATING_A
+                availability = "AAAA"
+                progression {
+                    prototype = "2460"
+                }
+                staticLevel = TechLevel.EXPERIMENTAL
+            }
+        },
 
         unitConstructionOption {
             key = ConstructionOptionKey.MEK_STANDARD

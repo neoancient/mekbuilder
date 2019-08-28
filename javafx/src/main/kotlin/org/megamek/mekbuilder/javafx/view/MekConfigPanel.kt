@@ -51,7 +51,7 @@ class MekConfigPanel: View() {
         cbBaseType.selectionModel.selectedItemProperty().onChange {
             subTypeBinding.invalidate()
             if (!configurationsList.contains(model.mekConfiguration.value)) {
-                cbSubType.selectionModel.select(configurationsList.firstOrNull())
+                cbSubType.selectionModel.select(configurationsList.first())
             }
         }
         cbSubType.items = configurationsList
@@ -67,7 +67,7 @@ class MekConfigPanel: View() {
             model.mekConfiguration.value.constructionOptions.observable()
         })
         cbConstructionOption.items = optionsList
-        // We can't do a simple double binding here because the value can go to nul
+        // We can't do a simple double binding here because the value can go to null
         // while refreshing the options and we need to be able to ignore it.
         cbConstructionOption.selectionModel.select(model.baseOption.value)
         model.baseOption.onChange {
@@ -75,8 +75,16 @@ class MekConfigPanel: View() {
         }
         cbConstructionOption.selectionModel.selectedItemProperty().onChange {
             if (it != null) {
-                model.baseOption.setValue(it)
+                model.baseOption.value = it
                 setMinTechLevel()
+            }
+        }
+        cbSubType.selectionModel.selectedItemProperty().onChange {
+            if (it != null) {
+                optionsList.invalidate()
+                if (model.baseOption.value !in optionsList) {
+                    model.baseOption.value = optionsList.first()
+                }
             }
         }
         SimpleComboBoxCellFactory.setConverter(cbConstructionOption) {

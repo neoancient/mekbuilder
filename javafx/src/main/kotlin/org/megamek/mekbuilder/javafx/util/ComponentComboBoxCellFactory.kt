@@ -23,13 +23,10 @@ fun Component.shortNameWithTechBase() =
             "$shortName${techBase().suffix()}"
         }
 
-class ComponentComboBoxCellFactory(private val combobox: ComboBox<Component>) :
-        Callback<ListView<Component>, ListCell<Component>> {
+class ComponentComboBoxCellFactory(private val combobox: ComboBox<out Component>) :
+        Callback<ListView<out Component>, ListCell<out Component>> {
 
     val nameMap = HashMap<Component, String>()
-    val shortNameConv = Component::getShortName
-    val techBaseConv = Component::shortNameWithTechBase
-    val fullNameConv = Component::getFullName
 
     init {
         combobox.items.onChange {
@@ -41,7 +38,7 @@ class ComponentComboBoxCellFactory(private val combobox: ComboBox<Component>) :
     fun refresh() {
         val count = combobox.items.groupingBy{it.shortName}.eachCount()
         if (count.filter{it.value > 1}.isEmpty()) {
-            combobox.items.forEach{nameMap[it] = shortNameConv(it)}
+            combobox.items.forEach{nameMap[it] = it.shortName}
         } else {
             combobox.items.forEach {
                 if (count[it.shortName]!! > 1) {
@@ -52,11 +49,11 @@ class ComponentComboBoxCellFactory(private val combobox: ComboBox<Component>) :
             }
         }
         if (combobox.items.groupingBy{nameMap[it]}.eachCount().filter{it.value > 1}.isNotEmpty()) {
-            combobox.items.forEach{nameMap[it] = fullNameConv(it)}
+            combobox.items.forEach{nameMap[it] = it.fullName}
         }
     }
 
-    override fun call(param: ListView<Component>?): ListCell<Component> {
+    override fun call(param: ListView<out Component>?): ListCell<out Component> {
         return object : ListCell<Component>() {
             override fun updateItem(item: Component?, empty: Boolean) {
                 super.updateItem(item, empty)
@@ -79,7 +76,7 @@ class ComponentComboBoxCellFactory(private val combobox: ComboBox<Component>) :
          *
          * @param comboBox    The control to apply the conversion to.
          */
-        fun  setConverter(comboBox: ComboBox<Component>) {
+        fun  setConverter(comboBox: ComboBox<out Component>) {
             val factory = ComponentComboBoxCellFactory(comboBox)
             comboBox.cellFactory = factory
             comboBox.converter = factory.converter

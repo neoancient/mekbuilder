@@ -58,6 +58,7 @@ public class MekBuild extends UnitBuild {
         getComponents().add(internalStructure);
         engineMount = new MekEngineMount(this, (MVFEngine) ComponentLibrary.getInstance()
                 .getComponent(ComponentKeys.ENGINE_FUSION));
+        engineMount.setRating(20);
         getComponents().add(engineMount);
         cockpitMount = new CockpitMount(this, ComponentKeys.COCKPIT_STANDARD_MEK);
         getComponents().add(cockpitMount);
@@ -316,6 +317,20 @@ public class MekBuild extends UnitBuild {
     @Override
     public MekEngineMount getEngine() {
         return engineMount;
+    }
+
+    public MVFEngine getEngineType() {
+        return (MVFEngine) engineMount.getComponent();
+    }
+
+    public void setEngineType(MVFEngine engine) { engineMount.setComponent(engine);}
+
+    public int getEngineRating() {
+        return engineMount.getEngineRating();
+    }
+
+    public void setEngineRating(int rating) {
+        engineMount.setRating(rating);
     }
 
     @Override

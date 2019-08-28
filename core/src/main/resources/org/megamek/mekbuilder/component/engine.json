@@ -1,5 +1,4 @@
 [{
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "LargeFusionEngine",
   "mmName" : "Normal",
@@ -22,7 +21,7 @@
     "LARGE_ENGINE" : null,
     "FUSION" : null,
     "HITTABLE" : null,
-    "VARIABLE" : "405,500,5"
+    "VARIABLE" : "5, 405,500"
   },
   "techAdvancement" : "ALL|D|CEDD|2630(TH/TH),~3085(LC),~3120,-,-|2630,-,~3120,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -36,7 +35,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "ASF", "INDUSTRIAL_MEK", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 10
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "ISXLEngine",
   "mmName" : "XL",
@@ -59,7 +57,7 @@
     "FUSION" : null,
     "HITTABLE" : null,
     "HAS_LARGE_ENGINE" : null,
-    "VARIABLE" : "10,400,5"
+    "VARIABLE" : "5, 10,400"
   },
   "techAdvancement" : "IS|E|DFED|2556(TH),2579(TH),3045,2865,3035(LC)|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -74,7 +72,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "ASF", "INDUSTRIAL_MEK", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 10
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "LargeClanXLEngine",
   "mmName" : "XL",
@@ -97,7 +94,7 @@
     "LARGE_ENGINE" : null,
     "FUSION" : null,
     "HITTABLE" : null,
-    "VARIABLE" : "405,500,5"
+    "VARIABLE" : "5, 405,500"
   },
   "techAdvancement" : "CLAN|F|DFEE|-,-,-,-,-|~2850(CIH),-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -113,7 +110,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "ASF", "INDUSTRIAL_MEK", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 10
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "ClanXXLEngine",
   "mmName" : "XXL",
@@ -137,7 +133,7 @@
     "HITTABLE" : null,
     "HAS_LARGE_ENGINE" : null,
     "XXL" : null,
-    "VARIABLE" : "10,400,5"
+    "VARIABLE" : "5, 10,400"
   },
   "techAdvancement" : "CLAN|F|DEDD|-,-,-,-,-|~2954(CSF),~3084(CSF),-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -153,7 +149,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "ASF", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 10
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "ICE",
   "mmName" : "ICE",
@@ -174,10 +169,11 @@
   "rulesRef" : "214,TM",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
+    "LAM" : false,
     "FUEL_ENGINE" : null,
     "HITTABLE" : null,
     "HAS_LARGE_ENGINE" : null,
-    "VARIABLE" : "10,400,5"
+    "VARIABLE" : "5, 10,400"
   },
   "techAdvancement" : "ALL|C|AAAA|-,-,~2300,-,-|-,-,~2300,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -189,7 +185,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "INDUSTRIAL_MEK", "COMBAT_VEHICLE" ],
   "weightFreeHeatSinks" : 0
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "CVFuelCellEngine",
   "mmName" : "Fuel Cell",
@@ -210,9 +205,10 @@
   "rulesRef" : "307, TO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
+    "LAM" : false,
     "FUEL_ENGINE" : null,
     "HITTABLE" : null,
-    "VARIABLE" : "10,400,5"
+    "VARIABLE" : "5, 10,400"
   },
   "techAdvancement" : "ALL|D|CDDC|~2300(TA/TA),2470(TH/TH),3078,-,-|~2300,2470,3078,-,-|ADVANCED",
   "permittedLocations" : [ ],
@@ -224,7 +220,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "COMBAT_VEHICLE" ],
   "weightFreeHeatSinks" : 1
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "Turbine",
   "mmName" : "ICE",
@@ -247,7 +242,7 @@
     "FUEL_ENGINE" : null,
     "HITTABLE" : null,
     "HAS_LARGE_ENGINE" : null,
-    "VARIABLE" : "10,400,5"
+    "VARIABLE" : "5, 10,400"
   },
   "techAdvancement" : "ALL|C|AAAA|-,-,~2300,-,-|-,-,~2300,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -259,7 +254,6 @@
   "allowedUnitTypes" : [ "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 0
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "ClanXLEngine",
   "mmName" : "XL",
@@ -282,7 +276,7 @@
     "FUSION" : null,
     "HITTABLE" : null,
     "HAS_LARGE_ENGINE" : null,
-    "VARIABLE" : "10,400,5"
+    "VARIABLE" : "5, 10,400"
   },
   "techAdvancement" : "CLAN|F|DEDD|-,-,-,-,-|~2824(CFM),2827(CSR),2829,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -297,7 +291,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "ASF", "INDUSTRIAL_MEK", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 10
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "CompactFusion",
   "mmName" : "Compact",
@@ -319,7 +312,7 @@
   "switches" : {
     "FUSION" : null,
     "HITTABLE" : null,
-    "VARIABLE" : "10,400,5"
+    "VARIABLE" : "5, 10,400"
   },
   "techAdvancement" : "IS|E|XXED|~3065(LC),3068(LC),3072,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -331,7 +324,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "ASF", "INDUSTRIAL_MEK", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 10
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "LargeLightEngine",
   "mmName" : "Light",
@@ -354,7 +346,7 @@
     "LARGE_ENGINE" : null,
     "FUSION" : null,
     "HITTABLE" : null,
-    "VARIABLE" : "405,500,5"
+    "VARIABLE" : "5, 405,500"
   },
   "techAdvancement" : "IS|E|XXEE|~3064(LC),3065(LC),-,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -370,8 +362,8 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "ASF", "INDUSTRIAL_MEK", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 10
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
+  "isDefault" : "true",
   "internalName" : "FusionEngine",
   "mmName" : "Normal",
   "fullName" : "Standard Fusion Engine",
@@ -393,7 +385,7 @@
     "FUSION" : null,
     "HITTABLE" : null,
     "HAS_LARGE_ENGINE" : null,
-    "VARIABLE" : "10,400,5"
+    "VARIABLE" : "5, 10,400"
   },
   "techAdvancement" : "ALL|D|CEDD|-,-,~2300,-,-|-,-,~2300,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -405,7 +397,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "ASF", "INDUSTRIAL_MEK", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 10
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "LargeISXXLEngineLarge",
   "mmName" : "XXL",
@@ -429,7 +420,7 @@
     "FUSION" : null,
     "HITTABLE" : null,
     "XXL" : null,
-    "VARIABLE" : "405,500,5"
+    "VARIABLE" : "5, 405,500"
   },
   "techAdvancement" : "IS|E|DFEE|3058(FS),3130(LC),-,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -445,7 +436,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "ASF", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 10
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "CVFissionEngine",
   "mmName" : "Fission",
@@ -466,8 +456,9 @@
   "rulesRef" : "307, TO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
+    "LAM" : false,
     "HITTABLE" : null,
-    "VARIABLE" : "10,400,5"
+    "VARIABLE" : "5, 10,400"
   },
   "techAdvancement" : "ALL|D|EEDD|2470(TH/TH),2882(TC/TC),3079,-,-|2470,2882,3079,-,-|ADVANCED",
   "permittedLocations" : [ ],
@@ -479,7 +470,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 5
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "LargeClanXXLEngineLarge",
   "mmName" : "XXL",
@@ -503,7 +493,7 @@
     "FUSION" : null,
     "HITTABLE" : null,
     "XXL" : null,
-    "VARIABLE" : "405,500,5"
+    "VARIABLE" : "5, 405,500"
   },
   "techAdvancement" : "CLAN|F|DFEE|-,-,-,-,-|3055(CSF),3125(CSF),-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -519,7 +509,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "ASF", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 10
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "ISXXLEngine",
   "mmName" : "XXL",
@@ -543,7 +532,7 @@
     "HITTABLE" : null,
     "HAS_LARGE_ENGINE" : null,
     "XXL" : null,
-    "VARIABLE" : "10,400,5"
+    "VARIABLE" : "5, 10,400"
   },
   "techAdvancement" : "IS|F|XXFE|~3055(FS/LC),~3110(LC),-,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -559,7 +548,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "ASF", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 10
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "LargeISXLEngine",
   "mmName" : "XL",
@@ -582,7 +570,7 @@
     "LARGE_ENGINE" : null,
     "FUSION" : null,
     "HITTABLE" : null,
-    "VARIABLE" : "405,500,5"
+    "VARIABLE" : "5, 405,500"
   },
   "techAdvancement" : "IS|E|DFEE|~2635(TH),~3085(LC),-,2822,3054(FS/LC)|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -598,7 +586,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "ASF", "INDUSTRIAL_MEK", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 10
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "LargeICE",
   "mmName" : "ICE",
@@ -619,10 +606,11 @@
   "rulesRef" : "307, TO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
+    "LAM" : false,
     "LARGE_ENGINE" : null,
     "FUEL_ENGINE" : null,
     "HITTABLE" : null,
-    "VARIABLE" : "405,500,5"
+    "VARIABLE" : "5, 405,500"
   },
   "techAdvancement" : "ALL|C|AAAA|2630(TH/TH),~3085(LC),-,-,-|2630,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -635,7 +623,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK", "INDUSTRIAL_MEK", "COMBAT_VEHICLE" ],
   "weightFreeHeatSinks" : 0
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "LargeTurbine",
   "mmName" : "ICE",
@@ -658,7 +645,7 @@
     "LARGE_ENGINE" : null,
     "FUEL_ENGINE" : null,
     "HITTABLE" : null,
-    "VARIABLE" : "405,500,5"
+    "VARIABLE" : "5, 405,500"
   },
   "techAdvancement" : "ALL|C|AAAA|2630(TH/TH),~3085(LC),-,-,-|2630,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -670,7 +657,6 @@
   "allowedUnitTypes" : [ "CONV_FIGHTER" ],
   "weightFreeHeatSinks" : 0
 }, {
-  "type" : "org.megamek.mekbuilder.component.MVFEngine",
   "componentType" : "ENGINE",
   "internalName" : "LightEngine",
   "mmName" : "Light",
@@ -693,7 +679,7 @@
     "FUSION" : null,
     "HITTABLE" : null,
     "HAS_LARGE_ENGINE" : null,
-    "VARIABLE" : "10,400,5"
+    "VARIABLE" : "5, 10,400"
   },
   "techAdvancement" : "IS|E|XXED|~3055(MERC),3062(LC),3067,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],

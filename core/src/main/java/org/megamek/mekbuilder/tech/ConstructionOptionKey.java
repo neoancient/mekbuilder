@@ -43,6 +43,7 @@ public enum ConstructionOptionKey {
     OMNI_VEHICLE (ConstructionOptionKey.TYPE_BASIC),
     PATCHWORK_ARMOR (ConstructionOptionKey.TYPE_BASIC),
     MIXED_TECH (ConstructionOptionKey.TYPE_BASIC),
+    NON_FUSION_BATTLEMEK (ConstructionOptionKey.TYPE_BASIC),
 
     MEK_PRIMITIVE (ConstructionOptionKey.TYPE_UNIT),
     MEK_STANDARD (ConstructionOptionKey.TYPE_UNIT),

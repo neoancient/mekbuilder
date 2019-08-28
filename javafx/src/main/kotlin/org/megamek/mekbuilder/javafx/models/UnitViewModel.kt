@@ -1,8 +1,10 @@
 package org.megamek.mekbuilder.javafx.models
 
+import javafx.beans.property.SimpleIntegerProperty
 import javafx.beans.property.SimpleListProperty
 import javafx.beans.property.SimpleObjectProperty
 import org.megamek.mekbuilder.component.Component
+import org.megamek.mekbuilder.component.MVFEngine
 import org.megamek.mekbuilder.tech.TechLevel
 import org.megamek.mekbuilder.unit.MekBuild
 import org.megamek.mekbuilder.unit.MekConfiguration
@@ -42,6 +44,19 @@ class UnitViewModel(): ViewModel() {
 
     val minTechLevelProperty = SimpleObjectProperty(TechLevel.INTRO)
     val weightClassProperty = SimpleObjectProperty<UnitWeightClass>()
+
+    // Properties used for several unit types, but not all models have an equivalent property
+    val engineType = bind (true) {
+        if (unitModel is MekModel)
+            (unitModel as MekModel).engineTypeProperty
+        else SimpleObjectProperty<MVFEngine>()
+    }
+    val engineRating = bind (true) {
+        if (unitModel is MekModel)
+            (unitModel as MekModel).engineRatingProperty
+        else SimpleObjectProperty<Int>()
+    }
+
 
     // Mek properties
     val mekConfiguration = bind(true) {if (unitModel is MekModel) (unitModel as MekModel).configurationProperty else SimpleObjectProperty<MekConfiguration>()}

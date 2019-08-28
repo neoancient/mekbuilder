@@ -3,22 +3,31 @@ package org.megamek.mekbuilder.javafx.view
 import javafx.beans.InvalidationListener
 import javafx.beans.Observable
 import javafx.beans.property.SimpleListProperty
-import javafx.collections.ListChangeListener
-import javafx.collections.ObservableList
 import javafx.scene.control.*
 import javafx.scene.layout.AnchorPane
 import org.megamek.mekbuilder.component.*
 import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
 import org.megamek.mekbuilder.javafx.util.ComponentComboBoxCellFactory
-import org.megamek.mekbuilder.javafx.util.SimpleComboBoxCellFactory
 import org.megamek.mekbuilder.javafx.util.SpinnerDoubleStringConverter
+import org.megamek.mekbuilder.tech.ConstructionOptionKey
+import org.megamek.mekbuilder.unit.MekBuild
+import org.megamek.mekbuilder.unit.UnitType
 import tornadofx.*
-import kotlin.streams.toList
 
 /**
  *
  */
+
+/**
+ * Creates an {@link ObservableList} of all components that match the criteria, sorted alphabetically
+ * by shortName with default value(s) moved to the top.
+ */
+fun createComponentList(op: (Component) -> Boolean) =
+        ComponentLibrary.getInstance().allComponents
+                .filter{op(it)}.sortedBy{it.shortName}
+                .sortedBy{!it.isDefault}.toList().observable()
+
 class MekChassis: View(), InvalidationListener {
     override val root: AnchorPane by fxml()
     private val techFilter: BasicInfo by inject()
@@ -31,10 +40,8 @@ class MekChassis: View(), InvalidationListener {
     private val cbGyro: ComboBox<Component> by fxid()
     private val cbCockpit: ComboBox<Cockpit> by fxid()
 
-    val allStructures = ComponentLibrary.getInstance().allComponents
-            .filter { it.type == ComponentType.MEK_STRUCTURE }
-            .sortedBy { it.fullName }
-            .sortedBy { !it.isDefault }.observable()
+    val allStructures = createComponentList { it.type == ComponentType.MEK_STRUCTURE }
+    val allEngines = createComponentList { it.type == ComponentType.ENGINE }
 
     init {
         val tonnageFactory = SpinnerValueFactory.DoubleSpinnerValueFactory(
@@ -75,11 +82,28 @@ class MekChassis: View(), InvalidationListener {
         cbStructure.bind(model.internalStructure)
         ComponentComboBoxCellFactory.setConverter(cbStructure)
 
+        val engineList = SimpleListProperty<MVFEngine>()
+        engineList.bind(objectBinding(allEngines) {
+            filter { techFilter.isLegal(it)
+                    && model.unit.allowed(it)
+                    && model.engineRating.value >= it.variableSizeMin()
+                    && model.engineRating.value <= it.variableSizeMax()
+                    && (it.hasFlag(ComponentSwitch.FUSION)
+                        || model.unit.unitType == UnitType.INDUSTRIAL_MEK
+                        || (model.unit as MekBuild).isPrimitive()
+                        || techFilter.isLegal(ConstructionOptionKey.NON_FUSION_BATTLEMEK.get()))}
+                    .map{it as MVFEngine}.toList().observable()
+        })
+        cbEngine.items = engineList
+        cbEngine.bind(model.engineType)
+        ComponentComboBoxCellFactory.setConverter(cbEngine)
+
         techFilter.addListener(this)
     }
 
     override fun invalidated(observable: Observable) {
         allStructures.invalidate()
+        allEngines.invalidate()
         if (model.internalStructure.value !in cbStructure.items
                 && cbStructure.items.isNotEmpty()) {
             cbStructure.selectionModel.select(cbStructure.items.first())
