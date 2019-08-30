@@ -139,6 +139,7 @@
   "bvCalcType" : "MOVE_FACTOR",
   "rulesRef" : "240, TM",
   "switches" : {
+    "TSM" : "null",
     "SUPERHEAVY_MEK" : "false",
     "PRIMITIVE" : "false",
     "SPREADABLE" : "null"
@@ -169,6 +170,7 @@
   "bvCalcType" : "MOVE_FACTOR",
   "rulesRef" : "240, TM",
   "switches" : {
+    "TSM" : "null",
     "SUPERHEAVY_MEK" : "false",
     "PRIMITIVE" : "false",
     "SPREADABLE" : "null"

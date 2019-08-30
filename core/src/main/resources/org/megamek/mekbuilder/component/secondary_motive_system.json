@@ -30,7 +30,8 @@
     "VEE_BODY" : 1
   },
   "allowedUnitTypes" : [ "COMBAT_VEHICLE" ],
-  "mode" : "JUMP"
+  "mode" : "JUMP",
+  "improved" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
@@ -58,7 +59,8 @@
   "incompatibleComponents" : { },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "PROTOMEK" ],
-  "mode" : "SUBMERSIBLE"
+  "mode" : "SUBMERSIBLE",
+  "improved" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
@@ -86,7 +88,8 @@
   "incompatibleComponents" : { },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_ARMOR" ],
-  "mode" : "VTOL"
+  "mode" : "VTOL",
+  "improved" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
@@ -118,7 +121,8 @@
   "incompatibleComponents" : { },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK", "INDUSTRIAL_MEK" ],
-  "mode" : "SUBMERSIBLE"
+  "mode" : "SUBMERSIBLE",
+  "improved" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
@@ -146,7 +150,8 @@
   "incompatibleComponents" : { },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_ARMOR" ],
-  "mode" : "JUMP"
+  "mode" : "JUMP",
+  "improved" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
@@ -174,7 +179,8 @@
   "incompatibleComponents" : { },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_ARMOR" ],
-  "mode" : "SUBMERSIBLE"
+  "mode" : "SUBMERSIBLE",
+  "improved" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
@@ -206,7 +212,8 @@
   "incompatibleComponents" : { },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK", "INDUSTRIAL_MEK" ],
-  "mode" : "JUMP"
+  "mode" : "JUMP",
+  "improved" : true
 }, {
   "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
@@ -238,7 +245,8 @@
   "incompatibleComponents" : { },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK", "INDUSTRIAL_MEK" ],
-  "mode" : "JUMP"
+  "mode" : "JUMP",
+  "improved" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
@@ -266,7 +274,8 @@
   "incompatibleComponents" : { },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "PROTOMEK" ],
-  "mode" : "JUMP"
+  "mode" : "JUMP",
+  "improved" : true
 }, {
   "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
@@ -294,7 +303,8 @@
   "incompatibleComponents" : { },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "PROTOMEK" ],
-  "mode" : "JUMP"
+  "mode" : "JUMP",
+  "improved" : false
 }, {
   "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
@@ -326,5 +336,6 @@
   "incompatibleComponents" : { },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK", "INDUSTRIAL_MEK" ],
-  "mode" : "JUMP"
+  "mode" : "JUMP",
+  "improved" : false
 }]

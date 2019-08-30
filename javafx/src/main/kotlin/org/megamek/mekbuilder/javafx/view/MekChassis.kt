@@ -96,8 +96,8 @@ class MekChassis: View(), InvalidationListener {
         engineList.bind(objectBinding(allEngines) {
             filter { techFilter.isLegal(it, false)
                     && model.unit.allowed(it)
-                    && model.engineRatingProperty.value >= it.variableSizeMin()
-                    && model.engineRatingProperty.value <= it.variableSizeMax()
+                    && model.engineRatingProperty.value.toInt() >= it.variableSizeMin()
+                    && model.engineRatingProperty.value.toInt() <= it.variableSizeMax()
                     && (it.hasFlag(ComponentSwitch.FUSION)
                     || model.unit.unitType == UnitType.INDUSTRIAL_MEK
                     || (model.unit as MekBuild).isPrimitive()

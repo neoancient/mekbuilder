@@ -18,6 +18,7 @@
  */
 package org.megamek.mekbuilder.javafx.models
 
+import javafx.beans.property.SimpleIntegerProperty
 import org.megamek.mekbuilder.unit.MekBuild
 import tornadofx.*
 
@@ -25,15 +26,40 @@ import tornadofx.*
  * Data model for MekBuild that provides wraps fields in JavaFX properties
  */
 class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
-    val configurationProperty = observable(mekBuild, MekBuild::getConfiguration, MekBuild::setConfiguration)
-    val internalStructureProperty = observable(mekBuild, MekBuild::getStructureType, MekBuild::setStructureType)
-    val engineTypeProperty = observable(mekBuild, MekBuild::getEngineType, MekBuild::setEngineType)
-    val engineRatingProperty = observable(mekBuild, MekBuild::getEngineRating, MekBuild::setEngineRating)
-    val cockpitTypeProperty = observable(mekBuild, MekBuild::getCockpitType, MekBuild::setCockpitType)
-    val gyroTypeProperty = observable(mekBuild, MekBuild::getGyroType, MekBuild::setGyroType)
-    val myomerTypeProperty = observable(mekBuild, MekBuild::getMyomerType, MekBuild::setMyomerType)
+    val configurationProperty = pojoProperty(mekBuild, MekBuild::getConfiguration, MekBuild::setConfiguration)
+    val internalStructureProperty = pojoProperty(mekBuild, MekBuild::getStructureType, MekBuild::setStructureType)
+    val engineTypeProperty = pojoProperty(mekBuild, MekBuild::getEngineType, MekBuild::setEngineType)
+    val engineRatingProperty = SimpleIntegerProperty(0)
+    val cockpitTypeProperty = pojoProperty(mekBuild, MekBuild::getCockpitType, MekBuild::setCockpitType)
+    val gyroTypeProperty = pojoProperty(mekBuild, MekBuild::getGyroType, MekBuild::setGyroType)
+    val myomerTypeProperty = pojoProperty(mekBuild, MekBuild::getMyomerType, MekBuild::setMyomerType)
 
     init {
+        engineRatingProperty.bind(integerBinding(mekBuild,
+                baseWalkMPProperty, tonnageProperty, configurationProperty) {
+            engineRating
+        })
+        // Possible switch between standard/large engine
+        baseWalkMPProperty.onChange {
+            engineTypeProperty.refresh()
+        }
+        // Possible switch between standard/large engine or reduction of MP due to exceeding max
+        tonnageProperty.onChange {
+            engineTypeProperty.refresh()
+        }
+        walkMPProperty.bind(baseWalkMPProperty)
+        runMPProperty.bind(stringBinding(mekBuild, baseRunMPProperty,
+                myomerTypeProperty, componentList) {
+            formattedRunMP()
+        })
+        minWalkProperty.bind(integerBinding(mekBuild, configurationProperty) {
+            minWalkMP()
+        })
+        maxWalkProperty.bind(integerBinding(mekBuild,
+                configurationProperty, engineTypeProperty, tonnageProperty,
+                techFilterProperty) {
+            maxWalkMP(techFilter)
+        })
         structureTonnageProperty.bind(doubleBinding(
                 internalStructureProperty, tonnageProperty, configurationProperty)
             {mekBuild.structureTonnage})

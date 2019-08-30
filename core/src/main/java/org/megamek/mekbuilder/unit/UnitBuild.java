@@ -21,6 +21,7 @@ package org.megamek.mekbuilder.unit;
 import megamek.common.annotations.Nullable;
 import org.megamek.mekbuilder.component.*;
 import org.megamek.mekbuilder.tech.Faction;
+import org.megamek.mekbuilder.tech.ITechFilter;
 import org.megamek.mekbuilder.tech.TechBase;
 import org.megamek.mekbuilder.tech.UnitConstructionOption;
 
@@ -318,6 +319,14 @@ public abstract class UnitBuild {
      * @return    Whether the location contains the cockpit or command center.
      */
     abstract public boolean isCockpitLocation(UnitLocation loc);
+
+    /**
+     * Sets the base movement for the unit. Setting this will adjust engine size as necessary.
+     *
+     * @param walk The base walk/cruise/safe thrust value
+     */
+    public abstract void setBaseWalkMP(int walk);
+
     /**
      * @return The walk/cruise/safe thrust MP with modifications for movement enhancements or restrictions
      */
@@ -343,6 +352,37 @@ public abstract class UnitBuild {
     public int getRunMP() {
         return getBaseRunMP();
     }
+
+    /**
+     * @return A String representation of the running/flanking MP that shows the effect of movement enhancements
+     *         (e.g. MASC, supercharger, TSM)
+     */
+    public String formattedRunMP() {
+        return Integer.toString(getRunMP());
+    }
+
+    /**
+     * @return The minimum base walking/cruising/safe thrust value for the unit
+     */
+    public abstract int minWalkMP();
+
+    /**
+     * Calculates the maximum speed of the unit based on factors such as tonnage and engine type.
+     *
+     * @return           The maximum base walking/cruising/safe thrust value for the unit.
+     */
+    public int maxWalkMP() {
+        return maxWalkMP(null);
+    }
+
+    /**
+     * Calculates the maximum speed of the unit based on factors such as tonnage and engine type.
+     *
+     * @param techFilter Used by some units to determine whether to consider a large engine. If {@code null},
+     *                   the large engine (if any) is considered legal.
+     * @return           The maximum base walking/cruising/safe thrust value for the unit.
+     */
+    public abstract int maxWalkMP(@Nullable ITechFilter techFilter);
 
     /**
      * Determines whether the component is allow on the unit. By default this checks

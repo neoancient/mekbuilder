@@ -21,11 +21,17 @@
                               <children>
                                  <VBox fx:id="structureLeft" HBox.hgrow="SOMETIMES">
                                     <HBox.margin>
-                                       <Insets />
+                                       <Insets left="5.0" right="5.0" />
                                     </HBox.margin>
                                  </VBox>
-                                 <VBox fx:id="structureMid" HBox.hgrow="SOMETIMES" />
-                                 <VBox fx:id="structureRight" HBox.hgrow="SOMETIMES" />
+                                 <VBox fx:id="structureMid" HBox.hgrow="SOMETIMES">
+                                    <HBox.margin>
+                                       <Insets left="5.0" right="5.0" />
+                                    </HBox.margin></VBox>
+                                 <VBox fx:id="structureRight" HBox.hgrow="SOMETIMES">
+                                    <HBox.margin>
+                                       <Insets left="5.0" right="5.0" />
+                                    </HBox.margin></VBox>
                               </children>
                            </HBox>
                         </content>

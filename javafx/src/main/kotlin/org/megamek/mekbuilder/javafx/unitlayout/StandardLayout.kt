@@ -26,6 +26,7 @@ import javafx.scene.layout.VBox
 import org.megamek.mekbuilder.javafx.view.BasicInfo
 import org.megamek.mekbuilder.javafx.view.MekChassis
 import org.megamek.mekbuilder.javafx.view.MekConfigPanel
+import org.megamek.mekbuilder.javafx.view.MovementView
 import tornadofx.*
 
 /**
@@ -35,6 +36,7 @@ class StandardLayout: View() {
     val mekConfiguration: MekConfigPanel by inject()
     val basicInfo: BasicInfo by inject()
     val mekChassis: MekChassis by inject()
+    val movement: MovementView by inject()
 
     override val root: AnchorPane by fxml()
 
@@ -72,6 +74,9 @@ class StandardLayout: View() {
                 wrapAnchor(mekConfiguration.root),
                 wrapAnchor(basicInfo.root),
                 wrapAnchor(mekChassis.root)
+        )
+        structureMid.children.setAll(
+                wrapAnchor(movement.root)
         )
         //            default:
         //        }

@@ -20,6 +20,7 @@ package org.megamek.mekbuilder.unit;
 
 import org.megamek.mekbuilder.component.*;
 import org.megamek.mekbuilder.tech.ConstructionOptionKey;
+import org.megamek.mekbuilder.tech.ITechFilter;
 import org.megamek.mekbuilder.tech.UnitConstructionOption;
 
 import java.util.Collections;
@@ -265,7 +266,9 @@ public class MekBuild extends UnitBuild {
     }
 
     public void setTonnage(double tonnage) {
+        int walk = getBaseWalkMP();
         this.tonnage = tonnage;
+        setBaseWalkMP(walk);
     }
 
     @Override
@@ -334,13 +337,85 @@ public class MekBuild extends UnitBuild {
     }
 
     @Override
+    public void setBaseWalkMP(int walk) {
+        if (walk > maxWalkMP(null)) {
+            walk = maxWalkMP(null);
+        }
+        double rating = walk * getTonnage();
+        if (isPrimitive()) {
+            rating *= 1.2;
+        }
+        rating = Math.max(10.0, Math.ceil(rating * getEngineType().variableStepSize())
+                / getEngineType().variableStepSize());
+        if (rating > getEngineType().variableSizeMax()) {
+            setEngineType(getEngineType().largeSize());
+        } else if (rating < getEngineType().variableSizeMin()) {
+            setEngineType(getEngineType().standardSize());
+        }
+        setEngineRating((int) rating);
+    }
+
+    @Override
     public int getBaseWalkMP() {
-        return (int)(engineMount.getEngineRating() / getTonnage());
+        int rating = engineMount.getEngineRating();
+        if (isPrimitive()) {
+            rating = (rating * 5) / 6;
+        }
+        return (int) (rating / getTonnage());
     }
 
     @Override
     public int getWalkMP() {
         return getBaseWalkMP();
+    }
+
+    @Override
+    public String formattedRunMP() {
+        int maxRun = getRunMP();
+        long boosts = getComponents().stream()
+                .filter(m -> m.getComponent().hasFlag(ComponentSwitch.SPEED_BOOST)).count();
+        if (boosts > 1) {
+            // It shouldn't be possible to have more than two (MASC + Supercharger),
+            // but we'll make sure we're capped at x2.5 anyway
+            maxRun *= 2.5;
+        } else if (boosts == 1) {
+            maxRun *= 2;
+        } else if (getComponents().stream().anyMatch(m -> m.getComponent().hasFlag(ComponentSwitch.TSM))) {
+            maxRun++;
+        }
+        if (maxRun > getRunMP()) {
+            return String.format("%d [%d]", getRunMP(), maxRun);
+        } else {
+            return Integer.toString(maxRun);
+        }
+    }
+
+    @Override
+    public int minWalkMP() {
+        // LAMs have a minimum jump MP of 3, which necessarily implies a minimum walk MP.
+        if (!isLAM()) {
+            return 1;
+        } else if (((SecondaryMotiveSystem) secondaryMotiveMount.getComponent()).isImproved()) {
+            return 2;
+        } else {
+            return 3;
+        }
+    }
+
+    @Override
+    public int maxWalkMP(ITechFilter filter) {
+        MVFEngine engine = getEngineType();
+        if ((engine.largeSize() != null)
+            && (filter == null || filter.isLegal(engine.largeSize()))) {
+            engine = engine.largeSize();
+        }
+        double maxRating = engine.variableSizeMax();
+        if (isPrimitive()) {
+            // Drop max walk for primitives to make sure walk * tonnage * 1.2 will be <= max rating
+            // and round down to the step size
+            maxRating = Math.floor((maxRating / 1.2) * engine.variableStepSize()) / engine.variableStepSize();
+        }
+        return (int) (maxRating / tonnage);
     }
 
     public int getBaseJumpMP() {

@@ -154,6 +154,8 @@ public enum ComponentSwitch {
     ECM,
     /** Standard myomer required for MASC */
     MASC_COMPATIBLE,
+    /** Triple-Strength Myomer; provides a boost to top speed */
+    TSM,
     /** Enables running at walk x 2 (MASC, supercharger, etc) */
     SPEED_BOOST,
     /** Mechanical jump boosters */

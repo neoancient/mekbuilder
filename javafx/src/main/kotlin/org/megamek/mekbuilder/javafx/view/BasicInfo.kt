@@ -77,6 +77,9 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
     private val cbFaction: ComboBox<Faction> by fxid()
 
     init {
+        model.techFilter = this
+        model.techFilterProperty.addListener(this)
+
         val techBaseList = SimpleListProperty<TechBase>()
         techBaseList.bind(objectBinding(model.baseOptionProperty) {
             if (model.baseOption == null
@@ -137,7 +140,12 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
         }
     }
 
-    override fun getYear() = txtYear.textProperty().value.toInt()
+    override fun getYear() =
+            if (txtYear.textProperty().value.isNotEmpty()) {
+                txtYear.textProperty().value.toInt()
+            } else {
+                model.introYear
+            }
 
     override fun getTechBase() = cbTechBase.selectedItem ?: TechBase.ALL
 

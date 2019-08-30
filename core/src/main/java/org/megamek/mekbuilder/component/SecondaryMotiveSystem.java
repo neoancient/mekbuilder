@@ -29,14 +29,23 @@ import org.megamek.mekbuilder.unit.UnitType;
 public class SecondaryMotiveSystem extends Component {
 
     private MotiveType mode = MotiveType.GROUND;
+    private boolean improved = false;
 
-    private static final double BA_JUMP_WEIGHTS[] = { 25, 25, 50, 125, 250 };
-    private static final double BA_UMU_WEIGHTS[] = { 45, 45, 85, 160, 250 };
-    private static final double BA_VTOL_WEIGHTS[] = { 30, 40, 60 };
+    private static final double[] BA_JUMP_WEIGHTS = { 25, 25, 50, 125, 250 };
+    private static final double[] BA_UMU_WEIGHTS = { 45, 45, 85, 160, 250 };
+    private static final double[] BA_VTOL_WEIGHTS = { 30, 40, 60 };
 
+    /**
+     * @return The movement mode provided by the component
+     */
     public MotiveType getMode() {
         return mode;
     }
+
+    /**
+     * @return Whether the MP limit is based on run rather than walk
+     */
+    public boolean isImproved() { return improved; }
 
     @Override
     public double calcWeight(UnitBuild unit, double size) {

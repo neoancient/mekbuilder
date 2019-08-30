@@ -23,13 +23,31 @@ import javafx.beans.value.ObservableDoubleValue
 import javafx.beans.value.ObservableIntegerValue
 import javafx.collections.ObservableList
 import org.megamek.mekbuilder.component.Mount
-import org.megamek.mekbuilder.tech.ITechProgression
+import org.megamek.mekbuilder.tech.ITechFilter
 import org.megamek.mekbuilder.tech.TechBase
 import org.megamek.mekbuilder.unit.UnitBuild
 import org.megamek.mekbuilder.unit.UnitLocation
 import org.megamek.mekbuilder.unit.UnitType
-import org.megamek.mekbuilder.unit.UnitWeightClass
 import tornadofx.*
+import kotlin.reflect.KFunction
+import kotlin.reflect.KFunction2
+
+/**
+ * Replacement for {@link Properties#observable}. This version fires a value changed event when the setter
+ * is called.
+ */
+fun <S : Any, T> pojoProperty(bean: S, getter: KFunction<T>, setter: KFunction2<S, T, Unit>): PojoProperty<T> {
+    val propName = getter.name.substring(3).decapitalize()
+
+    return object : PojoProperty<T>(bean, propName) {
+        override fun get() = getter.call(bean)
+        override fun set(newValue: T) {
+            setter.invoke(bean, newValue)
+            refresh()
+        }
+    }
+}
+
 
 /**
  * Data model for UnitModel that wraps fields in JavaFX properties
@@ -38,22 +56,25 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     val unitProperty = SimpleObjectProperty(unitBuild)
     var unit by unitProperty
     val unitTypeProperty = ReadOnlyObjectWrapper<UnitType>(unit.unitType)
+    var unitType by unitTypeProperty
+    val techFilterProperty = SimpleObjectProperty<ITechFilter>()
+    var techFilter by techFilterProperty
 
-    val baseOptionProperty = observable(unit, UnitBuild::getBaseConstructionOption, UnitBuild::setBaseConstructionOption)
+    val baseOptionProperty = pojoProperty(unit, UnitBuild::getBaseConstructionOption, UnitBuild::setBaseConstructionOption)
     var baseConstructionOption by baseOptionProperty
-    val chassisProperty = observable(unit, UnitBuild::getChassis, UnitBuild::setChassis)
+    val chassisProperty = pojoProperty(unit, UnitBuild::getChassis, UnitBuild::setChassis)
     var chassisName by chassisProperty
-    val modelProperty = observable(unit, UnitBuild::getModel, UnitBuild::setModel)
+    val modelProperty = pojoProperty(unit, UnitBuild::getModel, UnitBuild::setModel)
     var modelName by modelProperty
-    val sourceProperty = observable(unit, UnitBuild::getSource, UnitBuild::setSource)
+    val sourceProperty = pojoProperty(unit, UnitBuild::getSource, UnitBuild::setSource)
     var source by sourceProperty
-    val yearProperty = observable(unit, UnitBuild::getYear, UnitBuild::setYear)
+    val yearProperty = pojoProperty(unit, UnitBuild::getYear, UnitBuild::setYear)
     var introYear by yearProperty
-    val techBaseProperty = observable(unit, UnitBuild::getTechBase, UnitBuild::setTechBase)
+    val techBaseProperty = pojoProperty(unit, UnitBuild::getTechBase, UnitBuild::setTechBase)
     var techBase by techBaseProperty
-    val factionProperty = observable(unit, UnitBuild::getFaction, UnitBuild::setFaction)
+    val factionProperty = pojoProperty(unit, UnitBuild::getFaction, UnitBuild::setFaction)
     var faction by factionProperty
-    val tonnageProperty = observable(unit, UnitBuild::getTonnage, UnitBuild::setTonnage)
+    val tonnageProperty = pojoProperty(unit, UnitBuild::getTonnage, UnitBuild::setTonnage)
 
     val componentList = ArrayList<Mount>().observable()
     val componentMap = HashMap<UnitLocation, ObservableList<Mount>>().observable()
@@ -72,7 +93,7 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     }
     fun maxArmorPointsProperty(loc: UnitLocation) = maxArmorPointsMap[loc] ?: SimpleIntegerProperty()
 
-    val omniProperty = observable(unit, UnitBuild::isOmni, UnitBuild::setOmni)
+    val omniProperty = pojoProperty(unit, UnitBuild::isOmni, UnitBuild::setOmni)
     var isOmni by omniProperty
     val kgStandardProperty = SimpleBooleanProperty(false)
     var usesKgStandard by kgStandardProperty
@@ -84,14 +105,18 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     var totalArmorPoints by totalArmorPointsProperty
     val defaultArmorNameProperty = SimpleStringProperty("")
     var defaultArmorName by defaultArmorNameProperty
-    val baseWalkMPProperty = SimpleIntegerProperty(0)
+    val baseWalkMPProperty = pojoProperty(unitBuild, UnitBuild::getBaseWalkMP, UnitBuild::setBaseWalkMP)
     var baseWalkMP by baseWalkMPProperty
     val baseRunMPProperty = SimpleIntegerProperty(0)
     var baseRunMP by baseRunMPProperty
     val walkMPProperty = SimpleIntegerProperty(0)
     var walkMP by walkMPProperty
-    val runMPProperty = SimpleIntegerProperty(0)
+    val runMPProperty = SimpleStringProperty("")
     var runMP by runMPProperty
+    val minWalkProperty = SimpleIntegerProperty(0)
+    var minWalk by minWalkProperty
+    val maxWalkProperty = SimpleIntegerProperty(0)
+    var maxWalk by maxWalkProperty
 
     init {
         baseOptionProperty.onChange {
@@ -107,5 +132,6 @@ abstract class UnitModel (unitBuild: UnitBuild) {
                 }
             }
         }
+        baseRunMPProperty.bind(integerBinding(unitBuild, baseWalkMPProperty) {baseRunMP})
     }
 }

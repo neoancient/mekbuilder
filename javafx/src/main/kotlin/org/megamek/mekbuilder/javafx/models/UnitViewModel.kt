@@ -18,11 +18,11 @@
  */
 package org.megamek.mekbuilder.javafx.models
 
-import javafx.beans.property.SimpleListProperty
-import javafx.beans.property.SimpleObjectProperty
+import javafx.beans.property.*
 import org.megamek.mekbuilder.component.Cockpit
 import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.component.MVFEngine
+import org.megamek.mekbuilder.tech.ITechFilter
 import org.megamek.mekbuilder.tech.TechLevel
 import org.megamek.mekbuilder.unit.MekBuild
 import org.megamek.mekbuilder.unit.MekConfiguration
@@ -35,7 +35,11 @@ import tornadofx.*
  * through suppliers that allow the model to be changed without having rebind any properties.
  */
 class UnitViewModel(): ViewModel() {
-    var unitModel: UnitModel = MekModel(MekBuild())
+    val techFilterProperty = SimpleObjectProperty<ITechFilter>()
+    var techFilter by techFilterProperty
+
+    val unitModelProperty = SimpleObjectProperty(MekModel(MekBuild()))
+    var unitModel by unitModelProperty
     val unitProperty = bind{unitModel.unitProperty}
     var unit by unitProperty
 
@@ -75,12 +79,16 @@ class UnitViewModel(): ViewModel() {
     var defaultArmorName by defaultArmorNameProperty
     val baseWalkMPProperty = bind(true) {unitModel.baseWalkMPProperty}
     var baseWalkMP by baseWalkMPProperty
-    val baseRunMPProperty = bind(true) {unitModel.baseRunMPProperty}
+    val baseRunMPProperty = bind {unitModel.baseRunMPProperty}
     var baseRunMP by baseRunMPProperty
-    val walkMPProperty = bind(true) {unitModel.walkMPProperty}
+    val walkMPProperty = bind{unitModel.walkMPProperty}
     var walkMP by walkMPProperty
-    val runMPProperty = bind(true) {unitModel.runMPProperty}
+    val runMPProperty = bind{unitModel.runMPProperty}
     var runMP by runMPProperty
+    val minWalkProperty = bind{unitModel.minWalkProperty.asObject()}
+    var minWalk by minWalkProperty
+    val maxWalkProperty = bind{unitModel.maxWalkProperty.asObject()}
+    var maxWalk by maxWalkProperty
 
     val minTechLevelProperty = SimpleObjectProperty(TechLevel.INTRO)
     var minTechLevel by minTechLevelProperty
@@ -94,10 +102,10 @@ class UnitViewModel(): ViewModel() {
         else SimpleObjectProperty<MVFEngine>()
     }
     var engineType by engineTypeProperty
-    val engineRatingProperty = bind (true) {
+    val engineRatingProperty = bind {
         if (unitModel is MekModel)
             (unitModel as MekModel).engineRatingProperty
-        else SimpleObjectProperty<Int>()
+        else SimpleIntegerProperty()
     }
     var engineRating by engineRatingProperty
 
@@ -115,6 +123,12 @@ class UnitViewModel(): ViewModel() {
     var myomer by myomerProperty
 
     init {
+        unitModel.techFilterProperty.bind(techFilterProperty)
+        unitModelProperty.addListener{
+            _, oldValue, newValue ->
+                oldValue.techFilterProperty.unbind()
+                newValue.techFilterProperty.bind(techFilterProperty)
+        }
         weightClassProperty.bind(objectBinding(unitModel) {weightClass.value})
     }
 }
