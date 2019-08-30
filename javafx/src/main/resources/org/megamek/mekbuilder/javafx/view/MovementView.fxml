@@ -40,7 +40,7 @@
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="3">
                <children>
                   <Label text="%lblSecondary.text" />
-                  <ComboBox prefWidth="150.0" />
+                  <ComboBox fx:id="cbSecondaryMotive" prefWidth="150.0" />
                </children>
             </VBox>
             <Label fx:id="lblRunMP" text="%lblRunMP.text" GridPane.rowIndex="2" />

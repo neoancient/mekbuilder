@@ -22,6 +22,7 @@ import javafx.beans.property.*
 import org.megamek.mekbuilder.component.Cockpit
 import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.component.MVFEngine
+import org.megamek.mekbuilder.component.SecondaryMotiveSystem
 import org.megamek.mekbuilder.tech.ITechFilter
 import org.megamek.mekbuilder.tech.TechLevel
 import org.megamek.mekbuilder.unit.MekBuild
@@ -89,6 +90,8 @@ class UnitViewModel(): ViewModel() {
     var minWalk by minWalkProperty
     val maxWalkProperty = bind{unitModel.maxWalkProperty.asObject()}
     var maxWalk by maxWalkProperty
+    val secondaryMotiveProperty = bind {unitModel.secondaryMotiveProperty}
+    var secondaryMotiveType by secondaryMotiveProperty
 
     val minTechLevelProperty = SimpleObjectProperty(TechLevel.INTRO)
     var minTechLevel by minTechLevelProperty

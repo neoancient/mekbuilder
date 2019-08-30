@@ -36,6 +36,9 @@ public class SecondaryMotiveSystem extends Component {
     private static final double[] BA_VTOL_WEIGHTS = { 30, 40, 60 };
 
     /**
+     * A component with a mode of {@link MotiveType#GROUND} is a place holder that provides
+     * no secondary movement mode.
+     *
      * @return The movement mode provided by the component
      */
     public MotiveType getMode() {

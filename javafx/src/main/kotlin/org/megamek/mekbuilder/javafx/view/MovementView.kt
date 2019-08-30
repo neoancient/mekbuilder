@@ -1,13 +1,19 @@
 package org.megamek.mekbuilder.javafx.view
 
+import javafx.beans.InvalidationListener
+import javafx.beans.Observable
+import javafx.beans.property.SimpleListProperty
 import javafx.beans.property.SimpleObjectProperty
 import javafx.scene.control.ComboBox
 import javafx.scene.control.Label
 import javafx.scene.control.Spinner
 import javafx.scene.control.SpinnerValueFactory
 import javafx.scene.layout.AnchorPane
+import org.megamek.mekbuilder.component.ComponentLibrary
+import org.megamek.mekbuilder.component.ComponentType
 import org.megamek.mekbuilder.component.SecondaryMotiveSystem
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
+import org.megamek.mekbuilder.javafx.util.ComponentComboBoxCellFactory
 import org.megamek.mekbuilder.unit.UnitBuild
 import org.megamek.mekbuilder.unit.UnitType
 import tornadofx.*
@@ -16,7 +22,7 @@ import javax.swing.SpinnerNumberModel
 /**
  * View for setting walk/cruise/thrust speed and additional movement modes (e.g. jump/underwater).
  */
-class MovementView : View() {
+class MovementView : View(), InvalidationListener {
     private val model: UnitViewModel by inject()
     private val techFilter: BasicInfo by inject()
 
@@ -32,12 +38,16 @@ class MovementView : View() {
     private val lblRunFinal: Label by fxid()
     private val lblJumpFinal: Label by fxid()
 
+    val allSecondaryMotive = ComponentLibrary.getInstance().allComponents
+            .filter {it.type == ComponentType.SECONDARY_MOTIVE_SYSTEM}
+            .sortedBy{it.shortName}.sortedBy{!it.isDefault}.toList().observable()
+
     private fun isWalker(unit: UnitBuild) =
-            unit.unitType.isMech || unit.unitType == UnitType.PROTOMEK || unit.unitType == UnitType.BATTLE_ARMOR
+        unit.unitType.isMech || unit.unitType == UnitType.PROTOMEK || unit.unitType == UnitType.BATTLE_ARMOR
 
     private fun isAero(unit: UnitBuild) =
-            //TODO: Add aero support vehicles
-            unit.unitType.isFighter || unit.unitType.isLargeCraft || unit.unitType == UnitType.SMALL_CRAFT
+        //TODO: Add aero support vehicles
+        unit.unitType.isFighter || unit.unitType.isLargeCraft || unit.unitType == UnitType.SMALL_CRAFT
 
     init {
         lblWalkMP.textProperty().bind(stringBinding(model.unitProperty) {
@@ -63,12 +73,26 @@ class MovementView : View() {
             _, _, newValue -> if (!newValue) spnWalkBase.increment(0)
         }
 
+        val secondaryMotiveList = SimpleListProperty<SecondaryMotiveSystem>()
+        secondaryMotiveList.bind(objectBinding(allSecondaryMotive) {
+            filter { techFilter.isLegal(it, false) && model.unit.allowed(it)}
+                    .map{it as SecondaryMotiveSystem}.toList().observable()
+        })
+        cbSecondaryMotive.items = secondaryMotiveList
+        cbSecondaryMotive.bind(model.secondaryMotiveProperty)
+        ComponentComboBoxCellFactory.setConverter(cbSecondaryMotive)
+
         spnWalkBase.bind(model.baseWalkMPProperty)
         lblRunBase.textProperty().bind(stringBinding(model.baseRunMPProperty) {
-            System.out.println("Setting base run text to ${model.baseRunMP}")
             model.baseRunMP.toString()
         })
         lblWalkFinal.textProperty().bind(stringBinding(model.walkMPProperty) {model.walkMP.toString()})
         lblRunFinal.textProperty().bind(stringBinding(model.runMPProperty) {model.runMP.toString()})
+
+        techFilter.addListener(this)
+    }
+
+    override fun invalidated(observable: Observable) {
+        allSecondaryMotive.invalidate()
     }
 }

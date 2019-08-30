@@ -25,6 +25,7 @@ package org.megamek.mekbuilder.component;
 public interface ComponentKeys {
     String ENGINE_FUSION = "FusionEngine";
 
+    String SECONDARY_MOTIVE_NONE = "NoSecondaryMotive";
     String MEK_JJ = "Jump Jet";
 
     String HEAT_SINK_SINGLE = "Heat Sink";

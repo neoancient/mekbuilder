@@ -18,6 +18,8 @@
  */
 package org.megamek.mekbuilder.unit;
 
+import com.sun.istack.NotNull;
+import com.sun.istack.Nullable;
 import org.megamek.mekbuilder.component.*;
 import org.megamek.mekbuilder.tech.ConstructionOptionKey;
 import org.megamek.mekbuilder.tech.ITechFilter;
@@ -66,11 +68,9 @@ public class MekBuild extends UnitBuild {
         gyroMount = new Mount(this, ComponentLibrary.getInstance()
                 .getComponent(ComponentKeys.GYRO_STANDARD));
         getComponents().add(gyroMount);
-        secondaryMotiveMount = new CompoundMount(this, ComponentLibrary.getInstance()
-                .getComponent(ComponentKeys.MEK_JJ));
+        secondaryMotiveMount = new CompoundMount(this, getDefaultSecondaryMotiveType());
         getComponents().add(secondaryMotiveMount);
-        heatSinkMount = new CompoundMount(this, ComponentLibrary.getInstance()
-                .getComponent(ComponentKeys.HEAT_SINK_SINGLE));
+        heatSinkMount = new CompoundMount(this, getDefaultSecondaryMotiveType());
         getComponents().add(heatSinkMount);
         myomerMount = new DistributedMount(this, ComponentLibrary.getInstance()
                 .getComponent(ComponentKeys.MYOMER_STANDARD));
@@ -395,7 +395,7 @@ public class MekBuild extends UnitBuild {
         // LAMs have a minimum jump MP of 3, which necessarily implies a minimum walk MP.
         if (!isLAM()) {
             return 1;
-        } else if (((SecondaryMotiveSystem) secondaryMotiveMount.getComponent()).isImproved()) {
+        } else if (getSecondaryMotiveType() != null && getSecondaryMotiveType().isImproved()) {
             return 2;
         } else {
             return 3;
@@ -418,9 +418,21 @@ public class MekBuild extends UnitBuild {
         return (int) (maxRating / tonnage);
     }
 
+    @Override
+    public SecondaryMotiveSystem getSecondaryMotiveType() {
+        return (SecondaryMotiveSystem) secondaryMotiveMount.getComponent();
+    }
+
+    @Override
+    public void setSecondaryMotiveType(SecondaryMotiveSystem secondary) {
+        if (secondary.getMode().equals(MotiveType.GROUND)) {
+            secondaryMotiveMount.setCount(0);
+        }
+        secondaryMotiveMount.setComponent(secondary);
+    }
+
     public int getBaseJumpMP() {
-        if (((SecondaryMotiveSystem) secondaryMotiveMount.getComponent()).getMode()
-                .equals(MotiveType.JUMP)) {
+        if (getSecondaryMotiveType().getMode().equals(MotiveType.JUMP)) {
             return secondaryMotiveMount.getCount();
         } else {
             return 0;
@@ -428,8 +440,7 @@ public class MekBuild extends UnitBuild {
     }
 
     public int getBaseUWMP() {
-        if (((SecondaryMotiveSystem) secondaryMotiveMount.getComponent()).getMode()
-                .equals(MotiveType.SUBMERSIBLE)) {
+        if (getSecondaryMotiveType().getMode().equals(MotiveType.SUBMERSIBLE)) {
             return secondaryMotiveMount.getCount();
         } else {
             return 0;
@@ -523,6 +534,13 @@ public class MekBuild extends UnitBuild {
                 .filter(c -> c.getType().equals(ComponentType.MEK_STRUCTURE)
                 && c.isDefault() && allowed(c)).findFirst()
                 .orElse(ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_STRUCTURE_STANDARD));
+    }
+
+    public Component getDefaultSecondaryMotiveType() {
+        return ComponentLibrary.getInstance().getAllComponents().stream()
+                .filter(c -> c.getType().equals(ComponentType.SECONDARY_MOTIVE_SYSTEM)
+                        && c.isDefault() && allowed(c)).findFirst()
+                .orElse(ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_JJ));
     }
 
     @Override

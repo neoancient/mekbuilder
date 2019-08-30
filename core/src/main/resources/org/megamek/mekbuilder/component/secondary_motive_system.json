@@ -1,5 +1,34 @@
-[{
-  "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
+[
+  {
+    "componentType": "SECONDARY_MOTIVE_SYSTEM",
+    "isDefault": true,
+    "internalName": "NoSecondaryMotive",
+    "mmName": "",
+    "fullName": "None",
+    "shortName": "None",
+    "weightFactor": 0.0,
+    "weightAddend": 0.0,
+    "weightCalc": "BASIC",
+    "costFactor": 0.0,
+    "costAddend": 0.0,
+    "costCalc": "BASIC",
+    "slots": 0.0,
+    "slotAddend": 0.0,
+    "slotCalc": "BASIC",
+    "bvFactor": 0.0,
+    "bvFactor2": 0.0,
+    "bvCalcType": "NONE",
+    "rulesRef": "",
+    "switches": {},
+    "techAdvancement": "ALL|A|AAAA|1950,1950,1950|1950,1950,1950|INTRO",
+    "permittedLocations": [],
+    "requiredComponents": {},
+    "incompatibleComponents": {},
+    "fixedLocations": {},
+    "allowedUnitTypes": [],
+    "mode": "GROUND",
+    "improved": false
+}, {
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
   "internalName" : "Vehicular Jump Jet",
   "mmName" : "Jump Jet",
@@ -33,7 +62,6 @@
   "mode" : "JUMP",
   "improved" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
   "internalName" : "ProtoMek UMU",
   "mmName" : "",
@@ -62,7 +90,6 @@
   "mode" : "SUBMERSIBLE",
   "improved" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
   "internalName" : "BA VTOL",
   "mmName" : "",
@@ -91,7 +118,6 @@
   "mode" : "VTOL",
   "improved" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
   "internalName" : "UMU",
   "mmName" : "ISUMU,CLUMU",
@@ -124,7 +150,6 @@
   "mode" : "SUBMERSIBLE",
   "improved" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
   "internalName" : "BA Jump Jet",
   "mmName" : "",
@@ -153,7 +178,6 @@
   "mode" : "JUMP",
   "improved" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
   "internalName" : "BA UMU",
   "mmName" : "",
@@ -182,7 +206,6 @@
   "mode" : "SUBMERSIBLE",
   "improved" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
   "internalName" : "Improved Jump Jet",
   "mmName" : "IS Improved Jump Jet,Clan Improved Jump Jet",
@@ -215,7 +238,6 @@
   "mode" : "JUMP",
   "improved" : true
 }, {
-  "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
   "internalName" : "Jump Jet",
   "mmName" : "Jump Jet",
@@ -248,7 +270,6 @@
   "mode" : "JUMP",
   "improved" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
   "internalName" : "ProtoMek XJJ",
   "mmName" : "",
@@ -277,7 +298,6 @@
   "mode" : "JUMP",
   "improved" : true
 }, {
-  "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
   "internalName" : "ProtoMek Jump Jet",
   "mmName" : "",
@@ -306,7 +326,6 @@
   "mode" : "JUMP",
   "improved" : false
 }, {
-  "type" : "org.megamek.mekbuilder.component.SecondaryMotiveSystem",
   "componentType" : "SECONDARY_MOTIVE_SYSTEM",
   "internalName" : "Jump Jet:prototype",
   "mmName" : "ISPrototypeJumpJet",

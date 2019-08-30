@@ -385,6 +385,21 @@ public abstract class UnitBuild {
     public abstract int maxWalkMP(@Nullable ITechFilter techFilter);
 
     /**
+     * A secondary motive system provides an additional movement mode (jump, UMU, VTOL, etc).
+     *
+     * @return The secondary motive system component.
+     */
+    public abstract SecondaryMotiveSystem getSecondaryMotiveType();
+
+    /**
+     * Sets the component that provides a secondary movement mode (jump, UMU, VTOL, etc).
+     * For unit types that cannot have a secondary system this is a noop.
+     *
+     * @param secondary The secondary motive system.
+     */
+    public abstract void setSecondaryMotiveType(SecondaryMotiveSystem secondary);
+
+    /**
      * Determines whether the component is allow on the unit. By default this checks
      * unit type, but subclasses will apply additional restrictions.
      *
