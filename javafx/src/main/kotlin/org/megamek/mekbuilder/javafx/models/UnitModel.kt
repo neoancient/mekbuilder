@@ -23,7 +23,6 @@ import javafx.beans.value.ObservableDoubleValue
 import javafx.beans.value.ObservableIntegerValue
 import javafx.collections.ObservableList
 import org.megamek.mekbuilder.component.Mount
-import org.megamek.mekbuilder.component.SecondaryMotiveSystem
 import org.megamek.mekbuilder.tech.ITechFilter
 import org.megamek.mekbuilder.tech.TechBase
 import org.megamek.mekbuilder.unit.UnitBuild
@@ -120,6 +119,14 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     var maxWalk by maxWalkProperty
     val secondaryMotiveProperty = pojoProperty(unit, UnitBuild::getSecondaryMotiveType, UnitBuild::setSecondaryMotiveType)
     var secondaryMotiveType by secondaryMotiveProperty
+    val baseSecondaryMPProperty = pojoProperty(unit, UnitBuild::getBaseSecondaryMP, UnitBuild::setSecondaryMP)
+    var baseSecondaryMP by baseSecondaryMPProperty
+    val secondaryMPProperty = SimpleIntegerProperty(0)
+    var secondaryMP by secondaryMPProperty
+    val minSecondaryMPProperty = SimpleIntegerProperty(0)
+    var minSecondaryMP by minSecondaryMPProperty
+    val maxSecondaryMPProperty = SimpleIntegerProperty(0)
+    var maxSecondaryMP by maxSecondaryMPProperty
 
     init {
         baseOptionProperty.onChange {

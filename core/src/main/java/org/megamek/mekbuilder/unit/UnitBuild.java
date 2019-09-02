@@ -328,7 +328,7 @@ public abstract class UnitBuild {
     public abstract void setBaseWalkMP(int walk);
 
     /**
-     * @return The walk/cruise/safe thrust MP with modifications for movement enhancements or restrictions
+     * @return The walk/cruise/safe thrust MP without modifications for movement enhancements or restrictions
      */
     abstract public int getBaseWalkMP();
 
@@ -398,6 +398,27 @@ public abstract class UnitBuild {
      * @param secondary The secondary motive system.
      */
     public abstract void setSecondaryMotiveType(SecondaryMotiveSystem secondary);
+
+    /**
+     * The base jump/UMU/VTOL MP without adjustments for restrictions
+     */
+    public abstract int getBaseSecondaryMP();
+
+    /**
+     * Sets the base value for calculating jump/UMU/VTOL MP
+     * @param mp The base movement points
+     */
+    public abstract void setSecondaryMP(int mp);
+
+    /**
+     * @return The actual jump/UMU/VTOL MP after adjusting for restrictions
+     */
+    public abstract int getSecondaryMP();
+
+    public SecondaryMotiveSystem getDefaultSecondaryMotiveType() {
+        return (SecondaryMotiveSystem) ComponentLibrary.getInstance()
+                .getComponent(ComponentKeys.SECONDARY_MOTIVE_NONE);
+    }
 
     /**
      * Determines whether the component is allow on the unit. By default this checks

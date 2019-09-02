@@ -52,13 +52,22 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
                 myomerTypeProperty, componentList) {
             formattedRunMP()
         })
-        minWalkProperty.bind(integerBinding(mekBuild, configurationProperty) {
-            minWalkMP()
-        })
+        secondaryMPProperty.bind(baseSecondaryMPProperty)
         maxWalkProperty.bind(integerBinding(mekBuild,
                 configurationProperty, engineTypeProperty, tonnageProperty,
                 techFilterProperty) {
             maxWalkMP(techFilter)
+        })
+        minWalkProperty.bind(integerBinding(mekBuild, configurationProperty,
+                secondaryMotiveProperty) {
+            minWalkMP()
+        })
+        maxSecondaryMPProperty.bind(integerBinding(mekBuild, baseWalkMPProperty,
+                configurationProperty, secondaryMotiveProperty) {
+            maxSecondaryMP()
+        })
+        minSecondaryMPProperty.bind(integerBinding(mekBuild, configurationProperty, secondaryMotiveProperty) {
+            minSecondaryMP()
         })
         structureTonnageProperty.bind(doubleBinding(
                 internalStructureProperty, tonnageProperty, configurationProperty)

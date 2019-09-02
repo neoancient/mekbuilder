@@ -34,7 +34,7 @@
             <Label text="%lblBase.text" GridPane.columnIndex="1" />
             <Label text="%lblFinal.text" GridPane.columnIndex="2" />
             <Label fx:id="lblWalkFinal" text="0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label fx:id="lblJumpFinal" text="0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label fx:id="lblSecondaryFinal" text="0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <Spinner fx:id="spnWalkBase" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="3">
@@ -46,7 +46,7 @@
             <Label fx:id="lblRunMP" text="%lblRunMP.text" GridPane.rowIndex="2" />
             <Label fx:id="lblRunBase" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label fx:id="lblRunFinal" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Spinner fx:id="spnJumpMP" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Spinner fx:id="spnBaseSecondary" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

@@ -431,20 +431,39 @@ public class MekBuild extends UnitBuild {
         secondaryMotiveMount.setComponent(secondary);
     }
 
-    public int getBaseJumpMP() {
-        if (getSecondaryMotiveType().getMode().equals(MotiveType.JUMP)) {
-            return secondaryMotiveMount.getCount();
-        } else {
+    public int minSecondaryMP() {
+        if (isLAM()) {
+            return 3;
+        } else if (getSecondaryMotiveType().getMode().equals(MotiveType.GROUND)) {
             return 0;
+        } else {
+            return 1;
         }
     }
 
-    public int getBaseUWMP() {
-        if (getSecondaryMotiveType().getMode().equals(MotiveType.SUBMERSIBLE)) {
-            return secondaryMotiveMount.getCount();
-        } else {
+    public int maxSecondaryMP() {
+        if (getSecondaryMotiveType().getMode().equals(MotiveType.GROUND)) {
             return 0;
+        } else if (getSecondaryMotiveType().isImproved()) {
+            return getBaseRunMP();
+        } else {
+            return getBaseWalkMP();
         }
+    }
+
+    @Override
+    public int getBaseSecondaryMP() {
+        return secondaryMotiveMount.getCount();
+    }
+
+    @Override
+    public void setSecondaryMP(int mp) {
+        secondaryMotiveMount.setCount(mp);
+    }
+
+    @Override
+    public int getSecondaryMP() {
+        return getBaseSecondaryMP();
     }
 
     /**
@@ -536,8 +555,9 @@ public class MekBuild extends UnitBuild {
                 .orElse(ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_STRUCTURE_STANDARD));
     }
 
-    public Component getDefaultSecondaryMotiveType() {
-        return ComponentLibrary.getInstance().getAllComponents().stream()
+    @Override
+    public SecondaryMotiveSystem getDefaultSecondaryMotiveType() {
+        return (SecondaryMotiveSystem) ComponentLibrary.getInstance().getAllComponents().stream()
                 .filter(c -> c.getType().equals(ComponentType.SECONDARY_MOTIVE_SYSTEM)
                         && c.isDefault() && allowed(c)).findFirst()
                 .orElse(ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_JJ));

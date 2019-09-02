@@ -90,8 +90,16 @@ class UnitViewModel(): ViewModel() {
     var minWalk by minWalkProperty
     val maxWalkProperty = bind{unitModel.maxWalkProperty.asObject()}
     var maxWalk by maxWalkProperty
-    val secondaryMotiveProperty = bind {unitModel.secondaryMotiveProperty}
+    val secondaryMotiveProperty = bind(true) {unitModel.secondaryMotiveProperty}
     var secondaryMotiveType by secondaryMotiveProperty
+    val baseSecondaryMPProperty = bind(true) {unitModel.baseSecondaryMPProperty}
+    var baseSecondaryMP by baseSecondaryMPProperty
+    val secondaryMPProperty = bind{unitModel.secondaryMPProperty}
+    var secondaryMP by secondaryMPProperty
+    val minSecondaryMPProperty = bind{unitModel.minSecondaryMPProperty.asObject()}
+    var minSecondaryMP by minSecondaryMPProperty
+    val maxSecondaryMPProperty = bind{unitModel.maxSecondaryMPProperty.asObject()}
+    var maxSecondaryMP by maxSecondaryMPProperty
 
     val minTechLevelProperty = SimpleObjectProperty(TechLevel.INTRO)
     var minTechLevel by minTechLevelProperty

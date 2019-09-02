@@ -1,5 +1,4 @@
-[
-  {
+[{
     "componentType": "SECONDARY_MOTIVE_SYSTEM",
     "isDefault": true,
     "internalName": "NoSecondaryMotive",
@@ -19,7 +18,9 @@
     "bvFactor2": 0.0,
     "bvCalcType": "NONE",
     "rulesRef": "",
-    "switches": {},
+    "switches": {
+      "LAM" : false
+    },
     "techAdvancement": "ALL|A|AAAA|1950,1950,1950|1950,1950,1950|INTRO",
     "permittedLocations": [],
     "requiredComponents": {},
@@ -138,6 +139,7 @@
   "rulesRef" : "295, TO",
   "switches" : {
     "SUPERHEAVY_MEK" : false,
+    "LAM" : false,
     "HITTABLE" : null,
     "MODULE" : null
   },
