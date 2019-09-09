@@ -91,6 +91,11 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
         })
 
         txtYear.textFormatter = TextFormatter(yearFieldConverter)
+        txtYear.textProperty().addListener { _, oldVal, newVal ->
+            if (!newVal.matches("[0-9]*".toRegex())) {
+                txtYear.text = oldVal
+            }
+        }
         cbTechBase.items = techBaseList
         SimpleComboBoxCellFactory.setConverter(cbTechBase, TechBase::unitDisplayName)
         cbTechLevel.items = TechLevel.values().toList().observable()
@@ -105,12 +110,12 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
 
         txtChassis.bind(model.chassisNameProperty)
         txtModel.bind(model.modelNameProperty)
+        txtYear.bind(model.introYearProperty)
         txtSource.bind(model.sourceProperty)
-        txtYear.bind(model.introYearProperty, false, yearFieldConverter)
         cbTechBase.bind(model.techBaseProperty)
         cbFaction.bind(model.factionProperty)
 
-        txtYear.textProperty().addListener(this)
+        txtYear.focusedProperty().addListener(this)
         cbTechBase.selectionModel.selectedItemProperty().addListener(this)
         cbTechLevel.selectionModel.selectedItemProperty().addListener(this)
         cbFaction.selectionModel.selectedItemProperty().addListener(this)
@@ -142,7 +147,7 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
 
     override fun getYear() =
             if (txtYear.textProperty().value.isNotEmpty()) {
-                txtYear.textProperty().value.toInt()
+                yearFieldConverter.fromString(txtYear.text) ?: model.introYear
             } else {
                 model.introYear
             }
