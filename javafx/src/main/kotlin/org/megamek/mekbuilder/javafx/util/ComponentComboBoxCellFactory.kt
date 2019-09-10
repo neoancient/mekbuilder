@@ -18,6 +18,8 @@
  */
 package org.megamek.mekbuilder.javafx.util
 
+import javafx.beans.property.ListProperty
+import javafx.beans.property.SimpleListProperty
 import javafx.scene.control.ComboBox
 import javafx.scene.control.ListCell
 import javafx.scene.control.ListView
@@ -34,54 +36,22 @@ import tornadofx.*
  * duplicates, all the components are shown by full name.
  */
 
-fun Component.shortNameWithTechBase() =
-        if (techBase().equals(TechBase.ALL) || shortName.toUpperCase().startsWith(techBase().toString())) {
-            shortName
-        } else {
-            "$shortName${techBase().suffix()}"
-        }
-
 class ComponentComboBoxCellFactory(private val combobox: ComboBox<out Component>) :
         Callback<ListView<out Component>, ListCell<out Component>> {
 
-    val nameMap = HashMap<Component, String>()
-
-    init {
-        combobox.items.onChange {
-            refresh()
-        }
-        refresh()
-    }
-
-    fun refresh() {
-        val count = combobox.items.groupingBy{it.shortName}.eachCount()
-        if (count.filter{it.value > 1}.isEmpty()) {
-            combobox.items.forEach{nameMap[it] = it.shortName}
-        } else {
-            combobox.items.forEach {
-                if (count[it.shortName]!! > 1) {
-                    nameMap[it] = it.shortNameWithTechBase()
-                } else {
-                    nameMap[it] = it.shortName
-                }
-            }
-        }
-        if (combobox.items.groupingBy{nameMap[it]}.eachCount().filter{it.value > 1}.isNotEmpty()) {
-            combobox.items.forEach{nameMap[it] = it.fullName}
-        }
-    }
+    val nameLookup = ComponentListNameLookup(combobox.items)
 
     override fun call(param: ListView<out Component>?): ListCell<out Component> {
         return object : ListCell<Component>() {
             override fun updateItem(item: Component?, empty: Boolean) {
                 super.updateItem(item, empty)
-                text = if (empty || item == null) "" else nameMap[item] ?: item.fullName
+                text = if (empty || item == null) "" else nameLookup[item] ?: item.fullName
             }
         }
     }
 
     val converter = object : StringConverter<Component>() {
-        override fun toString(component: Component): String = nameMap[component] ?: component.fullName
+        override fun toString(component: Component): String = nameLookup[component] ?: component.fullName
 
         override fun fromString(string: String?): Component? = null
     }

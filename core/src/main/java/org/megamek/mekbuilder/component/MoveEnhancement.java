@@ -89,4 +89,12 @@ public class MoveEnhancement extends Component {
         }
         return super.calcCost(unit, size);
     }
+
+    @Override
+    public boolean allowed(UnitBuild unit) {
+        if (isBaseModeRequired() && !getMode().equals(unit.getSecondaryMotiveType().getMode())) {
+            return false;
+        }
+        return super.allowed(unit);
+    }
 }

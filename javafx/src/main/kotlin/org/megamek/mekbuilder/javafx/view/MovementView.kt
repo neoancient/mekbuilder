@@ -3,17 +3,18 @@ package org.megamek.mekbuilder.javafx.view
 import javafx.beans.InvalidationListener
 import javafx.beans.Observable
 import javafx.beans.property.SimpleListProperty
-import javafx.collections.ListChangeListener
-import javafx.scene.control.ComboBox
-import javafx.scene.control.Label
-import javafx.scene.control.Spinner
-import javafx.scene.control.SpinnerValueFactory
+import javafx.beans.property.SimpleStringProperty
+import javafx.beans.value.ObservableValue
+import javafx.scene.control.*
 import javafx.scene.layout.AnchorPane
+import javafx.util.Callback
 import org.megamek.mekbuilder.component.ComponentLibrary
 import org.megamek.mekbuilder.component.ComponentType
+import org.megamek.mekbuilder.component.MoveEnhancement
 import org.megamek.mekbuilder.component.SecondaryMotiveSystem
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
 import org.megamek.mekbuilder.javafx.util.ComponentComboBoxCellFactory
+import org.megamek.mekbuilder.javafx.util.ComponentListNameLookup
 import org.megamek.mekbuilder.unit.MotiveType
 import org.megamek.mekbuilder.unit.UnitBuild
 import org.megamek.mekbuilder.unit.UnitType
@@ -37,11 +38,22 @@ class MovementView : View(), InvalidationListener {
     private val lblWalkFinal: Label by fxid()
     private val lblRunFinal: Label by fxid()
     private val lblSecondaryFinal: Label by fxid()
+    private val tblEnhancement: TableView<MoveEnhancement> by fxid()
+    private val colEnhancementInstalled: TableColumn<MoveEnhancement, Boolean> by fxid()
+    private val colEnhancementName: TableColumn<MoveEnhancement, String> by fxid()
+    private val colEnhancementSize: TableColumn<MoveEnhancement, Double> by fxid()
 
-    val allSecondaryMotive = ComponentLibrary.getInstance().allComponents
+    private val allSecondaryMotive = ComponentLibrary.getInstance().allComponents
             .filter {it.type == ComponentType.SECONDARY_MOTIVE_SYSTEM}
             .sortedBy{it.shortName}.sortedBy{!it.isDefault}
             .toList().observable()
+    private val allEnhancements = SortedFilteredList(ComponentLibrary.getInstance().allComponents
+            .filter {it.type == ComponentType.MOVE_ENHANCEMENT}
+            .map {it as MoveEnhancement}
+            .sortedBy{it.shortName}.toList().observable(), {
+                model.unit.allowed(it) && techFilter.isLegal(it)
+    })
+
 
     private fun isWalker(unit: UnitBuild) =
         unit.unitType.isMech || unit.unitType == UnitType.PROTOMEK || unit.unitType == UnitType.BATTLE_ARMOR
@@ -107,6 +119,19 @@ class MovementView : View(), InvalidationListener {
         lblWalkFinal.textProperty().bind(stringBinding(model.walkMPProperty) {model.walkMP.toString()})
         lblRunFinal.textProperty().bind(stringBinding(model.runMPProperty) {model.runMP.toString()})
         lblSecondaryFinal.textProperty().bind(stringBinding(model.secondaryMPProperty) {model.secondaryMP.toString()})
+
+        val enhancementLookup = ComponentListNameLookup(allEnhancements)
+        allEnhancements.bindTo(tblEnhancement)
+        colEnhancementInstalled.cellValueFactory = Callback<TableColumn.CellDataFeatures<MoveEnhancement, Boolean>,
+                ObservableValue<Boolean>> {
+            model.componentListProperty.booleanBinding {
+                list -> list?.any{m -> m.component.equals(it?.value)} ?: false
+            }
+        }
+        colEnhancementName.cellValueFactory = Callback<TableColumn.CellDataFeatures<MoveEnhancement, String>,
+                ObservableValue<String>> {
+            SimpleStringProperty(enhancementLookup[it.value])
+        }
 
         techFilter.addListener(this)
     }

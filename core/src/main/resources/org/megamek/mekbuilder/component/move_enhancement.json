@@ -1,5 +1,4 @@
 [{
-  "type" : "org.megamek.mekbuilder.component.MoveEnhancement",
   "componentType" : "MOVE_ENHANCEMENT",
   "internalName" : "Supercharger",
   "mmName" : "Supercharger",
@@ -35,7 +34,6 @@
   "baseModeRequired" : false,
   "incompatible" : [ ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.MoveEnhancement",
   "componentType" : "MOVE_ENHANCEMENT",
   "internalName" : "BAPartialWing",
   "mmName" : "BAPartialWing",
@@ -69,11 +67,10 @@
   "baseModeRequired" : true,
   "incompatible" : [ ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.MoveEnhancement",
   "componentType" : "MOVE_ENHANCEMENT",
   "internalName" : "Tracks",
   "mmName" : "Tracks",
-  "fullName" : "Mek Tracks",
+  "fullName" : "Mech Tracks",
   "shortName" : "Tracks",
   "weightFactor" : 0.1,
   "weightAddend" : 0.0,
@@ -108,7 +105,6 @@
   "baseModeRequired" : false,
   "incompatible" : [ ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.MoveEnhancement",
   "componentType" : "MOVE_ENHANCEMENT",
   "internalName" : "ISMASC",
   "mmName" : "ISMASC",
@@ -144,7 +140,6 @@
   "baseModeRequired" : false,
   "incompatible" : [ ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.MoveEnhancement",
   "componentType" : "MOVE_ENHANCEMENT",
   "internalName" : "ISPartialWing",
   "mmName" : "ISPartialWing",
@@ -178,10 +173,9 @@
   },
   "allowedUnitTypes" : [ "BATTLE_MEK", "INDUSTRIAL_MEK" ],
   "mode" : "JUMP",
-  "baseModeRequired" : false,
+  "baseModeRequired" : true,
   "incompatible" : [ "MECH_JUMP" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.MoveEnhancement",
   "componentType" : "MOVE_ENHANCEMENT",
   "internalName" : "VTOLJetBooster",
   "mmName" : "ISVTOLJetBooster,CLVTOLJetBooster",
@@ -218,7 +212,6 @@
   "baseModeRequired" : false,
   "incompatible" : [ ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.MoveEnhancement",
   "componentType" : "MOVE_ENHANCEMENT",
   "internalName" : "MechanicalJumpBooster",
   "mmName" : "ISMechanicalJumpBooster,CLMechanicalJumpBooster",
@@ -260,7 +253,6 @@
   "baseModeRequired" : false,
   "incompatible" : [ "PARTIAL_WING" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.MoveEnhancement",
   "componentType" : "MOVE_ENHANCEMENT",
   "internalName" : "CLPartialWing",
   "mmName" : "CLPartialWing",
@@ -294,10 +286,9 @@
   },
   "allowedUnitTypes" : [ "BATTLE_MEK", "INDUSTRIAL_MEK" ],
   "mode" : "JUMP",
-  "baseModeRequired" : false,
+  "baseModeRequired" : true,
   "incompatible" : [ "MECH_JUMP" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.MoveEnhancement",
   "componentType" : "MOVE_ENHANCEMENT",
   "internalName" : "CLMASC",
   "mmName" : "CLMASC",
@@ -333,7 +324,6 @@
   "baseModeRequired" : false,
   "incompatible" : [ ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.MoveEnhancement",
   "componentType" : "MOVE_ENHANCEMENT",
   "internalName" : "BAJumpBooster",
   "mmName" : "ISBAJumpBooster,CLBAJumpBooster",
@@ -367,7 +357,6 @@
   "baseModeRequired" : true,
   "incompatible" : [ "PARTIAL_WING" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.MoveEnhancement",
   "componentType" : "MOVE_ENHANCEMENT",
   "internalName" : "BAMechanicalJumpBooster",
   "mmName" : "Jump Booster",
@@ -399,7 +388,6 @@
   "baseModeRequired" : false,
   "incompatible" : [ "SPEED_BOOST" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.MoveEnhancement",
   "componentType" : "MOVE_ENHANCEMENT",
   "internalName" : "BAMyomerBooster",
   "mmName" : "CLBAMyomerBooster",
@@ -431,7 +419,6 @@
   "baseModeRequired" : false,
   "incompatible" : [ "MECH_JUMP" ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.MoveEnhancement",
   "componentType" : "MOVE_ENHANCEMENT",
   "internalName" : "ProtoMekMyomerBooster",
   "mmName" : "CLMyomerBooster",
@@ -463,7 +450,6 @@
   "baseModeRequired" : false,
   "incompatible" : [ ]
 }, {
-  "type" : "org.megamek.mekbuilder.component.MoveEnhancement",
   "componentType" : "MOVE_ENHANCEMENT",
   "internalName" : "ProtoMekPartialWing",
   "mmName" : "ProtoMechPartialWing",
@@ -495,6 +481,6 @@
   },
   "allowedUnitTypes" : [ "PROTOMEK" ],
   "mode" : "JUMP",
-  "baseModeRequired" : false,
+  "baseModeRequired" : true,
   "incompatible" : [ ]
 }]

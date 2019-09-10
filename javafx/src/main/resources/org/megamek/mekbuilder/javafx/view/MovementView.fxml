@@ -4,6 +4,8 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -28,6 +30,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" />
           <RowConstraints minHeight="10.0" prefHeight="60.0" />
+            <RowConstraints minHeight="10.0" prefHeight="60.0" />
         </rowConstraints>
          <children>
             <Label fx:id="lblWalkMP" text="%lblWalkMP.text" GridPane.rowIndex="1" />
@@ -47,6 +50,13 @@
             <Label fx:id="lblRunBase" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label fx:id="lblRunFinal" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Spinner fx:id="spnBaseSecondary" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TableView fx:id="tblEnhancement" editable="true" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="4">
+              <columns>
+                <TableColumn fx:id="colEnhancementInstalled" prefWidth="75.0" resizable="false" sortable="false" />
+                <TableColumn fx:id="colEnhancementName" editable="false" minWidth="-1.0" prefWidth="289.0" sortable="false" text="%column.enhancement.title" />
+                  <TableColumn fx:id="colEnhancementSize" prefWidth="75.0" resizable="false" sortable="false" text="%column.size.title" />
+              </columns>
+            </TableView>
          </children>
          <padding>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
