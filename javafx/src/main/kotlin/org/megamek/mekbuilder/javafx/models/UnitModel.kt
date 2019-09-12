@@ -146,8 +146,11 @@ abstract class UnitModel (unitBuild: UnitBuild) {
         baseRunMPProperty.bind(integerBinding(unitBuild, baseWalkMPProperty) {baseRunMP})
     }
 
-    fun addEquipment(c: Component) {
+    fun addEquipment(c: Component, size: Double) {
         val mount = unit.createMount(c)
+        if (c.variableSize()) {
+            mount.size = size
+        }
         unit.addMount(mount)
         mountList.add(mount)
     }

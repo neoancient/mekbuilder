@@ -26,6 +26,7 @@ import org.megamek.mekbuilder.unit.MotiveType
 import org.megamek.mekbuilder.unit.UnitBuild
 import org.megamek.mekbuilder.unit.UnitType
 import tornadofx.*
+import tornadofx.FX.Companion.messages
 
 /**
  * View for setting walk/cruise/thrust speed and additional movement modes (e.g. jump/underwater).
@@ -153,6 +154,10 @@ class MovementView : View(), InvalidationListener {
                 ObservableValue<Number>> {
             it.value.sizeProperty
         }
+        colEnhancementSize.cellFactory = Callback<TableColumn<EnhancementEntry, Number>,
+                TableCell<EnhancementEntry, Number>> {
+            EnhancementSizeCell()
+        }
         model.secondaryMotiveProperty.onChange {filterEnhancements()}
         model.baseOptionProperty.onChange {filterEnhancements()}
         filterEnhancements()
@@ -198,12 +203,55 @@ class MovementView : View(), InvalidationListener {
         init {
             installedProperty.onChange {
                 if (it) {
-                    model.unitModel.addEquipment(component)
+                    model.unitModel.addEquipment(component, sizeProperty.value)
                 } else {
                     val mount = model.mountList.first{m -> m.component == component}
                     model.unitModel.removeEquipment(mount)
                 }
             }
+            sizeProperty.onChange {
+                val mount = model.mountList.firstOrNull{m -> m.component == component}
+                mount?.size = it
+                model.mountList.invalidate()
+            }
+        }
+    }
+
+    private class EnhancementSizeCell : TableCell<EnhancementEntry, Number>() {
+        val spinner = Spinner<Double>()
+        val valueFactory = SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, 0.0)
+        val changeListener = ChangeListener<Number> {
+            _, _, newValue -> valueFactory.value = newValue.toDouble()
+        }
+
+        init {
+            spinner.valueFactory = valueFactory
+            spinner.valueProperty().onChange {
+                if (it != null) {
+                    tableView.items[index].sizeProperty.value = it
+                }
+            }
+        }
+
+        fun entry() = tableView?.items?.getOrNull(index)
+
+        override fun updateItem(item: Number?, empty: Boolean) {
+            valueFactory.maxProperty().unbind()
+            if (item != null) {
+                entry()?.sizeProperty?.removeListener(changeListener)
+            }
+            super.updateItem(item, empty)
+            if (empty || item == null || entry()?.component?.variableSize() != true) {
+                graphic = null
+                text = if (entry() == null) "" else messages["column.size.NA"]
+            } else {
+                valueFactory.max = entry()?.component?.variableSizeMax() ?: 0.0
+                valueFactory.min = entry()?.component?.variableSizeMin() ?: 0.0
+                valueFactory.value = item.toDouble()
+                entry()?.sizeProperty?.addListener(changeListener)
+                graphic = spinner
+            }
         }
     }
 }
+

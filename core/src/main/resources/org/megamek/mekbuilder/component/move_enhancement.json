@@ -234,7 +234,7 @@
     "SUPERHEAVY_MEK" : false,
     "MECH_JUMP" : null,
     "HITTABLE" : null,
-    "VARIABLE" : [ 1.0 ],
+    "VARIABLE" :  "1.0",
     "MODULE" : null
   },
   "techAdvancement" : "IS|E|XXFE|~3060(FS),3083(FS/LC),3090,-,-|-,-,-,-,-|EXPERIMENTAL",
