@@ -2,12 +2,18 @@ package org.megamek.mekbuilder.javafx.view
 
 import javafx.beans.InvalidationListener
 import javafx.beans.Observable
+import javafx.beans.property.SimpleBooleanProperty
+import javafx.beans.property.SimpleDoubleProperty
 import javafx.beans.property.SimpleListProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.beans.value.ObservableValue
+import javafx.collections.ListChangeListener
 import javafx.scene.control.*
+import javafx.scene.control.cell.CheckBoxTableCell
+import javafx.scene.control.cell.PropertyValueFactory
 import javafx.scene.layout.AnchorPane
 import javafx.util.Callback
+import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.component.ComponentLibrary
 import org.megamek.mekbuilder.component.ComponentType
 import org.megamek.mekbuilder.component.MoveEnhancement
@@ -15,6 +21,7 @@ import org.megamek.mekbuilder.component.SecondaryMotiveSystem
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
 import org.megamek.mekbuilder.javafx.util.ComponentComboBoxCellFactory
 import org.megamek.mekbuilder.javafx.util.ComponentListNameLookup
+import org.megamek.mekbuilder.javafx.util.shortNameWithTechBase
 import org.megamek.mekbuilder.unit.MotiveType
 import org.megamek.mekbuilder.unit.UnitBuild
 import org.megamek.mekbuilder.unit.UnitType
@@ -38,21 +45,21 @@ class MovementView : View(), InvalidationListener {
     private val lblWalkFinal: Label by fxid()
     private val lblRunFinal: Label by fxid()
     private val lblSecondaryFinal: Label by fxid()
-    private val tblEnhancement: TableView<MoveEnhancement> by fxid()
-    private val colEnhancementInstalled: TableColumn<MoveEnhancement, Boolean> by fxid()
-    private val colEnhancementName: TableColumn<MoveEnhancement, String> by fxid()
-    private val colEnhancementSize: TableColumn<MoveEnhancement, Double> by fxid()
+    private val tblEnhancement: TableView<EnhancementEntry> by fxid()
+    private val colEnhancementInstalled: TableColumn<EnhancementEntry, Boolean> by fxid()
+    private val colEnhancementName: TableColumn<EnhancementEntry, String> by fxid()
+    private val colEnhancementSize: TableColumn<EnhancementEntry, Number> by fxid()
 
+    private val enhancementLookup = ComponentListNameLookup()
     private val allSecondaryMotive = ComponentLibrary.getInstance().allComponents
             .filter {it.type == ComponentType.SECONDARY_MOTIVE_SYSTEM}
             .sortedBy{it.shortName}.sortedBy{!it.isDefault}
             .toList().observable()
-    private val allEnhancements = SortedFilteredList(ComponentLibrary.getInstance().allComponents
+    private val allEnhancements: SortedFilteredList<EnhancementEntry> = SortedFilteredList(ComponentLibrary.getInstance().allComponents
             .filter {it.type == ComponentType.MOVE_ENHANCEMENT}
-            .map {it as MoveEnhancement}
-            .sortedBy{it.shortName}.toList().observable(), {
-                model.unit.allowed(it) && techFilter.isLegal(it)
-    })
+            .sortedBy{it.shortNameWithTechBase()}
+            .map {EnhancementEntry(it as MoveEnhancement)}
+            .toList().observable())
 
 
     private fun isWalker(unit: UnitBuild) =
@@ -120,18 +127,35 @@ class MovementView : View(), InvalidationListener {
         lblRunFinal.textProperty().bind(stringBinding(model.runMPProperty) {model.runMP.toString()})
         lblSecondaryFinal.textProperty().bind(stringBinding(model.secondaryMPProperty) {model.secondaryMP.toString()})
 
-        val enhancementLookup = ComponentListNameLookup(allEnhancements)
         allEnhancements.bindTo(tblEnhancement)
-        colEnhancementInstalled.cellValueFactory = Callback<TableColumn.CellDataFeatures<MoveEnhancement, Boolean>,
+        allEnhancements.predicate = {
+            model.unit.allowed(it.component) && techFilter.isLegal(it.component)
+        }
+        enhancementLookup.listProperty.bind(objectBinding(allEnhancements.filteredItems) {
+            map{it.component as Component}.toList().observable()
+        })
+        tblEnhancement.columnResizePolicy = SmartResize.POLICY
+        colEnhancementName.remainingWidth()
+
+        colEnhancementInstalled.cellValueFactory = Callback<TableColumn.CellDataFeatures<EnhancementEntry, Boolean>,
                 ObservableValue<Boolean>> {
-            model.componentListProperty.booleanBinding {
-                list -> list?.any{m -> m.component.equals(it?.value)} ?: false
-            }
+            it.value.installedProperty
         }
-        colEnhancementName.cellValueFactory = Callback<TableColumn.CellDataFeatures<MoveEnhancement, String>,
+        colEnhancementInstalled.cellFactory = Callback<TableColumn<EnhancementEntry, Boolean>,
+                TableCell<EnhancementEntry, Boolean>> {
+            CheckBoxTableCell()
+        }
+        colEnhancementName.cellValueFactory = Callback<TableColumn.CellDataFeatures<EnhancementEntry, String>,
                 ObservableValue<String>> {
-            SimpleStringProperty(enhancementLookup[it.value])
+            it.value.nameProperty
         }
+        colEnhancementSize.cellValueFactory = Callback<TableColumn.CellDataFeatures<EnhancementEntry, Number>,
+                ObservableValue<Number>> {
+            it.value.sizeProperty
+        }
+        model.secondaryMotiveProperty.onChange {filterEnhancements()}
+        model.baseOptionProperty.onChange {filterEnhancements()}
+        filterEnhancements()
 
         techFilter.addListener(this)
     }
@@ -153,6 +177,33 @@ class MovementView : View(), InvalidationListener {
             model.secondaryMotiveType = cbSecondaryMotive.items.first()
         } else {
             cbSecondaryMotive.selectionModel.select(model.secondaryMotiveType)
+        }
+        filterEnhancements()
+    }
+
+    private fun filterEnhancements() {
+        allEnhancements.predicate = {
+            model.unit.allowed(it.component) && techFilter.isLegal(it.component)
+        }
+        allEnhancements.filteredItems.forEach {
+            it.nameProperty.value = enhancementLookup[it.component]
+        }
+    }
+
+    private inner class EnhancementEntry(val component: MoveEnhancement) {
+        val installedProperty = SimpleBooleanProperty(model.mountList.any{ it.component == component })
+        val nameProperty = SimpleStringProperty("")
+        val sizeProperty = SimpleDoubleProperty(0.0)
+
+        init {
+            installedProperty.onChange {
+                if (it) {
+                    model.unitModel.addEquipment(component)
+                } else {
+                    val mount = model.mountList.first{m -> m.component == component}
+                    model.unitModel.removeEquipment(mount)
+                }
+            }
         }
     }
 }

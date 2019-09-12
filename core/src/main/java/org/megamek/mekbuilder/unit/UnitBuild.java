@@ -431,4 +431,41 @@ public abstract class UnitBuild {
         return component.allowed(this);
     }
 
+    /**
+     * Creates the correct {@link Mount} type for the component. The mount is not added to the unit.
+     *
+     * @param c The Component to mount
+     * @return  The component mount
+     */
+    public Mount createMount(Component c) {
+        switch (c.getType()) {
+            case ARMOR:
+                return new ArmorMount(this, (Armor) c);
+            case COCKPIT:
+                return new CockpitMount(this, (Cockpit) c);
+            case HEAT_SINK:
+                return new CompoundMount(this, c);
+            default:
+                return new Mount(this, c);
+        }
+    }
+
+    /**
+     * Adds the equipment mount to the unit.
+     *
+     * @param m The equipment mount to add
+     */
+    public void addMount(Mount m) {
+        components.add(m);
+    }
+
+    /**
+     * Removes the mount from the unit.
+     *
+     * @param m The mount to remove
+     * @return  Whether the mount was found and removed
+     */
+    public boolean removeMount(Mount m) {
+        return components.remove(m);
+    }
 }

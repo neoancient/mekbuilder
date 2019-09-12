@@ -414,7 +414,7 @@
   "requiredComponents" : { },
   "incompatibleComponents" : { },
   "fixedLocations" : { },
-  "allowedUnitTypes" : [ ],
+  "allowedUnitTypes" : [ "BATTLE_ARMOR" ],
   "mode" : "GROUND",
   "baseModeRequired" : false,
   "incompatible" : [ "MECH_JUMP" ]

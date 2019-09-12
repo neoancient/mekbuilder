@@ -31,7 +31,7 @@ public class CockpitMount extends DistributedMount {
         this(build, (Cockpit) ComponentLibrary.getInstance().getComponent(cockpitKey));
     }
 
-    protected CockpitMount(UnitBuild build, Cockpit cockpit) {
+    public CockpitMount(UnitBuild build, Cockpit cockpit) {
         super(build, cockpit);
     }
 

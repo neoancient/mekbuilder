@@ -49,7 +49,7 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
         }
         walkMPProperty.bind(baseWalkMPProperty)
         runMPProperty.bind(stringBinding(mekBuild, baseRunMPProperty,
-                myomerTypeProperty, componentList) {
+                myomerTypeProperty, mountList) {
             formattedRunMP()
         })
         secondaryMPProperty.bind(baseSecondaryMPProperty)

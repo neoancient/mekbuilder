@@ -12,7 +12,7 @@ fun Component.shortNameWithTechBase() =
         if (techBase().equals(TechBase.ALL) || shortName.toUpperCase().startsWith(techBase().toString())) {
             shortName
         } else {
-            "$shortName${techBase().suffix()}"
+            "$shortName ${techBase().suffix()}"
         }
 
 /**
@@ -23,11 +23,11 @@ fun Component.shortNameWithTechBase() =
  * times in the list or there are multiple {@link Component}s with the same full name.
  */
 
-class ComponentListNameLookup {
+class ComponentListNameLookup() {
     val listProperty = SimpleListProperty<Component>()
     private val nameMap = HashMap<Component, String>()
 
-    constructor(list: ObservableList<out Component>) {
+    constructor(list: ObservableList<out Component>) : this() {
         listProperty.bind(objectBinding(list) {
             toList().observable()
         })

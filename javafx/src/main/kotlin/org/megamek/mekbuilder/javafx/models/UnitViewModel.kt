@@ -22,7 +22,6 @@ import javafx.beans.property.*
 import org.megamek.mekbuilder.component.Cockpit
 import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.component.MVFEngine
-import org.megamek.mekbuilder.component.SecondaryMotiveSystem
 import org.megamek.mekbuilder.tech.ITechFilter
 import org.megamek.mekbuilder.tech.TechLevel
 import org.megamek.mekbuilder.unit.MekBuild
@@ -63,8 +62,8 @@ class UnitViewModel(): ViewModel() {
     var faction by factionProperty
     val tonnageProperty = bind(true) {unitModel.tonnageProperty}
     var tonnage by tonnageProperty
-    val componentListProperty = bind{ SimpleListProperty(unitModel.componentList) }
-    var componentList by componentListProperty
+    val mountListProperty = bind{ SimpleListProperty(unitModel.mountList) }
+    var mountList by mountListProperty
 
     val omniProperty = bind(true) {unitModel.omniProperty}
     var omni by omniProperty

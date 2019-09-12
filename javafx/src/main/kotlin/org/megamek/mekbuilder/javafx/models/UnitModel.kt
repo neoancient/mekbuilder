@@ -22,6 +22,7 @@ import javafx.beans.property.*
 import javafx.beans.value.ObservableDoubleValue
 import javafx.beans.value.ObservableIntegerValue
 import javafx.collections.ObservableList
+import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.component.Mount
 import org.megamek.mekbuilder.tech.ITechFilter
 import org.megamek.mekbuilder.tech.TechBase
@@ -76,18 +77,18 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     var faction by factionProperty
     val tonnageProperty = pojoProperty(unit, UnitBuild::getTonnage, UnitBuild::setTonnage)
 
-    val componentList = ArrayList<Mount>().observable()
-    val componentMap = HashMap<UnitLocation, ObservableList<Mount>>().observable()
+    val mountList = ArrayList<Mount>().observable()
+    val mountMap = HashMap<UnitLocation, ObservableList<Mount>>().observable()
     val weaponTonnageMap = HashMap<UnitLocation, ObservableDoubleValue>().observable()
     val maxArmorPointsMap = HashMap<UnitLocation, ObservableIntegerValue>().observable()
 
     val weightClass = objectBinding(tonnageProperty) {unit.weightClass}
-    val buildWeight = doubleBinding(componentList) {unit.buildWeight()}
-    val weaponTonnage = doubleBinding(componentList) {unit.getWeaponTonnage()}
-    val energyWeaponTonnage = doubleBinding(componentList) {unit.getEnergyWeaponTonnage()}
-    val tcompLinkedTonnage = doubleBinding(componentList) {unit.getTCLinkedTonnage()}
+    val buildWeight = doubleBinding(mountList) {unit.buildWeight()}
+    val weaponTonnage = doubleBinding(mountList) {unit.getWeaponTonnage()}
+    val energyWeaponTonnage = doubleBinding(mountList) {unit.getEnergyWeaponTonnage()}
+    val tcompLinkedTonnage = doubleBinding(mountList) {unit.getTCLinkedTonnage()}
     fun weaponTonnage(loc: UnitLocation): ObservableDoubleValue {
-        weaponTonnageMap.putIfAbsent(loc, doubleBinding(componentMap[loc] ?: observableList())
+        weaponTonnageMap.putIfAbsent(loc, doubleBinding(mountMap[loc] ?: observableList())
             {unit.getWeaponTonnage(loc)})
         return weaponTonnageMap[loc] ?: SimpleDoubleProperty()
     }
@@ -143,5 +144,16 @@ abstract class UnitModel (unitBuild: UnitBuild) {
             }
         }
         baseRunMPProperty.bind(integerBinding(unitBuild, baseWalkMPProperty) {baseRunMP})
+    }
+
+    fun addEquipment(c: Component) {
+        val mount = unit.createMount(c)
+        unit.addMount(mount)
+        mountList.add(mount)
+    }
+
+    fun removeEquipment(m: Mount) {
+        unit.removeMount(m)
+        mountList.remove(m)
     }
 }
