@@ -48,7 +48,9 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
                 getMyomer().componentProperty, mountList) {
             formattedRunMP()
         })
-        secondaryMPProperty.bind(baseSecondaryMPProperty)
+        secondaryMPProperty.bind(integerBinding(mekBuild, baseSecondaryMPProperty, mountList) {
+            getSecondaryMP()
+        })
         maxWalkProperty.bind(integerBinding(mekBuild,
                 configurationProperty, getEngine().componentProperty, tonnageProperty,
                 techFilterProperty) {

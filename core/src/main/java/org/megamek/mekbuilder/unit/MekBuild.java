@@ -387,7 +387,9 @@ public class MekBuild extends UnitBuild {
     public String formattedRunMP() {
         int maxRun = getRunMP();
         long boosts = getComponents().stream()
-                .filter(m -> m.getComponent().hasFlag(ComponentSwitch.SPEED_BOOST)).count();
+                .filter(m -> m.getComponent().getType().equals(ComponentType.MOVE_ENHANCEMENT)
+                        && m.getComponent().hasFlag(ComponentSwitch.SPEED_BOOST)
+                        && ((MoveEnhancement) m.getComponent()).getMode() == MotiveType.GROUND).count();
         if (boosts > 1) {
             // It shouldn't be possible to have more than two (MASC + Supercharger),
             // but we'll make sure we're capped at x2.5 anyway
@@ -477,7 +479,15 @@ public class MekBuild extends UnitBuild {
 
     @Override
     public int getSecondaryMP() {
-        return getBaseSecondaryMP();
+        int mp = getBaseSecondaryMP();
+        if ((mp > 0) && getComponents().stream()
+                .anyMatch(m -> m.getComponent().hasFlag(ComponentSwitch.PARTIAL_WING))) {
+            mp++;
+            if (getWeightClass().value < UnitWeightClass.HEAVY.value) {
+                mp++;
+            }
+        }
+        return mp;
     }
 
     /**
