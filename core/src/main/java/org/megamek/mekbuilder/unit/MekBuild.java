@@ -18,8 +18,6 @@
  */
 package org.megamek.mekbuilder.unit;
 
-import com.sun.istack.NotNull;
-import com.sun.istack.Nullable;
 import org.megamek.mekbuilder.component.*;
 import org.megamek.mekbuilder.tech.ConstructionOptionKey;
 import org.megamek.mekbuilder.tech.ITechFilter;
@@ -70,7 +68,7 @@ public class MekBuild extends UnitBuild {
         getComponents().add(gyroMount);
         secondaryMotiveMount = new CompoundMount(this, getDefaultSecondaryMotiveType());
         getComponents().add(secondaryMotiveMount);
-        heatSinkMount = new CompoundMount(this, getDefaultSecondaryMotiveType());
+        heatSinkMount = new CompoundMount(this, getDefaultHeatSinkType());
         getComponents().add(heatSinkMount);
         myomerMount = new DistributedMount(this, ComponentLibrary.getInstance()
                 .getComponent(ComponentKeys.MYOMER_STANDARD));
@@ -300,6 +298,22 @@ public class MekBuild extends UnitBuild {
 
     public MekInternalStructure getStructureMount() {
         return internalStructure;
+    }
+
+    public CockpitMount getCockpitMount() {
+        return cockpitMount;
+    }
+
+    public CompoundMount getHeatSinkMount() {
+        return heatSinkMount;
+    }
+
+    public Mount getGyroMount() {
+        return gyroMount;
+    }
+
+    public DistributedMount getMyomerMount() {
+        return myomerMount;
     }
 
     public Component getStructureType() {
@@ -560,7 +574,15 @@ public class MekBuild extends UnitBuild {
         return (SecondaryMotiveSystem) ComponentLibrary.getInstance().getAllComponents().stream()
                 .filter(c -> c.getType().equals(ComponentType.SECONDARY_MOTIVE_SYSTEM)
                         && c.isDefault() && allowed(c)).findFirst()
-                .orElse(ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_JJ));
+                .orElse(super.getDefaultSecondaryMotiveType());
+    }
+
+    @Override
+    public HeatSink getDefaultHeatSinkType() {
+        return (HeatSink) ComponentLibrary.getInstance().getAllComponents().stream()
+                .filter(c -> c.getType().equals(ComponentType.HEAT_SINK)
+                        && c.isDefault() && allowed(c)).findFirst()
+                .orElse(super.getDefaultHeatSinkType());
     }
 
     @Override

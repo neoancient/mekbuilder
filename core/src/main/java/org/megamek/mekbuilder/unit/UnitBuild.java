@@ -50,7 +50,7 @@ public abstract class UnitBuild {
         this.baseConstructionOption = option;
     }
 
-    protected List<Mount> getComponents() {
+    public List<Mount> getComponents() {
         return components;
     }
 
@@ -420,6 +420,11 @@ public abstract class UnitBuild {
                 .getComponent(ComponentKeys.SECONDARY_MOTIVE_NONE);
     }
 
+    public HeatSink getDefaultHeatSinkType() {
+        return (HeatSink) ComponentLibrary.getInstance()
+                .getComponent(ComponentKeys.HEAT_SINK_SINGLE);
+    }
+
     /**
      * Determines whether the component is allow on the unit. By default this checks
      * unit type, but subclasses will apply additional restrictions.
@@ -428,7 +433,16 @@ public abstract class UnitBuild {
      * @return          Whether the component is legal for the unit
      */
     public boolean allowed(Component component) {
-        return component.allowed(this);
+        if (!component.allowed(this)) {
+            return false;
+        }
+        for (Mount m : getComponents()) {
+            if (!m.getComponent().equals(component)
+                    && m.getComponent().incompatibleWith(component)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**

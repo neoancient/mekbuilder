@@ -401,16 +401,33 @@ public class Component implements ITechDelegator {
             return true;
         }
         //Ignore the permitted locations if they do not apply to this build.
-        return !permittedLocations.stream().anyMatch(l -> unit.getLocationSet().contains(l));
+        return permittedLocations.stream().noneMatch(l -> unit.getLocationSet().contains(l));
     }
 
     /**
      * @param unit The unit a component might be installed on
      * @return Whether the component can be installed on the unit based on build type
-     * or compatibility with other installed equipment.
      */
     public boolean allowed(UnitBuild unit) {
         return allowedUnitTypes.isEmpty() || allowedUnitTypes.contains(unit.getUnitType());
+    }
+
+    /**
+     * @return A set of flags that must be met by other installed components.
+     */
+    public Set<ComponentSwitch> requirements() {
+        return Collections.unmodifiableSet(requiredComponents.keySet());
+    }
+
+    /**
+     * Checks list of incompatible components against another's flags and vice versa.
+     *
+     * @param other Another Component to compare
+     * @return      Whether the two components are incompatible on the same unit.
+     */
+    public boolean incompatibleWith(Component other) {
+        return incompatibleComponents.keySet().stream().anyMatch(other::hasFlag)
+                || other.incompatibleComponents.keySet().stream().anyMatch(this::hasFlag);
     }
 
     @Override

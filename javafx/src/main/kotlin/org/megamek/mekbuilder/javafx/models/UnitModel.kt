@@ -21,8 +21,10 @@ package org.megamek.mekbuilder.javafx.models
 import javafx.beans.property.*
 import javafx.beans.value.ObservableDoubleValue
 import javafx.beans.value.ObservableIntegerValue
+import javafx.collections.FXCollections
 import javafx.collections.ObservableList
 import org.megamek.mekbuilder.component.Component
+import org.megamek.mekbuilder.component.ComponentType
 import org.megamek.mekbuilder.component.Mount
 import org.megamek.mekbuilder.tech.ITechFilter
 import org.megamek.mekbuilder.tech.TechBase
@@ -37,18 +39,17 @@ import kotlin.reflect.KFunction2
  * Replacement for {@link Properties#observable}. This version fires a value changed event when the setter
  * is called.
  */
-fun <S : Any, T> pojoProperty(bean: S, getter: KFunction<T>, setter: KFunction2<S, T, Unit>): PojoProperty<T> {
+fun <S : Any, T> pojoProperty(bean: S, getter: KFunction<T>, setter: KFunction2<S, T, Unit>? = null): PojoProperty<T> {
     val propName = getter.name.substring(3).decapitalize()
 
     return object : PojoProperty<T>(bean, propName) {
         override fun get() = getter.call(bean)
         override fun set(newValue: T) {
-            setter.invoke(bean, newValue)
+            setter?.invoke(bean, newValue)
             refresh()
         }
     }
 }
-
 
 /**
  * Data model for UnitModel that wraps fields in JavaFX properties
@@ -77,7 +78,9 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     var faction by factionProperty
     val tonnageProperty = pojoProperty(unit, UnitBuild::getTonnage, UnitBuild::setTonnage)
 
-    val mountList = ArrayList<Mount>().observable()
+    val mountList = FXCollections.observableArrayList<MountModel> {
+        arrayOf(it.componentProperty, it.sizeProperty, it.locationProperty,
+                it.moduleProperty, it.rearFacingProperty, it.armoredProperty)}
     val mountMap = HashMap<UnitLocation, ObservableList<Mount>>().observable()
     val weaponTonnageMap = HashMap<UnitLocation, ObservableDoubleValue>().observable()
     val maxArmorPointsMap = HashMap<UnitLocation, ObservableIntegerValue>().observable()
@@ -130,6 +133,7 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     var maxSecondaryMP by maxSecondaryMPProperty
 
     init {
+        mountList.setAll(unit.components.map{MountModel(it)})
         baseOptionProperty.onChange {
             if (it != null) {
                 // If we're not on mixed tech make sure the tech base matches the construction option
@@ -146,17 +150,22 @@ abstract class UnitModel (unitBuild: UnitBuild) {
         baseRunMPProperty.bind(integerBinding(unitBuild, baseWalkMPProperty) {baseRunMP})
     }
 
+    fun getEngine() = mountList.first{it.component.type == ComponentType.ENGINE}
+    fun getCockpit() = mountList.first{it.component.type == ComponentType.COCKPIT}
+    fun getSecondaryMotive() = mountList.first{it.component.type == ComponentType.SECONDARY_MOTIVE_SYSTEM}
+    fun getHeatSinks() = mountList.first{it.component.type == ComponentType.HEAT_SINK}
+
     fun addEquipment(c: Component, size: Double) {
-        val mount = unit.createMount(c)
+        val mount = MountModel(unit.createMount(c))
         if (c.variableSize()) {
             mount.size = size
         }
-        unit.addMount(mount)
+        unit.addMount(mount.mount)
         mountList.add(mount)
     }
 
-    fun removeEquipment(m: Mount) {
-        unit.removeMount(m)
+    fun removeEquipment(m: MountModel) {
+        unit.removeMount(m.mount)
         mountList.remove(m)
     }
 }

@@ -19,6 +19,7 @@
 package org.megamek.mekbuilder.javafx.models
 
 import javafx.beans.property.SimpleIntegerProperty
+import org.megamek.mekbuilder.component.ComponentType
 import org.megamek.mekbuilder.unit.MekBuild
 import tornadofx.*
 
@@ -27,7 +28,6 @@ import tornadofx.*
  */
 class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
     val configurationProperty = pojoProperty(mekBuild, MekBuild::getConfiguration, MekBuild::setConfiguration)
-    val internalStructureProperty = pojoProperty(mekBuild, MekBuild::getStructureType, MekBuild::setStructureType)
     val engineTypeProperty = pojoProperty(mekBuild, MekBuild::getEngineType, MekBuild::setEngineType)
     val engineRatingProperty = SimpleIntegerProperty(0)
     val cockpitTypeProperty = pojoProperty(mekBuild, MekBuild::getCockpitType, MekBuild::setCockpitType)
@@ -49,12 +49,12 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
         }
         walkMPProperty.bind(baseWalkMPProperty)
         runMPProperty.bind(stringBinding(mekBuild, baseRunMPProperty,
-                myomerTypeProperty, mountList) {
+                getMyomer().componentProperty, mountList) {
             formattedRunMP()
         })
         secondaryMPProperty.bind(baseSecondaryMPProperty)
         maxWalkProperty.bind(integerBinding(mekBuild,
-                configurationProperty, engineTypeProperty, tonnageProperty,
+                configurationProperty, getEngine().componentProperty, tonnageProperty,
                 techFilterProperty) {
             maxWalkMP(techFilter)
         })
@@ -63,14 +63,19 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
             minWalkMP()
         })
         maxSecondaryMPProperty.bind(integerBinding(mekBuild, baseWalkMPProperty,
-                configurationProperty, secondaryMotiveProperty) {
+                configurationProperty, getSecondaryMotive().componentProperty) {
             maxSecondaryMP()
         })
-        minSecondaryMPProperty.bind(integerBinding(mekBuild, configurationProperty, secondaryMotiveProperty) {
+        minSecondaryMPProperty.bind(integerBinding(mekBuild, configurationProperty, getSecondaryMotive().componentProperty) {
             minSecondaryMP()
         })
         structureTonnageProperty.bind(doubleBinding(
-                internalStructureProperty, tonnageProperty, configurationProperty)
+                getInternalStructure().componentProperty, tonnageProperty, configurationProperty)
             {mekBuild.structureTonnage})
     }
+
+    fun getInternalStructure() = mountList.first{it.component.type == ComponentType.MEK_STRUCTURE}
+    fun getGyro() = mountList.first{it.component.type == ComponentType.GYRO}
+    fun getMyomer() = mountList.first{it.component.type == ComponentType.MYOMER}
+
 }

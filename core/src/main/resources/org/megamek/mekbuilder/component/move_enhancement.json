@@ -126,14 +126,15 @@
   "switches" : {
     "SUPERHEAVY_MEK" : false,
     "HITTABLE" : null,
-    "SPEED_BOOST" : null
+    "SPEED_BOOST" : null,
+    "MASC" : null
   },
   "techAdvancement" : "IS|E|DFED|~2730(TH),2740(TH),3040,2795,3035(CC)|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
-  "requiredComponents" : {
-    "MASC_COMPATIBLE" : null
+  "requiredComponents" : { },
+  "incompatibleComponents" : {
+    "MASC" : null
   },
-  "incompatibleComponents" : { },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ],
   "mode" : "GROUND",
@@ -166,7 +167,9 @@
   "techAdvancement" : "IS|F|XXED|3074(MERC),-,3090,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
   "requiredComponents" : { },
-  "incompatibleComponents" : { },
+  "incompatibleComponents" : {
+    "PARTIAL_WING" : null
+  },
   "fixedLocations" : {
     "MEK_LTORSO" : 4,
     "MEK_RTORSO" : 4
@@ -279,7 +282,9 @@
   "techAdvancement" : "CLAN|F|XXED|-,-,-,-,-|3067(CJF),~3085(CJF),3090,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
   "requiredComponents" : { },
-  "incompatibleComponents" : { },
+  "incompatibleComponents" : {
+    "PARTIAL_WING" : null
+  },
   "fixedLocations" : {
     "MEK_LTORSO" : 3,
     "MEK_RTORSO" : 3
@@ -310,14 +315,15 @@
   "switches" : {
     "SUPERHEAVY_MEK" : false,
     "HITTABLE" : null,
-    "SPEED_BOOST" : null
+    "SPEED_BOOST" : null,
+    "MASC" : null
   },
   "techAdvancement" : "CLAN|F|XFED|-,-,-,-,-|~2820(CIH),2827(CIH),2835,-,-|STANDARD",
   "permittedLocations" : [ ],
-  "requiredComponents" : {
-    "MASC_COMPATIBLE" : null
+  "requiredComponents" : { },
+  "incompatibleComponents" : {
+    "MASC" : null
   },
-  "incompatibleComponents" : { },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ],
   "mode" : "GROUND",

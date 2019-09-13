@@ -21,6 +21,7 @@ package org.megamek.mekbuilder.javafx.models
 import javafx.beans.property.*
 import org.megamek.mekbuilder.component.Cockpit
 import org.megamek.mekbuilder.component.Component
+import org.megamek.mekbuilder.component.ComponentType
 import org.megamek.mekbuilder.component.MVFEngine
 import org.megamek.mekbuilder.tech.ITechFilter
 import org.megamek.mekbuilder.tech.TechLevel
@@ -123,7 +124,7 @@ class UnitViewModel(): ViewModel() {
     // Mek properties
     val mekConfigurationProperty = bind(true) {if (unitModel is MekModel) (unitModel as MekModel).configurationProperty else SimpleObjectProperty<MekConfiguration>()}
     var mekConfiguration by mekConfigurationProperty
-    val internalStructureProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).internalStructureProperty else SimpleObjectProperty<Component>()}
+    val internalStructureProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).getInternalStructure().componentProperty else SimpleObjectProperty<Component>()}
     var internalStructure by internalStructureProperty
     val cockpitProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).cockpitTypeProperty else SimpleObjectProperty<Cockpit>()}
     var cockpit by cockpitProperty

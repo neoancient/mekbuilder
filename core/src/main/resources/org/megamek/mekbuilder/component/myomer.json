@@ -25,7 +25,9 @@
   "techAdvancement" : "IS|D|XXED|~2905(FW),2940(FW),-,-,-|-,-,-,-,-|INTRO",
   "permittedLocations" : [ ],
   "requiredComponents" : { },
-  "incompatibleComponents" : { },
+  "incompatibleComponents" : {
+    "MASC" : null
+  },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
@@ -50,8 +52,7 @@
   "rulesRef" : "-",
   "switches" : {
     "SUPERHEAVY_MEK" : "false",
-    "PRIMITIVE" : "false",
-    "MASC_COMPATIBLE" : "null"
+    "PRIMITIVE" : "false"
   },
   "techAdvancement" : "ALL|D|CCCC|~2300(TA/TA),2350(TH/TH),2505,-,-|~2300,2350,2505,-,-|INTRO",
   "permittedLocations" : [ ],
@@ -85,7 +86,9 @@
   "techAdvancement" : "ALL|D|CCCC|~2300(TA/TA),2350(TH/TH),2505,-,-|~2300,2350,2505,-,-|ADVANCED",
   "permittedLocations" : [ ],
   "requiredComponents" : { },
-  "incompatibleComponents" : { },
+  "incompatibleComponents" : {
+    "MASC" : null
+  },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK", "INDUSTRIAL_MEK" ]
 }, {
@@ -116,7 +119,9 @@
   "techAdvancement" : "IS|F|XXXF|3132(RS),-,-,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
   "requiredComponents" : { },
-  "incompatibleComponents" : { },
+  "incompatibleComponents" : {
+    "MASC" : null
+  },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }, {
@@ -147,7 +152,9 @@
   "techAdvancement" : "IS|E|XXED|~3035(FS),3045(FS),3055,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
   "requiredComponents" : { },
-  "incompatibleComponents" : { },
+  "incompatibleComponents" : {
+    "MASC" : null
+  },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "INDUSTRIAL_MEK" ]
 }, {
@@ -178,7 +185,9 @@
   "techAdvancement" : "IS|E|XXDD|~3028(FS/CC),3050(CC),3055,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
   "requiredComponents" : { },
-  "incompatibleComponents" : { },
+  "incompatibleComponents" : {
+    "MASC" : null
+  },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ]
 }]

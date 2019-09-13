@@ -18,10 +18,10 @@
  */
 package org.megamek.mekbuilder.component;
 
-import org.megamek.mekbuilder.component.Component;
-import org.megamek.mekbuilder.component.ComponentLibrary;
 import org.megamek.mekbuilder.unit.UnitBuild;
 import org.megamek.mekbuilder.unit.UnitLocation;
+
+import java.lang.ref.WeakReference;
 
 /**
  * An adapter that tracks the details of how a {@link Component} is mounted on a {@link UnitBuild};
@@ -33,7 +33,7 @@ public class Mount {
         FIXED, OMNI, BA_MANIPULATOR, BA_MWM, BA_APM
     }
 
-    private final UnitBuild unit;
+    private final WeakReference<UnitBuild> unit;
     private String componentKey;
     private transient Component component;
     private UnitLocation location = UnitLocation.NO_LOCATION;
@@ -50,7 +50,7 @@ public class Mount {
      * @param size      The size of the component
      */
     public Mount(UnitBuild unit, Component component, double size) {
-        this.unit = unit;
+        this.unit = new WeakReference<>(unit);
         this.component = component;
         this.size = size;
     }
@@ -66,7 +66,7 @@ public class Mount {
     }
 
     public UnitBuild getUnit() {
-        return unit;
+        return unit.get();
     }
 
     public UnitLocation getLocation() {
@@ -136,7 +136,7 @@ public class Mount {
     }
 
     public int getComponentSlots() {
-        return component.calcSlots(unit, size);
+        return component.calcSlots(getUnit(), size);
     }
 
     /**

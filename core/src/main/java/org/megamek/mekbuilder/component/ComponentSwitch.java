@@ -29,7 +29,6 @@ import org.megamek.mekbuilder.unit.MotiveType;
 import org.megamek.mekbuilder.unit.UnitWeightClass;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.function.BiFunction;
 import java.util.stream.Collectors;
@@ -39,7 +38,7 @@ class DataParsers {
     static final BiFunction<String, String, Object> booleanParser = (val, sep) -> Boolean.valueOf(val);
     static final BiFunction<String, String, Object> doubleArrayParser = (val, sep) -> Arrays.stream(val.split(sep))
             .filter(s -> !s.isEmpty())
-            .map(s -> Double.valueOf(s)).collect(Collectors.toList());
+            .map(Double::valueOf).collect(Collectors.toList());
 }
 
 /**
@@ -88,12 +87,12 @@ public enum ComponentSwitch {
     VEE_MOTIVE (EnumSet.allOf(MotiveType.class),
             (String val, String sep) -> Arrays.stream(val.split(sep))
                     .filter(s -> !s.isEmpty())
-                    .map(wc -> MotiveType.valueOf(wc)).collect(Collectors.toSet())),
+                    .map(MotiveType::valueOf).collect(Collectors.toSet())),
     /** Can only be installed on unit with a weight class in the set. */
     WEIGHT_CLASS (EnumSet.allOf(UnitWeightClass.class),
             (String val, String sep) -> Arrays.stream(val.split(sep))
                     .filter(s -> !s.isEmpty())
-                    .map(wc -> UnitWeightClass.valueOf(wc)).collect(Collectors.toSet())),
+                    .map(UnitWeightClass::valueOf).collect(Collectors.toSet())),
 
     /** For physical weapons or industrial equipment, actuators that must be present or removed to mount
      * (true for required, false for must be removed). For other weapons, actuators that must be removed
@@ -152,8 +151,8 @@ public enum ComponentSwitch {
     PATCHWORK_ARMOR,
     /** Qualifies for stealth armor requirement */
     ECM,
-    /** Standard myomer required for MASC */
-    MASC_COMPATIBLE,
+    /** MASC is incompatible with non-standard myomer */
+    MASC,
     /** Triple-Strength Myomer; provides a boost to top speed */
     TSM,
     /** Enables running at walk x 2 (MASC, supercharger, etc) */
@@ -211,7 +210,7 @@ public enum ComponentSwitch {
             return "null";
         } else if (val instanceof Collection<?>) {
             return ((Collection<?>) val).stream().map(Object::toString).collect(Collectors.joining(","));
-        } else if (val instanceof Array) {
+        } else if (val instanceof Object[]) {
             return Arrays.stream((Object[]) val).map(Object::toString).collect(Collectors.joining(","));
         } else {
             return val.toString();
@@ -227,7 +226,7 @@ public enum ComponentSwitch {
     }
 
 
-    public class SwitchMapSerializer extends StdSerializer<Map<ComponentSwitch, Object>> {
+    public static class SwitchMapSerializer extends StdSerializer<Map<ComponentSwitch, Object>> {
         SwitchMapSerializer() {
             super(Map.class, true);
         }

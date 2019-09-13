@@ -2,6 +2,7 @@ package org.megamek.mekbuilder.javafx.view
 
 import javafx.beans.InvalidationListener
 import javafx.beans.Observable
+import javafx.beans.binding.Bindings
 import javafx.beans.property.SimpleBooleanProperty
 import javafx.beans.property.SimpleDoubleProperty
 import javafx.beans.property.SimpleListProperty
@@ -158,9 +159,13 @@ class MovementView : View(), InvalidationListener {
                 TableCell<EnhancementEntry, Number>> {
             EnhancementSizeCell()
         }
-        model.secondaryMotiveProperty.onChange {filterEnhancements()}
         model.baseOptionProperty.onChange {filterEnhancements()}
+        model.mountList.onChange {
+            filterEnhancements()
+        }
         filterEnhancements()
+        tblEnhancement.prefHeightProperty().bind(Bindings.size(tblEnhancement.items)
+                .multiply(tblEnhancement.fixedCellSizeProperty()).add(30))
 
         techFilter.addListener(this)
     }
@@ -217,7 +222,7 @@ class MovementView : View(), InvalidationListener {
         }
     }
 
-    private class EnhancementSizeCell : TableCell<EnhancementEntry, Number>() {
+    private inner class EnhancementSizeCell : TableCell<EnhancementEntry, Number>() {
         val spinner = Spinner<Double>()
         val valueFactory = SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, 0.0)
         val changeListener = ChangeListener<Number> {
