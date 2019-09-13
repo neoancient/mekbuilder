@@ -28,11 +28,7 @@ import tornadofx.*
  */
 class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
     val configurationProperty = pojoProperty(mekBuild, MekBuild::getConfiguration, MekBuild::setConfiguration)
-    val engineTypeProperty = pojoProperty(mekBuild, MekBuild::getEngineType, MekBuild::setEngineType)
     val engineRatingProperty = SimpleIntegerProperty(0)
-    val cockpitTypeProperty = pojoProperty(mekBuild, MekBuild::getCockpitType, MekBuild::setCockpitType)
-    val gyroTypeProperty = pojoProperty(mekBuild, MekBuild::getGyroType, MekBuild::setGyroType)
-    val myomerTypeProperty = pojoProperty(mekBuild, MekBuild::getMyomerType, MekBuild::setMyomerType)
 
     init {
         engineRatingProperty.bind(integerBinding(mekBuild,
@@ -41,11 +37,11 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
         })
         // Possible switch between standard/large engine
         baseWalkMPProperty.onChange {
-            engineTypeProperty.refresh()
+            getEngine().componentProperty.refresh()
         }
         // Possible switch between standard/large engine or reduction of MP due to exceeding max
         tonnageProperty.onChange {
-            engineTypeProperty.refresh()
+            getEngine().componentProperty.refresh()
         }
         walkMPProperty.bind(baseWalkMPProperty)
         runMPProperty.bind(stringBinding(mekBuild, baseRunMPProperty,
@@ -74,8 +70,11 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
             {mekBuild.structureTonnage})
     }
 
-    fun getInternalStructure() = mountList.first{it.component.type == ComponentType.MEK_STRUCTURE}
-    fun getGyro() = mountList.first{it.component.type == ComponentType.GYRO}
-    fun getMyomer() = mountList.first{it.component.type == ComponentType.MYOMER}
+    fun getEngine() = mountList.first{it.component.type == ComponentType.ENGINE}!!
+    fun getCockpit() = mountList.first{it.component.type == ComponentType.COCKPIT}!!
+    fun getHeatSinks() = mountList.first{it.component.type == ComponentType.HEAT_SINK}!!
+    fun getInternalStructure() = mountList.first{it.component.type == ComponentType.MEK_STRUCTURE}!!
+    fun getGyro() = mountList.first{it.component.type == ComponentType.GYRO}!!
+    fun getMyomer() = mountList.first{it.component.type == ComponentType.MYOMER}!!
 
 }

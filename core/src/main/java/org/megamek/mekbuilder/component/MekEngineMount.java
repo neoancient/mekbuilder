@@ -116,6 +116,6 @@ public class MekEngineMount extends Mount implements IEngineMount {
      * @return The number of heat sinks that can be integrated into the engine.
      */
     public int maxIntegratedHS() {
-        return (int)Math.floor(getEngineRating() / 25);
+        return getEngineRating() / 25;
     }
 }

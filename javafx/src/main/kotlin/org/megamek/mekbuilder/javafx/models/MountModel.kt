@@ -18,13 +18,10 @@
  */
 package org.megamek.mekbuilder.javafx.models
 
-import javafx.beans.Observable
 import javafx.beans.property.SimpleObjectProperty
-import javafx.util.Callback
+import org.megamek.mekbuilder.component.*
 import org.megamek.mekbuilder.component.Component
-import org.megamek.mekbuilder.component.Mount
 import tornadofx.*
-import javax.swing.text.StyleConstants.setComponent
 
 /**
  *

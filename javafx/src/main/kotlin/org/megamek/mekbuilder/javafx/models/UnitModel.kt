@@ -150,10 +150,7 @@ abstract class UnitModel (unitBuild: UnitBuild) {
         baseRunMPProperty.bind(integerBinding(unitBuild, baseWalkMPProperty) {baseRunMP})
     }
 
-    fun getEngine() = mountList.first{it.component.type == ComponentType.ENGINE}
-    fun getCockpit() = mountList.first{it.component.type == ComponentType.COCKPIT}
     fun getSecondaryMotive() = mountList.first{it.component.type == ComponentType.SECONDARY_MOTIVE_SYSTEM}
-    fun getHeatSinks() = mountList.first{it.component.type == ComponentType.HEAT_SINK}
 
     fun addEquipment(c: Component, size: Double) {
         val mount = MountModel(unit.createMount(c))

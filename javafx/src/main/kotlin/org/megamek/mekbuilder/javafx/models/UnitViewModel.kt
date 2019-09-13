@@ -19,10 +19,8 @@
 package org.megamek.mekbuilder.javafx.models
 
 import javafx.beans.property.*
-import org.megamek.mekbuilder.component.Cockpit
+import org.megamek.mekbuilder.component.*
 import org.megamek.mekbuilder.component.Component
-import org.megamek.mekbuilder.component.ComponentType
-import org.megamek.mekbuilder.component.MVFEngine
 import org.megamek.mekbuilder.tech.ITechFilter
 import org.megamek.mekbuilder.tech.TechLevel
 import org.megamek.mekbuilder.unit.MekBuild
@@ -90,7 +88,7 @@ class UnitViewModel(): ViewModel() {
     var minWalk by minWalkProperty
     val maxWalkProperty = bind{unitModel.maxWalkProperty.asObject()}
     var maxWalk by maxWalkProperty
-    val secondaryMotiveProperty = bind(true) {unitModel.secondaryMotiveProperty}
+    val secondaryMotiveProperty = bind(true) {unitModel.getSecondaryMotive().componentProperty as Property<SecondaryMotiveSystem>}
     var secondaryMotiveType by secondaryMotiveProperty
     val baseSecondaryMPProperty = bind(true) {unitModel.baseSecondaryMPProperty}
     var baseSecondaryMP by baseSecondaryMPProperty
@@ -107,11 +105,7 @@ class UnitViewModel(): ViewModel() {
     var weightClass by weightClassProperty
 
     // Properties used for several unit types, but not all models have an equivalent property
-    val engineTypeProperty = bind (true) {
-        if (unitModel is MekModel)
-            (unitModel as MekModel).engineTypeProperty
-        else SimpleObjectProperty<MVFEngine>()
-    }
+    val engineTypeProperty = bind (true) {unitModel.getEngine().componentProperty as Property<MVFEngine> }
     var engineType by engineTypeProperty
     val engineRatingProperty = bind {
         if (unitModel is MekModel)
@@ -126,11 +120,11 @@ class UnitViewModel(): ViewModel() {
     var mekConfiguration by mekConfigurationProperty
     val internalStructureProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).getInternalStructure().componentProperty else SimpleObjectProperty<Component>()}
     var internalStructure by internalStructureProperty
-    val cockpitProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).cockpitTypeProperty else SimpleObjectProperty<Cockpit>()}
+    val cockpitProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).getCockpit().componentProperty as Property<Cockpit> else SimpleObjectProperty<Cockpit>()}
     var cockpit by cockpitProperty
-    val gyroProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).gyroTypeProperty else SimpleObjectProperty<Component>()}
+    val gyroProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).getGyro().componentProperty else SimpleObjectProperty<Component>()}
     var gyro by gyroProperty
-    val myomerProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).myomerTypeProperty else SimpleObjectProperty<Component>()}
+    val myomerProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).getMyomer().componentProperty else SimpleObjectProperty<Component>()}
     var myomer by myomerProperty
 
     init {
