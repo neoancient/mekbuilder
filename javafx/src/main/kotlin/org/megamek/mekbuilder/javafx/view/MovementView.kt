@@ -8,11 +8,11 @@ import javafx.beans.property.SimpleDoubleProperty
 import javafx.beans.property.SimpleListProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.beans.value.ObservableValue
-import javafx.collections.ListChangeListener
 import javafx.scene.control.*
 import javafx.scene.control.cell.CheckBoxTableCell
-import javafx.scene.control.cell.PropertyValueFactory
+import javafx.scene.control.cell.TextFieldTableCell
 import javafx.scene.layout.AnchorPane
+import javafx.scene.paint.Color
 import javafx.util.Callback
 import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.component.ComponentLibrary
@@ -27,7 +27,6 @@ import org.megamek.mekbuilder.unit.MotiveType
 import org.megamek.mekbuilder.unit.UnitBuild
 import org.megamek.mekbuilder.unit.UnitType
 import tornadofx.*
-import tornadofx.FX.Companion.messages
 
 /**
  * View for setting walk/cruise/thrust speed and additional movement modes (e.g. jump/underwater).
@@ -151,6 +150,21 @@ class MovementView : View(), InvalidationListener {
                 ObservableValue<String>> {
             it.value.nameProperty
         }
+        colEnhancementName.cellFactory = Callback<TableColumn<EnhancementEntry, String>,
+                TableCell<EnhancementEntry, String>> {
+            object : TextFieldTableCell<EnhancementEntry, String>() {
+                override fun updateItem(item: String?, empty: Boolean) {
+                    super.updateItem(item, empty)
+                    if (item != null && !empty) {
+                        textFill = if (tableRow.isDisabled) {
+                                Color.GRAY
+                            } else {
+                                Color.BLACK
+                            }
+                    }
+                }
+            }
+        }
         colEnhancementSize.cellValueFactory = Callback<TableColumn.CellDataFeatures<EnhancementEntry, Number>,
                 ObservableValue<Number>> {
             it.value.sizeProperty
@@ -166,6 +180,13 @@ class MovementView : View(), InvalidationListener {
         filterEnhancements()
         tblEnhancement.prefHeightProperty().bind(Bindings.size(tblEnhancement.items)
                 .multiply(tblEnhancement.fixedCellSizeProperty()).add(30))
+        tblEnhancement.rowFactory = Callback<TableView<EnhancementEntry>, TableRow<EnhancementEntry>> {
+            val row = TableRow<EnhancementEntry>()
+            row.disableProperty().bind(booleanBinding(row.itemProperty(), techFilter, model.mountListProperty) {
+                row.item?.allowedProperty?.value != true
+            })
+            row
+        }
 
         techFilter.addListener(this)
     }
@@ -204,6 +225,7 @@ class MovementView : View(), InvalidationListener {
         val installedProperty = SimpleBooleanProperty(model.mountList.any{ it.component == component })
         val nameProperty = SimpleStringProperty("")
         val sizeProperty = SimpleDoubleProperty(0.0)
+        val allowedProperty = SimpleBooleanProperty(true)
 
         init {
             installedProperty.onChange {
@@ -218,6 +240,14 @@ class MovementView : View(), InvalidationListener {
                 val mount = model.mountList.firstOrNull{m -> m.component == component}
                 mount?.size = it
                 model.mountList.invalidate()
+            }
+            allowedProperty.bind(booleanBinding(model.mountListProperty, model.baseOptionProperty, techFilter) {
+                model.unit.allowed(component) && model.unit.compatibleWithInstalled(component)
+            })
+            allowedProperty.onChange {
+                if (!it) {
+                    installedProperty.set(false)
+                }
             }
         }
     }

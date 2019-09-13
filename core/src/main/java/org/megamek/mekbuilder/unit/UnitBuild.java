@@ -433,9 +433,15 @@ public abstract class UnitBuild {
      * @return          Whether the component is legal for the unit
      */
     public boolean allowed(Component component) {
-        if (!component.allowed(this)) {
-            return false;
-        }
+        return component.allowed(this);
+    }
+
+    /**
+     * Checks whether this component is compatible with all components already installed.
+     * @param component The componet to install
+     * @return          Whether the component is compatible
+     */
+    public boolean compatibleWithInstalled(Component component) {
         for (Mount m : getComponents()) {
             if (!m.getComponent().equals(component)
                     && m.getComponent().incompatibleWith(component)) {
