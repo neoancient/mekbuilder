@@ -78,7 +78,7 @@ public class MekConfiguration {
      * @return         The configuration data for the requested subtype.
      */
     public static @Nullable
-    MekConfiguration getConfigurations(UnitType unitType, SubType subType) {
+    MekConfiguration getConfiguration(UnitType unitType, SubType subType) {
         return getConfigurations(unitType).stream().filter(c -> c.subType == subType).findFirst().orElse(null);
     }
 

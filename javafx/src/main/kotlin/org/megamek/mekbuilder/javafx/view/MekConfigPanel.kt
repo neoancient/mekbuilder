@@ -36,15 +36,15 @@ import java.util.concurrent.Callable
  * Panel that shows basic configuration options for BattleMeks and IndustrialMeks
  */
 class MekConfigPanel: View() {
-    private val model: UnitViewModel by inject()
+    internal val model: UnitViewModel by inject()
 
     override val root: AnchorPane by fxml()
 
-    private val cbBaseType: ComboBox<MekConfiguration.BaseType> by fxid()
-    private val cbSubType: ComboBox<MekConfiguration> by fxid()
-    private val cbConstructionOption: ComboBox<UnitConstructionOption> by fxid()
-    private val chkOmni: CheckBox by fxid()
-    private val lblConstructionOption: Label by fxid()
+    internal val cbBaseType: ComboBox<MekConfiguration.BaseType> by fxid()
+    internal val cbSubType: ComboBox<MekConfiguration> by fxid()
+    internal val cbConstructionOption: ComboBox<UnitConstructionOption> by fxid()
+    internal val chkOmni: CheckBox by fxid()
+    internal val lblConstructionOption: Label by fxid()
 
     init {
         // List property that updates when the unit type changes to include all base types
@@ -76,7 +76,17 @@ class MekConfigPanel: View() {
         SimpleComboBoxCellFactory.setConverter(cbSubType) {
             messages["subType.${it.subType}"]
         }
-        cbSubType.bind(model.mekConfigurationProperty)
+        cbSubType.selectionModel.selectedItemProperty().onChange {
+            if (it != null) {
+                model.mekConfiguration = it
+            }
+        }
+        model.mekConfigurationProperty.onChange {
+            if (it != null) {
+                cbBaseType.selectionModel.select(it.baseType)
+                cbSubType.selectionModel.select(it)
+            }
+        }
 
         // List property bound to the available construction options for the configuration.
         // Invalidates when the configuration changes.

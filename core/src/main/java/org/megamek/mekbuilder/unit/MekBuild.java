@@ -54,7 +54,7 @@ public class MekBuild extends UnitBuild {
     public MekBuild() {
         super((UnitConstructionOption) ConstructionOptionKey.MEK_STANDARD.get());
         criticalSlots = new EnumMap<>(UnitLocation.class);
-        configuration = MekConfiguration.getConfigurations(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_BIPED);
+        configuration = MekConfiguration.getConfiguration(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_BIPED);
         internalStructure = new MekInternalStructure(this);
         getComponents().add(internalStructure);
         engineMount = new MekEngineMount(this, (MVFEngine) ComponentLibrary.getInstance()

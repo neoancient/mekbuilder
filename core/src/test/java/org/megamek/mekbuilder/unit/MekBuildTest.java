@@ -30,7 +30,7 @@ class MekBuildTest {
     @Test
     void testBiped() {
         MekBuild mek = new MekBuild();
-        mek.setConfiguration(MekConfiguration.getConfigurations(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_BIPED));
+        mek.setConfiguration(MekConfiguration.getConfiguration(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_BIPED));
 
         assertAll(
                 () -> assertTrue(mek.isBiped()),
@@ -53,7 +53,7 @@ class MekBuildTest {
     @Test
     void testQuad() {
         MekBuild mek = new MekBuild();
-        mek.setConfiguration(MekConfiguration.getConfigurations(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_QUAD));
+        mek.setConfiguration(MekConfiguration.getConfiguration(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_QUAD));
 
         assertAll(
                 () -> assertFalse(mek.isBiped()),
@@ -76,7 +76,7 @@ class MekBuildTest {
     @Test
     void testTripod() {
         MekBuild mek = new MekBuild();
-        mek.setConfiguration(MekConfiguration.getConfigurations(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_TRIPOD));
+        mek.setConfiguration(MekConfiguration.getConfiguration(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_TRIPOD));
 
         assertAll(
                 () -> assertFalse(mek.isBiped()),
@@ -107,7 +107,7 @@ class MekBuildTest {
     @Test
     void testQuadStructureTonnage() {
         MekBuild quad = new MekBuild();
-        quad.setConfiguration(MekConfiguration.getConfigurations(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_QUAD));
+        quad.setConfiguration(MekConfiguration.getConfiguration(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_QUAD));
         quad.setTonnage(50);
 
         assertEquals(quad.getStructureTonnage(), 5);
@@ -116,7 +116,7 @@ class MekBuildTest {
     @Test
     void testTripodStructureTonnage() {
         MekBuild tripod = new MekBuild();
-        tripod.setConfiguration(MekConfiguration.getConfigurations(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_TRIPOD));
+        tripod.setConfiguration(MekConfiguration.getConfiguration(UnitType.BATTLE_MEK, MekConfiguration.SubType.STANDARD_TRIPOD));
         tripod.setTonnage(50);
 
         assertEquals(tripod.getStructureTonnage(), 5.5);

@@ -31,6 +31,9 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
     val engineRatingProperty = SimpleIntegerProperty(0)
 
     init {
+        configurationProperty.onChange {
+            baseOptionProperty.refresh()
+        }
         engineRatingProperty.bind(integerBinding(mekBuild,
                 baseWalkMPProperty, tonnageProperty, configurationProperty) {
             engineRating
