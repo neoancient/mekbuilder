@@ -4,63 +4,53 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Spinner?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane styleClass="bordered-titled-border" stylesheets="@borderedtitled.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label layoutX="14.0" styleClass="bordered-titled-title" stylesheets="@borderedtitled.css" text="%title.text">
-         <padding>
-            <Insets left="5.0" right="5.0" />
-         </padding>
-      </Label>
-      <GridPane hgap="5.0" layoutX="10.0" layoutY="10.0" vgap="5.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="10.0">
+<?import javafx.scene.layout.StackPane?>
+<AnchorPane styleClass="bordered-titled-border" stylesheets="@borderedtitled.css"
+            xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+    <Label layoutX="14.0" styleClass="bordered-titled-title" stylesheets="@borderedtitled.css" text="%title.text">
+        <padding>
+          <Insets left="5.0" right="5.0"/>
+        </padding>
+    </Label>
+    <GridPane hgap="5.0" layoutX="10.0" layoutY="10.0" vgap="5.0" AnchorPane.bottomAnchor="1.0"
+              AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="10.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0"/>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="30.0" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" />
-          <RowConstraints minHeight="10.0" prefHeight="60.0" />
-            <RowConstraints minHeight="10.0" />
+            <RowConstraints fillHeight="false" minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+            <RowConstraints minHeight="10.0" prefHeight="60.0"/>
+            <RowConstraints minHeight="10.0" vgrow="ALWAYS"/>
         </rowConstraints>
-         <children>
-            <Label fx:id="lblWalkMP" text="%lblWalkMP.text" GridPane.rowIndex="1" />
-            <Label text="%lblBase.text" GridPane.columnIndex="1" />
-            <Label text="%lblFinal.text" GridPane.columnIndex="2" />
-            <Label fx:id="lblWalkFinal" text="0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label fx:id="lblSecondaryFinal" text="0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Spinner fx:id="spnWalkBase" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="3">
-               <children>
-                  <Label text="%lblSecondary.text" />
-                  <ComboBox fx:id="cbSecondaryMotive" prefWidth="150.0" />
-               </children>
-            </VBox>
-            <Label fx:id="lblRunMP" text="%lblRunMP.text" GridPane.rowIndex="2" />
-            <Label fx:id="lblRunBase" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label fx:id="lblRunFinal" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Spinner fx:id="spnBaseSecondary" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TableView fx:id="tblEnhancement" editable="true" fixedCellSize="30.0" GridPane.columnSpan="2147483647" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="4">
-              <columns>
-                <TableColumn fx:id="colEnhancementInstalled" prefWidth="75.0" resizable="false" sortable="false" />
-                <TableColumn fx:id="colEnhancementName" editable="false" minWidth="-1.0" prefWidth="289.0" sortable="false" text="%column.enhancement.title" />
-                  <TableColumn fx:id="colEnhancementSize" prefWidth="75.0" resizable="false" sortable="false" text="%column.size.title" />
-              </columns>
-            </TableView>
-         </children>
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-      </GridPane>
-   </children>
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+        </padding>
+        <Label fx:id="lblWalkMP" text="%lblWalkMP.text" GridPane.rowIndex="1"/>
+        <Label text="%lblBase.text" GridPane.columnIndex="1"/>
+        <Label text="%lblFinal.text" GridPane.columnIndex="2"/>
+        <Label fx:id="lblWalkFinal" text="0" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <Label fx:id="lblSecondaryFinal" text="0" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+        <Spinner fx:id="spnWalkBase" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Label GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="3">
+            <Label text="%lblSecondary.text"/>
+            <ComboBox fx:id="cbSecondaryMotive" prefWidth="150.0"/>
+        </VBox>
+        <Label fx:id="lblRunMP" text="%lblRunMP.text" GridPane.rowIndex="2"/>
+        <Label fx:id="lblRunBase" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Label fx:id="lblRunFinal" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+        <Spinner fx:id="spnBaseSecondary" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <StackPane fx:id="panEnhancement" prefHeight="180.0" GridPane.columnSpan="2147483647"
+                   GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.vgrow="SOMETIMES"/>
+    </GridPane>
 </AnchorPane>

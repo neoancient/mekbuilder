@@ -2,27 +2,16 @@ package org.megamek.mekbuilder.javafx.view
 
 import javafx.beans.InvalidationListener
 import javafx.beans.Observable
-import javafx.beans.binding.Bindings
-import javafx.beans.property.SimpleBooleanProperty
-import javafx.beans.property.SimpleDoubleProperty
 import javafx.beans.property.SimpleListProperty
-import javafx.beans.property.SimpleStringProperty
-import javafx.beans.value.ObservableValue
 import javafx.scene.control.*
-import javafx.scene.control.cell.CheckBoxTableCell
-import javafx.scene.control.cell.TextFieldTableCell
 import javafx.scene.layout.AnchorPane
-import javafx.scene.paint.Color
-import javafx.util.Callback
-import org.megamek.mekbuilder.component.Component
+import javafx.scene.layout.StackPane
 import org.megamek.mekbuilder.component.ComponentLibrary
 import org.megamek.mekbuilder.component.ComponentType
-import org.megamek.mekbuilder.component.MoveEnhancement
 import org.megamek.mekbuilder.component.SecondaryMotiveSystem
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
 import org.megamek.mekbuilder.javafx.util.ComponentComboBoxCellFactory
-import org.megamek.mekbuilder.javafx.util.ComponentListNameLookup
-import org.megamek.mekbuilder.javafx.util.shortNameWithTechBase
+import org.megamek.mekbuilder.javafx.util.UniqueComponentTableView
 import org.megamek.mekbuilder.unit.MotiveType
 import org.megamek.mekbuilder.unit.UnitBuild
 import org.megamek.mekbuilder.unit.UnitType
@@ -46,21 +35,12 @@ class MovementView : View(), InvalidationListener {
     private val lblWalkFinal: Label by fxid()
     private val lblRunFinal: Label by fxid()
     private val lblSecondaryFinal: Label by fxid()
-    private val tblEnhancement: TableView<EnhancementEntry> by fxid()
-    private val colEnhancementInstalled: TableColumn<EnhancementEntry, Boolean> by fxid()
-    private val colEnhancementName: TableColumn<EnhancementEntry, String> by fxid()
-    private val colEnhancementSize: TableColumn<EnhancementEntry, Number> by fxid()
+    private val panEnhancement: StackPane by fxid()
 
-    private val enhancementLookup = ComponentListNameLookup()
     private val allSecondaryMotive = ComponentLibrary.getInstance().allComponents
             .filter {it.type == ComponentType.SECONDARY_MOTIVE_SYSTEM}
             .sortedBy{it.shortName}.sortedBy{!it.isDefault}
             .toList().observable()
-    private val allEnhancements: SortedFilteredList<EnhancementEntry> = SortedFilteredList(ComponentLibrary.getInstance().allComponents
-            .filter {it.type == ComponentType.MOVE_ENHANCEMENT}
-            .sortedBy{it.shortNameWithTechBase()}
-            .map {EnhancementEntry(it as MoveEnhancement)}
-            .toList().observable())
 
 
     private fun isWalker(unit: UnitBuild) =
@@ -127,66 +107,9 @@ class MovementView : View(), InvalidationListener {
         lblWalkFinal.textProperty().bind(stringBinding(model.walkMPProperty) {model.walkMP.toString()})
         lblRunFinal.textProperty().bind(stringBinding(model.runMPProperty) {model.runMP.toString()})
         lblSecondaryFinal.textProperty().bind(stringBinding(model.secondaryMPProperty) {model.secondaryMP.toString()})
-
-        allEnhancements.bindTo(tblEnhancement)
-        allEnhancements.predicate = {
-            model.unit.allowed(it.component) && techFilter.isLegal(it.component)
-        }
-        enhancementLookup.listProperty.bind(objectBinding(allEnhancements.filteredItems) {
-            map{it.component as Component}.toList().observable()
-        })
-        tblEnhancement.columnResizePolicy = SmartResize.POLICY
-        colEnhancementName.remainingWidth()
-
-        colEnhancementInstalled.cellValueFactory = Callback<TableColumn.CellDataFeatures<EnhancementEntry, Boolean>,
-                ObservableValue<Boolean>> {
-            it.value.installedProperty
-        }
-        colEnhancementInstalled.cellFactory = Callback<TableColumn<EnhancementEntry, Boolean>,
-                TableCell<EnhancementEntry, Boolean>> {
-            CheckBoxTableCell()
-        }
-        colEnhancementName.cellValueFactory = Callback<TableColumn.CellDataFeatures<EnhancementEntry, String>,
-                ObservableValue<String>> {
-            it.value.nameProperty
-        }
-        colEnhancementName.cellFactory = Callback<TableColumn<EnhancementEntry, String>,
-                TableCell<EnhancementEntry, String>> {
-            object : TextFieldTableCell<EnhancementEntry, String>() {
-                override fun updateItem(item: String?, empty: Boolean) {
-                    super.updateItem(item, empty)
-                    if (item != null && !empty) {
-                        textFill = if (tableRow.isDisabled) {
-                                Color.GRAY
-                            } else {
-                                Color.BLACK
-                            }
-                    }
-                }
-            }
-        }
-        colEnhancementSize.cellValueFactory = Callback<TableColumn.CellDataFeatures<EnhancementEntry, Number>,
-                ObservableValue<Number>> {
-            it.value.sizeProperty
-        }
-        colEnhancementSize.cellFactory = Callback<TableColumn<EnhancementEntry, Number>,
-                TableCell<EnhancementEntry, Number>> {
-            EnhancementSizeCell()
-        }
-        model.baseOptionProperty.onChange {filterEnhancements()}
-        model.mountList.onChange {
-            filterEnhancements()
-        }
-        filterEnhancements()
-        tblEnhancement.prefHeightProperty().bind(Bindings.size(tblEnhancement.items)
-                .multiply(tblEnhancement.fixedCellSizeProperty()).add(30))
-        tblEnhancement.rowFactory = Callback<TableView<EnhancementEntry>, TableRow<EnhancementEntry>> {
-            val row = TableRow<EnhancementEntry>()
-            row.disableProperty().bind(booleanBinding(row.itemProperty(), techFilter, model.mountListProperty) {
-                row.item?.allowedProperty?.value != true
-            })
-            row
-        }
+        val table = UniqueComponentTableView{it.type == ComponentType.MOVE_ENHANCEMENT}
+        panEnhancement.add(table.root)
+        panEnhancement.prefHeightProperty().bind(table.root.prefHeightProperty())
 
         techFilter.addListener(this)
     }
@@ -208,84 +131,6 @@ class MovementView : View(), InvalidationListener {
             model.secondaryMotiveType = cbSecondaryMotive.items.first()
         } else {
             cbSecondaryMotive.selectionModel.select(model.secondaryMotiveType)
-        }
-        filterEnhancements()
-    }
-
-    private fun filterEnhancements() {
-        allEnhancements.predicate = {
-            model.unit.allowed(it.component) && techFilter.isLegal(it.component)
-        }
-        allEnhancements.filteredItems.forEach {
-            it.nameProperty.value = enhancementLookup[it.component]
-        }
-    }
-
-    private inner class EnhancementEntry(val component: MoveEnhancement) {
-        val installedProperty = SimpleBooleanProperty(model.mountList.any{ it.component == component })
-        val nameProperty = SimpleStringProperty("")
-        val sizeProperty = SimpleDoubleProperty(0.0)
-        val allowedProperty = SimpleBooleanProperty(true)
-
-        init {
-            installedProperty.onChange {
-                if (it) {
-                    model.unitModel.addEquipment(component, sizeProperty.value)
-                } else {
-                    val mount = model.mountList.first{m -> m.component == component}
-                    model.unitModel.removeEquipment(mount)
-                }
-            }
-            sizeProperty.onChange {
-                val mount = model.mountList.firstOrNull{m -> m.component == component}
-                mount?.size = it
-                model.mountList.invalidate()
-            }
-            allowedProperty.bind(booleanBinding(model.mountListProperty, model.baseOptionProperty, techFilter) {
-                model.unit.allowed(component) && model.unit.compatibleWithInstalled(component)
-            })
-            allowedProperty.onChange {
-                if (!it) {
-                    installedProperty.set(false)
-                }
-            }
-        }
-    }
-
-    private inner class EnhancementSizeCell : TableCell<EnhancementEntry, Number>() {
-        val spinner = Spinner<Double>()
-        val valueFactory = SpinnerValueFactory.DoubleSpinnerValueFactory(0.0, 0.0)
-        val changeListener = ChangeListener<Number> {
-            _, _, newValue -> valueFactory.value = newValue.toDouble()
-        }
-
-        init {
-            spinner.valueFactory = valueFactory
-            spinner.valueProperty().onChange {
-                if (it != null) {
-                    tableView.items[index].sizeProperty.value = it
-                }
-            }
-        }
-
-        fun entry() = tableView?.items?.getOrNull(index)
-
-        override fun updateItem(item: Number?, empty: Boolean) {
-            valueFactory.maxProperty().unbind()
-            if (item != null) {
-                entry()?.sizeProperty?.removeListener(changeListener)
-            }
-            super.updateItem(item, empty)
-            if (empty || item == null || entry()?.component?.variableSize() != true) {
-                graphic = null
-                text = if (entry() == null) "" else messages["column.size.NA"]
-            } else {
-                valueFactory.max = entry()?.component?.variableSizeMax() ?: 0.0
-                valueFactory.min = entry()?.component?.variableSizeMin() ?: 0.0
-                valueFactory.value = item.toDouble()
-                entry()?.sizeProperty?.addListener(changeListener)
-                graphic = spinner
-            }
         }
     }
 }
