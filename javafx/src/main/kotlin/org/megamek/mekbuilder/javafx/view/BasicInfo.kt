@@ -66,15 +66,15 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
         }
     }
 
-    private val txtChassis: TextField by fxid()
-    private val txtModel: TextField by fxid()
-    private val txtYear: TextField by fxid()
-    private val chkShowExtinct: CheckBox by fxid()
-    private val txtSource: TextField by fxid()
-    private val cbTechBase: ComboBox<TechBase> by fxid()
-    private val cbTechLevel: ComboBox<TechLevel> by fxid()
-    private val chkEraBasedProgression: CheckBox by fxid()
-    private val cbFaction: ComboBox<Faction> by fxid()
+    internal val txtChassis: TextField by fxid()
+    internal val txtModel: TextField by fxid()
+    internal val txtYear: TextField by fxid()
+    internal val chkShowExtinct: CheckBox by fxid()
+    internal val txtSource: TextField by fxid()
+    internal val cbTechBase: ComboBox<TechBase> by fxid()
+    internal val cbTechLevel: ComboBox<TechLevel> by fxid()
+    internal val chkEraBasedProgression: CheckBox by fxid()
+    internal val cbFaction: ComboBox<Faction> by fxid()
 
     init {
         model.techFilter = this

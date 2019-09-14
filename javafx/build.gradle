@@ -18,7 +18,8 @@ dependencies {
     compile 'org.jetbrains.kotlin:kotlin-reflect:1.3.41'
     compile 'no.tornado:tornadofx:1.7.17'
 
-    testCompile 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+    testCompile 'org.junit.jupiter:junit-jupiter-api:5.5.1'
+    testCompile 'org.testfx:testfx-junit5:4.0.16-alpha'
 }
 
 
