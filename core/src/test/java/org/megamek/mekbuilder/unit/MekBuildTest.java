@@ -19,6 +19,11 @@
 package org.megamek.mekbuilder.unit;
 
 import org.junit.jupiter.api.Test;
+import org.megamek.mekbuilder.component.ComponentKeys;
+import org.megamek.mekbuilder.component.ComponentLibrary;
+import org.megamek.mekbuilder.component.MVFEngine;
+import org.megamek.mekbuilder.tech.ConstructionOptionKey;
+import org.megamek.mekbuilder.tech.UnitConstructionOption;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -139,4 +144,75 @@ class MekBuildTest {
         );
     }
 
+    @Test
+    void tonnageChangeAffectsEngineRating() {
+        MekBuild mek = new MekBuild();
+        mek.setTonnage(20);
+        mek.setEngineRating(20 * 8);
+
+        mek.setTonnage(30);
+
+        assertEquals(30 * 8, mek.getEngineRating());
+    }
+
+    @Test
+    void baseWalkChangeAffectsEngineRating() {
+        MekBuild mek = new MekBuild();
+        mek.setTonnage(20);
+        mek.setEngineRating(20 * 6);
+
+        mek.setBaseWalkMP(8);
+
+        assertEquals(20 * 8, mek.getEngineRating());
+    }
+
+    @Test
+    void engineSwitchToLarge() {
+        MekBuild mek = new MekBuild();
+        mek.setTonnage(50);
+
+        mek.setBaseWalkMP(9);
+
+        assertTrue(mek.getEngineType().isLargeEngine());
+    }
+
+    @Test
+    void engineSwitchFromLarge() {
+        MekBuild mek = new MekBuild();
+        mek.setTonnage(50);
+        mek.setBaseWalkMP(9);
+
+        mek.setBaseWalkMP(6);
+
+        assertFalse(mek.getEngineType().isLargeEngine());
+    }
+
+    @Test
+    void walkMPLimitedByMaxEngineRating() {
+        MekBuild hasLarge = new MekBuild();
+        hasLarge.setTonnage(50);
+        MekBuild noLarge = new MekBuild();
+        noLarge.setEngineType((MVFEngine) ComponentLibrary.getInstance().getComponent(ComponentKeys.ENGINE_COMPACT));
+        noLarge.setTonnage(50);
+
+        hasLarge.setBaseWalkMP(12);
+        noLarge.setBaseWalkMP(12);
+
+        assertAll(
+                () -> assertEquals(500 / 50, hasLarge.getBaseWalkMP()),
+                () -> assertEquals(400 / 50, noLarge.getBaseWalkMP()));
+    }
+
+    @Test
+    void primitiveHasEngineRating20PercentHigher() {
+        MekBuild mek = new MekBuild();
+        mek.setTonnage(20);
+        mek.setConfiguration(MekConfiguration.getConfiguration(mek.getUnitType(),
+                MekConfiguration.SubType.PRIMITIVE_BIPED));
+        mek.setBaseConstructionOption((UnitConstructionOption) ConstructionOptionKey.MEK_PRIMITIVE.get());
+
+        mek.setBaseWalkMP(5);
+
+        assertEquals(120, mek.getEngineRating());
+    }
 }

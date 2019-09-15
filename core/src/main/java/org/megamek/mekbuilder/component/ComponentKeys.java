@@ -24,6 +24,8 @@ package org.megamek.mekbuilder.component;
  */
 public interface ComponentKeys {
     String ENGINE_FUSION = "FusionEngine";
+    String ENGINE_COMPACT = "CompactFusion";
+    String ENGINE_ICE = "ICE";
 
     String SECONDARY_MOTIVE_NONE = "NoSecondaryMotive";
     String MEK_JJ = "Jump Jet";
