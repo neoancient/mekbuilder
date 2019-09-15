@@ -21,12 +21,14 @@ package org.megamek.mekbuilder.javafx.models
 import javafx.beans.property.*
 import org.megamek.mekbuilder.component.*
 import org.megamek.mekbuilder.component.Component
+import org.megamek.mekbuilder.tech.ConstructionOptionKey
 import org.megamek.mekbuilder.tech.ITechFilter
 import org.megamek.mekbuilder.tech.TechLevel
 import org.megamek.mekbuilder.unit.MekBuild
 import org.megamek.mekbuilder.unit.MekConfiguration
 import org.megamek.mekbuilder.unit.UnitWeightClass
 import tornadofx.*
+import kotlin.math.max
 
 /**
  * The actual view model for the UI, which serves as an adapter for the various unit-specific models. These
@@ -128,6 +130,18 @@ class UnitViewModel(): ViewModel() {
     var myomer by myomerProperty
 
     init {
+        minTechLevelProperty.bind(baseOptionProperty.objectBinding(omniProperty) {
+            var tl = it?.staticTechLevel() ?: TechLevel.STANDARD
+            if (omni) {
+                val option = if (unit.unitType.isVehicle)
+                    ConstructionOptionKey.OMNI_VEHICLE.get()
+                else ConstructionOptionKey.OMNI.get()
+                if (option.staticTechLevel() > tl) {
+                    tl = option.staticTechLevel()
+                }
+            }
+            tl
+        })
         unitModel.techFilterProperty.bind(techFilterProperty)
         unitModelProperty.addListener{
             _, oldValue, newValue ->

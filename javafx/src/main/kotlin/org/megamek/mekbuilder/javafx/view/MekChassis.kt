@@ -49,15 +49,15 @@ fun createComponentList(op: (Component) -> Boolean) =
 class MekChassis: View(), InvalidationListener {
     override val root: AnchorPane by fxml()
     private val techFilter: BasicInfo by inject()
-    private val model: UnitViewModel by inject()
+    internal val model: UnitViewModel by inject()
 
-    private val spnTonnage: Spinner<Double> by fxid()
-    private val lblWeightClass: Label by fxid()
-    private val cbStructure: ComboBox<Component> by fxid()
-    private val cbEngine: ComboBox<MVFEngine> by fxid()
-    private val cbGyro: ComboBox<Component> by fxid()
-    private val cbCockpit: ComboBox<Cockpit> by fxid()
-    private val cbMyomer: ComboBox<Component> by fxid()
+    internal val spnTonnage: Spinner<Double> by fxid()
+    internal val lblWeightClass: Label by fxid()
+    internal val cbStructure: ComboBox<Component> by fxid()
+    internal val cbEngine: ComboBox<MVFEngine> by fxid()
+    internal val cbGyro: ComboBox<Component> by fxid()
+    internal val cbCockpit: ComboBox<Cockpit> by fxid()
+    internal val cbMyomer: ComboBox<Component> by fxid()
 
     val allStructures = createComponentList { it.type == ComponentType.MEK_STRUCTURE }
     val allEngines = createComponentList { it.type == ComponentType.ENGINE }
@@ -140,6 +140,8 @@ class MekChassis: View(), InvalidationListener {
 
         model.baseOptionProperty.onChange {
             if (it != null) {
+                // Side effects from maintaining the contract that min <= value <= max require
+                // doing this in a particular order and repeating the first one at the end.
                 tonnageFactory.max = it.maxWeight
                 tonnageFactory.min = it.minWeight
                 if (tonnageFactory.value < it.minWeight) {
@@ -148,6 +150,7 @@ class MekChassis: View(), InvalidationListener {
                 if (tonnageFactory.value > it.maxWeight) {
                     tonnageFactory.value = it.maxWeight
                 }
+                tonnageFactory.max = it.maxWeight
                 allStructures.invalidate()
                 if (model.internalStructure !in structureList) {
                     cbStructure.selectionModel.select(structureList.first())

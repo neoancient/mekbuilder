@@ -25,7 +25,6 @@ import tornadofx.*
 /**
  *
  */
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 internal class MekConfigPanelTest : ApplicationTest() {
     private lateinit var configPanel: MekConfigPanel
     private lateinit var model: UnitViewModel

@@ -154,7 +154,7 @@ class BasicInfo: View(), ITechFilter, Observable, InvalidationListener {
 
     override fun getTechBase() = cbTechBase.selectedItem ?: model.techBase
 
-    override fun getTechLevel() = cbTechLevel.selectedItem ?: TechLevel.STANDARD
+    override fun getTechLevel() = cbTechLevel.selectedItem ?: model.minTechLevel
 
     override fun getFaction() = cbFaction.selectedItem
 

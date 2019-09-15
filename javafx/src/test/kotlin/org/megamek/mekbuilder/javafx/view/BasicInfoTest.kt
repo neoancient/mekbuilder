@@ -20,7 +20,6 @@ import tornadofx.*
 /**
  *
  */
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 internal class BasicInfoTest : ApplicationTest() {
     private lateinit var basicInfo: BasicInfo
 
