@@ -19,15 +19,20 @@
 package org.megamek.mekbuilder.javafx.view
 
 import javafx.application.Platform
+import javafx.beans.property.Property
 import javafx.scene.Scene
+import javafx.scene.control.ComboBox
 import javafx.scene.control.SpinnerValueFactory
 import javafx.scene.input.KeyCode
 import javafx.scene.input.KeyCodeCombination
 import javafx.stage.Stage
+import org.hamcrest.MatcherAssert.assertThat
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.function.Executable
+import org.megamek.mekbuilder.component.*
+import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.javafx.models.MekModel
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
 import org.megamek.mekbuilder.tech.ConstructionOptionKey
@@ -35,6 +40,7 @@ import org.megamek.mekbuilder.tech.UnitConstructionOption
 import org.megamek.mekbuilder.unit.MekBuild
 import org.testfx.framework.junit5.ApplicationTest
 import org.testfx.framework.junit5.Start
+import org.testfx.matcher.control.ComboBoxMatchers
 import tornadofx.*
 
 /**
@@ -123,5 +129,113 @@ internal class MekChassisTest: ApplicationTest() {
                     Executable { assertTrue(model.tonnage >= option.minWeight) },
                     Executable { assertTrue(model.tonnage <= option.maxWeight) })
         }
+    }
+
+    /**
+     * Convenience function that changes a combo box selecting to the next item after the current
+     * selection. If the current selection is the last in the list, selects the one above instead.
+     *
+     * @param selected The currently selected item
+     * @param cb       The combo box
+     * @return         The item at the newly selected index
+     */
+    private fun<T: Component> changeComboBoxEntry(selected: T, cb: ComboBox<T>): T {
+        val initialIndex = cb.items.indexOf(selected)
+
+        clickOn(cb)
+        // The default should be the first in the list but we'll allow for the possibility
+        // that we're at the end of the list and have to go up.
+        return if (initialIndex < cb.items.size - 1) {
+            type(KeyCode.DOWN).type(KeyCode.ENTER)
+            cb.items[initialIndex + 1]
+        } else {
+            type(KeyCode.UP).type(KeyCode.ENTER)
+            cb.items[initialIndex - 1]
+        }
+    }
+
+    @Test
+    fun setInitialStructureType() {
+        Platform.runLater {
+            val structure = ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_STRUCTURE_IS_ENDO_STEEL)
+            model.internalStructure = structure
+
+            assertThat(mekChassis.cbStructure, ComboBoxMatchers.hasSelectedItem(structure))
+        }
+    }
+
+    @Test
+    fun changeInternalStructure() {
+        val nextIS = changeComboBoxEntry(model.internalStructure, mekChassis.cbStructure)
+
+        assertEquals(nextIS, model.internalStructure)
+    }
+
+    @Test
+    fun setInitialEngineType() {
+        Platform.runLater {
+            val engine = ComponentLibrary.getInstance().getComponent(ComponentKeys.ENGINE_COMPACT) as MVFEngine
+            model.engineType = engine
+
+            assertThat(mekChassis.cbEngine, ComboBoxMatchers.hasSelectedItem(engine))
+        }
+    }
+
+    @Test
+    fun changeEngine() {
+        val nextEngine = changeComboBoxEntry(model.engineType, mekChassis.cbEngine)
+
+        assertEquals(nextEngine, model.engineType)
+    }
+
+    @Test
+    fun setInitialCockpitType() {
+        Platform.runLater {
+            val cockpit = ComponentLibrary.getInstance().getComponent(ComponentKeys.COCKPIT_MEK_SMALL) as Cockpit
+            model.cockpit = cockpit
+
+            assertThat(mekChassis.cbCockpit, ComboBoxMatchers.hasSelectedItem(cockpit))
+        }
+    }
+
+    @Test
+    fun changeCockpit() {
+        val nextCockpit = changeComboBoxEntry(model.cockpit, mekChassis.cbCockpit)
+
+        assertEquals(nextCockpit, model.cockpit)
+    }
+
+    @Test
+    fun setInitialGyroType() {
+        Platform.runLater {
+            val gyro = ComponentLibrary.getInstance().getComponent(ComponentKeys.GYRO_HEAVY_DUTY)
+            model.gyro = gyro
+
+            assertThat(mekChassis.cbGyro, ComboBoxMatchers.hasSelectedItem(gyro))
+        }
+    }
+
+    @Test
+    fun changeGyro() {
+        val nextGyro = changeComboBoxEntry(model.gyro, mekChassis.cbGyro)
+
+        assertEquals(nextGyro, model.gyro)
+    }
+
+    @Test
+    fun setInitialMyomerType() {
+        Platform.runLater {
+            val myomer = ComponentLibrary.getInstance().getComponent(ComponentKeys.MYOMER_TSM)
+            model.myomer = myomer
+
+            assertThat(mekChassis.cbMyomer, ComboBoxMatchers.hasSelectedItem(myomer))
+        }
+    }
+
+    @Test
+    fun changeMyomer() {
+        val nextGyro = changeComboBoxEntry(model.myomer, mekChassis.cbMyomer)
+
+        assertEquals(nextGyro, model.myomer)
     }
 }

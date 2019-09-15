@@ -43,12 +43,15 @@ public interface ComponentKeys {
     String MEK_STRUCTURE_CLAN_ENDO_STEEL = "Clan Endo Steel";
 
     String COCKPIT_STANDARD_MEK = "Standard Cockpit";
+    String COCKPIT_MEK_SMALL = "Small Cockpit";
     String COCKPIT_INDUSTRIAL = "Industrial Cockpit";
     String COCKPIT_STANDARD_ASF = "ASF Cockpit";
     String COCKPIT_STANDARD_CF = "CF Cockpit";
     String COCKPIT_STANDARD_CV = "CV Cockpit";
 
     String GYRO_STANDARD = "Standard Gyro";
+    String GYRO_HEAVY_DUTY = "Heavy Duty Gyro";
 
     String MYOMER_STANDARD = "Standard Myomer";
+    String MYOMER_TSM = "TSM";
 }
