@@ -21,21 +21,21 @@ import tornadofx.*
  * View for setting walk/cruise/thrust speed and additional movement modes (e.g. jump/underwater).
  */
 class MovementView : View(), InvalidationListener {
-    private val model: UnitViewModel by inject()
-    private val techFilter: BasicInfo by inject()
+    internal val model: UnitViewModel by inject()
+    internal val techFilter: BasicInfo by inject()
 
     override val root: AnchorPane by fxml()
 
-    private val lblWalkMP: Label by fxid()
-    private val lblRunMP: Label by fxid()
-    private val cbSecondaryMotive: ComboBox<SecondaryMotiveSystem> by fxid()
-    private val spnWalkBase: Spinner<Int> by fxid()
-    private val lblRunBase: Label by fxid()
-    private val spnBaseSecondary: Spinner<Int> by fxid()
-    private val lblWalkFinal: Label by fxid()
-    private val lblRunFinal: Label by fxid()
-    private val lblSecondaryFinal: Label by fxid()
-    private val panEnhancement: StackPane by fxid()
+    internal val lblWalkMP: Label by fxid()
+    internal val lblRunMP: Label by fxid()
+    internal val cbSecondaryMotive: ComboBox<SecondaryMotiveSystem> by fxid()
+    internal val spnWalkBase: Spinner<Int> by fxid()
+    internal val lblRunBase: Label by fxid()
+    internal val spnBaseSecondary: Spinner<Int> by fxid()
+    internal val lblWalkFinal: Label by fxid()
+    internal val lblRunFinal: Label by fxid()
+    internal val lblSecondaryFinal: Label by fxid()
+    internal val panEnhancement: StackPane by fxid()
 
     private val allSecondaryMotive = ComponentLibrary.getInstance().allComponents
             .filter {it.type == ComponentType.SECONDARY_MOTIVE_SYSTEM}
