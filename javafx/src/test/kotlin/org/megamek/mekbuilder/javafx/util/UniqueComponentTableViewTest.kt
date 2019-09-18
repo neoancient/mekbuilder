@@ -22,7 +22,6 @@ import javafx.scene.Scene
 import javafx.scene.control.TableView
 import javafx.stage.Stage
 import org.junit.jupiter.api.Assertions.*
-import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.megamek.mekbuilder.component.ComponentKeys
 import org.megamek.mekbuilder.component.ComponentLibrary
@@ -31,10 +30,8 @@ import org.megamek.mekbuilder.component.ComponentType
 import org.megamek.mekbuilder.javafx.models.MekModel
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
 import org.megamek.mekbuilder.javafx.view.BasicInfo
-import org.megamek.mekbuilder.tech.ITechFilter
 import org.megamek.mekbuilder.tech.TechBase
 import org.megamek.mekbuilder.unit.MekBuild
-import org.mockito.Mockito.mock
 import org.testfx.framework.junit5.ApplicationTest
 import org.testfx.framework.junit5.Start
 import tornadofx.*
