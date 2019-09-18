@@ -56,7 +56,7 @@ internal class MovementViewTest: ApplicationTest() {
 
     @BeforeEach
     fun resetModel() {
-        movementView.model.rebind {
+        model.rebind {
             unitModel = MekModel(MekBuild())
         }
     }

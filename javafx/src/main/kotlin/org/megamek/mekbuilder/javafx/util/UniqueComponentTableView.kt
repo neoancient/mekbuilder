@@ -9,6 +9,7 @@ import javafx.scene.paint.Color
 import javafx.util.Callback
 import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.component.ComponentLibrary
+import org.megamek.mekbuilder.javafx.models.MountModel
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
 import org.megamek.mekbuilder.javafx.view.BasicInfo
 import tornadofx.*
@@ -79,7 +80,23 @@ class UniqueComponentTableView(val filter: (Component) -> Boolean): View() {
         })
         model.baseOptionProperty.onChange {filterComponents()}
         model.mountList.onChange {
+            while (it.next()) {
+                when {
+                    it.wasReplaced() -> {
+                        removeMounts(it.removed)
+                        addNewMounts(it.addedSubList)
+                    }
+                    it.wasAdded() -> addNewMounts(it.addedSubList)
+                    it.wasRemoved() -> removeMounts(it.removed)
+                    it.wasUpdated() -> updateMounts(it.list.subList(it.from, it.to))
+                    // We don't care about permutations
+                }
+            }
+        }
+        // Replacing the list does not trigger a list change event.
+        model.unitProperty.onChange {
             filterComponents()
+            updateMounts(model.mountList)
         }
         techFilter.addListener{filterComponents()}
         filterComponents()
@@ -94,20 +111,50 @@ class UniqueComponentTableView(val filter: (Component) -> Boolean): View() {
         }
     }
 
+    private fun addNewMounts(list: List<MountModel>) {
+        list.filter{filter(it.component)}.forEach {
+            val item = allComponents.items.firstOrNull{i -> i.component == it.component}
+            item?.installedProperty?.value = true
+            item?.sizeProperty?.value = it.size
+        }
+    }
+
+    private fun removeMounts(list: List<MountModel>) {
+        list.filter{filter(it.component)}.forEach {
+            val item = allComponents.items.firstOrNull{i -> i.component == it.component}
+            item?.installedProperty?.value = false
+        }
+    }
+
+    private fun updateMounts(list: List<MountModel>) {
+        // Avoid concurrent modification
+        val copy = list.toList()
+        allComponents.items.forEach {
+            val mount = copy.firstOrNull{m -> m.component == it.component}
+            it.installedProperty.value = mount != null
+            it.sizeProperty.value = mount?.size ?: 1.0
+        }
+    }
 
     inner class RowItem(val component: Component) {
-        val installedProperty = SimpleBooleanProperty(model.mountList.any{ it.component == component })
+        val installedProperty = SimpleBooleanProperty(false)
         val nameProperty = SimpleStringProperty("")
         val sizeProperty = SimpleDoubleProperty(0.0)
         val allowedProperty = SimpleBooleanProperty(true)
 
         init {
+            val mount = model.mountList.firstOrNull{it.component == component}
+            installedProperty.value = mount != null
+            sizeProperty.value = mount?.size ?: 0.0
+
             installedProperty.onChange {
                 if (it) {
                     model.unitModel.addEquipment(component, sizeProperty.value)
                 } else {
-                    val mount = model.mountList.first{m -> m.component == component}
-                    model.unitModel.removeEquipment(mount)
+                    val mount = model.mountList.firstOrNull{m -> m.component == component}
+                    if (mount != null) {
+                        model.unitModel.removeEquipment(mount)
+                    }
                 }
             }
             sizeProperty.onChange {
@@ -136,7 +183,7 @@ class UniqueComponentTableView(val filter: (Component) -> Boolean): View() {
         init {
             spinner.valueFactory = valueFactory
             spinner.valueProperty().onChange {
-                if (it != null) {
+                if (it != null && index >= 0) {
                     tableView.items[index].sizeProperty.value = it
                 }
             }

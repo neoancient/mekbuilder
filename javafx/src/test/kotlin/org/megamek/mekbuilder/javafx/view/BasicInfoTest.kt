@@ -94,7 +94,7 @@ internal class BasicInfoTest : ApplicationTest() {
         Platform.runLater {
             basicInfo.model.techBase = TechBase.CLAN
 
-            assertThat(basicInfo.cbTechBase, ComboBoxMatchers.hasSelectedItem(basicInfo.model.techBase))
+            assertThat(basicInfo.cbTechBase, ComboBoxMatchers.hasSelectedItem(TechBase.CLAN))
         }
     }
 

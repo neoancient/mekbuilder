@@ -78,9 +78,9 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     var faction by factionProperty
     val tonnageProperty = pojoProperty(unit, UnitBuild::getTonnage, UnitBuild::setTonnage)
 
-    val mountList = FXCollections.observableArrayList<MountModel> {
+    val mountList = SimpleListProperty(FXCollections.observableArrayList<MountModel> {
         arrayOf(it.componentProperty, it.sizeProperty, it.locationProperty,
-                it.moduleProperty, it.rearFacingProperty, it.armoredProperty)}
+                it.moduleProperty, it.rearFacingProperty, it.armoredProperty)})
     val mountMap = HashMap<UnitLocation, ObservableList<Mount>>().observable()
     val weaponTonnageMap = HashMap<UnitLocation, ObservableDoubleValue>().observable()
     val maxArmorPointsMap = HashMap<UnitLocation, ObservableIntegerValue>().observable()
@@ -152,7 +152,7 @@ abstract class UnitModel (unitBuild: UnitBuild) {
 
     fun getSecondaryMotive() = mountList.first{it.component.type == ComponentType.SECONDARY_MOTIVE_SYSTEM}
 
-    fun addEquipment(c: Component, size: Double) {
+    fun addEquipment(c: Component, size: Double = 1.0) {
         val mount = MountModel(unit.createMount(c))
         if (c.variableSize()) {
             mount.size = size

@@ -104,7 +104,6 @@ class MekConfigPanel: View() {
         cbConstructionOption.selectionModel.selectedItemProperty().onChange {
             if (it != null) {
                 model.baseOption = it
-                setMinTechLevel()
             }
         }
         cbSubType.selectionModel.selectedItemProperty().onChange {
@@ -137,16 +136,5 @@ class MekConfigPanel: View() {
         chkOmni.visibleWhen(model.mekConfigurationProperty.booleanBinding {
             it?.isOmniAllowed ?: false
         })
-        chkOmni.selectedProperty().onChange {
-            setMinTechLevel()
-        }
-    }
-
-    private fun setMinTechLevel() {
-        var tl = model.baseOption.staticTechLevel()
-        if (model.omni && tl < ConstructionOptionKey.OMNI.get().staticTechLevel()) {
-            tl = ConstructionOptionKey.OMNI.get().staticTechLevel()
-        }
-        model.minTechLevel = tl
     }
 }

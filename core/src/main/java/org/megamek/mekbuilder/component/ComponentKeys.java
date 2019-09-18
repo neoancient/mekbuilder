@@ -54,4 +54,8 @@ public interface ComponentKeys {
 
     String MYOMER_STANDARD = "Standard Myomer";
     String MYOMER_TSM = "TSM";
+
+    String MASC_IS = "ISMASC";
+    String MASC_CLAN = "CLMASC";
+    String MEK_JUMP_BOOSTER = "MechanicalJumpBooster";
 }

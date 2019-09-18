@@ -63,7 +63,7 @@ class UnitViewModel(): ViewModel() {
     var faction by factionProperty
     val tonnageProperty = bind(true) {unitModel.tonnageProperty}
     var tonnage by tonnageProperty
-    val mountListProperty = bind{ SimpleListProperty(unitModel.mountList) }
+    val mountListProperty = bind{ unitModel.mountList }
     var mountList by mountListProperty
 
     val omniProperty = bind(true) {unitModel.omniProperty}
