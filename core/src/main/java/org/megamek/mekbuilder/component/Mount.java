@@ -84,9 +84,15 @@ public class Mount {
         return component;
     }
 
+    /**
+     * Changes the type of component in this mount. A null component is ignored.
+     * @param component The Component to assign to this mount.
+     */
     public void setComponent(Component component) {
-        this.componentKey = component.getInternalName();
-        this.component = component;
+        if (null != component) {
+            this.componentKey = component.getInternalName();
+            this.component = component;
+        }
     }
 
     public void setComponent(String key) {

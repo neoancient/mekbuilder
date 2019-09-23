@@ -101,6 +101,9 @@ public class MekInternalStructure extends DistributedMount {
 
     @Override
     public void setComponent(Component component) {
+        if (null == component) {
+            return;
+        }
         if (!component.getType().equals(ComponentType.MEK_STRUCTURE)) {
             throw new IllegalArgumentException("Attempting to assign non-structure component to internal structure");
         }

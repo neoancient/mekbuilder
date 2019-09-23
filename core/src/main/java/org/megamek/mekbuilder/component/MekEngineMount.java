@@ -42,6 +42,9 @@ public class MekEngineMount extends Mount implements IEngineMount {
 
     @Override
     public void setComponent(Component component) {
+        if (null == component) {
+            return;
+        }
         if (!(component instanceof MVFEngine)) {
             throw new IllegalArgumentException("Attempting to assign non-engine component to engine mount.");
         }
@@ -117,5 +120,10 @@ public class MekEngineMount extends Mount implements IEngineMount {
      */
     public int maxIntegratedHS() {
         return getEngineRating() / 25;
+    }
+
+    public int getComponentSlots() {
+        // Size is the rating, which does not affect number of slots.
+        return getComponent().calcSlots(getUnit(), 1.0);
     }
 }

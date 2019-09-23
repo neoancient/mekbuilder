@@ -19,6 +19,7 @@
 package org.megamek.mekbuilder.javafx.view
 
 import javafx.beans.property.*
+import javafx.collections.FXCollections
 import javafx.collections.ListChangeListener
 import javafx.scene.control.Label
 import javafx.scene.control.TreeItem
@@ -107,21 +108,42 @@ class UnitSummary: View() {
         tblSummary.columnResizePolicy = TreeTableSmartResize.POLICY
         colName.remainingWidth()
 
-        val root = TreeItem(SummaryItem(Category.MISC_EQUIPMENT))
         val map = model.mountList.map{TreeItem(SummaryItem(it))}.groupBy{it.value.category}.toMap()
-        Category.values().forEach {
-            val item = TreeItem(SummaryItem(it))
-            if (map.containsKey(it)) {
-                item.children.setAll(map[it])
+        // Only display components that occupy slots or take up weight
+        val mountPredicate = {item: TreeItem<SummaryItem> -> item.value.slotProperty.value + item.value.weightProperty.value > 0.0}
+        // Display categories appropriate to the unit type
+        val categoryPredicate = {item: TreeItem<SummaryItem> -> model.unitType in item.value.category.unitTypes}
+        val categoryNodes = Category.values().map{TreeItem(SummaryItem(it))}.toList().observable()
+        categoryNodes.forEach {item ->
+            val children = FXCollections.observableArrayList<TreeItem<SummaryItem>> {
+                arrayOf(it.value.slotProperty, it.value.weightProperty)}
+            if (map.containsKey(item.value.category)) {
+                children.setAll(map[item.value.category])
             }
+            val filteredMounts = SortedFilteredList(children)
+            filteredMounts.predicate = mountPredicate
+            item.children.setAll(filteredMounts)
+            children.onChange {
+                filteredMounts.refilter()
+                item.children.setAll(filteredMounts.filteredItems)
+            }
+
             item.value.slotProperty.bind(integerBinding(item.children) {
                 map{it.value.slotProperty.value}.sum()
             })
             item.value.weightProperty.bind(doubleBinding(item.children) {
                 map{it.value.weightProperty.value}.sum()
             })
-            root.children.add(item)
         }
+        val sortedCategories = SortedFilteredList(categoryNodes)
+        sortedCategories.predicate = categoryPredicate
+        val root = TreeItem(SummaryItem(Category.MISC_EQUIPMENT))
+        root.children.setAll(sortedCategories)
+        model.unitTypeProperty.onChange {
+            sortedCategories.refilter()
+            root.children.setAll(sortedCategories)
+        }
+
         tblSummary.root = root
         tblSummary.isShowRoot = false
 

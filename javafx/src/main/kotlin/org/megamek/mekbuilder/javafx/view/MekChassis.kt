@@ -20,6 +20,7 @@ package org.megamek.mekbuilder.javafx.view
 
 import javafx.beans.InvalidationListener
 import javafx.beans.Observable
+import javafx.beans.property.Property
 import javafx.beans.property.SimpleListProperty
 import javafx.scene.control.*
 import javafx.scene.layout.AnchorPane
@@ -183,9 +184,26 @@ class MekChassis: View(), InvalidationListener {
         allCockpits.invalidate()
         allGyros.invalidate()
         allMyomer.invalidate()
-        if (model.internalStructureProperty.value !in cbStructure.items
-                && cbStructure.items.isNotEmpty()) {
-            cbStructure.selectionModel.select(cbStructure.items.first())
+        checkComboBoxSelection(model.internalStructureProperty, cbStructure)
+        checkComboBoxSelection(model.engineTypeProperty, cbEngine)
+        checkComboBoxSelection(model.gyroProperty, cbGyro)
+        checkComboBoxSelection(model.cockpitProperty, cbCockpit)
+        checkComboBoxSelection(model.myomerProperty, cbMyomer)
+    }
+
+    /**
+     * Checks whether the current item is still in the relevant combo box. Tries to match the
+     * short name, so switching between IS and Clan will select the equivalent in the new tech base.
+     * If there isn't one, selects the first in the list.
+     *
+     * @param prop The model property
+     */
+    private fun <T: Component> checkComboBoxSelection(prop: Property<out Component>, cb: ComboBox<T>) {
+        if (prop.value !in cb.items) {
+            val c = cb.items.firstOrNull {
+                it.shortName == prop.value?.shortName
+            }
+            cb.selectionModel.select(c ?: cb.items.first())
         }
     }
 }

@@ -47,12 +47,13 @@ public class MVFEngine extends Component {
         return weightFreeHeatSinks;
     }
 
-    public double getWeight(UnitBuild unit) {
-        if ((unit.getUnitType().equals(UnitType.PROTOMEK)
-                && unit.getEngine().getEngineRating() < 40)) {
+    @Override
+    public double calcWeight(UnitBuild unit, double size) {
+        if (unit.usesKilogramStandard()
+                && (unit.getEngine().getEngineRating() < 40)) {
             return unit.getEngine().getEngineRating() * 0.025;
         } else {
-            return Round.round(ENGINE_WEIGHTS[(int) Math.ceil(unit.getEngine().getEngineRating() / 5)]
+            return Round.round(ENGINE_WEIGHTS[unit.getEngine().getEngineRating() / 5]
                     * getWeightFactor(), unit);
         }
     }
