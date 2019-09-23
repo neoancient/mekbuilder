@@ -151,16 +151,15 @@ class UniqueComponentTableView(val filter: (Component) -> Boolean): View() {
                 if (it) {
                     model.unitModel.addEquipment(component, sizeProperty.value)
                 } else {
-                    val mount = model.mountList.firstOrNull{m -> m.component == component}
-                    if (mount != null) {
-                        model.unitModel.removeEquipment(mount)
+                    val m = model.mountList.firstOrNull{ m -> m.component == component}
+                    if (m != null) {
+                        model.unitModel.removeEquipment(m)
                     }
                 }
             }
             sizeProperty.onChange {
-                val mount = model.mountList.firstOrNull{m -> m.component == component}
-                mount?.size = it
-                model.mountList.invalidate()
+                val m = model.mountList.firstOrNull{ m -> m.component == component}
+                m?.size = it
             }
             allowedProperty.bind(booleanBinding(model.mountListProperty, model.baseOptionProperty, techFilter) {
                 model.unit.allowed(component) && model.unit.compatibleWithInstalled(component)
