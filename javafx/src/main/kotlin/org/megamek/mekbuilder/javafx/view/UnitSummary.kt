@@ -53,8 +53,6 @@ enum class Category(val unitTypes: Set<UnitType> = EnumSet.allOf(UnitType::class
     QUARTERS  (EnumSet.of(UnitType.SUPPORT_VEHICLE, UnitType.SMALL_CRAFT, UnitType.DROPSHIP,
             UnitType.JUMPSHIP, UnitType.WARSHIP, UnitType.SPACE_STATION));
 
-    fun displayName() = name
-
     companion object {
         fun of(component: Component) = when (component.type) {
             ComponentType.ARMOR -> ARMOR
@@ -174,7 +172,7 @@ class UnitSummary: View() {
 
         constructor(mount: MountModel): this(Category.of(mount.component), mount)
 
-        val nameProperty = SimpleStringProperty(category.displayName())
+        val nameProperty = SimpleStringProperty(messages["category.${category.name}"])
         val slotProperty = SimpleIntegerProperty()
         val weightProperty = SimpleDoubleProperty()
 
