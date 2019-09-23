@@ -174,16 +174,15 @@ class UnitSummary: View() {
 
         constructor(mount: MountModel): this(Category.of(mount.component), mount)
 
-        val nameProperty = SimpleStringProperty(if (mount == null) {
-            category.displayName()
-        } else {
-            mount.component.fullName
-        })
+        val nameProperty = SimpleStringProperty(category.displayName())
         val slotProperty = SimpleIntegerProperty()
         val weightProperty = SimpleDoubleProperty()
 
         init {
             if (mount != null) {
+                nameProperty.bind(stringBinding(mount.componentProperty) {
+                    value.fullName
+                })
                 slotProperty.bind(mount.slots)
                 weightProperty.bind(mount.weight)
             }
