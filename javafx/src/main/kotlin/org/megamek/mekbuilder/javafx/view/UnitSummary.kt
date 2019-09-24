@@ -21,6 +21,7 @@ package org.megamek.mekbuilder.javafx.view
 import javafx.beans.property.*
 import javafx.collections.FXCollections
 import javafx.collections.ListChangeListener
+import javafx.collections.ObservableList
 import javafx.scene.control.Label
 import javafx.scene.control.TreeItem
 import javafx.scene.control.TreeTableColumn
@@ -94,7 +95,8 @@ class UnitSummary: View() {
     internal val colSlots: TreeTableColumn<SummaryItem, Number> by fxid()
     internal val colWeight: TreeTableColumn<SummaryItem, Number> by fxid()
 
-    private val categoryMap = Category.values().map{Pair(it, TreeItem(SummaryItem(it)))}.toMap()
+    private val categoryNodes = Category.values().map{Pair(it, TreeItem(SummaryItem(it)))}.toMap()
+    private val categoryChildLists = HashMap<Category, ObservableList<TreeItem<SummaryItem>>>()
 
     init {
         lblUnitName.textProperty().bind(stringBinding(model.chassisNameProperty, model.modelNameProperty) {
@@ -112,7 +114,7 @@ class UnitSummary: View() {
         val mountPredicate = {item: TreeItem<SummaryItem> -> item.value.slotProperty.value + item.value.weightProperty.value > 0.0}
         // Display categories appropriate to the unit type
         val categoryPredicate = {item: TreeItem<SummaryItem> -> model.unitType in item.value.category.unitTypes}
-        categoryMap.values.forEach {item ->
+        categoryNodes.values.forEach { item ->
             if (item.value.category == Category.TOTAL) {
                 item.value.slotProperty.bind(integerBinding(model.mountList) {
                     map{it.slots.value}.sum()
@@ -130,6 +132,7 @@ class UnitSummary: View() {
                 val filteredMounts = SortedFilteredList(children)
                 filteredMounts.predicate = mountPredicate
                 item.children.setAll(filteredMounts)
+                categoryChildLists[item.value.category] = filteredMounts
                 children.onChange {
                     filteredMounts.refilter()
                     item.children.setAll(filteredMounts.filteredItems)
@@ -143,7 +146,7 @@ class UnitSummary: View() {
                 })
             }
         }
-        val sortedCategories = SortedFilteredList(categoryMap.values.toList().observable())
+        val sortedCategories = SortedFilteredList(categoryNodes.values.toList().observable())
         sortedCategories.predicate = categoryPredicate
         val root = TreeItem(SummaryItem(Category.MISC_EQUIPMENT))
         root.children.setAll(sortedCategories)
@@ -163,15 +166,15 @@ class UnitSummary: View() {
             while (it.next()) {
                 if (it.wasRemoved()) {
                     it.removed.forEach {
-                        val node = categoryMap[Category.of(it.component)]
-                        node?.children?.remove(node.children.find { item ->
-                            item.value.mount == it
-                        })
+                        val cat = Category.of(it.component)
+                        val item = categoryChildLists[cat]?.find {item -> item.value.mount == it}
+                        categoryChildLists[cat]?.remove(item)
+                        categoryNodes[cat]?.children?.setAll(categoryChildLists[cat])
                     }
                 }
                 if (it.wasAdded()) {
                     it.addedSubList.forEach {
-                        val children = categoryMap[Category.of(it.component)]?.children
+                        val children = categoryChildLists[Category.of(it.component)]
                         if (children?.any{item -> item.value.mount == it} == false) {
                             children.add(TreeItem(SummaryItem(it)))
                         }
