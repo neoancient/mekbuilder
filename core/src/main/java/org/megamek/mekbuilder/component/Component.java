@@ -47,6 +47,7 @@ public class Component implements ITechDelegator {
     private double weightFactor = 0.0;
     private double weightAddend = 0.0;
     private CalcMethod weightCalc = CalcMethod.BASIC;
+    private RoundWeight roundWeight = RoundWeight.STANDARD;
     private double costFactor = 0.0;
     private double costAddend = 0.0;
     private CalcMethod costCalc = CalcMethod.BASIC;
@@ -165,7 +166,8 @@ public class Component implements ITechDelegator {
      * @return The combined weight of the components
      */
     double calcWeight(UnitBuild unit, double size) {
-       return (weightCalc.calcValue(this, unit, weightFactor) + weightAddend) * size;
+       return roundWeight.round((weightCalc.calcValue(this, unit, weightFactor) + weightAddend) * size,
+               unit);
     }
 
     /**

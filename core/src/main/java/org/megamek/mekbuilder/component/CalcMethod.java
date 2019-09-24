@@ -77,13 +77,13 @@ public enum CalcMethod {
      * @param component The component
      * @param unit      The unit it's mounted on
      * @param factor    The component's factor for the type of value being calculated
-     * @return          The result of the calulation
+     * @return          The result of the calculation
      */
     public double calcValue(Component component, UnitBuild unit, double factor) {
         return calculation.calcValue(component, unit, factor);
     }
 
     public static CalcMethod fromAbbrev(String abbrev) {
-        return Arrays.stream(CalcMethod.values()).filter(v -> v.equals(abbrev)).findFirst().orElse(null);
+        return Arrays.stream(CalcMethod.values()).filter(v -> v.abbrev.equals(abbrev)).findFirst().orElse(null);
     }
 }
