@@ -33,6 +33,7 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
     init {
         configurationProperty.onChange {
             baseOptionProperty.refresh()
+            refreshMountCalculations()
         }
         engineRatingProperty.bind(integerBinding(mekBuild,
                 baseWalkMPProperty, tonnageProperty, configurationProperty) {

@@ -210,7 +210,11 @@ public class Component implements ITechDelegator {
      * @return The number of slots required by the components
      */
     int calcSlots(UnitBuild unit, double size) {
-        return (int) Math.ceil((slotCalc.calcValue(this, unit, slots) + slotAddend) * size);
+        double s = slotCalc.calcValue(this, unit, slots) + slotAddend;
+        if (hasFlag(ComponentSwitch.VARIABLE_SLOTS)) {
+            s *= size;
+        }
+        return (int) Math.ceil(s);
     }
 
     /**

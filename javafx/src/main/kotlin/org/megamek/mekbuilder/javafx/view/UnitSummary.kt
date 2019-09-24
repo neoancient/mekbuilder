@@ -161,20 +161,20 @@ class UnitSummary: View() {
 
         model.mountList.addListener(ListChangeListener {
             while (it.next()) {
-                if (it.wasAdded()) {
-                    it.addedSubList.forEach {
-                        val children = categoryMap[Category.of(it.component)]?.children
-                        if (children?.any{item -> item.value.mount == it} == false) {
-                            children.add(TreeItem(SummaryItem(it)))
-                        }
-                    }
-                }
                 if (it.wasRemoved()) {
                     it.removed.forEach {
                         val node = categoryMap[Category.of(it.component)]
                         node?.children?.remove(node.children.find { item ->
                             item.value.mount == it
                         })
+                    }
+                }
+                if (it.wasAdded()) {
+                    it.addedSubList.forEach {
+                        val children = categoryMap[Category.of(it.component)]?.children
+                        if (children?.any{item -> item.value.mount == it} == false) {
+                            children.add(TreeItem(SummaryItem(it)))
+                        }
                     }
                 }
             }

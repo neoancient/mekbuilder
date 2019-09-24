@@ -62,6 +62,8 @@ public enum ComponentSwitch {
      * such as cargo bays or mechanical jump boosters. First value is the step size.
      * If a second or third value is provided they are the minimum and maximum size values, respectively. */
     VARIABLE (1.0, DataParsers.doubleArrayParser),
+    /** The computed number of slots is multiplied by the size (for variable-sized components) */
+    VARIABLE_SLOTS,
     /** Can be linked to another component that has one of the given switches (Artemis, PPC Capacitor, etc) */
     LINKABLE (null, (String val, String sep) -> Arrays.stream(val.split(sep))
             .filter(s -> !s.isEmpty())
