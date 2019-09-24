@@ -36,6 +36,7 @@ import tornadofx.*
 import java.util.*
 
 enum class Category(val unitTypes: Set<UnitType> = EnumSet.allOf(UnitType::class.java)) {
+    TOTAL,
     ENGINE,
     STRUCTURE,
     CONTROLS,
@@ -113,25 +114,35 @@ class UnitSummary: View() {
         val categoryPredicate = {item: TreeItem<SummaryItem> -> model.unitType in item.value.category.unitTypes}
         val categoryNodes = Category.values().map{TreeItem(SummaryItem(it))}.toList().observable()
         categoryNodes.forEach {item ->
-            val children = FXCollections.observableArrayList<TreeItem<SummaryItem>> {
-                arrayOf(it.value.slotProperty, it.value.weightProperty)}
-            if (map.containsKey(item.value.category)) {
-                children.setAll(map[item.value.category])
-            }
-            val filteredMounts = SortedFilteredList(children)
-            filteredMounts.predicate = mountPredicate
-            item.children.setAll(filteredMounts)
-            children.onChange {
-                filteredMounts.refilter()
-                item.children.setAll(filteredMounts.filteredItems)
-            }
+            if (item.value.category == Category.TOTAL) {
+                item.value.slotProperty.bind(integerBinding(model.mountList) {
+                    map{it.slots.value}.sum()
+                })
+                item.value.weightProperty.bind(doubleBinding(model.mountList) {
+                    map{it.weight.value}.sum()
+                })
+            } else {
+                val children = FXCollections.observableArrayList<TreeItem<SummaryItem>> {
+                    arrayOf(it.value.slotProperty, it.value.weightProperty)
+                }
+                if (map.containsKey(item.value.category)) {
+                    children.setAll(map[item.value.category])
+                }
+                val filteredMounts = SortedFilteredList(children)
+                filteredMounts.predicate = mountPredicate
+                item.children.setAll(filteredMounts)
+                children.onChange {
+                    filteredMounts.refilter()
+                    item.children.setAll(filteredMounts.filteredItems)
+                }
 
-            item.value.slotProperty.bind(integerBinding(item.children) {
-                map{it.value.slotProperty.value}.sum()
-            })
-            item.value.weightProperty.bind(doubleBinding(item.children) {
-                map{it.value.weightProperty.value}.sum()
-            })
+                item.value.slotProperty.bind(integerBinding(item.children) {
+                    map { it.value.slotProperty.value }.sum()
+                })
+                item.value.weightProperty.bind(doubleBinding(item.children) {
+                    map { it.value.weightProperty.value }.sum()
+                })
+            }
         }
         val sortedCategories = SortedFilteredList(categoryNodes)
         sortedCategories.predicate = categoryPredicate
