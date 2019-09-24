@@ -94,7 +94,7 @@ class UnitSummary: View() {
     internal val colSlots: TreeTableColumn<SummaryItem, Number> by fxid()
     internal val colWeight: TreeTableColumn<SummaryItem, Number> by fxid()
 
-    private val categoryMap = HashMap<Category, TreeItem<SummaryItem>>()
+    private val categoryMap = Category.values().map{Pair(it, TreeItem(SummaryItem(it)))}.toMap()
 
     init {
         lblUnitName.textProperty().bind(stringBinding(model.chassisNameProperty, model.modelNameProperty) {
@@ -112,8 +112,7 @@ class UnitSummary: View() {
         val mountPredicate = {item: TreeItem<SummaryItem> -> item.value.slotProperty.value + item.value.weightProperty.value > 0.0}
         // Display categories appropriate to the unit type
         val categoryPredicate = {item: TreeItem<SummaryItem> -> model.unitType in item.value.category.unitTypes}
-        val categoryNodes = Category.values().map{TreeItem(SummaryItem(it))}.toList().observable()
-        categoryNodes.forEach {item ->
+        categoryMap.values.forEach {item ->
             if (item.value.category == Category.TOTAL) {
                 item.value.slotProperty.bind(integerBinding(model.mountList) {
                     map{it.slots.value}.sum()
@@ -144,7 +143,7 @@ class UnitSummary: View() {
                 })
             }
         }
-        val sortedCategories = SortedFilteredList(categoryNodes)
+        val sortedCategories = SortedFilteredList(categoryMap.values.toList().observable())
         sortedCategories.predicate = categoryPredicate
         val root = TreeItem(SummaryItem(Category.MISC_EQUIPMENT))
         root.children.setAll(sortedCategories)
@@ -164,7 +163,10 @@ class UnitSummary: View() {
             while (it.next()) {
                 if (it.wasAdded()) {
                     it.addedSubList.forEach {
-                        categoryMap[Category.of(it.component)]?.children?.add(TreeItem(SummaryItem(it)))
+                        val children = categoryMap[Category.of(it.component)]?.children
+                        if (children?.any{item -> item.value.mount == it} == false) {
+                            children.add(TreeItem(SummaryItem(it)))
+                        }
                     }
                 }
                 if (it.wasRemoved()) {

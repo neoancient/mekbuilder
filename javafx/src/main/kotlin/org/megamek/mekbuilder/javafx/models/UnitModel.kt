@@ -160,6 +160,13 @@ abstract class UnitModel (unitBuild: UnitBuild) {
                 it.cost.invalidate()
             }
         }
+        walkMPProperty.onChange {
+            mountList.forEach {
+                it.weight.invalidate()
+                it.slots.invalidate()
+                it.cost.invalidate()
+            }
+        }
     }
 
     fun getSecondaryMotive() = mountList.first{it.component.type == ComponentType.SECONDARY_MOTIVE_SYSTEM}
