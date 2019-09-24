@@ -76,6 +76,7 @@ class MekConfigPanel: View() {
         SimpleComboBoxCellFactory.setConverter(cbSubType) {
             messages["subType.${it.subType}"]
         }
+        cbSubType.selectionModel.select(model.mekConfiguration)
         cbSubType.selectionModel.selectedItemProperty().onChange {
             if (it != null) {
                 model.mekConfiguration = it
