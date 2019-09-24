@@ -88,7 +88,13 @@ class UniqueComponentTableView(val filter: (Component) -> Boolean): View() {
                     }
                     it.wasAdded() -> addNewMounts(it.addedSubList)
                     it.wasRemoved() -> removeMounts(it.removed)
-                    it.wasUpdated() -> updateMounts(it.list.subList(it.from, it.to))
+                    it.wasUpdated() -> for (i in it.from until it.to) {
+                        val entry = allComponents.items.firstOrNull {
+                            item -> item.component == it.list[i].component
+                        }
+                        entry?.installedProperty?.value = entry != null
+                        entry?.sizeProperty?.value = it.list[i].size
+                    }
                     // We don't care about permutations
                 }
             }
@@ -96,7 +102,7 @@ class UniqueComponentTableView(val filter: (Component) -> Boolean): View() {
         // Replacing the list does not trigger a list change event.
         model.unitProperty.onChange {
             filterComponents()
-            updateMounts(model.mountList)
+            updateMounts()
         }
         techFilter.addListener{filterComponents()}
         filterComponents()
@@ -126,11 +132,9 @@ class UniqueComponentTableView(val filter: (Component) -> Boolean): View() {
         }
     }
 
-    private fun updateMounts(list: List<MountModel>) {
-        // Avoid concurrent modification
-        val copy = list.toList()
+    private fun updateMounts() {
         allComponents.items.forEach {
-            val mount = copy.firstOrNull{m -> m.component == it.component}
+            val mount = model.mountList.firstOrNull{m -> m.component == it.component}
             it.installedProperty.value = mount != null
             it.sizeProperty.value = mount?.size ?: 1.0
         }
