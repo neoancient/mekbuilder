@@ -52,6 +52,10 @@ public class SecondaryMotiveSystem extends Component {
 
     @Override
     public double calcWeight(UnitBuild unit, double size) {
+        return weightPerItem(unit) * size;
+    }
+
+    private double weightPerItem(UnitBuild unit) {
         if (unit.getUnitType().equals(UnitType.PROTOMEK)) {
             return unit.getTonnage() > 5 ? getWeightFactor() : getWeightFactor() * 0.5;
         } else if (unit.getUnitType().equals(UnitType.BATTLE_ARMOR)) {

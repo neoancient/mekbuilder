@@ -58,6 +58,11 @@ public class CompoundMount extends DistributedMount {
     }
 
     @Override
+    public int getComponentSlots() {
+        return (int) Math.ceil(getSlotsPerItem() * count);
+    }
+
+    @Override
     public double getComponentCost() {
         return getComponent().calcCost(getUnit(), count);
     }
