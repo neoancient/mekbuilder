@@ -151,7 +151,7 @@
   "costFactor" : 375000.0,
   "costAddend" : 0.0,
   "costCalc" : "BASIC",
-  "slots" : 2.0,
+  "slots" : 6.0,
   "slotAddend" : 0.0,
   "slotCalc" : "BASIC",
   "bvFactor" : 0.0,
@@ -238,7 +238,8 @@
     "SUPERHEAVY_MEK" : false,
     "LAM" : false,
     "PRIMITIVE" : false,
-    "TRIPOD" : false
+    "TRIPOD" : false,
+    "QUADVEE" : false
   },
   "techAdvancement" : "ALL|D|XXFF|3053(FS/LC),~3080(LC),3100,-,-|3055(CSJ),~3080,3100,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -360,7 +361,8 @@
     "SUPERHEAVY_MEK" : false,
     "LAM" : false,
     "PRIMITIVE" : false,
-    "TRIPOD" : false
+    "TRIPOD" : false,
+    "QUADVEE" : false
   },
   "techAdvancement" : "IS|E|XXFX|3052(FS/LC),-,-,3055,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -382,7 +384,7 @@
   "isDefault" : true,
   "internalName" : "CF Cockpit",
   "mmName" : "",
-  "fullName" : "Convention Fighter Cockpit",
+  "fullName" : "Conventional Fighter Cockpit",
   "shortName" : "Standard",
   "weightFactor" : 0.1,
   "weightAddend" : 0.0,
@@ -430,7 +432,8 @@
   "switches" : {
     "SUPERHEAVY_MEK" : false,
     "PRIMITIVE" : false,
-    "TRIPOD" : false
+    "TRIPOD" : false,
+    "QUADVEE" : false
   },
   "techAdvancement" : "ALL|D|CCCC|~2468(TH/TH),2470(TH/TH),2487,-,-|~2468,2470,2487,-,-|INTRO",
   "permittedLocations" : [ ],
@@ -568,7 +571,8 @@
   "switches" : {
     "SUPERHEAVY_MEK" : false,
     "PRIMITIVE" : false,
-    "TRIPOD" : false
+    "TRIPOD" : false,
+    "QUADVEE" : false
   },
   "techAdvancement" : "ALL|E|XXED|3060(FS),3067(FS),3080,-,-|-,3080(CJF),3080,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -786,7 +790,8 @@
   "switches" : {
     "SUPERHEAVY_MEK" : false,
     "PRIMITIVE" : false,
-    "TRIPOD" : false
+    "TRIPOD" : false,
+    "QUADVEE" : false
   },
   "techAdvancement" : "CLAN|F|XXFF|-,-,-,-,-|~3083(CHH),-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],

@@ -203,7 +203,7 @@ class MekChassis: View(), InvalidationListener {
             val c = cb.items.firstOrNull {
                 it.shortName == prop.value?.shortName
             }
-            cb.selectionModel.select(c ?: cb.items.first())
+            cb.selectionModel.select(c ?: cb.items.firstOrNull())
         }
     }
 }
