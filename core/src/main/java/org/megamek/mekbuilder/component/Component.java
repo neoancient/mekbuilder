@@ -44,6 +44,7 @@ public class Component implements ITechDelegator {
     private String mmName = "?";
     private String fullName = "?";
     private String shortName = "?";
+    private String nameFormat = null;
     private double weightFactor = 0.0;
     private double weightAddend = 0.0;
     private CalcMethod weightCalc = CalcMethod.BASIC;
@@ -109,6 +110,21 @@ public class Component implements ITechDelegator {
 
     public String getShortName() {
         return shortName;
+    }
+
+    /**
+     * Formats a display name that incorporates the size of variable-sized components.
+     * If no name format is provided, returns fullName.
+     *
+     * @param size The size of the component mount.
+     * @return     The display name
+     */
+    String displayName(double size) {
+        if (nameFormat == null) {
+            return fullName;
+        } else {
+            return String.format(nameFormat, size);
+        }
     }
 
     /**

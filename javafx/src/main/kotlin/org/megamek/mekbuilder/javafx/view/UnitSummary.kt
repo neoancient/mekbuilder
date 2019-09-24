@@ -191,8 +191,8 @@ class UnitSummary: View() {
 
         init {
             if (mount != null) {
-                nameProperty.bind(stringBinding(mount.componentProperty) {
-                    value.fullName
+                nameProperty.bind(stringBinding(mount.componentProperty, mount.sizeProperty) {
+                    mount.mount.displayName()
                 })
                 slotProperty.bind(mount.slots)
                 weightProperty.bind(mount.weight)

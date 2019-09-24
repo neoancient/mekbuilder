@@ -1636,7 +1636,7 @@
   "mmName" : "Ladder (20m)",
   "fullName" : "Ladder",
   "shortName" : "Ladder",
-  "sizeFormat" : "Ladder (%dm)",
+  "nameFormat" : "Ladder (%.0fm)",
   "weightFactor" : 0.1,
   "weightAddend" : 0.0,
   "weightCalc" : "BASIC",

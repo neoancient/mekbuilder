@@ -99,6 +99,13 @@ public class Mount {
         setComponent(ComponentLibrary.getInstance().getComponent(key));
     }
 
+    /**
+     * @return The display name of the mounted component
+     */
+    public String displayName() {
+        return component.displayName(size);
+    }
+
     public ModuleType getModuleType() {
         return moduleType;
     }

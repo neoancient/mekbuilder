@@ -220,7 +220,7 @@
   "mmName" : "ISMechanicalJumpBooster,CLMechanicalJumpBooster",
   "fullName" : "Mech Mechanical Jump Booster",
   "shortName" : "Mechanical Jump Booster",
-  "sizeFormat" : "Mechanical Jump Booster (%d MP)",
+  "nameFormat" : "Mechanical Jump Booster (%.0f MP)",
   "weightFactor" : 0.05,
   "weightAddend" : 0.0,
   "weightCalc" : "TOTAL_TONNAGE",
