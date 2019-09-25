@@ -115,6 +115,8 @@ class UniqueComponentTableView(val filter: (Component) -> Boolean): View() {
         allComponents.filteredItems.forEach {
             it.nameProperty.value = componentLookup[it.component]
         }
+        allComponents.items.filter {!allComponents.predicate.invoke(it)}
+                .forEach{it.installedProperty.value = false}
     }
 
     private fun addNewMounts(list: List<MountModel>) {
