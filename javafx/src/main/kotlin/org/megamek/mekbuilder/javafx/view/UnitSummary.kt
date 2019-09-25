@@ -87,8 +87,12 @@ class UnitSummary: View() {
 
     internal val lblUnitName: Label by fxid()
     internal val lblUnitDescription: Label by fxid()
-    internal val lblWeight: Label by fxid()
-    internal val lblHeatGenerated: Label by fxid()
+    internal val lblMaxWeight: Label by fxid()
+    internal val lblMaxSlots: Label by fxid()
+    internal val lblPodSpace: Label by fxid()
+    internal val lblPodSpaceText: Label by fxid()
+    internal val lblHeatProfile: Label by fxid()
+    internal val lblMaxHeat: Label by fxid()
     internal val lblHeatDissipation: Label by fxid()
     internal val tblSummary: TreeTableView<SummaryItem> by fxid()
     internal val colName: TreeTableColumn<SummaryItem, String> by fxid()
@@ -102,7 +106,7 @@ class UnitSummary: View() {
         lblUnitName.textProperty().bind(stringBinding(model.chassisNameProperty, model.modelNameProperty) {
             "${model.chassisName} ${model.modelName}".trim()
         })
-        lblWeight.bind(model.tonnageProperty.stringBinding {
+        lblMaxWeight.bind(model.tonnageProperty.stringBinding {
             it.toString()
         })
 

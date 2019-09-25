@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
-
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="bordered-titled-border" stylesheets="@borderedtitled.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -18,47 +18,66 @@
             <Insets left="5.0" right="5.0" />
          </padding>
       </Label>
-      <GridPane hgap="5.0" layoutX="10.0" layoutY="10.0" vgap="5.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="10.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" />
-          <RowConstraints minHeight="10.0" />
-          <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-        </rowConstraints>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="10.0">
          <children>
-            <Label fx:id="lblUnitName" text="Unit Name" />
-            <Label fx:id="lblUnitDescription" text="Unit Description" GridPane.columnIndex="1" />
-            <TreeTableView fx:id="tblSummary" prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2147483647" GridPane.rowIndex="2">
+            <HBox spacing="20.0">
+               <children>
+                  <Label fx:id="lblUnitName" text="Unit Name" />
+                  <Label fx:id="lblUnitDescription" text="Unit Description" />
+               </children>
+            </HBox>
+            <HBox spacing="5.0">
+               <children>
+                  <GridPane hgap="5.0" vgap="5.0" HBox.hgrow="SOMETIMES">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" />
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="%lblMaxWeight.text" />
+                        <Label text="%lblMaxSlots.text" GridPane.rowIndex="1" />
+                        <Label fx:id="lblMaxWeight" text="0" GridPane.columnIndex="1" />
+                        <Label fx:id="lblMaxSlots" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="lblPodSpaceText" text="%lblPodSpace.text" GridPane.rowIndex="2" />
+                        <Label fx:id="lblPodSpace" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <GridPane hgap="5.0" vgap="5.0" HBox.hgrow="SOMETIMES">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints minHeight="10.0" />
+                        <RowConstraints minHeight="10.0" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label text="%lblMaxHeat.text" GridPane.rowIndex="2" />
+                        <Label text="%lblHeatHeader.text" />
+                        <Label text="%lblHeatProfile.text" GridPane.rowIndex="1" />
+                        <Label fx:id="lblHeatProfile" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="lblMaxHeat" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="%lblHeatDissipation.text" GridPane.rowIndex="3" />
+                        <Label fx:id="lblHeatDissipation" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+            <TreeTableView fx:id="tblSummary" prefHeight="200.0" prefWidth="200.0">
               <columns>
                 <TreeTableColumn fx:id="colName" editable="false" prefWidth="431.0" sortable="false" text="%colName.title" />
                 <TreeTableColumn fx:id="colSlots" editable="false" prefWidth="87.0" sortable="false" text="%colSlots.title" />
                   <TreeTableColumn fx:id="colWeight" editable="false" prefWidth="77.0" sortable="false" text="%colWeight.title" />
               </columns>
             </TreeTableView>
-            <HBox alignment="CENTER_RIGHT" spacing="5.0" GridPane.columnIndex="2">
-               <children>
-                  <Label text="%lblWeight.text" />
-                  <Label fx:id="lblWeight" text="Tonnage" />
-               </children>
-            </HBox>
-            <Label text="%lblHeatProfile.text" GridPane.rowIndex="1" />
-            <HBox alignment="CENTER_RIGHT" spacing="5.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
-               <children>
-                  <Label text="%lblHeatDissipation.text" />
-                  <Label fx:id="lblHeatDissipation" text="0" />
-               </children>
-            </HBox>
-            <HBox alignment="CENTER_LEFT" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
-               <children>
-                  <Label text="%lblHeatGenerated.text" />
-                  <Label fx:id="lblHeatGenerated" text="0" />
-               </children>
-            </HBox>
          </children>
-      </GridPane>
+      </VBox>
    </children>
 </AnchorPane>
