@@ -100,7 +100,35 @@ class UnitSummary: View() {
     internal val colWeight: TreeTableColumn<SummaryItem, Number> by fxid()
 
     private val categoryNodes = Category.values().map{Pair(it, TreeItem(SummaryItem(it)))}.toMap()
-    private val categoryChildLists = HashMap<Category, ObservableList<TreeItem<SummaryItem>>>()
+    private val categoryChildLists = HashMap<Category, SortedFilteredList<TreeItem<SummaryItem>>>()
+    private val mountChangeListener = ListChangeListener<MountModel> {
+        while (it.next()) {
+            if (it.wasRemoved()) {
+                it.removed.forEach {
+                    val cat = Category.of(it.component)
+                    val item = categoryChildLists[cat]?.find {item -> item.value.mount == it}
+                    categoryChildLists[cat]?.remove(item)
+                    categoryNodes[cat]?.children?.setAll(categoryChildLists[cat])
+                }
+            }
+            if (it.wasAdded()) {
+                it.addedSubList.forEach {
+                    val children = categoryChildLists[Category.of(it.component)]
+                    if (children?.any{item -> item.value.mount == it} == false) {
+                        children.add(TreeItem(SummaryItem(it)))
+                    }
+                }
+            }
+            if (it.wasUpdated()) {
+                for(i in it.from until it.to) {
+                    val cat = Category.of(it.list[i].component)
+                    categoryChildLists[cat]?.refilter()
+                    categoryNodes[cat]?.children?.setAll(categoryChildLists[cat]?.filteredItems)
+                }
+            }
+        }
+    }
+
 
     init {
         lblUnitName.textProperty().bind(stringBinding(model.chassisNameProperty, model.modelNameProperty) {
@@ -113,7 +141,25 @@ class UnitSummary: View() {
         tblSummary.columnResizePolicy = TreeTableSmartResize.POLICY
         colName.remainingWidth()
 
-        val map = model.mountList.map{TreeItem(SummaryItem(it))}.groupBy{it.value.category}.toMap()
+        refreshTable()
+
+        model.addMountListener(mountChangeListener)
+        model.unitModelProperty.onChange {
+            tblSummary.root = refreshTable()
+        }
+
+        tblSummary.root = refreshTable()
+        tblSummary.isShowRoot = false
+
+        colName.cellValueFactory = Callback {it.value.value.nameProperty}
+        colSlots.cellValueFactory = Callback {it.value.value.slotProperty}
+        colWeight.cellValueFactory = Callback {it.value.value.weightProperty}
+    }
+
+    private fun refreshTable(): TreeItem<SummaryItem> {
+        // We need to go directly to the model because when this gets triggered by a change
+        // in the unit the properties have not been rebound yet.
+        val map = model.unitModel.mountList.map{TreeItem(SummaryItem(it))}.groupBy{it.value.category}.toMap()
         // Only display components that occupy slots or take up weight
         val mountPredicate = {item: TreeItem<SummaryItem> -> item.value.slotProperty.value + item.value.weightProperty.value > 0.0}
         // Display categories appropriate to the unit type
@@ -154,38 +200,7 @@ class UnitSummary: View() {
         sortedCategories.predicate = categoryPredicate
         val root = TreeItem(SummaryItem(Category.MISC_EQUIPMENT))
         root.children.setAll(sortedCategories)
-        model.unitTypeProperty.onChange {
-            sortedCategories.refilter()
-            root.children.setAll(sortedCategories)
-        }
-
-        tblSummary.root = root
-        tblSummary.isShowRoot = false
-
-        colName.cellValueFactory = Callback {it.value.value.nameProperty}
-        colSlots.cellValueFactory = Callback {it.value.value.slotProperty}
-        colWeight.cellValueFactory = Callback {it.value.value.weightProperty}
-
-        model.mountList.addListener(ListChangeListener {
-            while (it.next()) {
-                if (it.wasRemoved()) {
-                    it.removed.forEach {
-                        val cat = Category.of(it.component)
-                        val item = categoryChildLists[cat]?.find {item -> item.value.mount == it}
-                        categoryChildLists[cat]?.remove(item)
-                        categoryNodes[cat]?.children?.setAll(categoryChildLists[cat])
-                    }
-                }
-                if (it.wasAdded()) {
-                    it.addedSubList.forEach {
-                        val children = categoryChildLists[Category.of(it.component)]
-                        if (children?.any{item -> item.value.mount == it} == false) {
-                            children.add(TreeItem(SummaryItem(it)))
-                        }
-                    }
-                }
-            }
-        })
+        return root
     }
 
     internal inner class SummaryItem(val category: Category, val mount: MountModel? = null) {

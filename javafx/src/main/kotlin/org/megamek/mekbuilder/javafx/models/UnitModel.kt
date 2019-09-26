@@ -148,13 +148,13 @@ abstract class UnitModel (unitBuild: UnitBuild) {
             }
         }
         baseRunMPProperty.bind(integerBinding(unitBuild, baseWalkMPProperty) {baseRunMP})
-        secondaryMPProperty.onChange {
+        baseSecondaryMPProperty.onChange {
             val mount = getSecondaryMotive()
             mount.slots.invalidate()
             mount.weight.invalidate()
         }
         tonnageProperty.onChange {refreshMountCalculations()}
-        walkMPProperty.onChange {refreshMountCalculations()}
+        baseWalkMPProperty.onChange {refreshMountCalculations()}
     }
 
     fun refreshMountCalculations() {

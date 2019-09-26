@@ -4,6 +4,7 @@ import javafx.beans.binding.Bindings
 import javafx.beans.property.SimpleBooleanProperty
 import javafx.beans.property.SimpleDoubleProperty
 import javafx.beans.property.SimpleStringProperty
+import javafx.collections.ListChangeListener
 import javafx.scene.control.*
 import javafx.scene.paint.Color
 import javafx.util.Callback
@@ -79,7 +80,7 @@ class UniqueComponentTableView(val filter: (Component) -> Boolean): View() {
             map{it.component}.toList().observable()
         })
         model.baseOptionProperty.onChange {filterComponents()}
-        model.mountList.onChange {
+        model.addMountListener(ListChangeListener {
             while (it.next()) {
                 when {
                     it.wasReplaced() -> {
@@ -98,7 +99,7 @@ class UniqueComponentTableView(val filter: (Component) -> Boolean): View() {
                     // We don't care about permutations
                 }
             }
-        }
+        })
         // Replacing the list does not trigger a list change event.
         model.unitProperty.onChange {
             filterComponents()
@@ -136,7 +137,7 @@ class UniqueComponentTableView(val filter: (Component) -> Boolean): View() {
 
     private fun updateMounts() {
         allComponents.items.forEach {
-            val mount = model.mountList.firstOrNull{m -> m.component == it.component}
+            val mount = model.unitModel.mountList.firstOrNull{m -> m.component == it.component}
             it.installedProperty.value = mount != null
             it.sizeProperty.value = mount?.size ?: 1.0
         }
@@ -155,7 +156,9 @@ class UniqueComponentTableView(val filter: (Component) -> Boolean): View() {
 
             installedProperty.onChange {
                 if (it) {
-                    model.unitModel.addEquipment(component, sizeProperty.value)
+                    if (model.unitModel.mountList.none{m -> m.component == component}) {
+                        model.unitModel.addEquipment(component, sizeProperty.value)
+                    }
                 } else {
                     val m = model.mountList.firstOrNull{ m -> m.component == component}
                     if (m != null) {
@@ -164,11 +167,11 @@ class UniqueComponentTableView(val filter: (Component) -> Boolean): View() {
                 }
             }
             sizeProperty.onChange {
-                val m = model.mountList.firstOrNull{ m -> m.component == component}
+                val m = model.unitModel.mountList.firstOrNull{ m -> m.component == component}
                 m?.size = it
             }
-            allowedProperty.bind(booleanBinding(model.mountListProperty, model.baseOptionProperty, techFilter) {
-                model.unit.allowed(component) && model.unit.compatibleWithInstalled(component)
+            allowedProperty.bind(booleanBinding(model.unitModelProperty, model.mountListProperty, model.baseOptionProperty, techFilter) {
+                model.unit.allowed(component) && model.unitModel.unit.compatibleWithInstalled(component)
             })
             allowedProperty.onChange {
                 if (!it) {

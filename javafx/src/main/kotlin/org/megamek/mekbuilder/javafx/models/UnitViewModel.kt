@@ -19,6 +19,7 @@
 package org.megamek.mekbuilder.javafx.models
 
 import javafx.beans.property.*
+import javafx.collections.ListChangeListener
 import org.megamek.mekbuilder.component.*
 import org.megamek.mekbuilder.component.Component
 import org.megamek.mekbuilder.tech.ConstructionOptionKey
@@ -28,6 +29,7 @@ import org.megamek.mekbuilder.unit.MekBuild
 import org.megamek.mekbuilder.unit.MekConfiguration
 import org.megamek.mekbuilder.unit.UnitWeightClass
 import tornadofx.*
+import java.util.concurrent.CopyOnWriteArrayList
 import kotlin.math.max
 
 /**
@@ -149,5 +151,21 @@ class UnitViewModel(): ViewModel() {
                 newValue.techFilterProperty.bind(techFilterProperty)
         }
         weightClassProperty.bind(objectBinding(unitModel) {weightClass.value})
+    }
+
+    /**
+     * Adds a change listener to the mount list and handles rebinding when the mountList
+     * changes, since the ViewModel rebinding isn't handling ListChangeListeners reliably. Note that
+     * if the listener uses the value of mountList, it should use the one from the underlying model,
+     * since this listener fires when the unitModel is updated, which is before the properties are rebound.
+     *
+     * @param l The listener to be called when {@link #mountList} is invalidated.
+     */
+    fun addMountListener(l: ListChangeListener<MountModel>) {
+        mountList.addListener(l)
+        unitModelProperty.addListener {_, oldV, newV ->
+            oldV.mountList.removeListener(l)
+            newV.mountList.addListener(l)
+        }
     }
 }
