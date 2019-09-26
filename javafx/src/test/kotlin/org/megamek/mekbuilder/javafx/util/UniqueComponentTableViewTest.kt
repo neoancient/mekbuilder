@@ -65,7 +65,7 @@ internal class UniqueComponentTableViewTest: ApplicationTest() {
                 unitModel = MekModel(mek)
             }
 
-            assertTrue(table.items.first { it.component == masc }.installedProperty.value)
+            assertTrue(table.items.first{it.component == masc}.installedProperty.value)
         }
     }
 
@@ -78,7 +78,7 @@ internal class UniqueComponentTableViewTest: ApplicationTest() {
                 unitModel = MekModel(mek)
             }
 
-            assertFalse(table.items.first { it.component.hasFlag(ComponentSwitch.MASC) }.allowedProperty.value)
+            assertFalse(table.items.first{it.component.hasFlag(ComponentSwitch.MASC)}.allowedProperty.value)
         }
     }
 
@@ -111,7 +111,9 @@ internal class UniqueComponentTableViewTest: ApplicationTest() {
                 unitModel = MekModel(mek)
             }
 
-            assertEquals(3.0, table.items.first { it.component == booster }.sizeProperty.value, 0.001)
+            val m = model.mountList.first{it.component == booster}
+            val item = table.items.first{it.component == booster}
+            assertEquals(3.0, table.items.first{it.component == booster}.sizeProperty.value, 0.001)
         }
     }
 }

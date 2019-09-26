@@ -22,7 +22,12 @@ import javafx.application.Platform
 import javafx.scene.Scene
 import javafx.stage.Stage
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.function.Executable
+import org.megamek.mekbuilder.component.ComponentKeys
+import org.megamek.mekbuilder.component.ComponentLibrary
+import org.megamek.mekbuilder.component.SecondaryMotiveSystem
 import org.megamek.mekbuilder.javafx.models.MekModel
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
 import org.megamek.mekbuilder.unit.MekBuild
@@ -43,6 +48,15 @@ internal class UnitSummaryTest: ApplicationTest() {
         model = summary.model
         stage.scene = Scene(summary.root)
         stage.show()
+    }
+
+    @BeforeEach
+    fun resetModel() {
+        Platform.runLater {
+            model.rebind {
+                unitModel = MekModel(MekBuild())
+            }
+        }
     }
 
     @Test
@@ -78,7 +92,7 @@ internal class UnitSummaryTest: ApplicationTest() {
                 unitModel = MekModel(mek)
             }
 
-            assertEquals(55.0, summary.lblWeight.text.toDouble(), 0.001)
+            assertEquals(55.0, summary.lblMaxWeight.text.toDouble(), 0.001)
         }
     }
 
@@ -87,7 +101,78 @@ internal class UnitSummaryTest: ApplicationTest() {
         Platform.runLater {
             model.tonnage = 35.0
 
-            assertEquals(35.0, summary.lblWeight.text.toDouble(), 0.001)
+            assertEquals(35.0, summary.lblMaxWeight.text.toDouble(), 0.001)
+        }
+    }
+
+    @Test
+    fun addMountIncreasesCategoryWeightAndSlots() {
+        Platform.runLater {
+            val engineNode = summary.tblSummary.root.children.find { it.value.category == Category.ENGINE }!!
+            val rows = engineNode.children.size
+            val startSlots = engineNode.value.slotProperty.value
+            val startWeight = engineNode.value.weightProperty.value
+
+            model.unitModel.addEquipment(ComponentLibrary.getInstance().getComponent(ComponentKeys.MASC_IS))
+
+            assertAll(
+                    Executable { assertEquals(rows + 1, engineNode.children.size) },
+                    Executable { assertTrue(engineNode.value.slotProperty.value > startSlots) },
+                    Executable { assertTrue(engineNode.value.weightProperty.value > startWeight) }
+            )
+        }
+    }
+
+    @Test
+    fun removeMountDecreasesCategoryWeightAndSlots() {
+        Platform.runLater {
+            val engineNode = summary.tblSummary.root.children.find { it.value.category == Category.ENGINE }!!
+            model.unitModel.addEquipment(ComponentLibrary.getInstance().getComponent(ComponentKeys.MASC_IS))
+            val rows = engineNode.children.size
+            val startSlots = engineNode.value.slotProperty.value
+            val startWeight = engineNode.value.weightProperty.value
+
+            val mount = model.mountList.find { it.component.internalName == ComponentKeys.MASC_IS }!!
+            model.mountList.remove(mount)
+
+            assertAll(
+                    Executable { assertEquals(rows - 1, engineNode.children.size) },
+                    Executable { assertTrue(engineNode.value.slotProperty.value < startSlots) },
+                    Executable { assertTrue(engineNode.value.weightProperty.value < startWeight) }
+            )
+        }
+    }
+
+    @Test
+    fun hideZeroSlotAndWeightEntries() {
+        Platform.runLater {
+            val engineNode = summary.tblSummary.root.children.find { it.value.category == Category.ENGINE }!!
+            val startCount = engineNode.children.size
+
+            model.secondaryMotiveType = ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_JJ) as SecondaryMotiveSystem
+            model.baseSecondaryMP = 1
+
+            assertEquals(startCount + 1, engineNode.children.size)
+        }
+    }
+
+    @Test
+    fun sizeChangeUpdatesWeightsAndSlots() {
+        Platform.runLater {
+            val engineNode = summary.tblSummary.root.children.find { it.value.category == Category.ENGINE }!!
+            model.secondaryMotiveType = ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_JJ) as SecondaryMotiveSystem
+            model.baseWalkMP = 4
+            model.baseSecondaryMP = 2
+            val startSlots = engineNode.value.slotProperty.value
+            val startWeight = engineNode.value.weightProperty.value
+
+            model.baseSecondaryMP = 4
+
+
+            assertAll(
+                    Executable { assertTrue(engineNode.value.slotProperty.value > startSlots) },
+                    Executable { assertTrue(engineNode.value.weightProperty.value > startWeight) }
+            )
         }
     }
 }
