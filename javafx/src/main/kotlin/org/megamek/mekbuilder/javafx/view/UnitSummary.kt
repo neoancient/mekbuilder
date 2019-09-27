@@ -136,6 +136,11 @@ class UnitSummary: View() {
         })
         lblMaxWeight.bind(model.tonnageProperty.stringBinding { it.toString()})
         lblMaxSlots.bind(model.availableSlotsProperty.stringBinding{it.toString()})
+        lblPodSpace.bind(stringBinding(model.tonnageProperty, model.mountListProperty, model.unitProperty) {
+            (model.tonnage - model.unitModel.buildWeight.value).toString()
+        })
+        lblPodSpaceText.visibleWhen(model.omniProperty)
+        lblPodSpace.visibleWhen(model.omniProperty)
 
         tblSummary.columnResizePolicy = TreeTableSmartResize.POLICY
         colName.remainingWidth()

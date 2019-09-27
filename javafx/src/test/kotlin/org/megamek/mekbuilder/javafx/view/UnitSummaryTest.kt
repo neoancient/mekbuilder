@@ -106,6 +106,46 @@ internal class UnitSummaryTest: ApplicationTest() {
     }
 
     @Test
+    fun showPodSpaceInitialOmni() {
+        Platform.runLater {
+            val mek = MekBuild()
+            mek.isOmni = true
+            model.rebind {
+                unitModel = MekModel(mek)
+            }
+
+            assertAll(
+                    Executable {assertTrue(summary.lblPodSpaceText.isVisible)},
+                    Executable {assertTrue(summary.lblPodSpace.isVisible)}
+            )
+        }
+    }
+
+    @Test
+    fun showPodSpaceWhenOmniSelected() {
+        Platform.runLater {
+            model.omni = true
+
+            assertAll(
+                    Executable {assertTrue(summary.lblPodSpaceText.isVisible)},
+                    Executable {assertTrue(summary.lblPodSpace.isVisible)}
+            )
+        }
+    }
+
+    @Test
+    fun hidePodSpaceWhenOmniNotSelected() {
+        Platform.runLater {
+            model.omni = false
+
+            assertAll(
+                    Executable {assertFalse(summary.lblPodSpaceText.isVisible)},
+                    Executable {assertFalse(summary.lblPodSpace.isVisible)}
+            )
+        }
+    }
+
+    @Test
     fun addMountIncreasesCategoryWeightAndSlots() {
         Platform.runLater {
             val engineNode = summary.tblSummary.root.children.find { it.value.category == Category.ENGINE }!!
