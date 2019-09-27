@@ -19,6 +19,7 @@
 package org.megamek.mekbuilder.javafx.models
 
 import javafx.beans.property.SimpleIntegerProperty
+import javafx.beans.value.ObservableIntegerValue
 import org.megamek.mekbuilder.component.ComponentType
 import org.megamek.mekbuilder.unit.MekBuild
 import tornadofx.*
@@ -31,6 +32,10 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
     val engineRatingProperty = SimpleIntegerProperty(0)
 
     init {
+        availableSlotsProperty.bind(integerBinding(configurationProperty) {
+            unit.locationSet.map{(unit as MekBuild).slotsInLocation(it)}.sum()
+        })
+
         configurationProperty.onChange {
             baseOptionProperty.refresh()
             refreshMountCalculations()

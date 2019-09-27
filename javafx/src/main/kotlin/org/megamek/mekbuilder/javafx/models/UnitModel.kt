@@ -96,6 +96,7 @@ abstract class UnitModel (unitBuild: UnitBuild) {
         return weaponTonnageMap[loc] ?: SimpleDoubleProperty()
     }
     fun maxArmorPointsProperty(loc: UnitLocation) = maxArmorPointsMap[loc] ?: SimpleIntegerProperty()
+    val availableSlotsProperty = SimpleIntegerProperty()
 
     val omniProperty = pojoProperty(unit, UnitBuild::isOmni, UnitBuild::setOmni)
     var isOmni by omniProperty

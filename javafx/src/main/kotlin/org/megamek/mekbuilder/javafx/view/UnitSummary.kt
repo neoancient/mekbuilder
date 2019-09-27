@@ -134,9 +134,8 @@ class UnitSummary: View() {
         lblUnitName.textProperty().bind(stringBinding(model.chassisNameProperty, model.modelNameProperty) {
             "${model.chassisName} ${model.modelName}".trim()
         })
-        lblMaxWeight.bind(model.tonnageProperty.stringBinding {
-            it.toString()
-        })
+        lblMaxWeight.bind(model.tonnageProperty.stringBinding { it.toString()})
+        lblMaxSlots.bind(model.availableSlotsProperty.stringBinding{it.toString()})
 
         tblSummary.columnResizePolicy = TreeTableSmartResize.POLICY
         colName.remainingWidth()

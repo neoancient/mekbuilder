@@ -29,8 +29,6 @@ import org.megamek.mekbuilder.unit.MekBuild
 import org.megamek.mekbuilder.unit.MekConfiguration
 import org.megamek.mekbuilder.unit.UnitWeightClass
 import tornadofx.*
-import java.util.concurrent.CopyOnWriteArrayList
-import kotlin.math.max
 
 /**
  * The actual view model for the UI, which serves as an adapter for the various unit-specific models. These
@@ -65,6 +63,8 @@ class UnitViewModel(): ViewModel() {
     var faction by factionProperty
     val tonnageProperty = bind(true) {unitModel.tonnageProperty}
     var tonnage by tonnageProperty
+    val availableSlotsProperty = bind{unitModel.availableSlotsProperty}
+    val availableSlots by availableSlotsProperty
     val mountListProperty = bind{ unitModel.mountList }
     var mountList by mountListProperty
 
