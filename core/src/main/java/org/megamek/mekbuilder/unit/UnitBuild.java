@@ -488,4 +488,14 @@ public abstract class UnitBuild {
     public boolean removeMount(Mount m) {
         return components.remove(m);
     }
+
+    /**
+     *
+     * @return
+     */
+    public int movementHeat() {
+        return getComponents().stream()
+                .mapToInt(m -> m.getComponent().movementHeat(getUnitType()))
+                .sum();
+    }
 }

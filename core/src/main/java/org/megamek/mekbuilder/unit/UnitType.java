@@ -23,27 +23,29 @@ package org.megamek.mekbuilder.unit;
  * legally use a component.
  */
 public enum UnitType {
-    BATTLE_MEK("BM"),
-    INDUSTRIAL_MEK("IM"),
-    PROTOMEK("PM"),
-    COMBAT_VEHICLE("CV"),
-    SUPPORT_VEHICLE("SV"),
-    BATTLE_ARMOR("BA"),
-    CONV_INFANTRY("CI"),
-    ASF("AF"),
-    CONV_FIGHTER("CF"),
-    SMALL_CRAFT("SC"),
-    DROPSHIP("DS"),
-    JUMPSHIP("JS"),
-    WARSHIP("WS"),
-    SPACE_STATION("SS"),
-    MOBILE_STRUCTURE("MS"),
-    HANDHELD_WEAPON("HHW");
+    BATTLE_MEK("BM", HeatStrategy.ACCUMULATE),
+    INDUSTRIAL_MEK("IM", HeatStrategy.ACCUMULATE),
+    PROTOMEK("PM", HeatStrategy.HEAT_NEUTRAL),
+    COMBAT_VEHICLE("CV", HeatStrategy.HEAT_NEUTRAL),
+    SUPPORT_VEHICLE("SV", HeatStrategy.HEAT_NEUTRAL),
+    BATTLE_ARMOR("BA", HeatStrategy.NOT_TRACKED),
+    CONV_INFANTRY("CI", HeatStrategy.NOT_TRACKED),
+    ASF("AF", HeatStrategy.ACCUMULATE),
+    CONV_FIGHTER("CF", HeatStrategy.HEAT_NEUTRAL),
+    SMALL_CRAFT("SC", HeatStrategy.ACCUMULATE),
+    DROPSHIP("DS", HeatStrategy.ZERO_HEAT),
+    JUMPSHIP("JS", HeatStrategy.ZERO_HEAT),
+    WARSHIP("WS", HeatStrategy.ZERO_HEAT),
+    SPACE_STATION("SS", HeatStrategy.ZERO_HEAT),
+    MOBILE_STRUCTURE("MS", HeatStrategy.HEAT_NEUTRAL),
+    HANDHELD_WEAPON("HHW", HeatStrategy.HEAT_NEUTRAL);
 
     public final String abbrev;
+    public final HeatStrategy heatStrategy;
 
-    UnitType(String abbrev) {
+    UnitType(String abbrev, HeatStrategy heatStrategy) {
         this.abbrev = abbrev;
+        this.heatStrategy = heatStrategy;
     }
 
     public boolean isMech() {
