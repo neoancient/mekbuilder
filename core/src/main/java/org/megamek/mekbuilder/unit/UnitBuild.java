@@ -465,6 +465,8 @@ public abstract class UnitBuild {
                 return new CockpitMount(this, (Cockpit) c);
             case HEAT_SINK:
                 return new CompoundMount(this, c);
+            case HEAVY_WEAPON:
+                return new WeaponMount(this, (HeavyWeapon) c, null);
             default:
                 return new Mount(this, c);
         }
@@ -490,12 +492,36 @@ public abstract class UnitBuild {
     }
 
     /**
+     * The movement heat is the amount of heat the unit generates simply by moving. This includes
+     * mech running/jumping heat as well as misc equipment such as stealth armor.
      *
-     * @return
+     * @return The unit's movement heat
      */
     public int movementHeat() {
         return getComponents().stream()
                 .mapToInt(m -> m.getComponent().movementHeat(getUnitType()))
+                .sum();
+    }
+
+    /**
+     * Calculates the heat from all weapons fired at the maximum rate.
+     *
+     * @return The maximum weapon heat
+     */
+    public double maxWeaponHeat() {
+        return getComponents().stream()
+                .mapToDouble(Mount::maxWeaponHeat)
+                .sum();
+    }
+
+    /**
+     * Calculates the heat from all weapons adjusted for BV purposes.
+     *
+     * @return The total weapon heat used for calculating BV.
+     */
+    public double adjustedWeaponHeat() {
+        return getComponents().stream()
+                .mapToDouble(Mount::modifiedWeaponHeat)
                 .sum();
     }
 }

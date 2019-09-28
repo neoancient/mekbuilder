@@ -19,9 +19,7 @@
 package org.megamek.mekbuilder.unit;
 
 import org.junit.jupiter.api.Test;
-import org.megamek.mekbuilder.component.ComponentKeys;
-import org.megamek.mekbuilder.component.ComponentLibrary;
-import org.megamek.mekbuilder.component.MVFEngine;
+import org.megamek.mekbuilder.component.*;
 import org.megamek.mekbuilder.tech.ConstructionOptionKey;
 import org.megamek.mekbuilder.tech.UnitConstructionOption;
 
@@ -215,4 +213,71 @@ class MekBuildTest {
 
         assertEquals(120, mek.getEngineRating());
     }
+
+    @Test
+    void mechJumpJetsHeatCalc() {
+        MekBuild mek = new MekBuild();
+        SecondaryMotiveSystem jj = (SecondaryMotiveSystem) ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_JJ);
+        mek.setSecondaryMotiveType(jj);
+
+        mek.setSecondaryMP(4);
+
+        assertEquals(4, mek.secondaryMotiveHeat());
+    }
+
+    @Test
+    void mechJumpMinimumHeat() {
+        MekBuild mek = new MekBuild();
+        SecondaryMotiveSystem jj = (SecondaryMotiveSystem) ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_JJ);
+        mek.setSecondaryMotiveType(jj);
+
+        mek.setSecondaryMP(2);
+
+        assertEquals(3, mek.secondaryMotiveHeat());
+    }
+
+    @Test
+    void mechIJJCalcHeat() {
+        SecondaryMotiveSystem ijj = (SecondaryMotiveSystem) ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_IJJ);
+        MekBuild mp4 = new MekBuild();
+        MekBuild mp7 = new MekBuild();
+        MekBuild mp8 = new MekBuild();
+
+        mp4.setSecondaryMotiveType(ijj);
+        mp4.setSecondaryMP(4);
+        mp7.setSecondaryMotiveType(ijj);
+        mp7.setSecondaryMP(7);
+        mp8.setSecondaryMotiveType(ijj);
+        mp8.setSecondaryMP(8);
+
+        assertAll(
+                () -> assertEquals(3, mp4.secondaryMotiveHeat()),
+                () -> assertEquals(4, mp7.secondaryMotiveHeat()),
+                () -> assertEquals(4, mp8.secondaryMotiveHeat())
+        );
+    }
+
+    @Test
+    void xxlEngineDoublesJumpHeat() {
+        MekBuild mek = new MekBuild();
+        SecondaryMotiveSystem jj = (SecondaryMotiveSystem) ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_JJ);
+        mek.setSecondaryMotiveType(jj);
+        mek.setEngineType((MVFEngine) ComponentLibrary.getInstance().getComponent(ComponentKeys.ENGINE_XXL_IS));
+
+        mek.setSecondaryMP(4);
+
+        assertEquals(8, mek.secondaryMotiveHeat());
+    }
+
+    @Test
+    void mechUMUCalcHeat() {
+        SecondaryMotiveSystem umu = (SecondaryMotiveSystem) ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_UMU);
+        MekBuild mek = new MekBuild();
+        mek.setSecondaryMotiveType(umu);
+
+        mek.setSecondaryMP(4);
+
+        assertEquals(1, mek.secondaryMotiveHeat());
+    }
+
 }

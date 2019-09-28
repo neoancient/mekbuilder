@@ -19,6 +19,8 @@
 package org.megamek.mekbuilder.component;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import org.megamek.mekbuilder.unit.HeatStrategy;
+import org.megamek.mekbuilder.unit.UnitType;
 
 import java.util.ArrayList;
 import java.util.EnumSet;
@@ -124,5 +126,21 @@ public class HeavyWeapon extends Component {
             default:
                 formattedDamage = fields[1];
         }
+    }
+
+    @Override
+    public double maxWeaponHeat(UnitType unitType) {
+        if (unitType.heatStrategy.equals(HeatStrategy.NOT_TRACKED)
+            || (unitType.heatStrategy.equals(HeatStrategy.HEAT_NEUTRAL)
+                // Heat neutral units only build up heat for energy weapons that don't use ammo.
+                && (!hasFlag(WeaponFlag.DIRECT_FIRE_ENERGY) || getAmmoType() != AmmunitionType.NONE))) {
+            return 0;
+        }
+        if (getAmmoType().equals(AmmunitionType.AC_ULTRA)) {
+            return getHeat() * 2;
+        } else if (getAmmoType().equals(AmmunitionType.AC_ROTARY)) {
+            return getHeat() * 6;
+        }
+        return getHeat();
     }
 }

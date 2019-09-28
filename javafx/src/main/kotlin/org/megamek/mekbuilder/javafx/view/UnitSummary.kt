@@ -129,7 +129,6 @@ class UnitSummary: View() {
         }
     }
 
-
     init {
         lblUnitName.textProperty().bind(stringBinding(model.chassisNameProperty, model.modelNameProperty) {
             "${model.chassisName} ${model.modelName}".trim()

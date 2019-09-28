@@ -102,4 +102,20 @@ class MekEngineMountTest {
         assertThrows(IllegalArgumentException.class,
                 () -> engine.setComponent(ComponentLibrary.getInstance().getComponent(ComponentKeys.HEAT_SINK_SINGLE)));
     }
+
+    @Test
+    void xxlEngineRunsHot() {
+        MekBuild mek = new MekBuild();
+        mek.setEngineType((MVFEngine) ComponentLibrary.getInstance().getComponent(ComponentKeys.ENGINE_XXL_IS));
+
+        assertEquals(6, mek.movementHeat());
+    }
+
+    @Test
+    void iceEngineNoMoveHeat() {
+        MekBuild mek = new MekBuild();
+        mek.setEngineType((MVFEngine) ComponentLibrary.getInstance().getComponent(ComponentKeys.ENGINE_ICE));
+
+        assertEquals(0, mek.movementHeat());
+    }
 }

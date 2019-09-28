@@ -41,8 +41,13 @@ public enum WeaponFlag {
     SWITCHABLE_AMMO("S"),
     PERFORMANCE_ENHANCEMENT("PE"),
     FLAK("F"),
-    EXPLOSIVE_WEAPON("X");
+    EXPLOSIVE_WEAPON("X"),
 
+    STREAK("");
+
+    /**
+     * Display code used in weapon description
+     */
     public final String code;
 
     WeaponFlag(String code) {

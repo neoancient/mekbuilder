@@ -18,6 +18,7 @@
  */
 package org.megamek.mekbuilder.component;
 
+import org.megamek.mekbuilder.unit.MotiveType;
 import org.megamek.mekbuilder.unit.UnitBuild;
 
 /**
@@ -66,5 +67,4 @@ public class CompoundMount extends DistributedMount {
     public double getComponentCost() {
         return getComponent().calcCost(getUnit(), count);
     }
-
 }

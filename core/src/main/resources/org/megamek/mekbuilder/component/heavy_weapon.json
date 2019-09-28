@@ -21,7 +21,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "ALL|C|CCCC|2365(TH/TH),2370(TH/TH),2400,-,-|2365,2370,2400,2836,-|STANDARD",
   "permittedLocations" : [ ],
@@ -75,7 +75,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "ALL|C|CCCC|2365(TH/TH),2370(TH/TH),2400,-,-|2365,2370,2400,2836,-|STANDARD",
   "permittedLocations" : [ ],
@@ -129,7 +129,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "ALL|C|CCCC|2365(TH/TH),2370(TH/TH),2400,-,-|2365,2370,2400,2836,-|STANDARD",
   "permittedLocations" : [ ],
@@ -236,7 +236,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|F|XXDD|-,-,-,-,-|~3057(CBR/CSA),3059(CSA),3064,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -290,7 +290,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR", "PULSE_MODULE" ]
+    "LINKABLE" : "LASER_INSULATOR,PULSE_MODULE"
   },
   "techAdvancement" : "ALL|C|BBBB|2290(TA/TA),~2300(TA/TA),2310,-,-|2290,~2300,2310,~2850,-|INTRO",
   "permittedLocations" : [ ],
@@ -399,7 +399,7 @@
     "HITTABLE" : null,
     "VARIABLE" : [ 1.0, 1.0, 20.0 ],
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS" ]
+    "LINKABLE" : "ARTEMIS"
   },
   "techAdvancement" : "CLAN|F|XXED|-,-,-,-,-|~3055(CSJ),3059(CSJ),3060,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -453,7 +453,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|F|XXFD|-,-,-,-,-|3069(CGS),3079(RD),3085,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -618,7 +618,8 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
+    
   },
   "techAdvancement" : "CLAN|F|XDXX|-,-,-,-,-|2815(CCY),2818(CCY),2820,2831,3080|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -727,7 +728,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "ALL|E|EFDC|~2580(TH/TH),2587(TH/TH),3049,2795,3055(FS/LC)|~2580,2587,-,~2830,-|STANDARD",
   "permittedLocations" : [ ],
@@ -888,7 +889,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2825(CJF/CGB),2827(CJF),2831,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -1158,7 +1159,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "IS|E|XXED|3057(LC/FS),3078(LC),3082,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -1265,7 +1266,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2820(CCY),2824(CCY),2825,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -1319,7 +1320,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|2820(CCY),2824(CCY),2831,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -1696,7 +1697,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "IS|D|XEED|2812(FW),3077(WB),3085,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -1806,7 +1807,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "ALL|C|CCCC|2295(TA/TA),2300(TA/TA),2400,-,-|2295,2300,2400,2830,-|INTRO",
   "permittedLocations" : [ ],
@@ -1969,7 +1970,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XXFE|-,-,-,-,-|3057(CCY),~3079(CJF),3088,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -1988,7 +1989,7 @@
     "longRange" : 21,
     "extremeRange" : 28
   },
-  "weaponFlags" : [ "CLUSTER", "MISSILE" ],
+  "weaponFlags" : [ "CLUSTER", "MISSILE", "STREAK" ],
   "aeroTechDamage" : {
     "minRange" : 5,
     "shortRange" : 5,
@@ -2402,7 +2403,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|E|XXEE|-,-,-,-,-|3059(CHH),3083(CHH),3145,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -2456,7 +2457,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|F|XXDC|-,-,-,-,-|~3059(CSJ),3060(CSJ),3061,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -2834,7 +2835,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2820(CCC),2824(CCC),2825,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -2941,7 +2942,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2820(CCC),2824(CCC),2825,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -3155,7 +3156,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "ALL|C|CCCC|2295(TA/TA),2300(TA/TA),2400,-,-|2295,2300,2400,2830,-|STANDARD",
   "permittedLocations" : [ ],
@@ -3209,7 +3210,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2820(CCC),2824(CCC),2825,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -3317,7 +3318,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR", "PULSE_MODULE" ]
+    "LINKABLE" : "LASER_INSULATOR,PULSE_MODULE"
   },
   "techAdvancement" : "IS|E|XXDX|3052(FW/WB),3058(FW),3062,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -3371,7 +3372,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXED|~3054(CS),3062(CS/WB),3070,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -3697,7 +3698,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "TC_LINKABLE" : null,
-    "LINKABLE" : [ "PPC_CAPACITOR" ]
+    "LINKABLE" : "PPC_CAPACITOR"
   },
   "techAdvancement" : "CLAN|F|XEXX|-,-,-,-,-|~2822(CWV),2823(CWV),-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -3861,7 +3862,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|F|XXDD|-,-,-,-,-|~3057(CBR/CSA),3059(CSA),3064,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -3915,7 +3916,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "IS|E|EFDC|2595(TH/TH),2609(TH/TH),3042,2950,3037(DC)|2595,2609,-,~2850,-|STANDARD",
   "permittedLocations" : [ ],
@@ -4022,7 +4023,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2820(CCC),2824(CCC),2825,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -4076,7 +4077,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2820(CCC),2824(CCC),2825,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -4185,7 +4186,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|E|XXEE|-,-,-,-,-|3059(CHH),3083(CHH),3145,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -4294,7 +4295,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2820(CCC),2824(CCC),2825,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -4404,7 +4405,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "IS|E|XXXE|~3120(FS),3130(FS),-,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -4566,7 +4567,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR", "PULSE_MODULE" ]
+    "LINKABLE" : "LASER_INSULATOR,PULSE_MODULE"
   },
   "techAdvancement" : "ALL|C|CDCB|2306(TA/TA),2316(TH/TH),2320,-,-|2306,2316,2320,~2850,-|INTRO",
   "permittedLocations" : [ ],
@@ -4781,7 +4782,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDDD|-,-,-,-,-|2819(CSA),~2822(CSA),2830,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -4800,7 +4801,7 @@
     "longRange" : 12,
     "extremeRange" : 16
   },
-  "weaponFlags" : [ "CLUSTER", "MISSILE" ],
+  "weaponFlags" : [ "CLUSTER", "MISSILE", "STREAK" ],
   "aeroTechDamage" : {
     "minRange" : 4,
     "shortRange" : 4,
@@ -4835,7 +4836,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDDD|-,-,-,-,-|2819(CSA),~2822(CSA),2830,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -4854,7 +4855,7 @@
     "longRange" : 12,
     "extremeRange" : 16
   },
-  "weaponFlags" : [ "CLUSTER", "MISSILE" ],
+  "weaponFlags" : [ "CLUSTER", "MISSILE", "STREAK" ],
   "aeroTechDamage" : {
     "minRange" : 8,
     "shortRange" : 8,
@@ -4889,7 +4890,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDDD|-,-,-,-,-|2819(CSA),~2822(CSA),2830,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -4908,7 +4909,7 @@
     "longRange" : 12,
     "extremeRange" : 16
   },
-  "weaponFlags" : [ "CLUSTER", "MISSILE" ],
+  "weaponFlags" : [ "CLUSTER", "MISSILE", "STREAK" ],
   "aeroTechDamage" : {
     "minRange" : 12,
     "shortRange" : 12,
@@ -4944,7 +4945,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "ALL|C|CCCC|2295(TA/TA),2300(TA/TA),2400,-,-|2295,2300,2400,2830,-|INTRO",
   "permittedLocations" : [ ],
@@ -4999,7 +5000,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "ALL|C|CCCC|2295(TA/TA),2300(TA/TA),2400,-,-|2295,2300,2400,2830,-|INTRO",
   "permittedLocations" : [ ],
@@ -5053,7 +5054,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR", "PULSE_MODULE" ]
+    "LINKABLE" : "LASER_INSULATOR,PULSE_MODULE"
   },
   "techAdvancement" : "IS|E|EFDC|2610(TH/TH),2620(TH/TH),3045,2950,3037(DC)|2610,2620,-,~2850,-|STANDARD",
   "permittedLocations" : [ ],
@@ -5108,7 +5109,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "ALL|C|CCCC|2295(TA/TA),2300(TA/TA),2400,-,-|2295,2300,2400,2830,-|INTRO",
   "permittedLocations" : [ ],
@@ -5162,7 +5163,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "IS|E|EFDC|2595(TH/TH),2609(TH/TH),3042,2950,3037(DC)|2595,2609,-,~2850,-|STANDARD",
   "permittedLocations" : [ ],
@@ -5216,7 +5217,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR", "PULSE_MODULE" ]
+    "LINKABLE" : "LASER_INSULATOR,PULSE_MODULE"
   },
   "techAdvancement" : "CLAN|F|XXDC|-,-,-,-,-|~3059(CSJ),3060(CSJ),3061,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -5270,7 +5271,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDXX|-,-,-,-,-|2815(CCC),2817(CCC),2819,2828,3080|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -5379,7 +5380,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDXX|-,-,-,-,-|2815(CCC),2817(CCC),2819,2828,3080|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -5433,7 +5434,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDXX|-,-,-,-,-|2815(CCC),2817(CCC),2819,2828,3080|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -5594,7 +5595,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "ALL|C|CCCC|2365(TH/TH),2370(TH/TH),2400,-,-|2365,2370,2400,2836,-|INTRO",
   "permittedLocations" : [ ],
@@ -5704,7 +5705,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "ALL|C|CCCC|2365(TH/TH),2370(TH/TH),2400,-,-|2365,2370,2400,2836,-|INTRO",
   "permittedLocations" : [ ],
@@ -5758,7 +5759,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "ALL|C|CCCC|2365(TH/TH),2370(TH/TH),2400,-,-|2365,2370,2400,2836,-|INTRO",
   "permittedLocations" : [ ],
@@ -5871,7 +5872,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2820(CCY),2824(CCY),2825,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -5926,7 +5927,7 @@
   "switches" : {
     "HITTABLE" : null,
     "VARIABLE" : [ 1.0, 1.0, 6.0 ],
-    "LINKABLE" : [ "ARTEMIS" ]
+    "LINKABLE" : "ARTEMIS"
   },
   "techAdvancement" : "CLAN|F|XXED|-,-,-,-,-|~3055(CSJ),3059(CSJ),3060,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -6086,7 +6087,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "IS|E|XXXE|~3120(FS),3130(FS),-,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -6142,7 +6143,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "TC_LINKABLE" : null,
-    "LINKABLE" : [ "PPC_CAPACITOR" ]
+    "LINKABLE" : "PPC_CAPACITOR"
   },
   "techAdvancement" : "IS|E|XXEC|3064(DC),3067(DC/FW),3068,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -6251,7 +6252,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR", "PULSE_MODULE" ]
+    "LINKABLE" : "LASER_INSULATOR,PULSE_MODULE"
   },
   "techAdvancement" : "ALL|C|BBBB|2290(TA/TA),~2300(TA/TA),2310,-,-|2290,~2300,2310,~2850,-|INTRO",
   "permittedLocations" : [ ],
@@ -6305,7 +6306,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "IS|E|EFDC|2595(TH/TH),2609(TH/TH),3042,2950,3037(DC)|2595,2609,-,~2850,-|STANDARD",
   "permittedLocations" : [ ],
@@ -6578,7 +6579,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXFE|3052(FS),3072(FS/LC),3081,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -6633,7 +6634,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXFE|3052(FS),3072(FS/LC),3081,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -6744,7 +6745,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXFE|3054(FS/LC),3078(LC),3083,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -6851,7 +6852,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "ALL|C|CCCC|2295(TA/TA),2300(TA/TA),2400,-,-|2295,2300,2400,2830,-|STANDARD",
   "permittedLocations" : [ ],
@@ -6906,7 +6907,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXFE|3052(FS),3072(FS/LC),3081,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -7126,7 +7127,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XEDC|-,-,-,-,-|~2820(CHH/CIH),2828(CIH),2830,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -7289,7 +7290,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXFE|3058(FS),3082(FS),3090,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -7344,7 +7345,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXFE|3058(FS),3082(FS),3090,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -7454,7 +7455,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR", "PULSE_MODULE" ]
+    "LINKABLE" : "LASER_INSULATOR,PULSE_MODULE"
   },
   "techAdvancement" : "CLAN|F|XFDC|-,-,-,-,-|~2820(CNC),2825(CNC),2830,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -7508,7 +7509,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|F|XXFD|-,-,-,-,-|3069(CGS),3079(RD),3085,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -7672,7 +7673,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "TC_LINKABLE" : null,
-    "LINKABLE" : [ "PPC_CAPACITOR" ]
+    "LINKABLE" : "PPC_CAPACITOR"
   },
   "techAdvancement" : "IS|E|EFDC|~2740(TH),2751(TH),3042,2860,3037(DC)|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -7782,7 +7783,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "TC_LINKABLE" : null,
-    "LINKABLE" : [ "PPC_CAPACITOR" ]
+    "LINKABLE" : "PPC_CAPACITOR"
   },
   "techAdvancement" : "IS|E|FXFD|~2779(TH),2784(TH),3068,2790,3067(DC/FW)|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -7891,7 +7892,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXFE|3058(FS),3082(FS),3090,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -8274,7 +8275,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "TC_LINKABLE" : null,
-    "LINKABLE" : [ "PPC_CAPACITOR" ]
+    "LINKABLE" : "PPC_CAPACITOR"
   },
   "techAdvancement" : "CLAN|F|XDXX|-,-,-,-,-|~2819(CSR),2820(CSR),-,2832,3080|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -8328,7 +8329,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2820(CCY),2824(CCY),2825,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -8384,7 +8385,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "TC_LINKABLE" : null,
-    "LINKABLE" : [ "PPC_CAPACITOR" ]
+    "LINKABLE" : "PPC_CAPACITOR"
   },
   "techAdvancement" : "IS|E|XXEC|3062(DC),3067(DC/FW),3068,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -8438,7 +8439,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2820(CCY),2824(CCY),2825,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -8493,7 +8494,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDXX|-,-,-,-,-|2815(CCY),2818(CCY),2820,2831,3080|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -8622,7 +8623,7 @@
     "longRange" : 12,
     "extremeRange" : 16
   },
-  "weaponFlags" : [ "MISSILE" ],
+  "weaponFlags" : [ "MISSILE", "STREAK" ],
   "aeroTechDamage" : {
     "minRange" : 0,
     "shortRange" : 0,
@@ -8710,7 +8711,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "ALL|C|CCCC|2295(TA/TA),2300(TA/TA),2400,-,-|2295,2300,2400,2830,-|STANDARD",
   "permittedLocations" : [ ],
@@ -8764,7 +8765,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "ALL|C|CCCC|2295(TA/TA),2300(TA/TA),2400,-,-|2295,2300,2400,2830,-|STANDARD",
   "permittedLocations" : [ ],
@@ -8930,7 +8931,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2820(CCY),2824(CCY),2825,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -9038,7 +9039,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|E|XEXX|-,-,-,-,-|2815(CGS),2818(CGS),2820,2826,3080|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -9092,7 +9093,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "APOLLO", "ONE_SHOT" ]
+    "LINKABLE" : "APOLLO,ONE_SHOT"
   },
   "techAdvancement" : "IS|C|XXED|~3052(DC),3058(DC),3063,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -9257,7 +9258,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|F|XXED|-,-,-,-,-|3057(CWF),3082(CWF),3095,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -9312,7 +9313,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XXFE|-,-,-,-,-|3057(CCY),~3079(CJF),3088,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -9331,7 +9332,7 @@
     "longRange" : 21,
     "extremeRange" : 28
   },
-  "weaponFlags" : [ "CLUSTER", "MISSILE" ],
+  "weaponFlags" : [ "CLUSTER", "MISSILE", "STREAK" ],
   "aeroTechDamage" : {
     "minRange" : 10,
     "shortRange" : 10,
@@ -9421,7 +9422,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "APOLLO", "ONE_SHOT" ]
+    "LINKABLE" : "APOLLO,ONE_SHOT"
   },
   "techAdvancement" : "IS|C|XXED|~3052(DC),3058(DC),3063,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -9475,7 +9476,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|EFDD|2645(TH/TH),2647(TH/TH),~2650,2845,3035(FW)|2645,2647,~2650,2836,-|STANDARD",
   "permittedLocations" : [ ],
@@ -9494,7 +9495,7 @@
     "longRange" : 9,
     "extremeRange" : 12
   },
-  "weaponFlags" : [ "CLUSTER", "MISSILE" ],
+  "weaponFlags" : [ "CLUSTER", "MISSILE", "STREAK" ],
   "aeroTechDamage" : {
     "minRange" : 4,
     "shortRange" : 0,
@@ -9529,7 +9530,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXED|3055(DC),3058(DC),~3060,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -9548,7 +9549,7 @@
     "longRange" : 9,
     "extremeRange" : 12
   },
-  "weaponFlags" : [ "CLUSTER", "MISSILE" ],
+  "weaponFlags" : [ "CLUSTER", "MISSILE", "STREAK" ],
   "aeroTechDamage" : {
     "minRange" : 8,
     "shortRange" : 0,
@@ -9583,7 +9584,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|F|XXDD|-,-,-,-,-|~3057(CBR/CSA),3059(CSA),3064,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -9691,7 +9692,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|F|XXFD|-,-,-,-,-|3069(CGS),3079(RD),3085,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -9745,7 +9746,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "IS|E|XXED|3057(LC/FS),3078(LC),3082,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -9799,7 +9800,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "APOLLO", "ONE_SHOT" ]
+    "LINKABLE" : "APOLLO,ONE_SHOT"
   },
   "techAdvancement" : "IS|C|XXED|~3052(DC),3058(DC),3063,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -9906,7 +9907,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXED|3055(DC),3058(DC),~3060,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -9925,7 +9926,7 @@
     "longRange" : 9,
     "extremeRange" : 12
   },
-  "weaponFlags" : [ "CLUSTER", "MISSILE" ],
+  "weaponFlags" : [ "CLUSTER", "MISSILE", "STREAK" ],
   "aeroTechDamage" : {
     "minRange" : 12,
     "shortRange" : 0,
@@ -9962,7 +9963,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "TC_LINKABLE" : null,
-    "LINKABLE" : [ "PPC_CAPACITOR" ]
+    "LINKABLE" : "PPC_CAPACITOR"
   },
   "techAdvancement" : "ALL|D|CCCC|~2440(TH/TH),2460(TH/TH),2500,-,-|~2440,2460,2500,2825,-|INTRO",
   "permittedLocations" : [ ],
@@ -10073,7 +10074,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "TC_LINKABLE" : null,
-    "LINKABLE" : [ "PPC_CAPACITOR" ]
+    "LINKABLE" : "PPC_CAPACITOR"
   },
   "techAdvancement" : "CLAN|F|XFDC|-,-,-,-,-|~2823(CSR),2826(CSR),2828,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -10127,7 +10128,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR", "PULSE_MODULE" ]
+    "LINKABLE" : "LASER_INSULATOR,PULSE_MODULE"
   },
   "techAdvancement" : "CLAN|F|XEDC|-,-,-,-,-|~2822(CJF),2824(CJF),2830,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -10400,7 +10401,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR", "PULSE_MODULE" ]
+    "LINKABLE" : "LASER_INSULATOR,PULSE_MODULE"
   },
   "techAdvancement" : "CLAN|F|XEDC|-,-,-,-,-|~2822(CJF),2825(CJF),2830,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -10454,7 +10455,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "APOLLO", "ONE_SHOT" ]
+    "LINKABLE" : "APOLLO,ONE_SHOT"
   },
   "techAdvancement" : "IS|C|XXED|~3052(DC),3058(DC),3063,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -10563,7 +10564,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR", "PULSE_MODULE" ]
+    "LINKABLE" : "LASER_INSULATOR,PULSE_MODULE"
   },
   "techAdvancement" : "CLAN|E|XDXX|-,-,-,-,-|~2812(CNC),~2815(CNC),2818,2830,3080|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -10782,7 +10783,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS" ]
+    "LINKABLE" : "ARTEMIS"
   },
   "techAdvancement" : "IS|D|XXED|~3067(MERC),3068(WB),3072,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -10837,7 +10838,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXFE|3058(FS),3082(FS),3090,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -10892,7 +10893,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS" ]
+    "LINKABLE" : "ARTEMIS"
   },
   "techAdvancement" : "IS|D|XXED|~3067(MERC),3068(WB),3072,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -10947,7 +10948,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS" ]
+    "LINKABLE" : "ARTEMIS"
   },
   "techAdvancement" : "IS|D|XXED|~3067(MERC),3068(WB),3072,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -11002,7 +11003,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS" ]
+    "LINKABLE" : "ARTEMIS"
   },
   "techAdvancement" : "IS|D|XXED|~3067(MERC),3068(WB),3072,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -11384,7 +11385,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "IS|E|XXED|3070(FW/WB),3072(FW/WB),3080,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -11438,7 +11439,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2825(CJF/CGB),2829(CGB),2831,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -11710,7 +11711,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXFE|3052(FS),3072(FS/LC),3081,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -11764,7 +11765,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "IS|E|XXXE|~3120(FS),3130(FS),-,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -11818,7 +11819,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "IS|E|XXED|3070(FW/WB),3072(FW/WB),3080,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -11927,7 +11928,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR", "PULSE_MODULE" ]
+    "LINKABLE" : "LASER_INSULATOR,PULSE_MODULE"
   },
   "techAdvancement" : "IS|E|XXDX|3052(FW/WB),3058(FW),3062,-,-|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -11982,7 +11983,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2820(CCY),2824(CCY),2825,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -12037,7 +12038,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2820(CCY),2824(CCY),2825,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -12146,7 +12147,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|F|XXED|-,-,-,-,-|3057(CWF),3082(CWF),3095,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -12201,7 +12202,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDXX|-,-,-,-,-|2815(CCY),2818(CCY),2820,2831,3080|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -12256,7 +12257,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDXX|-,-,-,-,-|2815(CCY),2818(CCY),2820,2831,3080|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -12311,7 +12312,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ARTEMIS", "ONE_SHOT" ]
+    "LINKABLE" : "ARTEMIS,ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XDCC|-,-,-,-,-|~2820(CCY),2824(CCY),2825,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -12366,7 +12367,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXFE|3054(FS/LC),3078(LC),3083,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -12420,7 +12421,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "IS|E|XXED|3057(LC/FS),3078(LC),3082,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -12474,7 +12475,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|F|XXED|-,-,-,-,-|3057(CWF),3082(CWF),3095,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -12529,7 +12530,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXFE|3054(FS/LC),3078(LC),3083,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -12583,7 +12584,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "IS|E|XXEE|3064(LC),3085(LC),-,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -12749,7 +12750,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "IS|E|XXED|3070(FW/WB),3072(FW/WB),3080,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -12804,7 +12805,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "IS|E|XXFE|3054(FS/LC),3078(LC),3083,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -12912,7 +12913,7 @@
   "switches" : {
     "HITTABLE" : null,
     "MODULE" : null,
-    "LINKABLE" : [ "LASER_INSULATOR" ]
+    "LINKABLE" : "LASER_INSULATOR"
   },
   "techAdvancement" : "CLAN|E|XXEE|-,-,-,-,-|3059(CHH),3083(CHH),3145,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -12986,7 +12987,7 @@
     "longRange" : 21,
     "extremeRange" : 28
   },
-  "weaponFlags" : [ "MISSILE" ],
+  "weaponFlags" : [ "MISSILE", "STREAK" ],
   "aeroTechDamage" : {
     "minRange" : 0,
     "shortRange" : 0,
@@ -13022,7 +13023,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XXFE|-,-,-,-,-|3057(CCY),~3079(CJF),3088,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -13041,7 +13042,7 @@
     "longRange" : 21,
     "extremeRange" : 28
   },
-  "weaponFlags" : [ "CLUSTER", "MISSILE" ],
+  "weaponFlags" : [ "CLUSTER", "MISSILE", "STREAK" ],
   "aeroTechDamage" : {
     "minRange" : 15,
     "shortRange" : 15,
@@ -13077,7 +13078,7 @@
     "HITTABLE" : null,
     "MODULE" : null,
     "INDIRECT_FIRE" : null,
-    "LINKABLE" : [ "ONE_SHOT" ]
+    "LINKABLE" : "ONE_SHOT"
   },
   "techAdvancement" : "CLAN|F|XXFE|-,-,-,-,-|3057(CCY),~3079(CJF),3088,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -13096,7 +13097,7 @@
     "longRange" : 21,
     "extremeRange" : 28
   },
-  "weaponFlags" : [ "CLUSTER", "MISSILE" ],
+  "weaponFlags" : [ "CLUSTER", "MISSILE", "STREAK" ],
   "aeroTechDamage" : {
     "minRange" : 20,
     "shortRange" : 20,

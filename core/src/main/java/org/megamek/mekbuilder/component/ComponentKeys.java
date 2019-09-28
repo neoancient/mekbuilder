@@ -26,9 +26,13 @@ public interface ComponentKeys {
     String ENGINE_FUSION = "FusionEngine";
     String ENGINE_COMPACT = "CompactFusion";
     String ENGINE_ICE = "ICE";
+    String ENGINE_XXL_IS = "ISXXLEngine";
 
     String SECONDARY_MOTIVE_NONE = "NoSecondaryMotive";
     String MEK_JJ = "Jump Jet";
+    String MEK_IJJ = "Improved Jump Jet";
+    String MEK_UMU = "UMU";
+    String PM_JJ = "ProtoMek Jump Jet";
 
     String HEAT_SINK_SINGLE = "Heat Sink";
 
@@ -60,4 +64,15 @@ public interface ComponentKeys {
     String MEK_JUMP_BOOSTER = "MechanicalJumpBooster";
 
     String MEDIUM_LASER = "Medium Laser";
+    String LRM10 = "ISLRM 10";
+    String STREAK_SRM2_IS = "ISStreakSRM2";
+    String PPC = "PPC";
+    String UAC5_IS = "ISUltraAC5";
+    String RAC5_IS = "ISRotaryAC5";
+
+    String ARTEMIS_IV_IS = "ISArtemisIV";
+    String PPC_CAPACITOR = "PPC Capacitor";
+    String LASER_PULSE_MODULE = "ISRISCLaserPulseModule";
+    String LASER_INSULATOR = "ISLaserInsulator";
+    String ONE_SHOT = "OneShot";
 }
