@@ -63,4 +63,29 @@ class HeatSinkMountTest {
         );
     }
 
+    @Test
+    void compactHeatSinksHaveMoreSlotFreeInEngine() {
+        MekBuild mek = new MekBuild();
+        mek.getHeatSinkMount().setCount(0);
+        mek.getHeatSinkMount().setComponent(ComponentLibrary.getInstance().getComponent(ComponentKeys.HEAT_SINK_COMPACT));
+        mek.setEngineRating(120);
+
+        assertAll(
+                () -> assertEquals(0.0, mek.getHeatSinkMount().getComponentWeight(), 0.001),
+                () -> assertEquals((10 - 8) / 2, mek.getHeatSinkMount().getComponentSlots()),
+                () -> assertEquals(10, mek.getHeatSinkMount().heatDissipation())
+        );
+    }
+
+    @Test
+    void compactHeatSinkSlotsRoundUp() {
+        MekBuild mek = new MekBuild();
+        mek.getHeatSinkMount().setCount(3);
+        mek.getHeatSinkMount().setComponent(ComponentLibrary.getInstance().getComponent(ComponentKeys.HEAT_SINK_COMPACT));
+        mek.setEngineRating(120);
+
+        // 13 - 8 == 5, should take three slots
+        assertEquals(3, mek.getHeatSinkMount().getComponentSlots());
+    }
+
 }

@@ -153,7 +153,8 @@
   "incompatibleComponents" : { },
   "fixedLocations" : { },
   "allowedUnitTypes" : [ "BATTLE_MEK" ],
-  "heatDissipation" : 1
+  "heatDissipation" : 1,
+  "compact" : true
 }, {
   "type" : "org.megamek.mekbuilder.component.HeatSink",
   "componentType" : "HEAT_SINK",

@@ -37,6 +37,7 @@ public interface ComponentKeys {
     String HEAT_SINK_SINGLE = "Heat Sink";
     String HEAT_SINK_DOUBLE_IS = "ISDoubleHeatSink";
     String HEAT_SINK_DOUBLE_CLAN = "CLDoubleHeatSink";
+    String HEAT_SINK_COMPACT = "Compact Heat Sink";
 
     String ARMOR_STANDARD = "Standard Armor";
     String ARMOR_INDUSTRIAL = "Industrial Armor";

@@ -43,6 +43,9 @@ public class HeatSinkMount extends CompoundMount {
     public int getComponentSlots() {
         if (getUnit().getUnitType().isMech()) {
             int integrated = getUnit().getEngine().getEngineRating() / 25;
+            if (getHeatSinkType().isCompact()) {
+                integrated *= 2;
+            }
             return getHeatSinkType().calcSlots(getUnit(), Math.max(0, totalHeatSinks() - integrated));
         }
         return 0;

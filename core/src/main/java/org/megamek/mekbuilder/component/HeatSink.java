@@ -23,11 +23,22 @@ package org.megamek.mekbuilder.component;
  */
 public class HeatSink extends Component {
     private int heatDissipation = 1;
+    private boolean compact = false;
 
     /**
      * @return The amount of heat that can be dissipated by one heat sink in a round
      */
     public int getHeatDissipation() {
         return heatDissipation;
+    }
+
+    /**
+     * Compact heat sinks double the number that do not have to be allocated critical slots on
+     * a Mek.
+     *
+     * @return Whether the heat sink is compact.
+     */
+    public boolean isCompact() {
+        return compact;
     }
 }
