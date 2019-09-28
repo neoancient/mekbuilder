@@ -18,6 +18,7 @@
  */
 package org.megamek.mekbuilder.unit;
 
+import com.sun.istack.NotNull;
 import megamek.common.annotations.Nullable;
 import org.megamek.mekbuilder.component.*;
 import org.megamek.mekbuilder.tech.Faction;
@@ -457,7 +458,7 @@ public abstract class UnitBuild {
      * @param c The Component to mount
      * @return  The component mount
      */
-    public Mount createMount(Component c) {
+    public Mount createMount(@NotNull Component c) {
         switch (c.getType()) {
             case ARMOR:
                 return new ArmorMount(this, (Armor) c);
@@ -467,8 +468,28 @@ public abstract class UnitBuild {
                 return new CompoundMount(this, c);
             case HEAVY_WEAPON:
                 return new WeaponMount(this, (HeavyWeapon) c, null);
+            case SECONDARY_MOTIVE_SYSTEM:
+                return new CompoundMount(this, c);
             default:
                 return new Mount(this, c);
+        }
+    }
+
+    /**
+     * Retrieves a {@link Component} using the lookup key and creates the correct {@link Mount}
+     * type for the component. The new mount is not added to the unit.
+     *
+     * @param componentKey a component lookup key
+     * @return             a mount instance, or {@code null} if the lookup key does not match
+     *                     any component
+     */
+    @Nullable
+    public Mount createMount(String componentKey) {
+        Component c = ComponentLibrary.getInstance().getComponent(componentKey);
+        if (null != c) {
+            return createMount(c);
+        } else {
+            return null;
         }
     }
 

@@ -39,7 +39,7 @@ public class MekInternalStructure extends DistributedMount {
         this(mek, ComponentLibrary.getInstance().getComponent(structureType));
     }
 
-    private MekInternalStructure(MekBuild mek, Component structureComponent) {
+    public MekInternalStructure(MekBuild mek, Component structureComponent) {
         super(mek, structureComponent);
         if (!structureComponent.getType().equals(ComponentType.MEK_STRUCTURE)) {
             throw new IllegalArgumentException(structureComponent.getInternalName()

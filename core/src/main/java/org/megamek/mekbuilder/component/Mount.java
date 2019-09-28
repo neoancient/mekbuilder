@@ -52,6 +52,7 @@ public class Mount {
     public Mount(UnitBuild unit, Component component, double size) {
         this.unit = new WeakReference<>(unit);
         this.component = component;
+        this.componentKey = component.getInternalName();
         this.size = size;
     }
 
