@@ -67,6 +67,11 @@ public class MekEngineMount extends Mount implements IEngineMount {
     }
 
     @Override
+    public int weightFreeHeatSinks() {
+        return getEngine().getWeightFreeHeatSinks();
+    }
+
+    @Override
     public boolean isInLocation(UnitLocation loc) {
         return getComponent().fixedSlots(getUnit(), loc) > 0;
     }

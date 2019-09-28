@@ -35,6 +35,8 @@ public interface ComponentKeys {
     String PM_JJ = "ProtoMek Jump Jet";
 
     String HEAT_SINK_SINGLE = "Heat Sink";
+    String HEAT_SINK_DOUBLE_IS = "ISDoubleHeatSink";
+    String HEAT_SINK_DOUBLE_CLAN = "CLDoubleHeatSink";
 
     String ARMOR_STANDARD = "Standard Armor";
     String ARMOR_INDUSTRIAL = "Industrial Armor";

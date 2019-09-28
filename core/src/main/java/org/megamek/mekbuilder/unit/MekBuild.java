@@ -46,7 +46,7 @@ public class MekBuild extends UnitBuild {
     private MekEngineMount engineMount;
     private CockpitMount cockpitMount;
     private CompoundMount secondaryMotiveMount;
-    private CompoundMount heatSinkMount;
+    private HeatSinkMount heatSinkMount;
     private Mount gyroMount;
     private DistributedMount myomerMount;
     private ArmorMount armorMount;
@@ -66,7 +66,7 @@ public class MekBuild extends UnitBuild {
         getComponents().add(gyroMount);
         secondaryMotiveMount = (CompoundMount) createMount(getDefaultSecondaryMotiveType());
         getComponents().add(secondaryMotiveMount);
-        heatSinkMount = (CompoundMount) createMount(getDefaultHeatSinkType());
+        heatSinkMount = (HeatSinkMount) createMount(getDefaultHeatSinkType());
         heatSinkMount.setCount(0);
         getComponents().add(heatSinkMount);
         myomerMount = (DistributedMount) createMount(ComponentLibrary.getInstance()
@@ -303,7 +303,7 @@ public class MekBuild extends UnitBuild {
         return cockpitMount;
     }
 
-    public CompoundMount getHeatSinkMount() {
+    public HeatSinkMount getHeatSinkMount() {
         return heatSinkMount;
     }
 

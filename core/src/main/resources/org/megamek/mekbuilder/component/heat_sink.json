@@ -48,7 +48,8 @@
   "rulesRef" : "220, TM",
   "switches" : {
     "HITTABLE" : null,
-    "MODULE" : null
+    "MODULE" : null,
+    "VARIABLE_SLOTS" : null
   },
   "techAdvancement" : "ALL|C|BBBB|-,-,-,-,-|-,-,-,-,-|INTRO",
   "permittedLocations" : [ ],
@@ -79,7 +80,8 @@
   "rulesRef" : "221, TM",
   "switches" : {
     "HITTABLE" : null,
-    "MODULE" : null
+    "MODULE" : null,
+    "VARIABLE_SLOTS" : null
   },
   "techAdvancement" : "IS|E|CEDC|2559(TH),2567(TH),3045,2865,3040(FS)|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -110,7 +112,8 @@
   "rulesRef" : "316, TO",
   "switches" : {
     "HITTABLE" : null,
-    "MODULE" : null
+    "MODULE" : null,
+    "VARIABLE_SLOTS" : null
   },
   "techAdvancement" : "CLAN|F|XXED|-,-,-,-,-|~3040(CJF),3051(CJF),3060,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -141,7 +144,8 @@
   "rulesRef" : "316, TO",
   "switches" : {
     "HITTABLE" : null,
-    "MODULE" : null
+    "MODULE" : null,
+    "VARIABLE_SLOTS" : null
   },
   "techAdvancement" : "IS|E|XXFE|3058(FS),3079(FS),-,-,-|-,-,-,-,-|EXPERIMENTAL",
   "permittedLocations" : [ ],
@@ -172,7 +176,8 @@
   "rulesRef" : "221, TM",
   "switches" : {
     "HITTABLE" : null,
-    "MODULE" : null
+    "MODULE" : null,
+    "VARIABLE_SLOTS" : null
   },
   "techAdvancement" : "CLAN|F|XEDC|-,-,-,-,-|~2825(CCY),~2827(CCY),2829,-,-|STANDARD",
   "permittedLocations" : [ ],
@@ -203,7 +208,8 @@
   "rulesRef" : "71, IO",
   "switches" : {
     "HITTABLE" : null,
-    "MODULE" : null
+    "MODULE" : null,
+    "VARIABLE_SLOTS" : null
   },
   "techAdvancement" : "IS|E|FFFX|2559(TH),2567(TH),3045,2865,3040(FS)|-,-,-,-,-|STANDARD",
   "permittedLocations" : [ ],

@@ -24,9 +24,29 @@ import org.megamek.mekbuilder.unit.UnitLocation;
  *
  */
 public interface IEngineMount {
+    /**
+     * The engine rating is only valid for MVFEngines.
+     *
+     * @return The rating of the mounted engine.
+     */
     int getEngineRating();
 
+    /**
+     * @return The weight of the engine in tons
+     */
     double getEngineTonnage();
 
+    /**
+     * Check for equipment that must be mounted in the same location as the engine, or is forbidden
+     * from such a location. This can vary with unit and engine type.
+     *
+     * @param loc The location to check
+     * @return    Whether the location contains at least part of the engine.
+     */
     boolean isEngineLocation(UnitLocation loc);
+
+    /**
+     * @return The number of heat sinks that are provided automatically with the engine.
+     */
+    int weightFreeHeatSinks();
 }

@@ -465,7 +465,7 @@ public abstract class UnitBuild {
             case COCKPIT:
                 return new CockpitMount(this, (Cockpit) c);
             case HEAT_SINK:
-                return new CompoundMount(this, c);
+                return new HeatSinkMount(this, (HeatSink) c);
             case HEAVY_WEAPON:
                 return new WeaponMount(this, (HeavyWeapon) c, null);
             case SECONDARY_MOTIVE_SYSTEM:

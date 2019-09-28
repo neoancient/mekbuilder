@@ -24,6 +24,9 @@ package org.megamek.mekbuilder.component;
 public class HeatSink extends Component {
     private int heatDissipation = 1;
 
+    /**
+     * @return The amount of heat that can be dissipated by one heat sink in a round
+     */
     public int getHeatDissipation() {
         return heatDissipation;
     }
