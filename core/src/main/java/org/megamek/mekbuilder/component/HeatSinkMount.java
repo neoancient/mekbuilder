@@ -54,7 +54,8 @@ public class HeatSinkMount extends CompoundMount {
     /**
      * @return The amount of heat that can be dissipated by all mounted heat sinks.
      */
+    @Override
     public int heatDissipation() {
-        return totalHeatSinks() * getHeatSinkType().getHeatDissipation();
+        return totalHeatSinks() * getHeatSinkType().heatDissipation();
     }
 }

@@ -214,4 +214,11 @@ public class Mount {
     public double modifiedWeaponHeat() {
         return maxWeaponHeat();
     }
+
+    /**
+     * @return The amount of heat that can be dissipated by the mounted equipment in a round.
+     */
+    public int heatDissipation() {
+        return getComponent().heatDissipation();
+    }
 }

@@ -38,7 +38,7 @@ public enum BVCalcType {
     CASE_II,
     /** Center torso armor factor is multiplied by BV factor (which doubles it for torso-mounted) */
     TORSO_COCKPIT,
-    /** Amount of heat that can be dissipated in a turn */
+    /** Amount of heat that can be dissipated in a round */
     HEAT_SINK,
     /** Added to base movement (TSM bonus) */
     MOVE_FACTOR,

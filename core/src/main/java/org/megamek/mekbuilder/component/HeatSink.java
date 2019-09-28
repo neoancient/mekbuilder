@@ -22,15 +22,7 @@ package org.megamek.mekbuilder.component;
  * Heat sink components. Has additional field for tracking heat dissipation.
  */
 public class HeatSink extends Component {
-    private int heatDissipation = 1;
     private boolean compact = false;
-
-    /**
-     * @return The amount of heat that can be dissipated by one heat sink in a round
-     */
-    public int getHeatDissipation() {
-        return heatDissipation;
-    }
 
     /**
      * Compact heat sinks double the number that do not have to be allocated critical slots on

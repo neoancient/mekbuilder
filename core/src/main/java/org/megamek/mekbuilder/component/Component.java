@@ -235,6 +235,20 @@ public class Component implements ITechDelegator {
     }
 
     /**
+     * This mostly applies to heat sinks, but there is other equipment (such as partial wings)
+     * that provide heat dissipation benefits as well.
+     *
+     * @return The amount of heat that can be dissipated by this Component.
+     */
+    int heatDissipation() {
+        if (bvCalcType.equals(BVCalcType.HEAT_SINK)) {
+            return (int) bvFactor;
+        } else {
+            return 0;
+        }
+    }
+
+    /**
      * @return Whether only one of this type of equipment can be mounted in a location
      */
     public boolean locationExclusive() {

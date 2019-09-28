@@ -280,4 +280,30 @@ class MekBuildTest {
         assertEquals(1, mek.secondaryMotiveHeat());
     }
 
+    @Test
+    void heatDissipationWithFusionEngine() {
+        MekBuild mek = new MekBuild();
+        mek.getHeatSinkMount().setCount(2);
+
+        assertEquals(12, mek.heatDissipation());
+    }
+
+    @Test
+    void heatDissipationWithICE() {
+        MekBuild mek = new MekBuild();
+        mek.setEngineType((MVFEngine) ComponentLibrary.getInstance().getComponent(ComponentKeys.ENGINE_ICE));
+        mek.getHeatSinkMount().setCount(2);
+
+        assertEquals(2, mek.heatDissipation());
+    }
+
+    @Test
+    void heatDissipationWithPartialWing() {
+        MekBuild mek = new MekBuild();
+        mek.getHeatSinkMount().setCount(0);
+        Mount wing = mek.createMount(ComponentLibrary.getInstance().getComponent(ComponentKeys.PARTIAL_WING_IS));
+        mek.addMount(wing);
+
+        assertEquals(13, mek.heatDissipation());
+    }
 }

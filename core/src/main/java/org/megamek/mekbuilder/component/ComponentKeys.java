@@ -65,6 +65,7 @@ public interface ComponentKeys {
     String MASC_IS = "ISMASC";
     String MASC_CLAN = "CLMASC";
     String MEK_JUMP_BOOSTER = "MechanicalJumpBooster";
+    String PARTIAL_WING_IS = "ISPartialWing";
 
     String MEDIUM_LASER = "Medium Laser";
     String LRM10 = "ISLRM 10";

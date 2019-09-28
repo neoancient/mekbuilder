@@ -545,4 +545,12 @@ public abstract class UnitBuild {
                 .mapToDouble(Mount::modifiedWeaponHeat)
                 .sum();
     }
+
+    /**
+     * @return The amount of heat that can be dissipated by the unit per round.
+     */
+    public int heatDissipation() {
+        return getComponents().stream()
+                .mapToInt(Mount::heatDissipation).sum();
+    }
 }
