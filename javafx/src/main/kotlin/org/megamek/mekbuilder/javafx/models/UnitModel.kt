@@ -133,6 +133,10 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     val maxSecondaryMPProperty = SimpleIntegerProperty(0)
     var maxSecondaryMP by maxSecondaryMPProperty
 
+    val movementHeatProperty = SimpleIntegerProperty()
+    val maxWeaponHeatProperty = SimpleIntegerProperty()
+    val heatDissipationProperty = SimpleIntegerProperty()
+
     init {
         mountList.setAll(unit.components.map{MountModel(it)})
         baseOptionProperty.onChange {
@@ -150,12 +154,19 @@ abstract class UnitModel (unitBuild: UnitBuild) {
         }
         baseRunMPProperty.bind(integerBinding(unitBuild, baseWalkMPProperty) {baseRunMP})
         baseSecondaryMPProperty.onChange {
-            val mount = getSecondaryMotive()
-            mount.slots.invalidate()
-            mount.weight.invalidate()
+            getSecondaryMotive().sizeProperty.refresh()
         }
         tonnageProperty.onChange {refreshMountCalculations()}
         baseWalkMPProperty.onChange {refreshMountCalculations()}
+        maxWeaponHeatProperty.bind(integerBinding(mountList) {
+            unit.maxWeaponHeat()
+        })
+        movementHeatProperty.bind(integerBinding(mountList) {
+            unit.movementHeat()
+        })
+        heatDissipationProperty.bind(integerBinding(mountList) {
+            unit.heatDissipation()
+        })
     }
 
     fun refreshMountCalculations() {

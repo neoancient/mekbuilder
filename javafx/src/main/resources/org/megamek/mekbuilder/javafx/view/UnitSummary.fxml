@@ -59,11 +59,11 @@
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label text="%lblMaxHeat.text" GridPane.rowIndex="2" />
+                        <Label text="%lblMovementHeat" GridPane.rowIndex="2" />
                         <Label text="%lblHeatHeader.text" />
-                        <Label text="%lblHeatProfile.text" GridPane.rowIndex="1" />
-                        <Label fx:id="lblHeatProfile" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label fx:id="lblMaxHeat" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="%lblWeaponHeat" GridPane.rowIndex="1" />
+                        <Label fx:id="lblWeaponHeat" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="lblMovementHeat" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="%lblHeatDissipation.text" GridPane.rowIndex="3" />
                         <Label fx:id="lblHeatDissipation" text="0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      </children>

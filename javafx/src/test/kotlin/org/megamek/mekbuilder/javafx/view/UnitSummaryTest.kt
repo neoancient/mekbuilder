@@ -27,6 +27,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.function.Executable
 import org.megamek.mekbuilder.component.ComponentKeys
 import org.megamek.mekbuilder.component.ComponentLibrary
+import org.megamek.mekbuilder.component.MVFEngine
 import org.megamek.mekbuilder.component.SecondaryMotiveSystem
 import org.megamek.mekbuilder.javafx.models.MekModel
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
@@ -142,6 +143,81 @@ internal class UnitSummaryTest: ApplicationTest() {
                     Executable {assertFalse(summary.lblPodSpaceText.isVisible)},
                     Executable {assertFalse(summary.lblPodSpace.isVisible)}
             )
+        }
+    }
+
+    @Test
+    fun setInitialMovementHeat() {
+        Platform.runLater {
+            val mek = MekBuild()
+            mek.secondaryMotiveType = ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_JJ) as SecondaryMotiveSystem
+            mek.baseWalkMP = 4
+            mek.secondaryMP = 4
+
+            model.rebind {
+                unitModel = MekModel(mek)
+            }
+
+            assertEquals("4", summary.lblMovementHeat.text)
+        }
+    }
+
+    @Test
+    fun updateMovementHeatWhenEngineChanges() {
+        Platform.runLater {
+            model.engineType = ComponentLibrary.getInstance().getComponent(ComponentKeys.ENGINE_XXL_IS) as MVFEngine
+
+            assertEquals("6", summary.lblMovementHeat.text)
+        }
+    }
+
+    @Test
+    fun updateMovementHeatWhenJumpMPChanges() {
+        Platform.runLater {
+            model.secondaryMotiveType = ComponentLibrary.getInstance().getComponent(ComponentKeys.MEK_JJ) as SecondaryMotiveSystem
+            model.baseWalkMP = 5
+            model.baseSecondaryMP = 4
+
+            assertEquals("4", summary.lblMovementHeat.text)
+        }
+    }
+
+    @Test
+    fun setInitialWeaponHeat() {
+        Platform.runLater {
+            val mek = MekBuild()
+            val laser = mek.createMount(ComponentLibrary.getInstance().getComponent(ComponentKeys.MEDIUM_LASER))
+            mek.addMount(laser)
+
+            model.rebind {
+                unitModel = MekModel(mek)
+            }
+
+            assertEquals("3", summary.lblWeaponHeat.text)
+        }
+    }
+
+    @Test
+    fun setInitialHeatDissipation() {
+        Platform.runLater {
+            val mek = MekBuild()
+            mek.heatSinkMount.count = 4
+
+            model.rebind {
+                unitModel = MekModel(mek)
+            }
+
+            assertEquals("14", summary.lblHeatDissipation.text)
+        }
+    }
+
+    @Test
+    fun heatDissipationChangesWhenPartialWingAdded() {
+        Platform.runLater {
+            val wing = ComponentLibrary.getInstance().getComponent(ComponentKeys.PARTIAL_WING_IS)
+            model.unitModel.addEquipment(wing)
+
+            assertEquals("13", summary.lblHeatDissipation.text)
         }
     }
 

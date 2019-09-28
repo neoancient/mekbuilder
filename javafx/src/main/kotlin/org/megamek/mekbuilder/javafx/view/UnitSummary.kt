@@ -91,8 +91,8 @@ class UnitSummary: View() {
     internal val lblMaxSlots: Label by fxid()
     internal val lblPodSpace: Label by fxid()
     internal val lblPodSpaceText: Label by fxid()
-    internal val lblHeatProfile: Label by fxid()
-    internal val lblMaxHeat: Label by fxid()
+    internal val lblWeaponHeat: Label by fxid()
+    internal val lblMovementHeat: Label by fxid()
     internal val lblHeatDissipation: Label by fxid()
     internal val tblSummary: TreeTableView<SummaryItem> by fxid()
     internal val colName: TreeTableColumn<SummaryItem, String> by fxid()
@@ -140,6 +140,9 @@ class UnitSummary: View() {
         })
         lblPodSpaceText.visibleWhen(model.omniProperty)
         lblPodSpace.visibleWhen(model.omniProperty)
+        lblWeaponHeat.bind(model.maxWeaponHeat.stringBinding{it.toString()})
+        lblMovementHeat.bind(model.movementHeat.stringBinding{it.toString()})
+        lblHeatDissipation.bind(model.heatDissipation.stringBinding{it.toString()})
 
         tblSummary.columnResizePolicy = TreeTableSmartResize.POLICY
         colName.remainingWidth()

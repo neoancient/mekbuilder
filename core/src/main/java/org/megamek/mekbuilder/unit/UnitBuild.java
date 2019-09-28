@@ -529,9 +529,9 @@ public abstract class UnitBuild {
      *
      * @return The maximum weapon heat
      */
-    public double maxWeaponHeat() {
+    public int maxWeaponHeat() {
         return getComponents().stream()
-                .mapToDouble(Mount::maxWeaponHeat)
+                .mapToInt(Mount::maxWeaponHeat)
                 .sum();
     }
 

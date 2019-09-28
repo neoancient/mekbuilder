@@ -98,6 +98,7 @@ class UniqueComponentTableView(val filter: (Component) -> Boolean): View() {
                     }
                     // We don't care about permutations
                 }
+                filterComponents()
             }
         })
         // Replacing the list does not trigger a list change event.

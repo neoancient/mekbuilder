@@ -131,6 +131,10 @@ class UnitViewModel(): ViewModel() {
     val myomerProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).getMyomer().componentProperty else SimpleObjectProperty<Component>()}
     var myomer by myomerProperty
 
+    val movementHeat = bind{unitModel.movementHeatProperty}
+    val maxWeaponHeat = bind{unitModel.maxWeaponHeatProperty}
+    val heatDissipation = bind{unitModel.heatDissipationProperty}
+
     init {
         minTechLevelProperty.bind(baseOptionProperty.objectBinding(omniProperty) {
             var tl = it?.staticTechLevel() ?: TechLevel.STANDARD

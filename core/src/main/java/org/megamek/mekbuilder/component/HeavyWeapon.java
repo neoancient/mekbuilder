@@ -129,7 +129,7 @@ public class HeavyWeapon extends Component {
     }
 
     @Override
-    public double maxWeaponHeat(UnitType unitType) {
+    public int maxWeaponHeat(UnitType unitType) {
         if (unitType.heatStrategy.equals(HeatStrategy.NOT_TRACKED)
             || (unitType.heatStrategy.equals(HeatStrategy.HEAT_NEUTRAL)
                 // Heat neutral units only build up heat for energy weapons that don't use ammo.
