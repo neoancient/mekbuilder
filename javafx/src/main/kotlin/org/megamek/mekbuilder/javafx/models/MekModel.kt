@@ -30,6 +30,7 @@ import tornadofx.*
 class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
     val configurationProperty = pojoProperty(mekBuild, MekBuild::getConfiguration, MekBuild::setConfiguration)
     val engineRatingProperty = SimpleIntegerProperty(0)
+    val engineTypeProperty = pojoProperty(mekBuild, MekBuild::getEngineType, MekBuild::setEngineType)
 
     init {
         availableSlotsProperty.bind(integerBinding(configurationProperty) {
@@ -44,6 +45,9 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
                 baseWalkMPProperty, tonnageProperty, configurationProperty) {
             engineRating
         })
+        engineTypeProperty.onChange {
+            getEngine().componentProperty.refresh()
+        }
         // Possible switch between standard/large engine
         baseWalkMPProperty.onChange {
             getEngine().componentProperty.refresh()
@@ -81,9 +85,7 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
             {mekBuild.structureTonnage})
     }
 
-    fun getEngine() = mountList.first{it.component.type == ComponentType.ENGINE}!!
     fun getCockpit() = mountList.first{it.component.type == ComponentType.COCKPIT}!!
-    fun getHeatSinks() = mountList.first{it.component.type == ComponentType.HEAT_SINK}!!
     fun getInternalStructure() = mountList.first{it.component.type == ComponentType.MEK_STRUCTURE}!!
     fun getGyro() = mountList.first{it.component.type == ComponentType.GYRO}!!
     fun getMyomer() = mountList.first{it.component.type == ComponentType.MYOMER}!!

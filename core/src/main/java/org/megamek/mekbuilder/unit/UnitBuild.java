@@ -416,6 +416,20 @@ public abstract class UnitBuild {
      */
     public abstract int getSecondaryMP();
 
+    /**
+     * Sets the number of heat sinks beyond those provided weight-free by the engine.
+     *
+     * @param count The number of additional heat sinks
+     */
+    public abstract void setAdditionalHeatSinkCount(int count);
+
+    /**
+     * Does not include those provided weight-fre by the engine.
+     *
+     * @return The number of additional heat sinks
+     */
+    public abstract int getAdditionalHeatSinkCount();
+
     public SecondaryMotiveSystem getDefaultSecondaryMotiveType() {
         return (SecondaryMotiveSystem) ComponentLibrary.getInstance()
                 .getComponent(ComponentKeys.SECONDARY_MOTIVE_NONE);

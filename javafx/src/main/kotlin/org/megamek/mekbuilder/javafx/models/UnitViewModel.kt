@@ -39,7 +39,7 @@ class UnitViewModel(): ViewModel() {
     val techFilterProperty = SimpleObjectProperty<ITechFilter>()
     var techFilter by techFilterProperty
 
-    val unitModelProperty = SimpleObjectProperty(MekModel(MekBuild()))
+    val unitModelProperty: ObjectProperty<UnitModel> = SimpleObjectProperty(MekModel(MekBuild()))
     var unitModel by unitModelProperty
     val unitProperty = bind{unitModel.unitProperty}
     var unit by unitProperty
@@ -102,6 +102,8 @@ class UnitViewModel(): ViewModel() {
     var minSecondaryMP by minSecondaryMPProperty
     val maxSecondaryMPProperty = bind{unitModel.maxSecondaryMPProperty.asObject()}
     var maxSecondaryMP by maxSecondaryMPProperty
+    val heatSinkCountProperty = bind(true) {unitModel.heatSinkCountProperty}
+    var heatSinkCount by heatSinkCountProperty
 
     val minTechLevelProperty = SimpleObjectProperty(TechLevel.INTRO)
     var minTechLevel by minTechLevelProperty
@@ -109,7 +111,12 @@ class UnitViewModel(): ViewModel() {
     var weightClass by weightClassProperty
 
     // Properties used for several unit types, but not all models have an equivalent property
-    val engineTypeProperty = bind (true) {unitModel.getEngine().componentProperty as Property<MVFEngine> }
+    val engineTypeProperty = bind (true) {
+        when {
+            unitModel is MekModel -> (unitModel as MekModel).engineTypeProperty
+            else -> SimpleObjectProperty<MVFEngine>()
+        }
+    }
     var engineType by engineTypeProperty
     val engineRatingProperty = bind {
         if (unitModel is MekModel)
@@ -117,6 +124,10 @@ class UnitViewModel(): ViewModel() {
         else SimpleIntegerProperty()
     }
     var engineRating by engineRatingProperty
+    val heatSinkTypeProperty = bind(true) {
+        unitModel.getHeatSinks().componentProperty as Property<HeatSink>
+    }
+    var heatSinkType by heatSinkTypeProperty
 
 
     // Mek properties

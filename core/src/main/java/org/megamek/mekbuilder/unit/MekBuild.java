@@ -489,6 +489,16 @@ public class MekBuild extends UnitBuild {
         return mp;
     }
 
+    @Override
+    public void setAdditionalHeatSinkCount(int count) {
+        getHeatSinkMount().setCount(count);
+    }
+
+    @Override
+    public int getAdditionalHeatSinkCount() {
+        return getHeatSinkMount().getCount();
+    }
+
     /**
      * @return The type of cockpit installed on the unit
      */

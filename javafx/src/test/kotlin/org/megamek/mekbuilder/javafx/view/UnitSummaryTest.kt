@@ -25,10 +25,7 @@ import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.function.Executable
-import org.megamek.mekbuilder.component.ComponentKeys
-import org.megamek.mekbuilder.component.ComponentLibrary
-import org.megamek.mekbuilder.component.MVFEngine
-import org.megamek.mekbuilder.component.SecondaryMotiveSystem
+import org.megamek.mekbuilder.component.*
 import org.megamek.mekbuilder.javafx.models.MekModel
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
 import org.megamek.mekbuilder.unit.MekBuild
@@ -208,6 +205,24 @@ internal class UnitSummaryTest: ApplicationTest() {
             }
 
             assertEquals("14", summary.lblHeatDissipation.text)
+        }
+    }
+
+    @Test
+    fun heatDissipationChangesWhenHeatSinkTypeChanges() {
+        Platform.runLater {
+            model.heatSinkType = ComponentLibrary.getInstance().getComponent(ComponentKeys.HEAT_SINK_DOUBLE_IS) as HeatSink
+
+            assertEquals("20", summary.lblHeatDissipation.text)
+        }
+    }
+
+    @Test
+    fun heatDissipationChangesWithHeatSinkCount() {
+        Platform.runLater {
+            model.heatSinkCount = 7
+
+            assertEquals("17", summary.lblHeatDissipation.text)
         }
     }
 
