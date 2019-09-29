@@ -34,6 +34,7 @@ class StandardLayout: View() {
     val basicInfo: BasicInfo by inject()
     val mekChassis: MekChassis by inject()
     val movement: MovementView by inject()
+    val heatSinks: HeatSinkView by inject()
     val summary: UnitSummary by inject()
 
     override val root: AnchorPane by fxml()
@@ -74,7 +75,8 @@ class StandardLayout: View() {
                 wrapAnchor(mekChassis.root)
         )
         structureMid.children.setAll(
-                wrapAnchor(movement.root)
+                wrapAnchor(movement.root),
+                wrapAnchor(heatSinks.root)
         )
         structureRight.children.setAll(
                 wrapAnchor(summary.root)
