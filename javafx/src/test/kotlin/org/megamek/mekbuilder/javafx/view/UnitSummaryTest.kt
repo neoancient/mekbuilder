@@ -29,6 +29,7 @@ import org.megamek.mekbuilder.component.*
 import org.megamek.mekbuilder.javafx.models.MekModel
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
 import org.megamek.mekbuilder.unit.MekBuild
+import org.megamek.mekbuilder.unit.UnitType
 import org.testfx.framework.junit5.ApplicationTest
 import org.testfx.framework.junit5.Start
 import tornadofx.*
@@ -191,6 +192,22 @@ internal class UnitSummaryTest: ApplicationTest() {
             }
 
             assertEquals("3", summary.lblWeaponHeat.text)
+        }
+    }
+
+    @Test
+    fun weaponHeatChangesWhenWeaponOrEnhancementAdded() {
+        Platform.runLater {
+            val ppc = ComponentLibrary.getInstance().getComponent(ComponentKeys.PPC)
+            val mount = model.unitModel.addEquipment(ppc)
+            val startHeat = summary.lblWeaponHeat.text
+
+            mount.otherComponent = ComponentLibrary.getInstance().getComponent(ComponentKeys.PPC_CAPACITOR)
+
+            assertAll(
+                    Executable {assertEquals("10", startHeat)},
+                    Executable {assertEquals("15", summary.lblWeaponHeat.text)}
+            )
         }
     }
 

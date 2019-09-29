@@ -80,7 +80,8 @@ abstract class UnitModel (unitBuild: UnitBuild) {
 
     val mountList = SimpleListProperty(FXCollections.observableArrayList<MountModel> {
         arrayOf(it.componentProperty, it.sizeProperty, it.locationProperty,
-                it.moduleProperty, it.rearFacingProperty, it.armoredProperty)})
+                it.moduleProperty, it.rearFacingProperty, it.armoredProperty,
+                it.otherComponentProperty)})
     val mountMap = HashMap<UnitLocation, ObservableList<Mount>>().observable()
     val weaponTonnageMap = HashMap<UnitLocation, ObservableDoubleValue>().observable()
     val maxArmorPointsMap = HashMap<UnitLocation, ObservableIntegerValue>().observable()
@@ -184,13 +185,14 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     fun getSecondaryMotive() = mountList.first{it.component.type == ComponentType.SECONDARY_MOTIVE_SYSTEM}
     fun getHeatSinks() = mountList.first{it.component.type == ComponentType.HEAT_SINK}!!
 
-    fun addEquipment(c: Component, size: Double = 1.0) {
+    fun addEquipment(c: Component, size: Double = 1.0): MountModel {
         val mount = MountModel(unit.createMount(c))
         if (c.variableSize()) {
             mount.size = size
         }
         unit.addMount(mount.mount)
         mountList.add(mount)
+        return mount;
     }
 
     fun removeEquipment(m: MountModel) {

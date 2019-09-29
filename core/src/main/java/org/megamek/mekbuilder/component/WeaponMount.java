@@ -114,15 +114,9 @@ public class WeaponMount extends Mount {
     }
 
     @Override
-    public double modifiedWeaponHeat() {
-        double heat = super.maxWeaponHeat();
-        if (getWeapon().hasFlag(WeaponFlag.STREAK)) {
-            heat *= 0.5;
-        }
+    public int maxWeaponHeat() {
+        int heat = super.maxWeaponHeat();
         if (null != getEnhancement()) {
-            if (getEnhancement().hasFlag(ComponentSwitch.ONE_SHOT)) {
-                heat *= 0.25;
-            }
             if (getEnhancement().hasFlag(ComponentSwitch.PPC_CAPACITOR)) {
                 heat += 5;
             }
@@ -132,6 +126,19 @@ public class WeaponMount extends Mount {
             if (getEnhancement().hasFlag(ComponentSwitch.LASER_INSULATOR)) {
                 heat--;
             }
+        }
+        return heat;
+    }
+
+    @Override
+    public double modifiedWeaponHeat() {
+        double heat = maxWeaponHeat();
+        if (getWeapon().hasFlag(WeaponFlag.STREAK)) {
+            heat *= 0.5;
+        }
+        if (null != getEnhancement()
+                && getEnhancement().hasFlag(ComponentSwitch.ONE_SHOT)) {
+            heat *= 0.25;
         }
         return heat;
     }

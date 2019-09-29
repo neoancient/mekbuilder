@@ -22,6 +22,7 @@ import javafx.beans.property.SimpleObjectProperty
 import org.megamek.mekbuilder.component.*
 import org.megamek.mekbuilder.component.Component
 import tornadofx.*
+import kotlin.reflect.KFunction
 
 /**
  *
@@ -43,13 +44,22 @@ class MountModel(m: Mount) {
     val armoredProperty = pojoProperty(m, Mount::isArmored, Mount::setArmored)
     var armored by armoredProperty
 
-    val weight = doubleBinding(componentProperty, sizeProperty, armoredProperty) {
+    val otherComponentProperty = when (mount) {
+        is WeaponMount -> pojoProperty(m as WeaponMount, WeaponMount::getEnhancement, WeaponMount::setEnhancement)
+        else -> SimpleObjectProperty<Component>()
+    }
+    var otherComponent by otherComponentProperty
+
+    val weight = doubleBinding(componentProperty, sizeProperty,
+            armoredProperty, otherComponentProperty) {
         mount.componentWeight
     }
-    val slots = integerBinding(componentProperty, sizeProperty) {
+    val slots = integerBinding(componentProperty, sizeProperty,
+            otherComponentProperty) {
         mount.componentSlots
     }
-    val cost = doubleBinding(componentProperty, sizeProperty, moduleProperty, armoredProperty) {
+    val cost = doubleBinding(componentProperty, sizeProperty, moduleProperty,
+            armoredProperty, otherComponentProperty) {
         mount.componentCost
     }
 }
