@@ -30,11 +30,11 @@
          <Label text="%cbHeatSinkType.text" />
          <Label text="%spnHeatSinkCount.text" GridPane.rowIndex="1" />
          <Label text="%lblWeightFree.text" GridPane.rowIndex="2" />
-         <Label fx:id="lblSlotsRequiredText" text="%lblSlotsRequired.text" GridPane.rowIndex="3" />
+         <Label text="%lblSlotsIntegrated.text" GridPane.rowIndex="3" />
          <ComboBox fx:id="cbHeatSinkType" prefWidth="150.0" GridPane.columnIndex="1" />
-         <Spinner fx:id="spnHeatSinkCount" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         <Spinner fx:id="spnHeatSinkCount" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          <Label fx:id="lblWeightFree" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-         <Label fx:id="lblSlotsRequired" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         <Label fx:id="lblSlotsIntegrated" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
       </children>
       <padding>
          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

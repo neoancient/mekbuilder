@@ -134,6 +134,8 @@ abstract class UnitModel (unitBuild: UnitBuild) {
     val maxSecondaryMPProperty = SimpleIntegerProperty(0)
     var maxSecondaryMP by maxSecondaryMPProperty
 
+    val heatSinkTypeProperty = pojoProperty(unit, UnitBuild::getHeatSinkType, UnitBuild::setHeatSinkType)
+    var heatSinkType by heatSinkTypeProperty
     val heatSinkCountProperty = pojoProperty(unit, UnitBuild::getAdditionalHeatSinkCount, UnitBuild::setAdditionalHeatSinkCount)
     var heatSinkCount by heatSinkCountProperty
     val movementHeatProperty = SimpleIntegerProperty()
@@ -161,7 +163,15 @@ abstract class UnitModel (unitBuild: UnitBuild) {
         }
         tonnageProperty.onChange {refreshMountCalculations()}
         baseWalkMPProperty.onChange {refreshMountCalculations()}
-        heatSinkCountProperty.onChange{getHeatSinks().sizeProperty.refresh()}
+        heatSinkTypeProperty.onChange {
+            getHeatSinks().componentProperty.refresh()
+        }
+        heatSinkCountProperty.onChange {
+            val hsMount = getHeatSinks();
+            hsMount.slots.invalidate()
+            hsMount.weight.invalidate()
+            hsMount.cost.invalidate()
+        }
         maxWeaponHeatProperty.bind(integerBinding(mountList) {
             unit.maxWeaponHeat()
         })

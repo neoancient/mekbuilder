@@ -424,6 +424,18 @@ public abstract class UnitBuild {
     public abstract void setAdditionalHeatSinkCount(int count);
 
     /**
+     * @return The type of heat sink installed on the unit
+     */
+    public abstract HeatSink getHeatSinkType();
+
+    /**
+     * Sets the type of heat sink installed on the unit
+     *
+     * @param heatSink the type of heat sink
+     */
+    public abstract void setHeatSinkType(HeatSink heatSink);
+
+    /**
      * Does not include those provided weight-fre by the engine.
      *
      * @return The number of additional heat sinks

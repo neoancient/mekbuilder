@@ -433,6 +433,24 @@ public class MekBuild extends UnitBuild {
         return (int) (maxRating / tonnage);
     }
 
+    /**
+     * @return The type of heat sink installed on the unit
+     */
+    @Override
+    public HeatSink getHeatSinkType() {
+        return heatSinkMount.getHeatSinkType();
+    }
+
+    /**
+     * Sets the type of heat sink installed on the unit
+     *
+     * @param heatSink the type of heat sink
+     */
+    @Override
+    public void setHeatSinkType(HeatSink heatSink) {
+        heatSinkMount.setComponent(heatSink);
+    }
+
     @Override
     public SecondaryMotiveSystem getSecondaryMotiveType() {
         return (SecondaryMotiveSystem) secondaryMotiveMount.getComponent();

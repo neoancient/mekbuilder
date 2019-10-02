@@ -121,14 +121,11 @@ class UnitViewModel(): ViewModel() {
     val engineRatingProperty = bind {
         if (unitModel is MekModel)
             (unitModel as MekModel).engineRatingProperty
-        else SimpleIntegerProperty()
+        else SimpleObjectProperty<Int>()
     }
     var engineRating by engineRatingProperty
-    val heatSinkTypeProperty = bind(true) {
-        unitModel.getHeatSinks().componentProperty as Property<HeatSink>
-    }
+    val heatSinkTypeProperty = bind(true) {unitModel.heatSinkTypeProperty}
     var heatSinkType by heatSinkTypeProperty
-
 
     // Mek properties
     val mekConfigurationProperty = bind(true) {if (unitModel is MekModel) (unitModel as MekModel).configurationProperty else SimpleObjectProperty<MekConfiguration>()}
@@ -142,6 +139,7 @@ class UnitViewModel(): ViewModel() {
     val myomerProperty = bind (true) {if (unitModel is MekModel) (unitModel as MekModel).getMyomer().componentProperty else SimpleObjectProperty<Component>()}
     var myomer by myomerProperty
 
+    val integratedHeatSinkProperty = bind{if (unitModel is MekModel) (unitModel as MekModel).integratedHeatSinksProperty else SimpleIntegerProperty()}
     val movementHeat = bind{unitModel.movementHeatProperty}
     val maxWeaponHeat = bind{unitModel.maxWeaponHeatProperty}
     val heatDissipation = bind{unitModel.heatDissipationProperty}

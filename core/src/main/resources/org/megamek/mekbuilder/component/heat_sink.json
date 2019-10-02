@@ -1,6 +1,6 @@
 [{
-  "type" : "org.megamek.mekbuilder.component.HeatSink",
   "componentType" : "HEAT_SINK",
+  "isDefault" : true,
   "internalName" : "ProtoMek Heat Sink",
   "mmName" : "",
   "fullName" : "ProtoMek Heat Sink",
@@ -27,8 +27,8 @@
   "allowedUnitTypes" : [ "PROTOMEK" ],
   "heatDissipation" : 1
 }, {
-  "type" : "org.megamek.mekbuilder.component.HeatSink",
   "componentType" : "HEAT_SINK",
+  "isDefault" : true,
   "internalName" : "Heat Sink",
   "mmName" : "Heat Sink",
   "fullName" : "Single Heat Sink",
@@ -51,7 +51,7 @@
     "MODULE" : null,
     "VARIABLE_SLOTS" : null
   },
-  "techAdvancement" : "ALL|C|BBBB|-,-,-,-,-|-,-,-,-,-|INTRO",
+  "techAdvancement" : "ALL|C|BBBB|-,-,2100,-,-|-,-,2100,-,-|INTRO",
   "permittedLocations" : [ ],
   "requiredComponents" : { },
   "incompatibleComponents" : { },
@@ -59,7 +59,6 @@
   "allowedUnitTypes" : [ "JUMPSHIP", "BATTLE_MEK", "ASF", "WARSHIP", "INDUSTRIAL_MEK", "SMALL_CRAFT", "DROPSHIP", "SUPPORT_VEHICLE", "COMBAT_VEHICLE", "CONV_FIGHTER" ],
   "heatDissipation" : 1
 }, {
-  "type" : "org.megamek.mekbuilder.component.HeatSink",
   "componentType" : "HEAT_SINK",
   "internalName" : "ISDoubleHeatSink",
   "mmName" : "ISDoubleHeatSink",
@@ -91,7 +90,6 @@
   "allowedUnitTypes" : [ "JUMPSHIP", "BATTLE_MEK", "ASF", "WARSHIP", "SMALL_CRAFT", "DROPSHIP" ],
   "heatDissipation" : 2
 }, {
-  "type" : "org.megamek.mekbuilder.component.HeatSink",
   "componentType" : "HEAT_SINK",
   "internalName" : "Laser Heat Sink",
   "mmName" : "Laser Heat Sink",
@@ -123,7 +121,6 @@
   "allowedUnitTypes" : [ "BATTLE_MEK" ],
   "heatDissipation" : 2
 }, {
-  "type" : "org.megamek.mekbuilder.component.HeatSink",
   "componentType" : "HEAT_SINK",
   "internalName" : "Compact Heat Sink",
   "mmName" : "1 Compact Heat Sink",
@@ -156,7 +153,6 @@
   "heatDissipation" : 1,
   "compact" : true
 }, {
-  "type" : "org.megamek.mekbuilder.component.HeatSink",
   "componentType" : "HEAT_SINK",
   "internalName" : "CLDoubleHeatSink",
   "mmName" : "CLDoubleHeatSink",
@@ -188,7 +184,6 @@
   "allowedUnitTypes" : [ "JUMPSHIP", "BATTLE_MEK", "ASF", "WARSHIP", "SMALL_CRAFT", "DROPSHIP" ],
   "heatDissipation" : 2
 }, {
-  "type" : "org.megamek.mekbuilder.component.HeatSink",
   "componentType" : "HEAT_SINK",
   "internalName" : "ISDoubleHeatSink:prototype",
   "mmName" : "ISDoubleHeatSinkPrototype",

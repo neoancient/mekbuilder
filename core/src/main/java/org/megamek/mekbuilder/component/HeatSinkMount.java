@@ -42,11 +42,7 @@ public class HeatSinkMount extends CompoundMount {
     @Override
     public int getComponentSlots() {
         if (getUnit().getUnitType().isMech()) {
-            int integrated = getUnit().getEngine().getEngineRating() / 25;
-            if (getHeatSinkType().isCompact()) {
-                integrated *= 2;
-            }
-            return getHeatSinkType().calcSlots(getUnit(), Math.max(0, totalHeatSinks() - integrated));
+            return getHeatSinkType().calcSlots(getUnit(), Math.max(0, totalHeatSinks() - integratedSlots()));
         }
         return 0;
     }
@@ -57,5 +53,20 @@ public class HeatSinkMount extends CompoundMount {
     @Override
     public int heatDissipation() {
         return totalHeatSinks() * getHeatSinkType().heatDissipation();
+    }
+
+    /**
+     * The number of heat sinks that are considered integral to the engine and do not have to be
+     * assigned critical slots is 4% of the engine rating, or twice that for compact slots.
+     * This is only applicable to meks.
+     *
+     * @return The number of heat sinks that do not have to be assigned mek critical slots.
+     */
+    public int integratedSlots() {
+        int integrated = getUnit().getEngine().getEngineRating() / 25;
+        if (getHeatSinkType().isCompact()) {
+            integrated *= 2;
+        }
+        return integrated;
     }
 }

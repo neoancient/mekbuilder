@@ -19,7 +19,6 @@
 package org.megamek.mekbuilder.javafx.models
 
 import javafx.beans.property.SimpleIntegerProperty
-import javafx.beans.value.ObservableIntegerValue
 import org.megamek.mekbuilder.component.ComponentType
 import org.megamek.mekbuilder.unit.MekBuild
 import tornadofx.*
@@ -29,8 +28,9 @@ import tornadofx.*
  */
 class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
     val configurationProperty = pojoProperty(mekBuild, MekBuild::getConfiguration, MekBuild::setConfiguration)
-    val engineRatingProperty = SimpleIntegerProperty(0)
+    val engineRatingProperty = pojoProperty(mekBuild, MekBuild::getEngineRating)
     val engineTypeProperty = pojoProperty(mekBuild, MekBuild::getEngineType, MekBuild::setEngineType)
+    val integratedHeatSinksProperty = SimpleIntegerProperty()
 
     init {
         availableSlotsProperty.bind(integerBinding(configurationProperty) {
@@ -41,20 +41,18 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
             baseOptionProperty.refresh()
             refreshMountCalculations()
         }
-        engineRatingProperty.bind(integerBinding(mekBuild,
-                baseWalkMPProperty, tonnageProperty, configurationProperty) {
-            engineRating
-        })
         engineTypeProperty.onChange {
             getEngine().componentProperty.refresh()
         }
         // Possible switch between standard/large engine
         baseWalkMPProperty.onChange {
             getEngine().componentProperty.refresh()
+            engineRatingProperty.refresh()
         }
         // Possible switch between standard/large engine or reduction of MP due to exceeding max
         tonnageProperty.onChange {
             getEngine().componentProperty.refresh()
+            engineRatingProperty.refresh()
         }
         walkMPProperty.bind(baseWalkMPProperty)
         runMPProperty.bind(stringBinding(mekBuild, baseRunMPProperty,
@@ -83,6 +81,13 @@ class MekModel(mekBuild: MekBuild): UnitModel(mekBuild) {
         structureTonnageProperty.bind(doubleBinding(
                 getInternalStructure().componentProperty, tonnageProperty, configurationProperty)
             {mekBuild.structureTonnage})
+        integratedHeatSinksProperty.bind(integerBinding(engineRatingProperty, heatSinkTypeProperty) {
+            if (heatSinkTypeProperty.value.isCompact()) {
+                (value / 25) * 2
+            } else {
+                value / 25
+            }
+        })
     }
 
     fun getCockpit() = mountList.first{it.component.type == ComponentType.COCKPIT}!!

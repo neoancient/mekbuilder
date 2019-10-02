@@ -79,3 +79,51 @@ class SpinnerDoubleStringConverter(private val textField: TextField,
             }
         }
 }
+
+class SpinnerIntStringConverter(private val textField: TextField,
+                                   private val factory: SpinnerValueFactory.IntegerSpinnerValueFactory)
+    : StringConverter<Int>() {
+
+    init {
+        textField.textProperty().addListener { _, oldVal, newVal ->
+            if (newVal != null && newVal.isNotEmpty()) {
+                if (factory.min < 0 && newVal.endsWith("-")) {
+                    if (newVal.length > 1) {
+                        Platform.runLater {textField.text = "-"}
+                    }
+                    return@addListener
+                }
+            }
+
+            try {
+                newVal.toInt()
+            } catch (ex: NumberFormatException) {
+                Platform.runLater {textField.text = oldVal}
+            }
+        }
+
+        val oldHandler = textField.onAction
+        textField.onAction = EventHandler<ActionEvent> { event ->
+            // Perform entry validation and possible replacement
+            fromString(textField.text)
+            oldHandler.handle(event)
+        }
+    }
+
+    override fun toString(value: Int?): String = value?.toString() ?: "0"
+
+    override fun fromString(string: String?): Int =
+            if (string == null || string.isEmpty()) {
+                0
+            } else {
+                try {
+                    var value = (round(string.toDouble() / factory.amountToStepBy) * factory.amountToStepBy).toInt()
+                    value = min(max(value, factory.min), factory.max)
+                    textField.text = value.toString()
+                    value
+                } catch (ex: NumberFormatException) {
+                    textField.text = min(max(0, factory.min), factory.max).toString()
+                    0
+                }
+            }
+}
