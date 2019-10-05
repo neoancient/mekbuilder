@@ -156,4 +156,20 @@ internal class HeatSinkViewTest: ApplicationTest() {
             assertEquals(10, view.lblSlotsIntegrated.text.toInt())
         }
     }
+
+    @Test
+    fun setInitialIntegratedSlotsCompact() {
+        Platform.runLater {
+            val mek = MekBuild()
+            // Engine rating 250 / 25 == 10 integrated
+            mek.tonnage = 50.0
+            mek.baseWalkMP = 5
+            mek.heatSinkType = ComponentKeys.HEAT_SINK_COMPACT.component() as HeatSink
+            model.rebind {
+                unitModel = MekModel(mek)
+            }
+
+            assertEquals(20, view.lblSlotsIntegrated.text.toInt())
+        }
+    }
 }

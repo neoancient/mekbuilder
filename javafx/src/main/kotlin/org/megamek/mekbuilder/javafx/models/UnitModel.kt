@@ -167,7 +167,7 @@ abstract class UnitModel (unitBuild: UnitBuild) {
             getHeatSinks().componentProperty.refresh()
         }
         heatSinkCountProperty.onChange {
-            val hsMount = getHeatSinks();
+            val hsMount = getHeatSinks()
             hsMount.slots.invalidate()
             hsMount.weight.invalidate()
             hsMount.cost.invalidate()
@@ -178,7 +178,7 @@ abstract class UnitModel (unitBuild: UnitBuild) {
         movementHeatProperty.bind(integerBinding(mountList) {
             unit.movementHeat()
         })
-        heatDissipationProperty.bind(integerBinding(mountList) {
+        heatDissipationProperty.bind(integerBinding(mountList, heatSinkCountProperty) {
             unit.heatDissipation()
         })
     }
