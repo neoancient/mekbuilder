@@ -111,8 +111,6 @@ internal class UniqueComponentTableViewTest: ApplicationTest() {
                 unitModel = MekModel(mek)
             }
 
-            val m = model.mountList.first{it.component == booster}
-            val item = table.items.first{it.component == booster}
             assertEquals(3.0, table.items.first{it.component == booster}.sizeProperty.value, 0.001)
         }
     }

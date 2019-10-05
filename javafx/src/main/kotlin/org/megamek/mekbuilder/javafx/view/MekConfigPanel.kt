@@ -26,7 +26,6 @@ import javafx.scene.control.Label
 import javafx.scene.layout.AnchorPane
 import org.megamek.mekbuilder.javafx.models.UnitViewModel
 import org.megamek.mekbuilder.javafx.util.SimpleComboBoxCellFactory
-import org.megamek.mekbuilder.tech.ConstructionOptionKey
 import org.megamek.mekbuilder.tech.UnitConstructionOption
 import tornadofx.*
 import org.megamek.mekbuilder.unit.MekConfiguration
@@ -137,5 +136,7 @@ class MekConfigPanel: View() {
         chkOmni.visibleWhen(model.mekConfigurationProperty.booleanBinding {
             it?.isOmniAllowed ?: false
         })
+
+
     }
 }

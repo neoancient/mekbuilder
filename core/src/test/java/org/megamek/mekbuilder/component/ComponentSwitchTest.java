@@ -27,9 +27,6 @@ import java.util.StringJoiner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * @author: Neoancient
- */
 class ComponentSwitchTest {
     @Test
     void testIntParser() {
@@ -40,18 +37,20 @@ class ComponentSwitchTest {
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     void testDoubleArrayParser() {
         final List<Double> list = (List<Double>) DataParsers.doubleArrayParser.apply("1.1,2.3,-0.4", ",");
 
         assertAll(
                 () -> assertEquals(list.size(), 3),
-                () -> assertTrue(list.contains(Double.valueOf(1.1))),
-                () -> assertTrue(list.contains(Double.valueOf(2.3))),
-                () -> assertTrue(list.contains(Double.valueOf(-0.4)))
+                () -> assertTrue(list.contains(1.1)),
+                () -> assertTrue(list.contains(2.3)),
+                () -> assertTrue(list.contains(-0.4))
         );
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     void testWeightClassSetParser() {
         final StringJoiner sj = new StringJoiner(",");
         sj.add(UnitWeightClass.LIGHT.name());
